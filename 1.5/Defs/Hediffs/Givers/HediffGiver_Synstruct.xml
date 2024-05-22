@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffGiverSetDef>
+        <defName>ABF_SynstructStandard</defName>
+	    <hediffGivers>
+			<li Class="ArtificialBeings.HediffGiver_Leaking">
+				<hediff>ABF_CoolantLoss</hediff>
+                <riseRatePerDay>1</riseRatePerDay>
+                <fallRatePerDay>15</fallRatePerDay>
+                <iconPath>UI/Icons/BleedingCoolant</iconPath>
+			</li>
+			<li Class="ArtificialBeings.HediffGiver_HypothermiaNoFrostbite">
+				<hediff>ABF_SynstructHypothermia</hediff>
+			</li>
+			<li Class="HediffGiver_Heat">
+				<hediff>ABF_Overheating</hediff>
+			</li>
+	    </hediffGivers>
+	</HediffGiverSetDef>
+
+	<HediffGiverSetDef>
+        <defName>ABF_SynstructCoolantless</defName>
+	    <hediffGivers>
+			<li Class="ArtificialBeings.HediffGiver_HypothermiaNoFrostbite">
+				<hediff>ABF_SynstructHypothermia</hediff>
+			</li>
+			<li Class="HediffGiver_Heat">
+				<hediff>ABF_Overheating</hediff>
+			</li>
+	    </hediffGivers>
+	</HediffGiverSetDef>
+
+</Defs>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BodyPartDef>
+        <defName>ABF_CoreIntelligence</defName>
+        <label>core</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ConsciousnessSource</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_InternalCorePump</defName>
+        <label>Coolant Pump</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>5</bleedRate>
+        <tags>
+            <li>BloodPumpingSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructHeatsink</defName>
+        <label>Heatsink</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>1</bleedRate>
+        <tags>
+            <li>BreathingSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_InternalBattery</defName>
+        <label>Battery</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>1</bleedRate>
+        <tags>
+            <li>MetabolismSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_MechaniteStorage</defName>
+        <label>Mechanite Storage</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>4</bleedRate>
+        <tags>
+            <li>BloodFiltrationSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_InternalGenerator</defName>
+        <label>Generator</label>
+        <hitPoints>25</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>1</bleedRate>
+        <tags>
+            <li>MetabolismSource</li>
+            <li>EatingSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>ABF_SynstructInsight</defName>
+		<label>synstruct insight</label>
+		<tab>ABF_SynstructResearch</tab>
+		<description>Initiate research into the development of synstructs - artificial analogues of living things - and related opportunities.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>Machining</li>
+		</prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>0</researchViewX>
+		<researchViewY>4</researchViewY>
+        <discoveredLetterTitle>About: Synstructs</discoveredLetterTitle>
+        <discoveredLetterText>You have started down the path of producing synstructs. Additional letters will appear at appropriate moments, but it should be known that they are created at an assembly pod and repaired, upgraded, and operated on using repair stims rather than medicine. They also have differing needs entirely, and may require a very different kind of colony than normal to be fully self-sufficient. They do not rest, but must take time to maintain themselves to sustain a coherent existence. While they can consume food for energy (usually at low efficiency), they are better serviced by charging at a specialized charging station or via a normal bed with an attached bedside charger. Synstructs can have missing parts or whole parts of their chassis restored by using part packs.</discoveredLetterText>
+	</ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ResearchProjectDef>
+        <defName>ABF_SynstructOptimization</defName>
+        <label>synstruct optimization</label>
+		<tab>ABF_SynstructResearch</tab>
+        <description>Standardization alone will not solve everything - further progress will require a revolution of efficiency and precision. New standards for optimization, accuracy, and capability will need to be developed. Once achieved, humanity's more wild ideas fall within reach.</description>
+        <baseCost>4000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+            <li>ABF_SynstructStandardization</li>
+            <li>AdvancedFabrication</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>5</researchViewX>
+		<researchViewY>4</researchViewY>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>ABF_AdvancedSynstructFrameworks</defName>
+        <label>advanced chassis and frame replacements</label>
+        <tab>ABF_SynstructResearch</tab>
+        <description>With the advent of optimized designs and structural techniques, a wide variety of new possibilities for framework enhancements is unlocked. With greater specialization and higher quality, these frameworks are purpose built rather than generic solutions.</description>
+        <baseCost>800</baseCost>
+        <techLevel>Spacer</techLevel>
+		<prerequisites>
+            <li>ABF_SynstructStructure</li>
+            <li>ABF_SynstructOptimization</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>6</researchViewX>
+		<researchViewY>0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>ABF_CoreAssistants</defName>
+        <label>core assistance</label>
+        <tab>ABF_SynstructResearch</tab>
+        <description>With the acquisition of proper fabrication capabilities and a strong standardization scheme, advancements in the quality of mechanical parts is now within reach. There is spare space in all synstruct cores for protective padding purposes - advanced specialized chips could occupy some of that space instead.</description>
+        <baseCost>1600</baseCost>
+        <techLevel>Spacer</techLevel>
+        <prerequisites>
+            <li>ABF_SynstructOptimization</li>
+            <li>ABF_InterchangeableParts</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>7</researchViewX>
+		<researchViewY>0</researchViewY>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+    </ResearchProjectDef>
+
+</Defs>

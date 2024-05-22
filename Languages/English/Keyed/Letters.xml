@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Coherence -->
+    <ABF_CoherenceEffectOccurredLetter>{PAWN_labelShort} has had a coherence related effect occur:\n\n  {1}.</ABF_CoherenceEffectOccurredLetter>
+    <ABF_CoherenceEffectOccurredLetterLabel>{PAWN_labelShort}: {1}</ABF_CoherenceEffectOccurredLetterLabel>
+
+    <!-- Newboots -->
+    <ABF_NewbootSynstructCreatedLabel>Newboot Synstruct</ABF_NewbootSynstructCreatedLabel>
+    <ABF_NewbootSynstructCreatedText>The final touches on a new {0} are complete. The synstruct is </ABF_NewbootSynstructCreatedText>
+
+    <!-- Personality Shift Letters -->
+    <ABF_PersonalityShiftFreewilled>Personality shift request</ABF_PersonalityShiftFreewilled>
+    <ABF_PersonalityShiftFreewilledDesc>{0_nameDef} would like to alter their personality slightly to see the world in a new way. If accepted, {0_possessive} passion in three skills and a trait will be exchanged for new ones with your input. {0_nameDef} would be pleased by the change, and would be mildly disappointed if prevented from changing.</ABF_PersonalityShiftFreewilledDesc>
+    <ABF_PersonalityShiftNewboot>Personality indecision</ABF_PersonalityShiftNewboot>
+    <ABF_PersonalityShiftRequest>Personality shift for {0_nameDef}</ABF_PersonalityShiftRequest>
+    <ABF_PersonalityShift>{0_nameFull} wishes to shift their personality slightly.</ABF_PersonalityShift>
+    <ABF_PersonalityShiftChooseHowPawnWillChange>Open this letter to choose how {0_nameDef} will change.</ABF_PersonalityShiftChooseHowPawnWillChange>
+
+</LanguageData>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef>
+        <defName>ABF_InitiateBerserkDirective</defName>
+        <label>trigger berserker directives</label>
+        <description>Remotely trigger combat protocols and turn off IFF sensors for a few hours.</description>
+        <iconPath>UI/Icons/Gizmos/ABF_RestrictionGizmo</iconPath>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <targetRequired>false</targetRequired>
+        <aiCanUse>true</aiCanUse>
+        <statBases>
+            <Ability_Duration>250</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>1</warmupTime>
+            <range>0.9</range>
+            <drawAimPie>false</drawAimPie>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveMentalState">
+                <compClass>CompAbilityEffect_GiveMentalState</compClass>
+                <stateDef>ABF_DirectiveBerserker</stateDef>
+                <applyToSelf>true</applyToSelf>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>ABF_DirectiveBerserker</hediffDef>
+                <onlyApplyToSelf>true</onlyApplyToSelf>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef>
+        <defName>ABF_InitiateInterferenceDirective</defName>
+        <label>trigger interference directives</label>
+        <description>Release an incredibly loud and painful metallic screech by scraping parts that are intentionally moved improperly while outputting a massive wave of radio signals so as to impair both organic and inorganic sensory implements. Doing this crashes the unit, requiring a full restart.</description>
+        <iconPath>UI/Icons/Gizmos/ABF_RestrictionGizmo</iconPath>
+        <cooldownTicksRange>6000</cooldownTicksRange>
+        <targetRequired>false</targetRequired>
+        <aiCanUse>false</aiCanUse>
+        <statBases>
+            <Ability_EffectRadius>6.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>1</warmupTime>
+            <range>6.9</range>
+            <drawAimPie>false</drawAimPie>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="ArtificialBeings.CompProperties_AbilityGiveHediffsUserTarget">
+                <compClass>ArtificialBeings.CompAbilityEffect_GiveHediffsUserTarget</compClass>
+                <hediffDefSelf>ABF_Incapacitated</hediffDefSelf>
+                <hediffDefTarget>ABF_DirectiveInterference</hediffDefTarget>
+                <severitySelf>0.5</severitySelf>
+                <severityTarget>1</severityTarget>
+            </li>
+        </comps>
+    </AbilityDef>
+
+</Defs>

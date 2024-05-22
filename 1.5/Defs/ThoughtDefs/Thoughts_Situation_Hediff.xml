@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>ABF_ChronicAnnoyance</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_ChronicAnnoyance</workerClass>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+            <li>Masochist</li>
+        </nullifyingTraits>
+        <stages>
+            <li>
+                <label>defective part</label>
+                <description>One of my parts is suffering from an extended inefficiency. How inconvenient.</description>
+                <baseMoodEffect>-2</baseMoodEffect>
+            </li>
+            <li>
+                <label>two defective parts</label>
+                <description>Two of my parts are suffering from extended inefficiencies. How annoying.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+            <li>
+                <label>three defective parts</label>
+                <description>Three of my parts are suffering from extended inefficiencies. This is absurd.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+            <li>
+                <label>many defective parts</label>
+                <description>A vast number of my parts are dysfunctional! This is ridiculous - I need repairs!</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+	    <validWhileDespawned>true</validWhileDespawned>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_RustedPart</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_RustedPart</workerClass>
+        <nullifyingTraits>
+            <li>Ascetic</li>
+            <li>Masochist</li>
+        </nullifyingTraits>
+        <stages>
+            <li>
+                <label>rusted part</label>
+                <description>There is rust on my frame. This is humiliating and denigrating.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+        </stages>
+	    <validWhileDespawned>true</validWhileDespawned>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_VisualAbberrationsThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>ABF_OpticalDriverAbberrations</hediff>
+        <stages>
+            <li>
+                <label>visual abberrations</label>
+                <description>My visual sensors are providing false information and interpretations. I can't tell what is real or not. This is extremely frustrating!</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+	    <validWhileDespawned>true</validWhileDespawned>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_OverclockedThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>ABF_SynstructOverclocking</hediff>
+        <stages>
+            <li>
+                <label>overclocked</label>
+                <description>My processor is running at an abnormally high clockrate. I can sense the strain on my hardware.</description>
+                <baseMoodEffect>-3</baseMoodEffect>
+            </li>
+        </stages>
+	    <validWhileDespawned>true</validWhileDespawned>
+    </ThoughtDef>
+
+ </Defs>

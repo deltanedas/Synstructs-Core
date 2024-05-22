@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>ABF_DoBillsAssemblyPod</defName>
+        <label>assemble mechanical units at assembly pod</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>ABF_Artificer</workType>
+        <priorityInType>10</priorityInType>
+        <fixedBillGiverDefs>
+          <li>ABF_SynstructCradle</li>
+        </fixedBillGiverDefs>
+        <verb>work</verb>
+        <gerund>working at</gerund>
+        <requiredCapacities>
+          <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+      </WorkGiverDef>
+
+      <WorkGiverDef>
+        <defName>ABF_DoBillsPartWorkbench</defName>
+        <label>assemble parts at parts workbench</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>ABF_Artificer</workType>
+        <priorityInType>5</priorityInType>
+        <fixedBillGiverDefs>
+          <li>ABF_SynstructPartWorkbench</li>
+        </fixedBillGiverDefs>
+        <verb>work</verb>
+        <gerund>working at</gerund>
+        <requiredCapacities>
+          <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+      </WorkGiverDef>
+
+</Defs>

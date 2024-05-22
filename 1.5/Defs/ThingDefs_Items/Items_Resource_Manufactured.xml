@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Base Def for repair items -->
+    <ThingDef Name="ABF_RepairItemBase" ParentName="ResourceBase" Abstract="True">
+        <soundInteract>Standard_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smelt</effectWorking>
+            <soundWorking>Recipe_Smelt</soundWorking>
+            <recipeUsers>
+                <li>TableMachining</li>
+                <li>ABF_SynstructPartWorkbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+
+    <!-- Mechanical Part Pack -->
+    <ThingDef ParentName="ABF_RepairItemBase">
+        <defName>ABF_PartPack</defName>
+        <label>Mechanical Part Pack</label>
+        <description>This pack of half-assembled parts is designed to replace standard components ranging from whole legs and arms to intricate batteries and adaptors. Basic materials are included for rapid creation of more specific pieces.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/PartPack</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <stackLimit>25</stackLimit>
+        <statBases>
+            <MarketValue>30</MarketValue>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Mass>0.45</Mass>
+            <Flammability>0</Flammability>
+            <WorkToMake>2150</WorkToMake>
+        </statBases>
+        <costList>
+            <Steel>40</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+        </costList>
+        <tradeability>All</tradeability>
+        <recipeMaker>
+            <bulkRecipeCount>4</bulkRecipeCount>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <thingSetMakerTags>
+            <li>Manufactured</li>
+            <li>RewardSpecial</li>
+        </thingSetMakerTags>
+    </ThingDef>
+
+    <!-- Repair Stim Base Def -->
+    <ThingDef Name="ABF_RepairStimBase" ParentName="ABF_RepairItemBase" Abstract="True">
+        <thingClass>Medicine</thingClass>
+        <stackLimit>25</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <drawGUIOverlay>True</drawGUIOverlay>
+        <uiIconForStackCount>1</uiIconForStackCount>
+        <statBases>
+            <MaxHitPoints>60</MaxHitPoints>
+            <DeteriorationRate>2</DeteriorationRate>
+            <Mass>0.70</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <thingCategories Inherit="False">
+            <li>Medicine</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Simple Repair Stim -->
+    <ThingDef ParentName="ABF_RepairStimBase">
+        <defName>ABF_RepairStimSimple</defName>
+        <label>Simple Repair Stim</label>
+        <description>A small, simple assembled kit of industrial components, and tools for assisting and stimulating synstruct repairs. The kit lacks a number of very helpful assets for more serious injuries or operations, and is suited more for battlefield triage than professional use.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/ABF_RepairStimSimple</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <statBases>
+            <MarketValue>12</MarketValue>
+            <MedicalPotency>0.60</MedicalPotency>
+            <MedicalQualityMax>0.70</MedicalQualityMax>
+            <WorkToMake>1000</WorkToMake>
+        </statBases>
+        <costList>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+            <bulkRecipeCount>4</bulkRecipeCount>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+                <Intellectual>4</Intellectual>
+            </skillRequirements>
+            <researchPrerequisite>Electricity</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <!-- Intermediate Repair Stim -->
+    <ThingDef ParentName="ABF_RepairStimBase">
+        <defName>ABF_RepairStimIntermediate</defName>
+        <label>Intermediate Repair Stim</label>
+        <description>An assembled kit of industrial components and tools for assisting and stimulating mechanical repairs. Stimulation kits like this are the core tools of any synstruct's artificer who believes in quality. Well-suited to a range of tasks, it is functionally capable and practical.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/ABF_RepairStimIntermediate</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <statBases>
+            <MarketValue>21</MarketValue>
+            <MedicalPotency>1.00</MedicalPotency>
+            <MedicalQualityMax>1.00</MedicalQualityMax>
+            <DeteriorationRate>2</DeteriorationRate>
+            <WorkToMake>3500</WorkToMake>
+        </statBases>
+        <costList>
+            <Plasteel>5</Plasteel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+            <bulkRecipeCount>4</bulkRecipeCount>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+                <Intellectual>6</Intellectual>
+            </skillRequirements>
+        </recipeMaker>
+    </ThingDef>
+
+    <!-- Advanced Repair Stim -->
+    <ThingDef ParentName="ABF_RepairStimBase">
+        <defName>ABF_RepairStimAdvanced</defName>
+        <label>Advanced Repair Stim</label>
+        <description>An array of high-tech tools for assisting and stimulating mechanical repairs. Relatively uncommon outside Glitterworlds, kits like these are highly prized by artificers and any self-respecting mechanical unit. This can make even poor artificers seem very competent.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/ABF_RepairStimAdvanced</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <techLevel>Spacer</techLevel>
+        <statBases>
+            <MarketValue>60</MarketValue>
+            <MedicalPotency>1.60</MedicalPotency>
+            <MedicalQualityMax>1.30</MedicalQualityMax>
+            <WorkToMake>6500</WorkToMake>
+        </statBases>
+        <costList>
+            <Gold>1</Gold>
+            <ComponentIndustrial>3</ComponentIndustrial>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+            <bulkRecipeCount>4</bulkRecipeCount>
+            <skillRequirements>
+                <Crafting>12</Crafting>
+                <Intellectual>12</Intellectual>
+            </skillRequirements>
+        </recipeMaker>
+    </ThingDef>
+
+    <!-- Synstruct Resurrection Kit Base -->
+    <ThingDef ParentName="ABF_RepairItemBase" Name="ABF_RestructKitBase" Abstract="True">
+	    <thingClass>ThingWithComps</thingClass>
+        <stackLimit>10</stackLimit>
+        <statBases>
+            <MaxHitPoints>80</MaxHitPoints>
+            <DeteriorationRate>2.0</DeteriorationRate>
+            <Mass>0.2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <tradeTags>
+          <li>ExoticMisc</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Resurrection Kit for sapient synstructs -->
+    <ThingDef ParentName="ABF_RestructKitBase">
+        <defName>ABF_SapientSynstructResurrectorKit</defName>
+        <label>sapient restruct kit</label>
+        <description>A one-use highly specialized suite of tools and components specifically designed to recover and restore a lost sapient synstruct's personality and consciousness. Due to those precisely specialized tools, these are useless for resuscitating non-sapient synstructs. Synstructs which have had their core destroyed cannot be recovered, but these tools would still be necessary to reconstruct the body.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/SapientRestructKit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <WorkToMake>4550</WorkToMake>
+        </statBases>
+        <techLevel>Ultra</techLevel>
+        <costList>
+            <Steel>80</Steel>
+            <Plasteel>40</Plasteel>
+            <Gold>2</Gold>
+            <ComponentIndustrial>10</ComponentIndustrial>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Use restruct kit</useLabel>
+                <useDuration>0</useDuration>
+                <warmupMote>Mote_ResurrectAbility</warmupMote>
+            </li>
+            <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
+                <validStates>
+                    <li>Sapient</li>
+                </validStates>
+            </li>
+        </comps>
+        <recipeMaker>
+            <recipeUsers>
+                <li>ABF_SynstructPartWorkbench</li>
+            </recipeUsers>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>ABF_MechaniteAssistedRecovery</researchPrerequisite>
+        </recipeMaker>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+
+    <!-- Resurrection Kit for sapient synstructs -->
+    <ThingDef ParentName="ABF_RestructKitBase">
+        <defName>ABF_DroneSynstructResurrectorKit</defName>
+        <label>drone restruct kit</label>
+        <description>A one-use suite of tools and components specifically designed to recover and restore a lost sapient synstruct's personality and consciousness. Due to those precisely specialized tools, these are useless for resuscitating non-sapient synstructs. Synstructs which have had their core destroyed cannot be recovered, but these tools would still be necessary to reconstruct the body.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/SapientRestructKit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>200</MarketValue>
+            <WorkToMake>2450</WorkToMake>
+        </statBases>
+        <techLevel>Spacer</techLevel>
+        <costList>
+            <Steel>40</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Use restruct kit</useLabel>
+                <useDuration>0</useDuration>
+                <warmupMote>Mote_ResurrectAbility</warmupMote>
+            </li>
+            <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
+                <validStates>
+                    <li>Blank</li>
+                    <li>Drone</li>
+                    <li>Reprogrammable</li>
+                </validStates>
+            </li>
+        </comps>
+        <recipeMaker>
+            <recipeUsers>
+                <li>ABF_SynstructPartWorkbench</li>
+            </recipeUsers>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+            <researchPrerequisite>ABF_MechaniteAssistedRecovery</researchPrerequisite>
+        </recipeMaker>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+
+    <!-- Mechanical Need Fulfillment Items -->
+
+    <ThingDef>
+        <defName>ABF_CoolantPack</defName>
+        <label>coolant pack</label>
+        <description>A tightly sealed package of coolant for mechanical units. Mechanical units consume it to replenish internal coolant reserves. It only fills the reserve and can not replenish immediately lost coolant.</description>
+        <category>Item</category>
+        <thingClass>ThingWithComps</thingClass>
+        <drawerType>MapMeshOnly</drawerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <selectable>true</selectable>
+        <stackLimit>10</stackLimit>
+        <tickerType>Rare</tickerType>
+        <possessionCount>5</possessionCount>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <alwaysHaulable>true</alwaysHaulable>
+        <pathCost>14</pathCost>
+        <allowedArchonexusCount>-1</allowedArchonexusCount>
+        <resourceReadoutPriority>Last</resourceReadoutPriority>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/ABF_CoolantPack</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>60</MaxHitPoints>
+            <DeteriorationRate>5</DeteriorationRate>
+            <Mass>0.5</Mass>
+            <Flammability>0.1</Flammability>
+            <Beauty>0</Beauty>
+            <MarketValue>3</MarketValue>
+            <WorkToMake>1600</WorkToMake>
+        </statBases>
+        <thingCategories>
+            <li>Drugs</li>
+        </thingCategories>
+        <recipeMaker>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <costList>
+            <Neutroamine>1</Neutroamine>
+            <Chemfuel>10</Chemfuel>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li>
+                <compClass>ArtificialBeings.CompArtificialNeedFulfiller</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_NeedFulfillerExtension">
+                <needOffsetRelations>
+                    <li><key>ABF_Coolant</key><value>0.5</value></li>
+                </needOffsetRelations>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <ThingDef>
+        <defName>ABF_LubricantPack</defName>
+        <label>lubricant pack</label>
+        <description>A tightly sealed package of lubricant for mechanical units. Mechanical units consume it to replenish internal lubricant reserves.</description>
+        <category>Item</category>
+        <thingClass>ThingWithComps</thingClass>
+        <drawerType>MapMeshOnly</drawerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <selectable>true</selectable>
+        <stackLimit>10</stackLimit>
+        <tickerType>Rare</tickerType>
+        <possessionCount>5</possessionCount>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <alwaysHaulable>true</alwaysHaulable>
+        <pathCost>14</pathCost>
+        <allowedArchonexusCount>-1</allowedArchonexusCount>
+        <resourceReadoutPriority>Last</resourceReadoutPriority>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <graphicData>
+            <texPath>Things/Items/Manufactured/ABF_LubricantPack</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>60</MaxHitPoints>
+            <DeteriorationRate>5</DeteriorationRate>
+            <Mass>0.5</Mass>
+            <Flammability>0.1</Flammability>
+            <Beauty>0</Beauty>
+            <MarketValue>3</MarketValue>
+            <WorkToMake>1400</WorkToMake>
+        </statBases>
+        <thingCategories>
+            <li>Drugs</li>
+        </thingCategories>
+        <recipeMaker>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <costList>
+            <Neutroamine>1</Neutroamine>
+            <Chemfuel>14</Chemfuel>
+        </costList>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li>
+                <compClass>ArtificialBeings.CompArtificialNeedFulfiller</compClass>
+            </li>
+        </comps>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_NeedFulfillerExtension">
+                <needOffsetRelations>
+                    <li><key>ABF_Lubricant</key><value>0.5</value></li>
+                </needOffsetRelations>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveMeleeOptimized</defName>
+        <label>Brawler</label>
+        <description>Additional specialized melee combat directives can be implemented into a drone to enhance close quarters combat efficiency and survival rate. The directives severely impair long range movement prediction and identification systems, however.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveMeleeOptimized</iconPath>
+        <exclusionTags>
+            <li>CombatDirectives</li>
+        </exclusionTags>
+        <statOffsets>
+            <MeleeHitChance>4</MeleeHitChance>
+            <MeleeDodgeChance>8</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+            <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown>
+            <ShootingAccuracyPawn>0.6</ShootingAccuracyPawn>
+            <PawnTrapSpringChance>0.2</PawnTrapSpringChance>
+        </statFactors>
+        <complexityCost>3</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>3</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>0.5</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Melee</key><value>10</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_ExclusionTag"/>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredWorkTag">
+                <requiredWorkTags>
+                    <li>Violent</li>
+                </requiredWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveRangeOptimized</defName>
+        <label>Sharpshooter</label>
+        <description>Additional specialized ranged combat directives can be implemented into a drone to enhance ranged combat efficiency. The directives severely impair close range reactiveness and survivability, however.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveRangeOptimized</iconPath>
+        <exclusionTags>
+            <li>CombatDirectives</li>
+        </exclusionTags>
+        <statOffsets>
+            <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+        </statOffsets>
+        <statFactors>
+            <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+            <MeleeHitChance>0.6</MeleeHitChance>
+            <MeleeDodgeChance>0.6</MeleeDodgeChance>
+            <PawnTrapSpringChance>2</PawnTrapSpringChance>
+        </statFactors>
+        <complexityCost>3</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>3</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>0.5</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Shooting</key><value>10</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_ExclusionTag"/>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredWorkTag">
+                <requiredWorkTags>
+                    <li>Violent</li>
+                </requiredWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveVeterancy</defName>
+        <label>Veteran</label>
+        <description>Highly sophisticated and complicated directives can be implemented into a drone to enhance overall combat efficiency. Optimized for combat at all ranges and scenarios, units with these directives have significant combat advantages at the cost of higher upkeep.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveVeterancy</iconPath>
+        <exclusionTags>
+            <li>CombatDirectives</li>
+        </exclusionTags>
+        <statOffsets>
+            <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+            <MeleeHitChance>8</MeleeHitChance>
+            <MeleeDodgeChance>16</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+            <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+            <PawnTrapSpringChance>0</PawnTrapSpringChance>
+        </statFactors>
+        <complexityCost>6</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>4</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>-1</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Shooting</key><value>20</value></li>
+            <li><key>Melee</key><value>20</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_MinimumComplexity">
+                <complexityRequirement>30</complexityRequirement>
+            </li>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_ExclusionTag"/>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredWorkTag">
+                <requiredWorkTags>
+                    <li>Violent</li>
+                </requiredWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectivePacifism</defName>
+        <label>Pacifist</label>
+        <description>Simplification directives can be implemented into a drone to strip out the need for friend/foe targetting and remove all combat capabilities. The spare computational capabilities can be refocused toward purely utilitarian and productive purposes, greatly enhancing general efficiency.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectivePacifism</iconPath>
+        <exclusionTags>
+            <li>CombatDirectives</li>
+        </exclusionTags>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <statOffsets>
+            <ShootingAccuracyPawn>-20</ShootingAccuracyPawn>
+            <MeleeHitChance>-20</MeleeHitChance>
+            <MeleeDodgeChance>-10</MeleeDodgeChance>
+            <ABF_ChargingSpeed>0.5</ABF_ChargingSpeed>
+            <ABF_CoherenceRetention>1</ABF_CoherenceRetention>
+            <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+        </statOffsets>
+        <statFactors>
+            <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+            <PawnTrapSpringChance>10</PawnTrapSpringChance>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Trader</key><value>1.5</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Shooting</key><value>-3</value></li>
+            <li><key>Melee</key><value>-3</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_ExclusionTag"/>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_ForbiddenWorkTag">
+                <forbiddenWorkTags>
+                    <li>Violent</li>
+                </forbiddenWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveMartyrdom</defName>
+        <label>Martyr</label>
+        <description>Sacrifice is a common theme amongst self-righteous causes, and martyrdom is widely held as a virtue for the selfless. Drones, whose entire existence revolves around serving another individual's cause and who are generally incapable of bringing disgrace are thus perfect martyrs and eminently sacrificiable. Alas, they are also relatively easy to resuscitate if killed, which impairs the narrative strength of their destruction.\n\nIntentionally overridden safety measures and intentionally destabilizing directives targeting those measures ensure defeated drones come to a decisive and glorious end. The severely reduced safety protocols also makes room for other programs, conveniently.</description>
+        <customEffectsDescription>Units with this directive break down into steel slag upon death.</customEffectsDescription>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveMartyrdom</iconPath>
+        <complexityCost>-4</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>0.5</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>-1</value></li>
+        </groupKindWeights>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveBerserker</defName>
+        <label>Berserker</label>
+        <description>Fantastical tales of legendary warriors winning battles after suffering normally lethal blows and of berserkerse who wage bloody conflict without regard for self or ally have always fascinated civilized peoples. Conveniently, the ability to ignore normally fatal damage and the "ability" to fail to recognize allies is relatively straightforward to institute in drones.\n\nSimple but specialized directives - and a great deal of removed safety protocols - can grant drones the capacity to mimic berserkers by instantaneously adapting to injuries without losing efficacy and by simply turning off most IFF sensors.</description>
+        <customEffectsDescription>Units with this directive gain an ability to enter a mental state to attack all non-berserking units and shrug off wounds.</customEffectsDescription>
+        <directiveClass>ArtificialBeings.Directive_AbilityGiver</directiveClass>
+        <abilities><li>ABF_InitiateBerserkDirective</li></abilities>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveBerserker</iconPath>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>-1</value></li>
+        </groupKindWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredWorkTag">
+                <requiredWorkTags>
+                    <li>Violent</li>
+                </requiredWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_DirectiveInterference</defName>
+        <label>Interdictor</label>
+        <description>The value of communication and hearing in all situations can not be overstated. Interfering with those capabilities is widely considered one of the most critical aspects of any conflict, both physical and non-physical. Because organics are unable to fully shut down their hearing, and most any other entity listens in some respect to audio signals, interfering with those abilities is simple - just fill the air with overwhelming amounts of junk data.\n\nSpecialized directives can grant drones the ability to emit a massive disrupting wave of audio and radiological signals, greatly impairing nearby anyone nearby.</description>
+        <customEffectsDescription>Units with this directive gain an ability to hit all nearby pawns with interference that will cause pain, reduced hearing and psychic sensitivity, and may cause wandering mental breaks. Using the ability causes a crash, requiring a full restart of the drone.</customEffectsDescription>
+        <directiveClass>ArtificialBeings.Directive_AbilityGiver</directiveClass>
+        <abilities><li>ABF_InitiateInterferenceDirective</li></abilities>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveInterference</iconPath>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>-1</value></li>
+        </groupKindWeights>
+    </ArtificialBeings.DirectiveDef>
+
+</Defs>

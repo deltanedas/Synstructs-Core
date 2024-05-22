@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThinkTreeDef>
+        <defName>ABF_AnimalIdleCoherence</defName>
+        <insertTag>Animal_PreWander</insertTag>
+        <insertPriority>2</insertPriority>
+        <thinkRoot Class="ArtificialBeings.JobGiver_BuildCoherenceIdle"/>
+    </ThinkTreeDef>
+
+</Defs>

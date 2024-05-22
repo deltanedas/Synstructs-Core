@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructTorso</defName>
+        <label>torso</label>
+        <hitPoints>40</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+        <executionPartPriority>400</executionPartPriority>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructNeck</defName>
+        <label>neck</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>BreathingPathway</li>
+            <li>EatingPathway</li>
+            <li>TalkingPathway</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+        <executionPartPriority>1000</executionPartPriority>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructHead</defName>
+        <label>head</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructVoiceSynthesizer</defName>
+        <label>Voice synthesizer</label>
+        <hitPoints>15</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0.2</bleedRate>
+        <socketed>true</socketed>
+        <tags>
+            <li>TalkingSource</li>
+        </tags>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructVisualSensor</defName>
+        <label>visual sensor</label>
+        <hitPoints>10</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>SightSource</li>
+        </tags>
+        <bleedRate>0.2</bleedRate>
+        <socketed>true</socketed>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructAudioSensor</defName>
+        <label>audio sensor</label>
+        <hitPoints>10</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>HearingSource</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructSmellSensor</defName>
+        <label>smell sensor</label>
+        <hitPoints>10</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructShoulder</defName>
+        <label>shoulder</label>
+        <hitPoints>25</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ManipulationLimbSegment</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructArm</defName>
+        <label>arm</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ManipulationLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructHand</defName>
+        <label>hand</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ManipulationLimbSegment</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructFinger</defName>
+        <label>finger</label>
+        <hitPoints>8</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>0.01</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0</bleedRate>
+        <tags>
+            <li>ManipulationLimbDigit</li>
+        </tags>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructWaist</defName>
+        <label>utility slot</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>0.00</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+        <conceptual>true</conceptual>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructLeg</defName>
+        <label>leg</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>MovingLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructFoot</defName>
+        <label>foot</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>.01</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>MovingLimbSegment</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_CounterWeightTail</defName>
+        <label>counterweight</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>0.01</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>MovingLimbSegment</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructJaw</defName>
+        <label>jaw</label>
+        <hitPoints>15</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ManipulationLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructWing</defName>
+        <label>wing</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ManipulationLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_SynstructPropeller</defName>
+        <label>propeller</label>
+        <hitPoints>10</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>0.05</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>MovingLimbCore</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_CounterWeightTop</defName>
+        <label>small counterweight</label>
+        <hitPoints>5</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <frostbiteVulnerability>0.01</frostbiteVulnerability>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>MovingLimbSegment</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+    </BodyPartDef>
+
+</Defs>

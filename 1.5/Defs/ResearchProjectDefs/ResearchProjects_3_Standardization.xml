@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ResearchProjectDef>
+        <defName>ABF_SynstructStandardization</defName>
+        <label>synstruct standardization</label>
+        <tab>ABF_SynstructResearch</tab>
+        <description>In order to reach a state of consistent manufactured quality and scaling quantity, a standard of production and coherence must be established. Synstructs come in a vast number of styles and designs - standardizing the colony's parts will be critical for success as operations scale up.</description>
+        <baseCost>1600</baseCost>
+        <techLevel>Spacer</techLevel>
+        <prerequisites>
+            <li>MicroelectronicsBasics</li>
+			<li>ABF_SynstructInsight</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <researchViewX>1</researchViewX>
+        <researchViewY>4</researchViewY>
+    </ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ABF_InterchangeableParts</defName>
+		<label>interchangeable parts</label>
+		<tab>ABF_SynstructResearch</tab>
+		<description>The standardization of designs, components, and assembly techniques allows for the standardization of parts, and thus, interchangeability. Dedicating resources to designing easily replaceable, upgradeable parts will open up new avenues for specialization and efficiency gains.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+            <li>ABF_SynstructStandardization</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ABF_SynstructStimulators</defName>
+		<label>synstruct stimulants</label>
+		<tab>ABF_SynstructResearch</tab>
+		<description>While synstructs largely ignore the passage of time, certain crises and time-sensitive opportunities arise to make speed a valuable resource. In moments like these, synstructs turn to consumable synthetic stimulants. Developing the means to produce these stimulants could prove essential.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+            <li>ABF_InterchangeableParts</li>
+            <li>DrugProduction</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>3</researchViewX>
+		<researchViewY>0</researchViewY>
+	</ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>ABF_AdvancedSynstructParts</defName>
+        <label>advanced parts</label>
+        <tab>ABF_SynstructResearch</tab>
+        <description>With better fabrication technology and a standardized part scheme comes the possibility of developing higher quality parts that significantly outperform standard-issue ones.</description>
+        <baseCost>1600</baseCost>
+        <techLevel>Spacer</techLevel>
+        <prerequisites>
+			<li>ABF_InterchangeableParts</li>
+            <li>Fabrication</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>ABF_SynstructStructure</defName>
+        <label>basic structure replacements</label>
+        <tab>ABF_SynstructResearch</tab>
+        <description>Unlike the limbs of a synstruct, the unit's chassis and frame - the foundation and mid-interior structure of the synstruct respectively - are critical components. Replacing them with specialized upgrades can enhance their unique capabilities greatly - although a synstruct may only have one chassis and one frame upgrade at a time.</description>
+        <baseCost>800</baseCost>
+        <techLevel>Spacer</techLevel>
+		<prerequisites><li>ABF_InterchangeableParts</li></prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>4</researchViewX>
+		<researchViewY>0</researchViewY>
+    </ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>ABF_MechaniteAssistedRecovery</defName>
+		<label>mechanite assisted recovery</label>
+		<tab>ABF_SynstructResearch</tab>
+		<description>While simple components and replacement parts can fix most physical damage to synstructs, recovering the consciousness of a synstruct is a far more complicated process. Advanced tools and intricate materials - with the technical knowhow to produce and incorporate them - will be required to reactivate destroyed sapient synstructs.</description>
+		<baseCost>1200</baseCost>
+		<techLevel>Ultra</techLevel>
+		<prerequisites><li>ABF_InterchangeableParts</li></prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+</Defs>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Class for all synstruct surgeries that applies to appropriate units -->
+    <RecipeDef Name="ABF_SurgerySynstructBase" Abstract="True">
+        <effectWorking>Repair</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workSpeedStat>ABF_ArtificialOperationSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>16</workSkillLearnFactor>
+        <anesthetize>false</anesthetize>
+        <recipeUsers /> <!-- XML patches add individual races that want to use the surgeries that inherit from this class. -->
+        <surgeryOutcomeEffect>ABF_ArtificialSurgeryOutcomeBase</surgeryOutcomeEffect>
+    </RecipeDef>
+
+	<!-- Surgery to terminate any incapacitated synstruct -->
+    <RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Terminate</defName>
+		<label>terminate</label>
+		<description>Terminates the functionality of a target permanently, by any means necessary.</description>
+		<workerClass>Recipe_ExecuteByCut</workerClass>
+		<jobString>Terminating.</jobString>
+		<workAmount>800</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+        <isViolation>true</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+        <surgeryOutcomeEffect IsNull="True" />
+	</RecipeDef>
+
+	<!-- Direct analogue to anesthetizing organics, with no fail chance or learning -->
+    <RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Incapacitate</defName>
+		<label>Incapacitate unit</label>
+		<description>Temporarily incapacitate the unit.</description>
+        <workerClass>Recipe_Surgery</workerClass>
+        <jobString>Incapacitating.</jobString>
+		<workAmount>0</workAmount>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>
+        <workSkillLearnFactor>0</workSkillLearnFactor>
+        <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<addsHediff>ABF_Incapacitated</addsHediff>
+	</RecipeDef>
+
+	<!-- Overclocking -->
+    <RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_ApplyOverclocking</defName>
+		<label>Overclock</label>
+		<description>A simple hardware restructuring to a synstruct to lower hardware safety measures for performance gains.</description>
+		<workerClass>Recipe_InstallImplant</workerClass>
+        <jobString>Overclocking.</jobString>
+		<workAmount>5000</workAmount>
+		<skillRequirements>
+            <Intellectual>2</Intellectual>
+        </skillRequirements>
+        <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+        <appliedOnFixedBodyParts>
+            <li>ABF_CoreIntelligence</li>
+        </appliedOnFixedBodyParts>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<researchPrerequisite>ABF_SynstructInsight</researchPrerequisite>
+		<addsHediff>ABF_SynstructOverclocking</addsHediff>
+	</RecipeDef>
+
+    <RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_UndoOverclocking</defName>
+		<label>undo overclocking</label>
+		<description>A simple hardware restructuring to a synstruct to reset hardware safety measures to standard settings.</description>
+        <workerClass>Recipe_RemoveHediff</workerClass>
+		<jobString>Resetting overclocking.</jobString>
+		<workAmount>5000</workAmount>
+		<skillRequirements>
+            <Intellectual>2</Intellectual>
+        </skillRequirements>
+        <surgeryOutcomeEffect IsNull="True" /> <!-- Always succeeds -->
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<researchPrerequisite>ABF_SynstructInsight</researchPrerequisite>
+        <removesHediff>ABF_SynstructOverclocking</removesHediff>
+	</RecipeDef>
+
+	<!-- Surgery to remove body parts from synstructs -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_RemoveSynstructBodyPart</defName>
+		<label>remove part</label>
+		<description>Removes body part.</description>
+		<workerClass>ArtificialBeings.Recipe_RemoveAndRestoreBodyPart</workerClass>
+		<jobString>Removing body part.</jobString>
+		<workAmount>2000</workAmount>
+    	<isViolation>true</isViolation>
+		<surgerySuccessChanceFactor>2.5</surgerySuccessChanceFactor>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_PartPack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>ABF_PartPack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<!-- Surgery to restore body parts in synstructs -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_RestoreBodyPartSynstruct</defName>
+		<label>restore part</label>
+		<description>Restores a particular body part.</description>
+		<workerClass>ArtificialBeings.Recipe_RestorePart</workerClass>
+		<jobString>Restoring body part.</jobString>
+		<workAmount>1400</workAmount>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+	  	<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_PartPack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+    	</ingredients>
+    	<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_PartPack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<!-- Surgery to make a synstruct into a drone -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Synstruct_MakeDrone</defName>
+		<label>format drone</label>
+		<description>Makes this synstruct into a drone.</description>
+		<workerClass>ArtificialBeings.Recipe_MakeDrone</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Formatting as a drone.</jobString>
+		<workAmount>800</workAmount>
+	</RecipeDef>
+
+	<!-- Surgery to make a synstruct into a reprogrammable drone -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Synstruct_MakeReprogrammable</defName>
+		<label>format reprogrammable drone</label>
+		<description>Makes this synstruct into a reprogrammable drone.</description>
+		<workerClass>ArtificialBeings.Recipe_MakeReprogrammable</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Formatting as a reprogrammable drone.</jobString>
+		<workAmount>1400</workAmount>
+		<skillRequirements>
+			<Intellectual>6</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<!-- Surgery to make a synstruct into a sapient -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Synstruct_MakeSapient</defName>
+		<label>format sapient</label>
+		<description>Makes this synstruct into a sapient individual.</description>
+		<workerClass>ArtificialBeings.Recipe_MakeSapient</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Formatting as a sapient individual.</jobString>
+		<workAmount>2800</workAmount>
+		<skillRequirements>
+			<Intellectual>9</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<!-- Surgery to make a synstruct blank -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Synstruct_MakeBlank</defName>
+		<label>remove formatting</label>
+		<description>Makes this synstruct into a blank unit, ready to be reformatted. This is considered murder when done on sapient synstructs!</description>
+		<workerClass>ArtificialBeings.Recipe_MakeBlank</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Deformatting synstruct.</jobString>
+		<workAmount>400</workAmount>
+	</RecipeDef>
+
+	<!-- Surgery to paint a synstruct -->
+	<RecipeDef ParentName="ABF_SurgerySynstructBase">
+		<defName>ABF_Synstruct_Paint</defName>
+		<label>paint synstruct</label>
+		<description>Repaints the synstruct's frame.</description>
+		<workerClass>ArtificialBeings.Recipe_PaintUnit</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Painting synstruct.</jobString>
+		<workAmount>200</workAmount>
+	</RecipeDef>
+
+    <!-- Injecting coolant into a synstruct -->
+    <RecipeDef>
+        <defName>ABF_CoolantInjection</defName>
+        <label>inject coolant</label>
+        <description>Manually replenish a pawn's coolant reserves by injecting from a pack. This does not replace lost coolant in the chassis, but is essential for replenishing that lost quantity over time from the reserves.</description>
+        <jobString>injecting coolant into TargetA.</jobString>
+        <effectWorking>Repair</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workSpeedStat>ABF_ArtificialOperationSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>2</workSkillLearnFactor>
+        <workAmount>800</workAmount>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>
+        <anesthetize>false</anesthetize>
+        <workerClass>ArtificialBeings.Recipe_SurgicallyFulfillArtificialNeed</workerClass>
+        <surgeryOutcomeEffect IsNull="True" />
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ABF_CoolantPack</li>
+                    </thingDefs>
+                </filter>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>ABF_CoolantPack</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+    <!-- Injecting lubricant into a synstruct -->
+    <RecipeDef>
+        <defName>ABF_LubricantInjection</defName>
+        <label>inject lubricant</label>
+        <description>Manually replenish a pawn's lubricant reserves by injecting from a pack. This does not replace lost lubricant in the chassis, but is essential for replenishing that lost quantity over time from the reserves.</description>
+        <jobString>injecting lubricant into TargetA.</jobString>
+        <effectWorking>Repair</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <workSpeedStat>ABF_ArtificialOperationSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>2</workSkillLearnFactor>
+        <workAmount>800</workAmount>
+        <hideBodyPartNames>true</hideBodyPartNames>
+        <targetsBodyPart>false</targetsBodyPart>
+        <anesthetize>false</anesthetize>
+        <workerClass>ArtificialBeings.Recipe_SurgicallyFulfillArtificialNeed</workerClass>
+        <surgeryOutcomeEffect IsNull="True" />
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ABF_LubricantPack</li>
+                    </thingDefs>
+                </filter>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>ABF_LubricantPack</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+    </RecipeDef>
+
+</Defs>

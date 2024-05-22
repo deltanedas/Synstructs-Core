@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Battery Charging Fleck -->
+
+    <FleckDef Name="ABF_FleckBase" ParentName= "FleckBase_Thrown" Abstract="True">
+        <fadeInTime>0.2</fadeInTime>
+        <solidTime>0.8</solidTime>
+        <fadeOutTime>0.8</fadeOutTime>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+    </FleckDef>
+
+    <FleckDef ParentName="ABF_FleckBase">
+        <defName>ABF_EmptyChargeFleck</defName>
+        <graphicData>
+            <texPath>Things/Effects/EmptyChargeFleck</texPath>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+    </FleckDef>
+
+    <FleckDef ParentName="ABF_FleckBase">
+        <defName>ABF_HalfChargeFleck</defName>
+        <graphicData>
+            <texPath>Things/Effects/HalfChargeFleck</texPath>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+    </FleckDef>
+
+    <FleckDef ParentName="ABF_FleckBase">
+        <defName>ABF_FullChargeFleck</defName>
+        <graphicData>
+            <texPath>Things/Effects/FullChargeFleck</texPath>
+            <renderInstanced>true</renderInstanced>
+        </graphicData>
+    </FleckDef>
+
+</Defs>

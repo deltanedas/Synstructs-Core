@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<ABF_ResurrectionSuccessful>{0} was successfully reactivated to minimal capacity. The synstruct must reboot before returning to full functionality.</ABF_ResurrectionSuccessful>
+
+</LanguageData>

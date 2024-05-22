@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Base Cybertech -->
+
+    <HediffDef Name="ABF_AddedBodyPartCybertechBase" ParentName="ABF_SynstructAddedBodyPartBase" Abstract="True">
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>1.5</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- Cybertech Replacement Part -->
+    <ThingDef ParentName="ABF_SynstructBodyPartBase">
+        <defName>ABF_CybertechReplacementPart</defName>
+        <label>cybertech part replacer</label>
+        <description>A small archotech device - with no known proper purpose - that can be inserted into various places of a synstruct to replace the original part there. Batteries, coolant pumps, mechanite storages, even audio sensors and reactors can all be replaced by a vastly higher functioning part. The fact that it can be removed from the synstruct's frame and then become a different part afterwards is nothing short of miraculous.</description>
+        <techLevel>Archotech</techLevel>
+        <graphicData>
+            <texPath>Things/Items/BodyParts/OrganGold</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <techHediffsTags>
+            <li>Archotech</li>
+        </techHediffsTags>
+        <statBases>
+            <MarketValue>2800</MarketValue>
+            <DeteriorationRate>0</DeteriorationRate>
+            <WorkToMake>78000</WorkToMake>
+            <Mass>2</Mass>
+        </statBases>
+        <thingSetMakerTags>
+            <li>RewardStandardCore</li>
+        </thingSetMakerTags>
+    </ThingDef>
+
+	<RecipeDef Name="ABF_SynstructSurgeryInstallCybertechComponent" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
+		<jobString>Implanting Cybertech component.</jobString>
+		<workAmount>4000</workAmount>
+        <surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<anesthetize>false</anesthetize>
+	</RecipeDef>
+
+    <!-- Cybertech Arm -->
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechArm</defName>
+		<label>install archotech arm</label>
+		<description>Install an archotech arm.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ArchotechArm</ThingDef>
+            <HediffDef>ArchotechArm</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech arm.</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ABF_CybertechReplacementPart</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_SynstructArm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ArchotechArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Leg -->
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechLeg</defName>
+		<label>install archotech leg</label>
+		<description>Install an archotech leg.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ArchotechLeg</ThingDef>
+            <HediffDef>ArchotechLeg</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_SynstructLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ArchotechLeg</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Visual Sensor -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechVisualSensor</defName>
+        <label>archotech visual sensor</label>
+        <labelNoun>an archotech visual sensor</labelNoun>
+        <description>An installed archotech eye.</description>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechVisualSensor</defName>
+        <label>install archotech eye</label>
+        <description>Install an archotech eye.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechVisualSensor</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech eye.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_SynstructVisualSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechVisualSensor</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Audio Sensor -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechAudioSensor</defName>
+        <label>Cybertech audio sensor</label>
+        <description>An archotech device in the form of a cybernetic ear. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+        <defName>ABF_Install_CybertechAudioSensor</defName>
+		<label>install Cybertech hearing sensor</label>
+		<description>Install a Cybertech audio sensor.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechAudioSensor</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech audio sensor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_SynstructAudioSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechAudioSensor</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Heatsink -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechHeatsink</defName>
+        <label>Cybertech heatsink</label>
+        <description>An archotech device in the form of a cybernetic heatsink. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+        <stages>
+			<li>
+		        <statOffsets>
+                    <ComfyTemperatureMax>30</ComfyTemperatureMax>
+		            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+		        </statOffsets>
+			</li>
+		</stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechHeatsink</defName>
+		<label>Install Cybertech heatsink</label>
+		<description>Install a Cybertech heatsink.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechHeatsink</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech heatsink.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_SynstructHeatsink</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechHeatsink</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Coolant Pump -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechCoolantPump</defName>
+        <label>Cybertech coolant pump</label>
+        <description>An archotech device in the form of a cybernetic coolant pump. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+        <stages>
+			<li>
+		        <statOffsets>
+                    <ComfyTemperatureMax>12</ComfyTemperatureMax>
+                    <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+		        </statOffsets>
+			</li>
+		</stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechCoolantPump</defName>
+		<label>Install Cybertech coolant pump</label>
+		<description>Install a Cybertech coolant pump.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechCoolantPump</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech coolant pump.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_InternalCorePump</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechCoolantPump</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Battery -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechBattery</defName>
+        <label>Cybertech battery pack</label>
+        <description>An archotech device in the form of a cybernetic battery. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <stages>
+			<li>
+                <hungerRateFactor>0.5</hungerRateFactor>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechBattery</defName>
+		<label>Install Cybertech battery</label>
+		<description>Install a Cybertech battery.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechBattery</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech battery.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_InternalBattery</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechBattery</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Mechanite Storage -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechMechaniteStorage</defName>
+        <label>Cybertech mechanite storage</label>
+        <description>An archotech device in the form of a cybernetic foundry of nanites with storage for them. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+		<stages>
+			<li>
+                <statOffsets>
+                    <InjuryHealingFactor>5</InjuryHealingFactor>
+                </statOffsets>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechMechaniteStorage</defName>
+		<label>Install Cybertech mechanite storage</label>
+		<description>Install a Cybertech mechanite storage.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechMechaniteStorage</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech mechanite storage.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_MechaniteStorage</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechMechaniteStorage</addsHediff>
+	</RecipeDef>
+
+    <!-- Cybertech Reactor -->
+    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
+        <defName>ABF_CybertechReactor</defName>
+        <label>Cybertech reactor</label>
+        <description>An archotech device in the form of a reactor - but it seems to reduce power consumption as well. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+		<stages>
+			<li>
+			    <hungerRateFactor>0.5</hungerRateFactor>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
+		<defName>ABF_Install_CybertechReactor</defName>
+		<label>install Cybertech reactor</label>
+		<description>Install a Cybertech reactor.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
+            <HediffDef>ABF_CybertechReactor</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Cybertech reactor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_CybertechReplacementPart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_CybertechReplacementPart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_InternalGenerator</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_CybertechReactor</addsHediff>
+	</RecipeDef>
+
+</Defs>

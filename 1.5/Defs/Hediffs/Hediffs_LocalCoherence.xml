@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef Name="ABF_CoherenceRandomEffectsBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <chronic>true</chronic>
+        <description>_</description>
+        <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+        <initialSeverity>0.001</initialSeverity>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_PartDecay</defName>
+        <label>decaying part</label>
+        <labelNoun>a decaying part</labelNoun>
+        <description>This part of this unit has suffered significant decay and is performing suboptimally. Repairs are needed to alleviate this.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>0.25</initialSeverity>
+        <minSeverity>0.2</minSeverity>
+        <maxSeverity>0.3</maxSeverity>
+        <stages>
+            <li>
+                <partEfficiencyOffset>-0.2</partEfficiencyOffset>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 144)</li>
+                        <li>(6, 72)</li>
+                        <li>(12, 36)</li>
+                        <li>(27, 18)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-3</daysBeforeCanOccur>
+                <racesToAffect />
+                <coherenceWorkers>
+                    <li>ArtificialBeings.CoherenceWorker_NoConsciousnessSource</li>
+                </coherenceWorkers>
+                <partDepthToAffect>Inside</partDepthToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_RustedPart</defName>
+        <label>rusted part</label>
+        <labelNoun>a rusted part</labelNoun>
+        <description>This part has rusted. While it is not performing any noticeably worse, it is very displeasing to see, hear, and use. Repairs are needed to alleviate this.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>0.25</initialSeverity>
+        <minSeverity>0.2</minSeverity>
+        <maxSeverity>0.3</maxSeverity>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PawnBeauty>-1</PawnBeauty>
+                </statOffsets>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 144)</li>
+                        <li>(6, 72)</li>
+                        <li>(12, 36)</li>
+                        <li>(27, 18)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-3</daysBeforeCanOccur>
+                <racesToAffect />
+                <partDepthToAffect>Outside</partDepthToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_PowerLoss</defName>
+        <label>part blackout</label>
+        <labelNoun>a part blackout</labelNoun>
+        <description>This part has suffered a near total power loss. While the part is still somewhat manipulatable by adjacent parts, it is severely impairing functionality and increasing power usage. Repairs can alleviate this, but it will pass on its own as mechanites repair the system.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.75</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <hungerRateFactor>1.2</hungerRateFactor>
+                <partEfficiencyOffset>-0.8</partEfficiencyOffset>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 180)</li>
+                        <li>(6, 90)</li>
+                        <li>(12, 45)</li>
+                        <li>(27, 23)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-3</daysBeforeCanOccur>
+                <racesToAffect />
+                <partDepthToAffect>Outside</partDepthToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_DamagedCore</defName>
+        <label>core damage</label>
+        <description>The memory core of this unit has suffered internal physical damage and is not operating at an appropriate level. All recent skill memory of the day of the incident has been lost. This will impair learning capacity and consciousness until repaired.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <forgetMemoryThoughtMtbDays>3</forgetMemoryThoughtMtbDays>
+                <partEfficiencyOffset>-0.15</partEfficiencyOffset>
+                <capMods>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>-0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <offset>-0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <GlobalLearningFactor>-0.5</GlobalLearningFactor>
+                </statOffsets>
+                <mentalStateGivers>
+                    <li>
+                        <mentalState>WanderConfused</mentalState>
+                        <mtbDays>5</mtbDays>
+                    </li>
+                </mentalStateGivers>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 20000)</li>
+                        <li>(5, 5000)</li>
+                        <li>(15, 2400)</li>
+                        <li>(25, 120)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <coherenceWorkers>
+                    <li>ArtificialBeings.CoherenceWorker_SapientsOnly</li>
+                    <li>ArtificialBeings.CoherenceWorker_RandomMemoryLoss</li>
+                </coherenceWorkers>
+                <bodyPartTagsToAffect>
+                    <li>ConsciousnessSource</li>
+                </bodyPartTagsToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_OpticalDriverAbberrations</defName>
+        <label>optical abberrations</label>
+        <description>Due to poor coherence and overuse, the optical drivers in this sensor have failed and are producing severe abberrations in visual feedback for the entire unit, leading to hallucinations and misidentified entities. The unit can resolve this with enough time, or by reaching stable coherence.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.2</severityPerDay>
+            </li>
+            <li Class="ArtificialBeings.HediffCompProperties_CoherenceThresholdToRemove">
+                <coherenceThresholdDays>0.5</coherenceThresholdDays>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>0.1</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 9999999)</li>
+                        <li>(2, 360)</li>
+                        <li>(6, 240)</li>
+                        <li>(9, 120)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-1</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Poor</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <bodyPartTagsToAffect>
+                    <li>SightSource</li>
+                </bodyPartTagsToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_JointMisalignment</defName>
+        <label>joint misalignment</label>
+        <description>This part has had its joints weaken and become misaligned, leading to ungainly functionality and difficulty using it. This will lead to unpredictable and unnerving movement in melee combat, as a curious side effect, until repairs are completed.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>0.25</initialSeverity>
+        <stages>
+            <li>
+                <partEfficiencyOffset>-0.25</partEfficiencyOffset>
+                <statOffsets>
+                    <MeleeDodgeChance>5</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 720)</li>
+                        <li>(3, 360)</li>
+                        <li>(9, 180)</li>
+                        <li>(15, 90)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-1</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Poor</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <bodyPartTagsToAffect>
+                    <li>ManipulationLimbSegment</li>
+                    <li>MovingLimbSegment</li>
+                </bodyPartTagsToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_FailingCoolantValves</defName>
+        <label>failing coolant valves</label>
+        <description>The internal coolant valves of this unit are degrading. Over time, the chassis will lose the ability to circulate coolant, leading to severe impediments to repairs and cooling efficiency until repaired.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>0.001</initialSeverity>
+        <lethalSeverity>1</lethalSeverity>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.02</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <minSeverity>0</minSeverity>
+                <label>initial</label>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>-0.10</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.2</minSeverity>
+                <label>minor</label>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                </capMods>
+				<statOffsets>
+                    <InjuryHealingFactor>-0.2</InjuryHealingFactor>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>moderate</label>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                </capMods>
+				<statOffsets>
+                    <InjuryHealingFactor>-0.3</InjuryHealingFactor>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>significant</label>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>-0.5</offset>
+                    </li>
+                </capMods>
+				<statOffsets>
+                    <InjuryHealingFactor>-0.5</InjuryHealingFactor>
+				</statOffsets>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>severe</label>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>-0.6</offset>
+                    </li>
+                </capMods>
+				<statOffsets>
+                    <InjuryHealingFactor>-0.7</InjuryHealingFactor>
+				</statOffsets>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 9999999)</li>
+                        <li>(3, 2400)</li>
+                        <li>(11, 160)</li>
+                        <li>(27, 80)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <partsToAffect>
+                    <li>ABF_InternalCorePump</li>
+                </partsToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
+        <defName>ABF_RogueMechanites</defName>
+        <label>rogue mechanites</label>
+        <description>The internal mechanite storage has suffered a critical failure, and the mechanites are decohering and preventing coolant flow. As they accumulate in critical regions and damage coolant lines, they may cause a lethal hardware failure unless emergency repairs occur.</description>
+        <hediffClass>Hediff_HeartAttack</hediffClass>
+        <defaultLabelColor>(0.9, 0.7, 0.5)</defaultLabelColor>
+        <initialSeverity>0.2</initialSeverity>
+        <lethalSeverity>1</lethalSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.4</severityPerDay>
+            </li>
+        </comps>
+        <tendable>true</tendable>
+        <stages>
+            <li>
+                <label>high coherence</label>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.85</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>moderate coherence</label>
+                <minSeverity>0.4</minSeverity>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>severe coherence</label>
+                <minSeverity>0.8</minSeverity>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>fatal</label>
+                <minSeverity>1</minSeverity>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 9999999)</li>
+                        <li>(3, 6400)</li>
+                        <li>(11, 3200)</li>
+                        <li>(27, 240)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <partsToAffect>
+                    <li>ABF_MechaniteStorage</li>
+                </partsToAffect>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <!-- Good Random Coherence Effects -->
+
+    <HediffDef Name="ABF_CoherenceGoodRandomEffectsBase" ParentName="ABF_CoherenceRandomEffectsBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <description>_</description>
+        <defaultLabelColor>(0.7, 0.7, 0.5)</defaultLabelColor>
+        <initialSeverity>0.001</initialSeverity>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceGoodRandomEffectsBase">
+        <defName>ABF_AdaptationPractice</defName>
+        <label>practiced adaptation</label>
+        <description>This unit has managed an undermaintained chassis well enough that it has come to understand how to deal with the situation, and learned a great deal about itself and existence as a whole. It is able to better learn from its experiences and efficiently deal with coherence issues for a short while.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.25</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <GlobalLearningFactor>0.5</GlobalLearningFactor>
+                    <ABF_CoherenceRetention>0.5</ABF_CoherenceRetention>
+                </statOffsets>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 600)</li>
+                        <li>(5, 300)</li>
+                        <li>(15, 180)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
+                <racesToAffect />
+                <coherenceWorkers>
+                    <li>ArtificialBeings.CoherenceWorker_AdaptationPractice</li>
+                    <li>ArtificialBeings.CoherenceWorker_SapientsOnly</li>
+                </coherenceWorkers>
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceGoodRandomEffectsBase">
+        <defName>ABF_AggressiveRepairs</defName>
+        <label>hyper-aggressive repairs</label>
+        <description>Due to poor coherence, the mechanites of this unit are less controlled and restricted, and a notable amount of them have gone rogue and are aggressively - and beneficially - repairing injuries at an accelerated rate without major side effects. This will last for several days, or until coherence is restored.</description>
+        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.2</severityPerDay>
+            </li>
+            <li Class="ArtificialBeings.HediffCompProperties_CoherenceThresholdToRemove">
+                <coherenceThresholdDays>0</coherenceThresholdDays>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
+                </statOffsets>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <meanDaysToOccur>
+                    <points>
+                        <li>(0, 600)</li>
+                        <li>(5, 300)</li>
+                        <li>(15, 120)</li>
+                        <li>(25, 60)</li>
+                    </points>
+                </meanDaysToOccur>
+                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
+                <requiredCoherenceStageToOccur>Poor</requiredCoherenceStageToOccur>
+                <racesToAffect />
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <!-- Coherence Stage Effects -->
+
+    <HediffDef Name="ABF_CoherenceStageEffectsBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <description>_</description>
+        <defaultLabelColor>(0.2, 0.42, 0.76)</defaultLabelColor>
+        <initialSeverity>0.001</initialSeverity>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
+        <defName>ABF_CoherenceCritical</defName>
+        <label>critical integrity</label>
+        <labelNoun>critical vulnerability</labelNoun>
+        <description>This unit is suffering from critically poor coherence and may suffer spontaneous major breakdowns or many small scale failures. The lack of coherence is also reducing overall efficiency and the chassis' ability to repair itself.</description>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <hungerRateFactor>1.05</hungerRateFactor>
+                <statFactors>
+                    <GlobalLearningFactor>0.75</GlobalLearningFactor>
+                    <InjuryHealingFactor>0.90</InjuryHealingFactor>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <isCoherenceStageEffect>true</isCoherenceStageEffect>
+                <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
+                <racesToAffect />
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
+        <defName>ABF_CoherencePoor</defName>
+        <label>poor integrity</label>
+        <labelNoun>minor vulnerability</labelNoun>
+        <description>This unit is suffering from poor coherence and may suffer spontaneous small scale failures if left unattended for too long. The lack of coherence is slightly reducing the chassis' ability to repair itself.</description>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>0.9</GlobalLearningFactor>
+                    <InjuryHealingFactor>0.95</InjuryHealingFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <isCoherenceStageEffect>true</isCoherenceStageEffect>
+                <requiredCoherenceStageToOccur>Poor</requiredCoherenceStageToOccur>
+                <racesToAffect />
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
+        <defName>ABF_CoherenceSatisfactory</defName>
+        <label>high integrity</label>
+        <labelNoun>heightened stability</labelNoun>
+        <description>This unit is benefitting from proper coherence and is immune to spontaneous part failure. The well-maintained chassis is slightly more power efficient and able to repair itself.</description>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <hungerRateFactor>0.95</hungerRateFactor>
+                <statFactors>
+                    <GlobalLearningFactor>1.1</GlobalLearningFactor>
+                    <InjuryHealingFactor>1.05</InjuryHealingFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
+                <isCoherenceStageEffect>true</isCoherenceStageEffect>
+                <requiredCoherenceStageToOccur>Satisfactory</requiredCoherenceStageToOccur>
+                <racesToAffect />
+            </li>
+        </modExtensions>
+    </HediffDef>
+
+</Defs>

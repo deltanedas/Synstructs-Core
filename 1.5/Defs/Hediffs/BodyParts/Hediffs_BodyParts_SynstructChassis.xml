@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Basic Chassis Base -->
+
+    <HediffDef Name="ABF_SynstructChassisBase" ParentName="ImplantHediffBase" Abstract="True">
+        <hediffClass>ArtificialBeings.Hediff_SynstructChassis</hediffClass>
+        <keepOnBodyPartRestoration>false</keepOnBodyPartRestoration>
+    </HediffDef>
+
+	<RecipeDef Name="ABF_SynstructInstallChassisBase" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
+        <workerClass>ArtificialBeings.Recipe_InstallSlotUpgrade</workerClass>
+        <targetsBodyPart>false</targetsBodyPart>
+		<jobString>Replacing chassis.</jobString>
+		<anesthetize>false</anesthetize>
+        <skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+	</RecipeDef>
+
+    <!-- Guardian -->
+    <HediffDef ParentName="ABF_SynstructChassisBase">
+        <defName>ABF_Chassis_Guardian</defName>
+        <label>guardian chassis</label>
+        <description>A chassis designed to withstand extreme temperature variance and exude intimidation. This chassis was designed with dealing with fire - be it natural, accidental, or delivered by molotov - and all the threats that come with it. The insulatory measures also preserves the unit in extreme cold.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ArmorRating_Heat>1.5</ArmorRating_Heat>
+                    <Insulation_Heat>40</Insulation_Heat>
+                    <Insulation_Cold>20</Insulation_Cold>
+                </statOffsets>
+                <statFactors>
+                    <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">1.5</SuppressionPower>
+                    <ArrestSuccessChance>1.25</ArrestSuccessChance>
+                    <IncomingDamageFactor>0.95</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_SynstructStructureBase">
+        <defName>ABF_Chassis_Guardian</defName>
+        <label>guardian chassis</label>
+        <description>A chassis designed to withstand extreme temperature variance and exude intimidation. This chassis was designed with dealing with fire - be it natural, accidental, or delivered by molotov - and all the threats that come with it. The insulatory measures also preserves the unit in extreme cold.</description>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+        </statBases>
+        <costList>
+            <Plasteel>60</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
+		<defName>ABF_Install_Chassis_Guardian</defName>
+		<label>install guardian chassis</label>
+		<description>Replaces the chassis of this unit with a guardian chassis, greatly enhancing environmental survivability and police capabilities.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Chassis_Guardian</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Chassis_Guardian</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>ABF_Chassis_Guardian</addsHediff>
+	</RecipeDef>
+
+    <!-- Hydraulic -->
+    <HediffDef ParentName="ABF_SynstructChassisBase">
+        <defName>ABF_Chassis_Hydraulic</defName>
+        <label>hydraulic chassis</label>
+	    <description>A chassis designed to maximize the amount of weight the structure can safely handle for short and long term needs. The restructured chassis also allows for greatly enhanced general labor speed.</description>
+		<stages>
+			<li>
+				<statOffsets>
+                    <GeneralLaborSpeed>1</GeneralLaborSpeed>
+				</statOffsets>
+                <statFactors>
+					<CarryingCapacity>1.6</CarryingCapacity>
+                </statFactors>
+			</li>
+		</stages>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_SynstructStructureBase">
+        <defName>ABF_Chassis_Hydraulic</defName>
+        <label>hydraulic chassis</label>
+        <description>A chassis designed to maximize the amount of weight the structure can safely handle for short and long term needs. The restructured chassis also lends itself to greater efficiency in a wide range of tasks.</description>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+        </statBases>
+        <costList>
+            <Steel>120</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
+		<defName>ABF_Install_Chassis_Hydraulic</defName>
+		<label>install hydraulic chassis</label>
+		<description>Replaces the chassis of this unit with a hydraulic chassis, greatly enhancing weight capacity and general labor efficiency.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Chassis_Hydraulic</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Chassis_Hydraulic</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>ABF_Chassis_Hydraulic</addsHediff>
+	</RecipeDef>
+
+    <!-- Repression -->
+    <HediffDef ParentName="ABF_SynstructChassisBase">
+        <defName>ABF_Chassis_Repression</defName>
+        <label>repression chassis</label>
+        <description>A chassis designed to selectively restrict combative capabilities. This chassis uses internal, isolated software to impede the unit's body when attempting to utilize weaponry, and is intentionally more fragile than standard chassis to reduce combat performance without impairing work capabilities.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>-10</MeleeDodgeChance>
+                </statOffsets>
+                <statFactors>
+                    <MeleeWeapon_CooldownMultiplier>2</MeleeWeapon_CooldownMultiplier>
+                    <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+                    <IncomingDamageFactor>1.5</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_SynstructStructureBase">
+        <defName>ABF_Chassis_Repression</defName>
+        <label>repression chassis</label>
+        <description>A chassis designed to selectively restrict combative capabilities. This chassis uses internal, isolated software to impede the unit's body when attempting to utilize weaponry, and is intentionally more fragile than standard chassis to reduce combat performance without impairing work capabilities.</description>
+        <statBases>
+            <MarketValue>400</MarketValue>
+        </statBases>
+        <costList>
+            <Plasteel>20</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
+		<defName>ABF_Install_Chassis_Repression</defName>
+		<label>install repression chassis</label>
+		<description>Replaces the chassis of this unit with a repression chassis, greatly reducing the combat capabilities of this unit.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Chassis_Repression</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Chassis_Repression</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>ABF_Chassis_Repression</addsHediff>
+	</RecipeDef>
+
+    <!-- Mobility -->
+    <HediffDef ParentName="ABF_SynstructChassisBase">
+        <defName>ABF_Chassis_Mobility</defName>
+        <label>mobility chassis</label>
+        <description>A chassis designed and optimized for fluency and efficiency of motion. This chassis has unique design choices alongside specialized counterweights to minimize drag, maximize momentum gain and loss, and grant superior flexibility and agility.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDodgeChance>10</MeleeDodgeChance>
+                </statOffsets>
+                <statFactors>
+                    <MoveSpeed>1.25</MoveSpeed>
+                    <MeleeWeapon_CooldownMultiplier>0.75</MeleeWeapon_CooldownMultiplier>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_SynstructStructureBase">
+        <defName>ABF_Chassis_Mobility</defName>
+        <label>mobility chassis</label>
+        <description>A chassis designed and optimized for fluency and efficiency of motion. This chassis has unique design choices alongside specialized counterweights to minimize drag, maximize momentum gain and loss, and grant superior flexibility and agility.</description>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+        </statBases>
+        <costList>
+            <Plasteel>40</Plasteel>
+            <ComponentSpacer>6</ComponentSpacer>
+        </costList>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
+		<defName>ABF_Install_Chassis_Mobility</defName>
+		<label>install mobility chassis</label>
+		<description>Replaces the chassis of this unit with a mobility chassis, greatly enhancing its movement capabilities and agility.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Chassis_Mobility</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Chassis_Mobility</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<addsHediff>ABF_Chassis_Mobility</addsHediff>
+	</RecipeDef>
+
+</Defs>

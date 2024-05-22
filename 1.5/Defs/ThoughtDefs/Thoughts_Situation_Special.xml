@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>ABF_MentalAssistant</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>ABF_MentalAssistant</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>Mental Assistant</label>
+                <description>This mental assistant chip helps remove terrible stressors and helps me to be mentally resilient. I feel strong.</description>
+                <baseMoodEffect>20</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Situational_PaintedColor_Favorite</defName>
+        <thoughtClass>Thought_Situational</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_PaintedColor_Favorite</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>painted favorite color</label>
+                <description>I love the color of my paint.</description>
+                <baseMoodEffect>1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+ </Defs>

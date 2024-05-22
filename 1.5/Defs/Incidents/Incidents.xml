@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>ABF_PersonalityShiftIncident</defName>
+		<label>Personality shift request</label>
+		<category>Misc</category>
+		<targetTags>
+		    <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>ArtificialBeings.Incidents_PersonalityShift</workerClass>
+		<baseChance>0.3</baseChance>
+	</IncidentDef>
+
+</Defs>
