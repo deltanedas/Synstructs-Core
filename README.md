@@ -19,7 +19,7 @@ Bunch of TODO
 ## Links
 [Discord](https://discord.gg/udNCpbkABT)
 
-[GitHub]()
+[GitHub](https://github.com/RWDevathon/Synstructs-Core)
 
 Special thanks to:
 * Atlas - The true original creator
