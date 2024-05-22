@@ -43,11 +43,6 @@
         <apparelTags>
             <li>IndustrialBasic</li>
         </apparelTags>
-        <modExtensions>
-            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
-                <pawnState>Sapient</pawnState>
-            </li>
-        </modExtensions>
     </PawnKindDef>
 
 </Defs>

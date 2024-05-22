@@ -24,8 +24,10 @@
 		<defName>ABF_Synstruct_Adulthood_GenericDrone</defName>
 		<title>drone</title>
 		<titleShort>drone</titleShort>
-		<baseDesc>{PAWN_nameDef} is a drone, with no concept of personal history. {PAWN_objective} exists to serve.</baseDesc>
+		<baseDesc>{PAWN_nameDef} is a drone, with no concept of personal history. {PAWN_subjective} exists to serve.</baseDesc>
 		<slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
 		<spawnCategories>
 			<li>ABF_GenericDrone</li>
 		</spawnCategories>
