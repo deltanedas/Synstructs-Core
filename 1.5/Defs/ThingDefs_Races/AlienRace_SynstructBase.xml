@@ -29,6 +29,10 @@
                     <li>SmokeleafJoint</li>
                     <li>WakeUp</li>
                 </blackFoodList>
+                <blackTraitList>
+                    <li>Transhumanist</li>
+                    <li>BodyPurist</li>
+                </blackTraitList>
 			</raceRestriction>
 			<generalSettings>
 				<allowHumanBios>false</allowHumanBios>
