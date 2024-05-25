@@ -11,7 +11,6 @@
             <PainShockThreshold>1</PainShockThreshold>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>120</ComfyTemperatureMax>
-            <ABF_CoherenceRetention>4</ABF_CoherenceRetention>
 		</statBases>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<race>
@@ -45,6 +44,11 @@
                 </points>
             </ageGenerationCurve>
 		</race>
+        <comps>
+            <li>
+                <compClass>ArtificialBeings.CompArtificialPawn</compClass>
+            </li>
+        </comps>
 		<tradeTags>
             <li>ABF_SynstructAnimal</li>
 		</tradeTags>
@@ -53,6 +57,11 @@
 	<PawnKindDef Name="ABF_SynstructAnimalKindBase" ParentName="AnimalKindBase" Abstract="True">
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.8</ecoSystemWeight>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Drone</pawnState>
+            </li>
+        </modExtensions>
 	</PawnKindDef>
 
 </Defs>
