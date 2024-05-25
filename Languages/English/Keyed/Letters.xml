@@ -7,7 +7,7 @@
 
     <!-- Newboots -->
     <ABF_NewbootSynstructCreatedLabel>Newboot Synstruct</ABF_NewbootSynstructCreatedLabel>
-    <ABF_NewbootSynstructCreatedText>The final touches on a new {0} are complete. The synstruct is </ABF_NewbootSynstructCreatedText>
+    <ABF_NewbootSynstructCreatedText>The final touches on a new {0} are complete. Placeholder: maybe some useful information for new players here?</ABF_NewbootSynstructCreatedText>
 
     <!-- Personality Shift Letters -->
     <ABF_PersonalityShiftFreewilled>Personality shift request</ABF_PersonalityShiftFreewilled>

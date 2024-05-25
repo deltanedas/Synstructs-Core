@@ -195,6 +195,8 @@
     <Compile Include="Components\ThingComps\CompPawnCharger.cs" />
     <Compile Include="Components\ThingComps\CompCoherenceNeed.cs" />
     <Compile Include="Components\ThingComps\CompAssignableToPawn_CoherenceSpot.cs" />
+    <Compile Include="DeathActions\DeathActionProperties_DeadSynstructSwitch.cs" />
+    <Compile Include="DeathActions\DeathActionWorker_DeadSynstructSwitch.cs" />
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
     <Compile Include="Extensions\HediffExtensions.cs" />

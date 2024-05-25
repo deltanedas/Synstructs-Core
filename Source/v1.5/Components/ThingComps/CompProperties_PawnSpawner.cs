@@ -10,5 +10,7 @@ namespace ArtificialBeings
         }
 
         public PawnKindDef pawnKind;
+
+        public MentalStateDef mentalStateOnSpawn;
     }
 }
