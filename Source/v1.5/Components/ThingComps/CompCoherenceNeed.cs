@@ -69,7 +69,7 @@ namespace ArtificialBeings
                 case ABF_CoherenceStage.Sufficient:
                     return 0.20f; // 20% per day base (70 -> 30 should take 2 days with 1 efficiency)
                 default:
-                    return 0.60f; // 60% per day base (100 -> 70 should take 0.5 day with 1 efficiency)
+                    return 0.30f; // 30% per day base (100 -> 70 should take 1 day with 1 efficiency)
             }
         }
 

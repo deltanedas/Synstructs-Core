@@ -4,34 +4,21 @@ using Verse.AI;
 
 namespace ArtificialBeings
 {
-    // Mechanical units should build coherence if in poor coherence and allowed to gain enough to escape it before doing other work.
     public class JobGiver_BuildCoherenceUrgent : ThinkNode_JobGiver
     {
-        // Pawn ThinkTrees occasionally sort jobs to take on a priority. This is a high priority job, and should almost always be done ahead of work.
+        // Pawn ThinkTrees occasionally sort jobs to take on a priority.
         public override float GetPriority(Pawn pawn)
         {
             TimeAssignmentDef timeAssignmentDef = (pawn.timetable == null) ? TimeAssignmentDefOf.Anything : pawn.timetable.CurrentAssignment;
-            if (timeAssignmentDef == TimeAssignmentDefOf.Anything)
+            if (timeAssignmentDef == TimeAssignmentDefOf.Meditate)
             {
-                return 9.25f;
-            }
-            else if (timeAssignmentDef == TimeAssignmentDefOf.Work)
-            {
-                return 8f;
-            }
-            else if (timeAssignmentDef == TimeAssignmentDefOf.Sleep)
-            {
-                return 9.25f;
+                return 9.5f;
             }
             else if (timeAssignmentDef == TimeAssignmentDefOf.Joy)
             {
                 return 8f;
             }
-            else if (timeAssignmentDef == TimeAssignmentDefOf.Meditate)
-            {
-                return 11f;
-            }
-            return 0.5f;
+            return 5f;
         }
 
         protected override Job TryGiveJob(Pawn pawn)
@@ -56,7 +43,7 @@ namespace ArtificialBeings
             }
 
             // Urgent coherence building is otherwise skipped if it is less than 30% away from the target level and above Poor.
-            if (compCoherenceNeed.CoherenceLevel / compCoherenceNeed.TargetCoherenceLevel > 0.7f && compCoherenceNeed.Stage > ABF_CoherenceStage.Poor)
+            if (compCoherenceNeed.CoherenceLevel + 0.3f > compCoherenceNeed.TargetCoherenceLevel && compCoherenceNeed.Stage > ABF_CoherenceStage.Poor)
             {
                 return null;
             }
