@@ -54,19 +54,6 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_MechaniteStorage</defName>
-        <label>Mechanite Storage</label>
-        <hitPoints>20</hitPoints>
-        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
-        <skinCovered>false</skinCovered>
-        <bleedRate>4</bleedRate>
-        <tags>
-            <li>BloodFiltrationSource</li>
-        </tags>
-        <canSuggestAmputation>false</canSuggestAmputation>
-    </BodyPartDef>
-
-    <BodyPartDef>
         <defName>ABF_InternalGenerator</defName>
         <label>Generator</label>
         <hitPoints>25</hitPoints>

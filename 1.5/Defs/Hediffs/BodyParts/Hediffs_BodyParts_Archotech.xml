@@ -316,51 +316,6 @@
 		<addsHediff>ABF_CybertechBattery</addsHediff>
 	</RecipeDef>
 
-    <!-- Cybertech Mechanite Storage -->
-    <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
-        <defName>ABF_CybertechMechaniteStorage</defName>
-        <label>Cybertech mechanite storage</label>
-        <description>An archotech device in the form of a cybernetic foundry of nanites with storage for them. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
-		<stages>
-			<li>
-                <statOffsets>
-                    <InjuryHealingFactor>5</InjuryHealingFactor>
-                </statOffsets>
-			</li>
-		</stages>
-        <spawnThingOnRemoved>ABF_CybertechReplacementPart</spawnThingOnRemoved>
-    </HediffDef>
-
-    <RecipeDef ParentName="ABF_SynstructSurgeryInstallCybertechComponent">
-		<defName>ABF_Install_CybertechMechaniteStorage</defName>
-		<label>Install Cybertech mechanite storage</label>
-		<description>Install a Cybertech mechanite storage.</description>
-        <descriptionHyperlinks>
-            <ThingDef>ABF_CybertechReplacementPart</ThingDef>
-            <HediffDef>ABF_CybertechMechaniteStorage</HediffDef>
-        </descriptionHyperlinks>
-		<jobString>Installing Cybertech mechanite storage.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>ABF_CybertechReplacementPart</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>ABF_CybertechReplacementPart</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>ABF_MechaniteStorage</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_CybertechMechaniteStorage</addsHediff>
-	</RecipeDef>
-
     <!-- Cybertech Reactor -->
     <HediffDef ParentName="ABF_AddedBodyPartCybertechBase">
         <defName>ABF_CybertechReactor</defName>
