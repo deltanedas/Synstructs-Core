@@ -31,7 +31,7 @@
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>ABF_SynstructStimulators</researchPrerequisite>
+			<researchPrerequisite>ABF_ResearchProject_Synstruct_Stimulators</researchPrerequisite>
 			<recipeUsers>
 				<li>DrugLab</li>
 			</recipeUsers>

@@ -87,7 +87,7 @@
 				<li>Medicine</li>
 			</categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>ABF_SynstructInsight</researchPrerequisite>
+		<researchPrerequisite>ABF_ResearchProject_Synstruct_Infrastructure</researchPrerequisite>
 		<addsHediff>ABF_SynstructOverclocking</addsHediff>
 	</RecipeDef>
 
@@ -117,7 +117,7 @@
 				<li>Medicine</li>
 			</categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>ABF_SynstructInsight</researchPrerequisite>
+		<researchPrerequisite>ABF_ResearchProject_Synstruct_Infrastructure</researchPrerequisite>
         <removesHediff>ABF_SynstructOverclocking</removesHediff>
 	</RecipeDef>
 

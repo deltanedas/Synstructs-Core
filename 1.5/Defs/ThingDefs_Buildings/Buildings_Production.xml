@@ -63,7 +63,7 @@
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
         </building>
         <constructEffect>ConstructMetal</constructEffect>
-        <researchPrerequisites><li>ABF_SynstructInsight</li></researchPrerequisites>
+        <researchPrerequisites><li>ABF_ResearchProject_Synstruct_Infrastructure</li></researchPrerequisites>
         <designationHotKey>Misc7</designationHotKey>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>
@@ -131,7 +131,7 @@
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
         </building>
         <constructEffect>ConstructMetal</constructEffect>
-        <researchPrerequisites><li>ABF_SynstructStandardization</li></researchPrerequisites>
+        <researchPrerequisites><li>ABF_ResearchProject_Synstruct_Infrastructure</li></researchPrerequisites>
         <designationHotKey>Misc7</designationHotKey>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>

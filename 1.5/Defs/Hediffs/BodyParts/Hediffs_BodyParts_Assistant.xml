@@ -34,7 +34,7 @@
 			<skillRequirements>
 				<Intellectual>8</Intellectual>
 			</skillRequirements>
-			<researchPrerequisite>ABF_CoreAssistants</researchPrerequisite>
+			<researchPrerequisite>ABF_ResearchProject_Synstruct_CoreAssistants</researchPrerequisite>
 			<recipeUsers>
 				<li>ABF_SynstructPartWorkbench</li>
 			</recipeUsers>

@@ -99,7 +99,7 @@
             <skillRequirements>
                 <Crafting>6</Crafting>
             </skillRequirements>
-            <researchPrerequisite>ABF_SynstructStructure</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
             <recipeUsers>
                 <li>ABF_SynstructPartWorkbench</li>
             </recipeUsers>

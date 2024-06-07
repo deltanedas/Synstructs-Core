@@ -3,7 +3,7 @@
 
     <!-- Base Spacer -->
 
-    <HediffDef Name="ABF_AddedABF_BodyPartSpacerBase" ParentName="ABF_SynstructAddedBodyPartBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_UltrapartBase" ParentName="ABF_SynstructAddedBodyPartBase" Abstract="True">
         <addedPartProps>
             <solid>true</solid>
             <partEfficiency>1.25</partEfficiency>
@@ -11,8 +11,8 @@
         </addedPartProps>
     </HediffDef>
 
-    <ThingDef Name="ABF_BodyPartSpacerBase" ParentName="ABF_SynstructBodyPartBase" Abstract="True">
-        <techLevel>Spacer</techLevel>
+    <ThingDef Name="ABF_Thing_Synstruct_UltrapartBase" ParentName="ABF_SynstructBodyPartBase" Abstract="True">
+        <techLevel>Ultra</techLevel>
         <graphicData>
             <texPath>Things/Items/BodyParts/OrganWhite</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -21,7 +21,7 @@
             <li>Advanced</li>
         </techHediffsTags>
         <statBases>
-            <WorkToMake>26000</WorkToMake>
+            <WorkToMake>34000</WorkToMake>
         </statBases>
         <recipeMaker>
             <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -30,9 +30,9 @@
             <soundWorking>Recipe_Smith</soundWorking>
             <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
             <skillRequirements>
-                <Crafting>8</Crafting>
+                <Crafting>12</Crafting>
             </skillRequirements>
-            <researchPrerequisite>ABF_AdvancedSynstructParts</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_Ultraparts</researchPrerequisite>
             <recipeUsers>
                 <li>ABF_SynstructPartWorkbench</li>
             </recipeUsers>
@@ -40,17 +40,17 @@
         <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     </ThingDef>
 
-	<RecipeDef Name="ABF_SynstructSurgerySpacerBase" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
-		<jobString>Implanting advanced component.</jobString>
+	<RecipeDef Name="ABF_Recipe_Synstruct_UltrapartBase" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
+		<jobString>Installing Ultrapart.</jobString>
 		<workAmount>2600</workAmount>
         <surgerySuccessChanceFactor>0.9</surgerySuccessChanceFactor>
 		<anesthetize>false</anesthetize>
 	</RecipeDef>
 
-    <!-- Advanced Arm -->
+    <!-- Ultra Arm -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedArm</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_Arm</defName>
         <label>Advanced arm</label>
         <description>Higher plasteel temperance with higher efficiency components grants this arm a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedArm</ThingDef></descriptionHyperlinks>
@@ -71,7 +71,7 @@
         <spawnThingOnRemoved>ABF_AdvancedArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedArm</defName>
         <label>Advanced arm</label>
         <description>Higher plasteel temperance with higher efficiency components grants this arm a significant advantage over standard issue parts.</description>
@@ -86,7 +86,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedArm</defName>
 		<label>Install advanced arm</label>
 		<description>Installs an advanced arm.</description>
@@ -109,20 +109,20 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_SynstructArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedArm</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Arm</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Leg -->
+    <!-- Ultra Leg -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedLeg</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_Leg</defName>
         <label>Advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedLeg</ThingDef></descriptionHyperlinks>
         <spawnThingOnRemoved>ABF_AdvancedLeg</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedLeg</defName>
         <label>Advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
@@ -137,7 +137,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedLeg</defName>
 		<label>Install advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
@@ -160,20 +160,20 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_SynstructLeg</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedLeg</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Leg</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Visual Sensor -->
+    <!-- Ultra Visual Sensor -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedVisualSensor</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_VisualSensor</defName>
         <label>Advanced visual sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this visual sensor a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedVisualSensor</ThingDef></descriptionHyperlinks>
         <spawnThingOnRemoved>ABF_AdvancedVisualSensor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedVisualSensor</defName>
         <label>Advanced visual sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this visual sensor a significant advantage over standard issue parts.</description>
@@ -188,7 +188,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedVisualSensor</defName>
 		<label>Install advanced visual sensor</label>
 		<description>Installs an advanced visual sensor.</description>
@@ -211,20 +211,20 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_SynstructVisualSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedVisualSensor</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_VisualSensor</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Audio Sensor -->
+    <!-- Ultra Audial Sensor -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedAudioSensor</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_AudialSensor</defName>
         <label>Advanced audio sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this audio sensor a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedAudioSensor</ThingDef></descriptionHyperlinks>
         <spawnThingOnRemoved>ABF_AdvancedAudioSensor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedAudioSensor</defName>
         <label>Advanced audio sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this audio sensor a significant advantage over standard issue parts.</description>
@@ -239,7 +239,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedAudioSensor</defName>
 		<label>Install advanced audio sensor</label>
 		<description>Installs an advanced audio sensor.</description>
@@ -262,13 +262,13 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_SynstructAudioSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedAudioSensor</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_AudialSensor</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Heatsink -->
+    <!-- Ultra Heatsink -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedHeatsink</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_Heatsink</defName>
         <label>Advanced heatsink</label>
         <description>Higher plasteel temperance with higher efficiency components grants this heatsink a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedHeatsink</ThingDef></descriptionHyperlinks>
@@ -283,7 +283,7 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedHeatsink</defName>
         <label>Advanced heatsink</label>
         <description>Higher plasteel temperance with higher efficiency components grants this heatsink a significant advantage over standard issue parts.</description>
@@ -298,7 +298,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedHeatsink</defName>
 		<label>Install advanced heatsink</label>
 		<description>Installs an advanced heatsink.</description>
@@ -321,13 +321,13 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_SynstructHeatsink</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedHeatsink</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Heatsink</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Coolant Pump -->
+    <!-- Ultra Coolant Pump -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedCoolantPump</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_CoolantPump</defName>
         <label>Advanced coolant pump</label>
         <description>Higher plasteel temperance with higher efficiency components grants this coolant pump a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedCoolantPump</ThingDef></descriptionHyperlinks>
@@ -343,7 +343,7 @@
         <spawnThingOnRemoved>ABF_AdvancedCoolantPump</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedCoolantPump</defName>
         <label>Advanced coolant pump</label>
         <description>Higher plasteel temperance with higher efficiency components grants this coolant pump a significant advantage over standard issue parts.</description>
@@ -358,7 +358,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedCoolantPump</defName>
 		<label>Install advanced coolant pump</label>
 		<description>Installs an advanced coolant pump.</description>
@@ -381,13 +381,13 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_InternalCorePump</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedCoolantPump</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_CoolantPump</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Battery -->
+    <!-- Ultra Battery -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedBattery</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_Battery</defName>
         <label>Advanced battery pack</label>
         <description>Higher plasteel temperance with higher efficiency components grants this battery a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedBattery</ThingDef></descriptionHyperlinks>
@@ -399,7 +399,7 @@
         <spawnThingOnRemoved>ABF_AdvancedBattery</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedBattery</defName>
         <label>Advanced battery pack</label>
         <description>Higher plasteel temperance with higher efficiency components grants this battery a significant advantage over standard issue parts.</description>
@@ -414,7 +414,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedBattery</defName>
 		<label>Install advanced battery pack</label>
 		<description>Installs an advanced battery pack.</description>
@@ -437,71 +437,13 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_InternalBattery</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedBattery</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Battery</addsHediff>
 	</RecipeDef>
 
-    <!-- Advanced Mechanite Storage -->
+    <!-- Ultra Reactor -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedMechaniteStorage</defName>
-        <label>Advanced mechanite storage</label>
-        <description>Higher plasteel temperance with higher efficiency components grants this mechanite storage a significant advantage over standard issue parts. Higher quality mechanites means injuries will be repaired quicker.</description>
-        <descriptionHyperlinks><ThingDef>ABF_AdvancedMechaniteStorage</ThingDef></descriptionHyperlinks>
-		<stages>
-			<li>
-                <statOffsets>
-                    <InjuryHealingFactor>2</InjuryHealingFactor>
-                </statOffsets>
-			</li>
-		</stages>
-        <spawnThingOnRemoved>ABF_AdvancedMechaniteStorage</spawnThingOnRemoved>
-    </HediffDef>
-
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedMechaniteStorage</defName>
-        <label>Advanced mechanite storage</label>
-        <description>Higher plasteel temperance with higher efficiency components grants this mechanite storage a significant advantage over standard issue parts. Higher quality mechanites means injuries will be repaired quicker.</description>
-        <costList>
-            <Steel>10</Steel>
-            <Plasteel>20</Plasteel>
-            <ComponentIndustrial>4</ComponentIndustrial>
-            <ComponentSpacer>1</ComponentSpacer>
-        </costList>
-        <statBases>
-            <Mass>3</Mass>
-        </statBases>
-    </ThingDef>
-
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
-		<defName>ABF_Install_AdvancedMechaniteStorage</defName>
-		<label>Install advanced mechanite storage</label>
-		<description>Installs an advanced mechanite storage.</description>
-		<jobString>Installing advanced mechanite storage.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>ABF_AdvancedMechaniteStorage</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>ABF_AdvancedMechaniteStorage</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>ABF_MechaniteStorage</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedMechaniteStorage</addsHediff>
-	</RecipeDef>
-
-    <!-- Advanced Reactor -->
-
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
-        <defName>ABF_AdvancedReactor</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Ultrapart_Reactor</defName>
         <label>Advanced reactor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this reactor a significant advantage over standard issue parts.</description>
         <descriptionHyperlinks><ThingDef>ABF_AdvancedReactor</ThingDef></descriptionHyperlinks>
@@ -513,7 +455,7 @@
         <spawnThingOnRemoved>ABF_AdvancedReactor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_BodyPartSpacerBase">
+    <ThingDef ParentName="ABF_Thing_Synstruct_UltrapartBase">
         <defName>ABF_AdvancedReactor</defName>
         <label>Advanced reactor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this reactor a significant advantage over standard issue parts.</description>
@@ -528,7 +470,7 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructSurgerySpacerBase">
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Install_AdvancedReactor</defName>
 		<label>install advanced reactor</label>
 		<description>Installs an advanced reactor.</description>
@@ -551,13 +493,13 @@
 		<appliedOnFixedBodyParts>
 			<li>ABF_InternalGenerator</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_AdvancedReactor</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Reactor</addsHediff>
 	</RecipeDef>
 
     <!-- Organic Charger -->
 
     <HediffDef ParentName="AddedBodyPartBase">
-        <defName>ABF_OrganicCharger</defName>
+        <defName>ABF_Hediff_Synstruct_OrganicCharger</defName>
         <label>organic charger</label>
         <description>An advanced bionic part that allows organics that have this installed to charge. It requires considerable energy itself, leading to faster consumption, and reduces the amount of nutrition absorbed when eating food.</description>
 		<descriptionHyperlinks><ThingDef>ABF_OrganicCharger</ThingDef></descriptionHyperlinks>
@@ -591,7 +533,7 @@
             <Mass>4</Mass>
         </statBases>
         <recipeMaker>
-            <researchPrerequisite>ABF_AdvancedSynstructParts</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
             <recipeUsers>
                 <li>ABF_SynstructPartWorkbench</li>
             </recipeUsers>
@@ -621,7 +563,7 @@
 		<appliedOnFixedBodyParts>
 			<li>Stomach</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_OrganicCharger</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_OrganicCharger</addsHediff>
 	</RecipeDef>
 
 </Defs>

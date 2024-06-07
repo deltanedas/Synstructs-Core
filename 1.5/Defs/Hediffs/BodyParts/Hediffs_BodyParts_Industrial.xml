@@ -90,7 +90,7 @@
             <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
@@ -163,7 +163,7 @@
             <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
@@ -243,7 +243,7 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
@@ -325,7 +325,7 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
@@ -411,7 +411,7 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
@@ -453,7 +453,7 @@
             <ComponentIndustrial>2</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ABF_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
         <statBases>
             <Mass>4</Mass>
@@ -462,7 +462,7 @@
 
     <!-- Auto-modulator Voice Synthesizer -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
         <defName>ABF_AutomodulatedVoiceSynthesizer</defName>
         <label>Automodulated Voice Synthesizer</label>
         <description>A voice synthesizer replacement utilizing a large built-in language modelling algorithm that can rapidly modulate the unit's voice output to perfectly reflect their desired tone, intonation, and connotation in a wide array of languages and even dialects of those languages. While organics do occasionally find dynamically changing voices to be unnerving, this device ensures that the synstruct's voice is sonorous, perfectly crisp, and with the exact sound desired to maximize positive outcomes in social interactions, leading others to have higher opinions of the unit.</description>
@@ -505,7 +505,7 @@
 
     <!-- Coercive Voice Synthesizer -->
 
-    <HediffDef ParentName="ABF_AddedABF_BodyPartSpacerBase">
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
         <defName>ABF_CoerciveVoiceSynthesizer</defName>
         <label>Coercive Voice Synthesizer</label>
         <description>A voice synthesizer replacement programmed to maximize coercive capabilities by greatly increasing volume and intensity. Specialized to operate only in various menacing tones and manipulative modes, others find units equipped with this to be terrifying and threatening and generally more conducive to obeying the will of the unit. The module has a single "normal" mode for instances where threatening is unnecessary, but others still find it mildly offputting.</description>

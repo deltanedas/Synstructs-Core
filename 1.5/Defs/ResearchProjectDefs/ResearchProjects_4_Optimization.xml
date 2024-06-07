@@ -2,57 +2,57 @@
 <Defs>
 
     <ResearchProjectDef>
-        <defName>ABF_SynstructOptimization</defName>
+        <defName>ABF_ResearchProject_Synstruct_Optimization</defName>
         <label>synstruct optimization</label>
 		<tab>ABF_SynstructResearch</tab>
-        <description>Standardization alone will not solve everything - further progress will require a revolution of efficiency and precision. New standards for optimization, accuracy, and capability will need to be developed. Once achieved, humanity's more wild ideas fall within reach.</description>
+        <description>Pave the way for assembling and upgrading synstructs with Ultratechnology.</description>
         <baseCost>4000</baseCost>
-		<techLevel>Spacer</techLevel>
+		<techLevel>Ultra</techLevel>
 		<prerequisites>
-            <li>ABF_SynstructStandardization</li>
+            <li>ABF_ResearchProject_Synstruct_Infrastructure</li>
             <li>AdvancedFabrication</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>5</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>4</researchViewY>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
     </ResearchProjectDef>
 
-    <!-- <ResearchProjectDef>
-        <defName>ABF_AdvancedSynstructFrameworks</defName>
-        <label>advanced chassis and frame replacements</label>
+    <ResearchProjectDef>
+        <defName>ABF_ResearchProject_Synstruct_Ultraparts</defName>
+        <label>ultra parts</label>
         <tab>ABF_SynstructResearch</tab>
-        <description>With the advent of optimized designs and structural techniques, a wide variety of new possibilities for framework enhancements is unlocked. With greater specialization and higher quality, these frameworks are purpose built rather than generic solutions.</description>
-        <baseCost>800</baseCost>
-        <techLevel>Spacer</techLevel>
-		<prerequisites>
-            <li>ABF_SynstructStructure</li>
-            <li>ABF_SynstructOptimization</li>
+        <description>Create highly sophisticated replacement parts that enhance synstructs greatly.</description>
+        <baseCost>1600</baseCost>
+        <techLevel>Ultra</techLevel>
+        <prerequisites>
+			<li>ABF_ResearchProject_Synstruct_InterchangeableParts</li>
+            <li>ABF_ResearchProject_Synstruct_Optimization</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>6</researchViewX>
-		<researchViewY>0</researchViewY>
-    </ResearchProjectDef> -->
+		<researchViewX>4</researchViewX>
+		<researchViewY>1</researchViewY>
+    </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ABF_CoreAssistants</defName>
-        <label>core assistance</label>
+        <defName>ABF_ResearchProject_Synstruct_CoreAssistants</defName>
+        <label>core assistants</label>
         <tab>ABF_SynstructResearch</tab>
-        <description>With the acquisition of proper fabrication capabilities and a strong standardization scheme, advancements in the quality of mechanical parts is now within reach. There is spare space in all synstruct cores for protective padding purposes - advanced specialized chips could occupy some of that space instead.</description>
+        <description>Create advanced chips that can greatly enhance individual aspects of a synstruct.</description>
         <baseCost>1600</baseCost>
-        <techLevel>Spacer</techLevel>
+        <techLevel>Ultra</techLevel>
         <prerequisites>
-            <li>ABF_SynstructOptimization</li>
-            <li>ABF_InterchangeableParts</li>
+            <li>ABF_ResearchProject_Synstruct_Optimization</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>7</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>0</researchViewY>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
+        <discoveredLetterText>Core Assistants are powerful implants that can be installed into any non-biomimetic synstruct to enhance their capabilities. Create them at a parts workbench, and install them using repair stims. Due to limited space in the core, each synstruct may have exactly one core assistant at a time.This enhancement will be lost if the core itself is ever destroyed.</discoveredLetterText>
     </ResearchProjectDef>
 
 </Defs>

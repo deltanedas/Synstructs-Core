@@ -225,7 +225,7 @@
             <skillRequirements>
                 <Crafting>8</Crafting>
             </skillRequirements>
-            <researchPrerequisite>ABF_MechaniteAssistedRecovery</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
         <tradeability>Sellable</tradeability>
     </ThingDef>
@@ -271,7 +271,7 @@
             <skillRequirements>
                 <Crafting>6</Crafting>
             </skillRequirements>
-            <researchPrerequisite>ABF_MechaniteAssistedRecovery</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
         <tradeability>Sellable</tradeability>
     </ThingDef>
