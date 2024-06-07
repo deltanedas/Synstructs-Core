@@ -20,7 +20,7 @@
         </requiredResearchFacilities>
     </ResearchProjectDef>
 
-    <ResearchProjectDef>
+    <!-- <ResearchProjectDef>
         <defName>ABF_AdvancedSynstructFrameworks</defName>
         <label>advanced chassis and frame replacements</label>
         <tab>ABF_SynstructResearch</tab>
@@ -34,7 +34,7 @@
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<researchViewX>6</researchViewX>
 		<researchViewY>0</researchViewY>
-    </ResearchProjectDef>
+    </ResearchProjectDef> -->
 
     <ResearchProjectDef>
         <defName>ABF_CoreAssistants</defName>
