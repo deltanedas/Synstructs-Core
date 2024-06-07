@@ -13,10 +13,8 @@
             <downloadUrl>https://github.com/RWDevathon/Artificial-Beings-Framework</downloadUrl>
         </li>
     </modDependencies>
-    <packageId>Killathon.ArtificialBeings.SynstructsCore</packageId>
+    <packageId>Killathon.ArtificialBeings.SynCore</packageId>
     <loadAfter>
-        <li>brrainz.harmony</li>
-        <li>erdelf.HumanoidAlienRaces</li>
         <li>Killathon.ArtificialBeings</li>
     </loadAfter>
 	<loadBefore>
