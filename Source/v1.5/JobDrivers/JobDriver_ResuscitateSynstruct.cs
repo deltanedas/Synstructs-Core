@@ -45,7 +45,7 @@ namespace ArtificialBeings
             Pawn innerPawn = Corpse.InnerPawn;
 
             // Apply incapacitated to the pawn. This will ensure hostile units can be safely captured, and that friendly units can't be reactivated mid-combat.
-            Hediff rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Incapacitated, innerPawn);
+            Hediff rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated, innerPawn);
             innerPawn.health.AddHediff(rebootHediff);
 
             bool shouldbeBlank = false;

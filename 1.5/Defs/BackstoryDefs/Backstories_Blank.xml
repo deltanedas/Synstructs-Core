@@ -4,7 +4,7 @@
     <!-- Blank -->
 
 	<BackstoryDef>
-		<defName>ABF_Synstruct_Childhood_Blank</defName>
+		<defName>ABF_Backstory_Synstruct_Childhood_Blank</defName>
 		<title>blank</title>
 		<titleShort>unit</titleShort>
 		<baseDesc>{PAWN_nameDef} was left entirely devoid of character and individuality, and has no concept of childhood.</baseDesc>
@@ -16,7 +16,7 @@
 	</BackstoryDef>
 
     <BackstoryDef>
-        <defName>ABF_Synstruct_Adulthood_Blank</defName>
+        <defName>ABF_Backstory_Synstruct_Adulthood_Blank</defName>
         <title>blank</title>
 		<titleShort>unit</titleShort>
 		<baseDesc>This unit has neither intelligence nor memory. {PAWN_objective} is entirely devoid of character and utility.</baseDesc>

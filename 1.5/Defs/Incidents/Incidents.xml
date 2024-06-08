@@ -2,8 +2,8 @@
 <Defs>
 
 	<IncidentDef>
-		<defName>ABF_PersonalityShiftIncident</defName>
-		<label>Personality shift request</label>
+		<defName>ABF_Incident_Synstruct_PersonalityShiftRequest</defName>
+		<label>personality shift request</label>
 		<category>Misc</category>
 		<targetTags>
 		    <li>Map_PlayerHome</li>

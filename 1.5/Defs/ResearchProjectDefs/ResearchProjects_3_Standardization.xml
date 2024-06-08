@@ -4,7 +4,7 @@
     <ResearchProjectDef>
         <defName>ABF_ResearchProject_Synstruct_Infrastructure</defName>
         <label>synstruct infrastructure</label>
-        <tab>ABF_SynstructResearch</tab>
+        <tab>ABF_ResearchTab_Synstruct_Primary</tab>
         <description>Discover the basic infrastructure needed to produce and maintain synstructs.</description>
         <baseCost>1600</baseCost>
         <techLevel>Spacer</techLevel>
@@ -12,7 +12,8 @@
             <li>Fabrication</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <discoveredLetterText>You have started down the path of producing synstructs. Additional letters will appear at appropriate moments, but it should be known that they are created at the synstruct cradle and repaired, upgraded, and operated on using repair stims rather than medicine. They also have differing needs entirely, and may require a very different kind of colony than normal to be fully self-sufficient. They do not rest, but must take time to maintain themselves to sustain a coherent existence. While they can consume food for energy (usually at low efficiency), they are better serviced by charging at a specialized charging station or via a normal bed with an attached bedside charger.</discoveredLetterText>
+        <discoveredLetterTitle>About: Synstruct Infrastructure</discoveredLetterTitle>
+        <discoveredLetterText>You have started down the path of producing synstructs. Additional letters will appear at appropriate moments, but it should be known that they are created at the synstruct cradle and repaired, upgraded, and operated on using repair stims rather than medicine. They also have differing needs entirely, and may require a very different kind of colony than normal to be fully self-sufficient. They require their coolant to be replaced roughly every year or they will enter a hibernative state, and require lubricant to be replaced roughly every quadrum or they will suffer minor penalties. Coolant and lubricant are created at the drug lab or in bulk at the biofuel refinery. Synstructs do not rest, but must take time to maintain themselves to sustain a coherent existence. While they can consume food for energy (usually at low efficiency), they are better serviced by charging at a specialized charging station or via a normal bed with an attached bedside charger.</discoveredLetterText>
         <researchViewX>0</researchViewX>
         <researchViewY>4</researchViewY>
     </ResearchProjectDef>
@@ -20,7 +21,7 @@
 	<ResearchProjectDef>
 		<defName>ABF_ResearchProject_Synstruct_InterchangeableParts</defName>
 		<label>interchangeable parts</label>
-		<tab>ABF_SynstructResearch</tab>
+		<tab>ABF_ResearchTab_Synstruct_Primary</tab>
 		<description>Establish a standard for repairing and restoring synstructs. Create tools to upgrade their parts.</description>
 		<baseCost>1200</baseCost>
 		<techLevel>Spacer</techLevel>
@@ -28,6 +29,7 @@
             <li>ABF_ResearchProject_Synstruct_Infrastructure</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <discoveredLetterTitle>About: Synstruct Repairs/Upgrades</discoveredLetterTitle>
         <discoveredLetterText>Synstructs may be repaired overtime with repair stims or far more swiftly with part packs. Part packs can be assembled at the machining table, synstruct cradle, or in bulk at the parts workbench. They restore missing body parts and can restore many injuries to a synstruct at once, regardless of where the injury is. Fallen synstructs may be restored via restruct kits, created at the parts workbench.\n\nSynstructs can be enhanced by swapping out their chassis and frame. They may have one of each upgrade at a time, greatly improving their capability in a particular role. Chassis upgrades are lost if the synstruct is killed, while frame upgrades are lost if the synstruct sustains too much damage or is killed.</discoveredLetterText>
 		<researchViewX>1</researchViewX>
 		<researchViewY>1</researchViewY>
@@ -36,7 +38,7 @@
 	<ResearchProjectDef>
 		<defName>ABF_ResearchProject_Synstruct_Stimulators</defName>
 		<label>synstruct stimulators</label>
-		<tab>ABF_SynstructResearch</tab>
+		<tab>ABF_ResearchTab_Synstruct_Primary</tab>
 		<description>Formulate chemical solutions to provide short-term enhancements for synstructs.</description>
 		<baseCost>1200</baseCost>
 		<techLevel>Spacer</techLevel>

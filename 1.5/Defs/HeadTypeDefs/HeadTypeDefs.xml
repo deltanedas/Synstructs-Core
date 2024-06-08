@@ -5,7 +5,7 @@
     <!-- Overridden by graphicPaths in individual races. -->
 
     <HeadTypeDef>
-        <defName>ABF_SynstructBaseHead</defName>
+        <defName>ABF_HeadType_Synstruct_BaseHead</defName>
         <graphicPath>Things/Pawns/Humanlikes/NoneEmpty</graphicPath>
         <gender>None</gender>
     </HeadTypeDef>

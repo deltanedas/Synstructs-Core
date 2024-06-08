@@ -2,12 +2,12 @@
 <Defs>
 
     <LetterDef ParentName="CustomChoiceLetterBase">
-        <defName>ABF_PersonalityShiftRequestLetter</defName>
+        <defName>ABF_Letter_Synstruct_PersonalityShiftRequest</defName>
         <letterClass>ArtificialBeings.ChoiceLetter_PersonalityShiftRequest</letterClass>
     </LetterDef>
 
     <LetterDef ParentName="CustomChoiceLetterBase">
-        <defName>ABF_PersonalityShiftLetter</defName>
+        <defName>ABF_Letter_Synstruct_PersonalityShift</defName>
         <letterClass>ArtificialBeings.ChoiceLetter_PersonalityShift</letterClass>
     </LetterDef>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <HediffDef Name="ABF_CoherenceRandomEffectsBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <chronic>true</chronic>
         <description>_</description>
@@ -9,8 +9,8 @@
         <initialSeverity>0.001</initialSeverity>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_PartDecay</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_PartDecay</defName>
         <label>decaying part</label>
         <labelNoun>a decaying part</labelNoun>
         <description>This part of this unit has suffered significant decay and is performing suboptimally. Repairs are needed to alleviate this.</description>
@@ -53,8 +53,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_RustedPart</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_RustedPart</defName>
         <label>rusted part</label>
         <labelNoun>a rusted part</labelNoun>
         <description>This part has rusted. While it is not performing any noticeably worse, it is very displeasing to see, hear, and use. Repairs are needed to alleviate this.</description>
@@ -87,8 +87,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_PowerLoss</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_PowerLoss</defName>
         <label>part blackout</label>
         <labelNoun>a part blackout</labelNoun>
         <description>This part has suffered a near total power loss. While the part is still somewhat manipulatable by adjacent parts, it is severely impairing functionality and increasing power usage. Repairs can alleviate this, but it will pass on its own as mechanites repair the system.</description>
@@ -123,8 +123,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_DamagedCore</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_CoreDamage</defName>
         <label>core damage</label>
         <description>The memory core of this unit has suffered internal physical damage and is not operating at an appropriate level. All recent skill memory of the day of the incident has been lost. This will impair learning capacity and consciousness until repaired.</description>
         <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
@@ -182,9 +182,9 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_OpticalDriverAbberrations</defName>
-        <label>optical abberrations</label>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_OpticalDriverAberrations</defName>
+        <label>optical aberrations</label>
         <description>Due to poor coherence and overuse, the optical drivers in this sensor have failed and are producing severe abberrations in visual feedback for the entire unit, leading to hallucinations and misidentified entities. The unit can resolve this with enough time, or by reaching stable coherence.</description>
         <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
         <initialSeverity>1</initialSeverity>
@@ -226,8 +226,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_JointMisalignment</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_JointMisalignment</defName>
         <label>joint misalignment</label>
         <description>This part has had its joints weaken and become misaligned, leading to ungainly functionality and difficulty using it. This will lead to unpredictable and unnerving movement in melee combat, as a curious side effect, until repairs are completed.</description>
         <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
@@ -261,8 +261,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceRandomEffectsBase">
-        <defName>ABF_FailingCoolantValves</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_FailingValves</defName>
         <label>failing coolant valves</label>
         <description>The internal coolant valves of this unit are degrading. Over time, the chassis will lose the ability to circulate coolant, leading to severe impediments to repairs and cooling efficiency until repaired.</description>
         <hediffClass>HediffWithComps</hediffClass>
@@ -353,7 +353,7 @@
                 <requiredCoherenceStageToOccur>Critical</requiredCoherenceStageToOccur>
                 <racesToAffect />
                 <partsToAffect>
-                    <li>ABF_InternalCorePump</li>
+                    <li>ABF_BodyPart_Synstruct_CoolantPump</li>
                 </partsToAffect>
             </li>
         </modExtensions>
@@ -361,7 +361,7 @@
 
     <!-- Good Random Coherence Effects -->
 
-    <HediffDef Name="ABF_CoherenceGoodRandomEffectsBase" ParentName="ABF_CoherenceRandomEffectsBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_Coherence_GoodRandomEffectsBase" ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <description>_</description>
@@ -369,8 +369,8 @@
         <initialSeverity>0.001</initialSeverity>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceGoodRandomEffectsBase">
-        <defName>ABF_AdaptationPractice</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_GoodRandomEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_AdaptationPractice</defName>
         <label>practiced adaptation</label>
         <description>This unit has managed an undermaintained chassis well enough that it has come to understand how to deal with the situation, and learned a great deal about itself and existence as a whole. It is able to better learn from its experiences and efficiently deal with coherence issues for a short while.</description>
         <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
@@ -384,7 +384,7 @@
             <li>
                 <statOffsets>
                     <GlobalLearningFactor>0.5</GlobalLearningFactor>
-                    <ABF_CoherenceRetention>0.5</ABF_CoherenceRetention>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.5</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
             </li>
         </stages>
@@ -408,47 +408,9 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceGoodRandomEffectsBase">
-        <defName>ABF_AggressiveRepairs</defName>
-        <label>hyper-aggressive repairs</label>
-        <description>Due to poor coherence, the mechanites of this unit are less controlled and restricted, and a notable amount of them have gone rogue and are aggressively - and beneficially - repairing injuries at an accelerated rate without major side effects. This will last for several days, or until coherence is restored.</description>
-        <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
-        <initialSeverity>1</initialSeverity>
-        <comps>
-            <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>-0.2</severityPerDay>
-            </li>
-            <li Class="ArtificialBeings.HediffCompProperties_CoherenceThresholdToRemove">
-                <coherenceThresholdDays>0</coherenceThresholdDays>
-            </li>
-        </comps>
-        <stages>
-            <li>
-                <statOffsets>
-                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
-                </statOffsets>
-            </li>
-        </stages>
-        <modExtensions>
-            <li Class="ArtificialBeings.ABF_CoherenceEffectExtension">
-                <meanDaysToOccur>
-                    <points>
-                        <li>(0, 600)</li>
-                        <li>(5, 300)</li>
-                        <li>(15, 120)</li>
-                        <li>(25, 60)</li>
-                    </points>
-                </meanDaysToOccur>
-                <daysBeforeCanOccur>-5</daysBeforeCanOccur>
-                <requiredCoherenceStageToOccur>Poor</requiredCoherenceStageToOccur>
-                <racesToAffect />
-            </li>
-        </modExtensions>
-    </HediffDef>
-
     <!-- Coherence Stage Effects -->
 
-    <HediffDef Name="ABF_CoherenceStageEffectsBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_Coherence_StageEffectsBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <description>_</description>
@@ -456,8 +418,8 @@
         <initialSeverity>0.001</initialSeverity>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
-        <defName>ABF_CoherenceCritical</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_StageEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_CriticalStage</defName>
         <label>critical integrity</label>
         <labelNoun>critical vulnerability</labelNoun>
         <description>This unit is suffering from critically poor coherence and may suffer spontaneous major breakdowns or many small scale failures. The lack of coherence is also reducing overall efficiency and the chassis' ability to repair itself.</description>
@@ -490,8 +452,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
-        <defName>ABF_CoherencePoor</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_StageEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_PoorStage</defName>
         <label>poor integrity</label>
         <labelNoun>minor vulnerability</labelNoun>
         <description>This unit is suffering from poor coherence and may suffer spontaneous small scale failures if left unattended for too long. The lack of coherence is slightly reducing the chassis' ability to repair itself.</description>
@@ -513,8 +475,8 @@
         </modExtensions>
     </HediffDef>
 
-    <HediffDef ParentName="ABF_CoherenceStageEffectsBase">
-        <defName>ABF_CoherenceSatisfactory</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_StageEffectsBase">
+        <defName>ABF_Hediff_Synstruct_Coherence_SatisfactoryStage</defName>
         <label>high integrity</label>
         <labelNoun>heightened stability</labelNoun>
         <description>This unit is benefitting from proper coherence and is immune to spontaneous part failure. The well-maintained chassis is slightly more power efficient and able to repair itself.</description>

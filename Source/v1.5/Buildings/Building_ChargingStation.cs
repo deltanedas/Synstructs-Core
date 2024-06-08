@@ -57,7 +57,7 @@ namespace ArtificialBeings
             else
             {
                 yield return new FloatMenuOption("ABF_ForceCharge".Translate(), delegate () {
-                    Job job = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(GetOpenRechargeSpot(pawn)), new LocalTargetInfo(this));
+                    Job job = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(GetOpenRechargeSpot(pawn)), new LocalTargetInfo(this));
                     pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                 });
             }
@@ -100,7 +100,7 @@ namespace ArtificialBeings
                         if (chargingSpot == IntVec3.Invalid)
                             break;
 
-                        Job job = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(chargingSpot), new LocalTargetInfo(this));
+                        Job job = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(chargingSpot), new LocalTargetInfo(this));
                         pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                     }
                 });

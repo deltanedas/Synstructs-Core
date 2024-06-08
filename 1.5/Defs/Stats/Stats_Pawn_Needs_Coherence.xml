@@ -3,7 +3,7 @@
 
     <!-- Coherence Retention -->
     <StatDef>
-        <defName>ABF_CoherenceRetention</defName>
+        <defName>ABF_Stat_Synstruct_CoherenceRetention</defName>
         <label>coherence retention efficiency</label>
         <description>How well this synstruct retains its level of coherence over time. This stat affects how quickly the pawn's coherence need naturally falls, and is primarily affected by coolant filtration and pumping.</description>
         <workerClass>ArtificialBeings.StatWorker_Coherence</workerClass>

@@ -2,7 +2,7 @@
 <Defs>
 
     <RecipeDef>
-        <defName>ABF_ManufacturePartPacks</defName>
+        <defName>ABF_Recipe_Synstruct_ManufacturePartPacksInBulk</defName>
         <label>manufacture Part Pack x4</label>
         <description>Produce packs of half-assembled parts designed to replace standard components ranging from whole legs and arms to intricate batteries and adaptors. Basic materials are included in the packs for rapid creation of more specific pieces.</description>
         <jobString>Assembling part packs.</jobString>
@@ -37,12 +37,13 @@
                 <count>24</count>
             </li>
         </ingredients>
+        <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         <products>
-            <ABF_PartPack>4</ABF_PartPack>
+            <ABF_Thing_Synstruct_PartPack>4</ABF_Thing_Synstruct_PartPack>
         </products>
         <recipeUsers>
             <li>
-                <li>ABF_SynstructPartWorkbench</li>
+                <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </li>
         </recipeUsers>
         <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>

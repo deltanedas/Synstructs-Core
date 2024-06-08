@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!-- Basic Frame Base -->
+    <!-- Frame Base -->
 
-    <HediffDef Name="ABF_SynstructFrameBase" ParentName="ImplantHediffBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_Frame_ImplantBase" ParentName="ImplantHediffBase" Abstract="True">
         <hediffClass>ArtificialBeings.Hediff_SynstructFrame</hediffClass>
         <keepOnBodyPartRestoration>false</keepOnBodyPartRestoration>
     </HediffDef>
 
-	<RecipeDef Name="ABF_SynstructInstallFrameBase" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
+	<RecipeDef Name="ABF_Recipe_Synstruct_Frame_InstallImplantBase" ParentName="ABF_Recipe_Synstruct_InstallImplantBase" Abstract="True">
         <workerClass>ArtificialBeings.Recipe_InstallSlotUpgrade</workerClass>
         <targetsBodyPart>false</targetsBodyPart>
 		<jobString>Replacing frame.</jobString>
@@ -20,8 +20,8 @@
 
     <!-- Plasteel Plating -->
 
-    <HediffDef ParentName="ABF_SynstructFrameBase">
-        <defName>ABF_Frame_Plasteel</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Frame_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Frame_Plasteel</defName>
         <label>plasteel frame</label>
 		<description>A frame infused with hyper-tempered and refined plasteel.</description>
 		<stages>
@@ -34,8 +34,8 @@
 		</stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Frame_Plasteel</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Frame_Plasteel</defName>
         <label>plasteel frame</label>
         <description>A frame infused with hyper-tempered and refined plasteel.</description>
         <statBases>
@@ -47,15 +47,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallFrameBase">
-        <defName>ABF_Install_Frame_Plasteel</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Frame_InstallImplantBase">
+        <defName>ABF_Recipe_Synstruct_Frame_Plasteel</defName>
         <label>install plasteel frame</label>
         <description>Replaces the frame of this unit with a tempered plasteel-infused frame, enhancing combat survivability.</description>
         <ingredients>
             <li>
                 <filter>
                     <thingDefs>
-                        <li>ABF_Frame_Plasteel</li>
+                        <li>ABF_Thing_Synstruct_Frame_Plasteel</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -63,15 +63,15 @@
         </ingredients>
         <fixedIngredientFilter>
             <thingDefs>
-                <li>ABF_Frame_Plasteel</li>
+                <li>ABF_Thing_Synstruct_Frame_Plasteel</li>
             </thingDefs>
         </fixedIngredientFilter>
-        <addsHediff>ABF_Frame_Plasteel</addsHediff>
+        <addsHediff>ABF_Hediff_Synstruct_Frame_Plasteel</addsHediff>
     </RecipeDef>
 
     <!-- Refined -->
-    <HediffDef ParentName="ABF_SynstructFrameBase">
-        <defName>ABF_Frame_Refined</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Frame_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Frame_Refined</defName>
         <label>refined frame</label>
         <description>A  frame exquisitely and precisely etched, carved, and designed to look as refined and eminently noble as possible. The frame may not enhance any explicit purpose, but it certainly affects perception of its bearer.</description>
         <stages>
@@ -88,8 +88,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Frame_Refined</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Frame_Refined</defName>
         <label>refined frame</label>
         <description>A frame exquisitely and precisely etched, carved, and designed to look as refined and eminently noble as possible. The frame may not enhance any explicit purpose, but it certainly affects perception of its bearer.</description>
         <statBases>
@@ -101,8 +101,8 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallFrameBase">
-		<defName>ABF_Install_Frame_Refined</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Frame_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Frame_Refined</defName>
 		<label>install refined frame</label>
 		<description>Replaces the frame of this unit with a refined frame, accentuating sociability and imbuing a distinctly noble and striking look. The frame itself is not physically much different and is thus exceedingly easy to install - the difficulty lies in the requisite artistic skills of its installer, as there is no way to standardize the beauty of the intricate design.</description>
 		<skillRequirements>
@@ -112,7 +112,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Frame_Refined</li>
+						<li>ABF_Thing_Synstruct_Frame_Refined</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -120,15 +120,15 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Frame_Refined</li>
+				<li>ABF_Thing_Synstruct_Frame_Refined</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Frame_Refined</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Frame_Refined</addsHediff>
 	</RecipeDef>
 
     <!-- Sanitary -->
-    <HediffDef ParentName="ABF_SynstructFrameBase">
-        <defName>ABF_Frame_Sanitary</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Frame_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Frame_Sanitary</defName>
         <label>sanitary frame</label>
         <description>A frame ruthlessly treated and sanitized to ensure zero habitability to microscopic biological entities. This frame completely rejects stains, filth, and pathogens. The frame is also optimized for completely smooth movement. Because of these traits, sanitary frames are sought after for surgeons, cooks, and for any synstruct coming into continual contact with filth.</description>
         <stages>
@@ -144,8 +144,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Frame_Sanitary</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Frame_Sanitary</defName>
         <label>sanitary frame</label>
         <description>A frame ruthlessly treated and sanitized to ensure zero habitability to any form of detritus. This frame completely rejects stains, filth, and pathogens. The frame is also optimized for completely smooth movement, suiting it well in surgeries and treatments.</description>
         <statBases>
@@ -158,15 +158,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallFrameBase">
-		<defName>ABF_Install_Frame_Sanitary</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Frame_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Frame_Sanitary</defName>
 		<label>install sanitary frame</label>
 		<description>Replaces the frame of this unit with a sanitary frame, ensuring it is completely free of filth and completely sanitized.</description>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Frame_Sanitary</li>
+						<li>ABF_Thing_Synstruct_Frame_Sanitary</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -174,10 +174,10 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Frame_Sanitary</li>
+				<li>ABF_Thing_Synstruct_Frame_Sanitary</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Frame_Sanitary</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Frame_Sanitary</addsHediff>
 	</RecipeDef>
 
 </Defs>

@@ -2,11 +2,11 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ABF_PersonalityShiftAllowed</defName>
+        <defName>ABF_Thought_Synstruct_PersonalityShiftAllowed</defName>
         <durationDays>20</durationDays>
         <stages>
             <li>
-                <label>Personality shift</label>
+                <label>personality shift</label>
                 <description>This new world view is interesting.</description>
                 <baseMoodEffect>4</baseMoodEffect>
             </li>
@@ -14,11 +14,11 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_PersonalityShiftDenied</defName>
+        <defName>ABF_Thought_Synstruct_PersonalityShiftDenied</defName>
         <durationDays>20</durationDays>
         <stages>
             <li>
-                <label>Stagnant personality</label>
+                <label>stagnant personality</label>
                 <description>I wanted to try out a different personality, but was denied. I feel stifled.</description>
                 <baseMoodEffect>-2</baseMoodEffect>
             </li>

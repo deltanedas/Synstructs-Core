@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!-- Basic Chassis Base -->
+    <!-- Chassis Base -->
 
-    <HediffDef Name="ABF_SynstructChassisBase" ParentName="ImplantHediffBase" Abstract="True">
+    <HediffDef Name="ABF_Hediff_Synstruct_Chassis_ImplantBase" ParentName="ImplantHediffBase" Abstract="True">
         <hediffClass>ArtificialBeings.Hediff_SynstructChassis</hediffClass>
         <keepOnBodyPartRestoration>false</keepOnBodyPartRestoration>
     </HediffDef>
 
-	<RecipeDef Name="ABF_SynstructInstallChassisBase" ParentName="ABF_SynstructSurgeryInstallBodyPartBase" Abstract="True">
+	<RecipeDef Name="ABF_Recipe_Synstruct_Chassis_InstallImplantBase" ParentName="ABF_Recipe_Synstruct_InstallImplantBase" Abstract="True">
         <workerClass>ArtificialBeings.Recipe_InstallSlotUpgrade</workerClass>
         <targetsBodyPart>false</targetsBodyPart>
 		<jobString>Replacing chassis.</jobString>
@@ -19,8 +19,8 @@
 	</RecipeDef>
 
     <!-- Guardian -->
-    <HediffDef ParentName="ABF_SynstructChassisBase">
-        <defName>ABF_Chassis_Guardian</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Chassis_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Chassis_Guardian</defName>
         <label>guardian chassis</label>
         <description>A chassis designed to withstand extreme temperature variance and exude intimidation. This chassis was designed with dealing with fire - be it natural, accidental, or delivered by molotov - and all the threats that come with it. The insulatory measures also preserves the unit in extreme cold.</description>
         <stages>
@@ -39,8 +39,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Chassis_Guardian</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Chassis_Guardian</defName>
         <label>guardian chassis</label>
         <description>A chassis designed to withstand extreme temperature variance and exude intimidation. This chassis was designed with dealing with fire - be it natural, accidental, or delivered by molotov - and all the threats that come with it. The insulatory measures also preserves the unit in extreme cold.</description>
         <statBases>
@@ -52,15 +52,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
-		<defName>ABF_Install_Chassis_Guardian</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Chassis_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Chassis_Guardian</defName>
 		<label>install guardian chassis</label>
 		<description>Replaces the chassis of this unit with a guardian chassis, greatly enhancing environmental survivability and police capabilities.</description>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Chassis_Guardian</li>
+						<li>ABF_Thing_Synstruct_Chassis_Guardian</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -68,15 +68,15 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Chassis_Guardian</li>
+				<li>ABF_Thing_Synstruct_Chassis_Guardian</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Chassis_Guardian</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Chassis_Guardian</addsHediff>
 	</RecipeDef>
 
     <!-- Hydraulic -->
-    <HediffDef ParentName="ABF_SynstructChassisBase">
-        <defName>ABF_Chassis_Hydraulic</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Chassis_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Chassis_Hydraulic</defName>
         <label>hydraulic chassis</label>
 	    <description>A chassis designed to maximize the amount of weight the structure can safely handle for short and long term needs. The restructured chassis also allows for greatly enhanced general labor speed.</description>
 		<stages>
@@ -91,8 +91,8 @@
 		</stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Chassis_Hydraulic</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Chassis_Hydraulic</defName>
         <label>hydraulic chassis</label>
         <description>A chassis designed to maximize the amount of weight the structure can safely handle for short and long term needs. The restructured chassis also lends itself to greater efficiency in a wide range of tasks.</description>
         <statBases>
@@ -105,15 +105,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
-		<defName>ABF_Install_Chassis_Hydraulic</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Chassis_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Chassis_Hydraulic</defName>
 		<label>install hydraulic chassis</label>
 		<description>Replaces the chassis of this unit with a hydraulic chassis, greatly enhancing weight capacity and general labor efficiency.</description>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Chassis_Hydraulic</li>
+						<li>ABF_Thing_Synstruct_Chassis_Hydraulic</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -121,15 +121,15 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Chassis_Hydraulic</li>
+				<li>ABF_Thing_Synstruct_Chassis_Hydraulic</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Chassis_Hydraulic</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Chassis_Hydraulic</addsHediff>
 	</RecipeDef>
 
     <!-- Repression -->
-    <HediffDef ParentName="ABF_SynstructChassisBase">
-        <defName>ABF_Chassis_Repression</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Chassis_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Chassis_Repression</defName>
         <label>repression chassis</label>
         <description>A chassis designed to selectively restrict combative capabilities. This chassis uses internal, isolated software to impede the unit's body when attempting to utilize weaponry, and is intentionally more fragile than standard chassis to reduce combat performance without impairing work capabilities.</description>
         <stages>
@@ -146,8 +146,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Chassis_Repression</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Chassis_Repression</defName>
         <label>repression chassis</label>
         <description>A chassis designed to selectively restrict combative capabilities. This chassis uses internal, isolated software to impede the unit's body when attempting to utilize weaponry, and is intentionally more fragile than standard chassis to reduce combat performance without impairing work capabilities.</description>
         <statBases>
@@ -159,15 +159,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
-		<defName>ABF_Install_Chassis_Repression</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Chassis_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Chassis_Repression</defName>
 		<label>install repression chassis</label>
 		<description>Replaces the chassis of this unit with a repression chassis, greatly reducing the combat capabilities of this unit.</description>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Chassis_Repression</li>
+						<li>ABF_Thing_Synstruct_Chassis_Repression</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -175,15 +175,15 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Chassis_Repression</li>
+				<li>ABF_Thing_Synstruct_Chassis_Repression</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Chassis_Repression</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Chassis_Repression</addsHediff>
 	</RecipeDef>
 
     <!-- Mobility -->
-    <HediffDef ParentName="ABF_SynstructChassisBase">
-        <defName>ABF_Chassis_Mobility</defName>
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Chassis_ImplantBase">
+        <defName>ABF_Hediff_Synstruct_Chassis_Mobility</defName>
         <label>mobility chassis</label>
         <description>A chassis designed and optimized for fluency and efficiency of motion. This chassis has unique design choices alongside specialized counterweights to minimize drag, maximize momentum gain and loss, and grant superior flexibility and agility.</description>
         <stages>
@@ -199,8 +199,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ABF_SynstructStructureBase">
-        <defName>ABF_Chassis_Mobility</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyStructureBase">
+        <defName>ABF_Thing_Synstruct_Chassis_Mobility</defName>
         <label>mobility chassis</label>
         <description>A chassis designed and optimized for fluency and efficiency of motion. This chassis has unique design choices alongside specialized counterweights to minimize drag, maximize momentum gain and loss, and grant superior flexibility and agility.</description>
         <statBases>
@@ -212,15 +212,15 @@
         </costList>
     </ThingDef>
 
-    <RecipeDef ParentName="ABF_SynstructInstallChassisBase">
-		<defName>ABF_Install_Chassis_Mobility</defName>
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Chassis_InstallImplantBase">
+		<defName>ABF_Recipe_Synstruct_Chassis_Mobility</defName>
 		<label>install mobility chassis</label>
 		<description>Replaces the chassis of this unit with a mobility chassis, greatly enhancing its movement capabilities and agility.</description>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ABF_Chassis_Mobility</li>
+						<li>ABF_Thing_Synstruct_Chassis_Mobility</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -228,10 +228,10 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ABF_Chassis_Mobility</li>
+				<li>ABF_Thing_Synstruct_Chassis_Mobility</li>
 			</thingDefs>
 		</fixedIngredientFilter>
-		<addsHediff>ABF_Chassis_Mobility</addsHediff>
+		<addsHediff>ABF_Hediff_Synstruct_Chassis_Mobility</addsHediff>
 	</RecipeDef>
 
 </Defs>

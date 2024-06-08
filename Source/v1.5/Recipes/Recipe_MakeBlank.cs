@@ -40,8 +40,8 @@ namespace ArtificialBeings
             // Becoming blank always resets backstories.
             if (pawn.story != null)
             {
-                pawn.story.Childhood = ABF_BackstoryDefOf.ABF_Synstruct_Childhood_Blank;
-                pawn.story.Adulthood = ABF_BackstoryDefOf.ABF_Synstruct_Adulthood_Blank;
+                pawn.story.Childhood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Childhood_Blank;
+                pawn.story.Adulthood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Adulthood_Blank;
                 pawn.Notify_DisabledWorkTypesChanged();
                 pawn.skills?.Notify_SkillDisablesChanged();
             }
@@ -49,7 +49,7 @@ namespace ArtificialBeings
             pawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Blank;
 
             // Ensure the pawn is disabled as it is blank.
-            pawn.health.AddHediff(ABF_HediffDefOf.ABF_Disabled);
+            pawn.health.AddHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Disabled);
         }
     }
 }

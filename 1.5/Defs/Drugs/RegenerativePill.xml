@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ABF_RegenerativePill</defName>
+		<defName>ABF_Thing_Synstruct_RegenerativePill</defName>
 		<label>regenerative pill</label>
 		<description>A rare case of a synstruct-designed solution (mostly) safe for organic consumption, regenerative pills are a complex synthetic solution that traverse the host's blood, coolant, or other internal streams and accumulates around injury sites in such a way as to accelerate recovery and cut off loss of fluids.\n\nOrganics will find the sensation quite unpleasant, but fully benefit from the pill's effects. Inorganic units benefit from the solution's materials to accelerate damage recovery without downsides.</description>
 		<graphicData>
@@ -23,9 +23,9 @@
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
 				<li Class="ArtificialBeings.IngestionOutcomeDoer_SplitEffects">
-					<organicEffect>ABF_RegenOrganic</organicEffect>
+					<organicEffect>ABF_Hediff_Synstruct_OrganicRegeneration</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<artificialEffect>ABF_RegenArtificial</artificialEffect>
+					<artificialEffect>ABF_Hediff_Synstruct_ArtificialRegeneration</artificialEffect>
 					<artificialSeverity>1</artificialSeverity>
 				</li>
 			</outcomeDoers>
@@ -49,7 +49,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ABF_RegenOrganic</defName>
+		<defName>ABF_Hediff_Synstruct_OrganicRegeneration</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>regeneration</label>
 		<description>A synthetic clotting and regenerative solution is leading to faster recovery times while causing great discomfort.</description>
@@ -66,12 +66,12 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Insignificant</label>
+				<label>insignificant</label>
 				<becomeVisible>false</becomeVisible>
 			</li>
 			<li>
 				<minSeverity>0.1</minSeverity>
-				<label>Minor</label>
+				<label>minor</label>
 				<painOffset>0.05</painOffset>
                 <totalBleedFactor>0.8</totalBleedFactor>
 				<statOffsets>
@@ -80,7 +80,7 @@
 			</li>
 			<li>
 				<minSeverity>0.25</minSeverity>
-				<label>Moderate</label>
+				<label>moderate</label>
 				<painOffset>0.1</painOffset>
                 <totalBleedFactor>0.6</totalBleedFactor>
 				<statOffsets>
@@ -89,7 +89,7 @@
 			</li>
 			<li>
 				<minSeverity>0.6</minSeverity>
-				<label>Significant</label>
+				<label>significant</label>
 				<painOffset>0.2</painOffset>
 				<vomitMtbDays>1.5</vomitMtbDays>
                 <totalBleedFactor>0.4</totalBleedFactor>
@@ -99,7 +99,7 @@
 			</li>
 			<li>
 				<minSeverity>0.7</minSeverity>
-				<label>Peak</label>
+				<label>peak</label>
 				<painOffset>0.3</painOffset>
 				<vomitMtbDays>1</vomitMtbDays>
                 <totalBleedFactor>0.2</totalBleedFactor>
@@ -111,34 +111,34 @@
 	</HediffDef>
 
 	<ThoughtDef>
-		<defName>ABF_RegenOrganic_Thought</defName>
+		<defName>ABF_Thought_Synstruct_OrganicRegeneration</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>ABF_RegenOrganic</hediff>
+		<hediff>ABF_Hediff_Synstruct_OrganicRegeneration</hediff>
 		<validWhileDespawned>true</validWhileDespawned>
 		<stages>
 			<li>
-				<label>Insignificant</label>
+				<label>insignificant</label>
 				<description>The strangeness has faded. I'm alright.</description>
 				<baseMoodEffect>0</baseMoodEffect>
 				<visible>false</visible>
 			</li>
 			<li>
-				<label>Regeneration (Minor)</label>
+				<label>regeneration (Minor)</label>
 				<description>I have a creeping sensation that something doesn't feel right, but it's just out of reach.</description>
 				<baseMoodEffect>-2</baseMoodEffect>
 			</li>
 			<li>
-				<label>Regeneration (Moderate)</label>
+				<label>regeneration (Moderate)</label>
 				<description>I feel uncomfortable and strange. This stuff is really nasty.</description>
 				<baseMoodEffect>-4</baseMoodEffect>
 			</li>
 			<li>
-				<label>Regeneration (Significant)</label>
+				<label>regeneration (Significant)</label>
 				<description>My whole body feels really sluggish and and weighty, like I'm made of mud.</description>
 				<baseMoodEffect>-6</baseMoodEffect>
 			</li>
 			<li>
-				<label>Regeneration (Peak)</label>
+				<label>regeneration (Peak)</label>
 				<description>My body feels really, really wrong - it feels like I have tar coating my organs! When will this end?</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
@@ -146,7 +146,7 @@
 	</ThoughtDef>
 
 	<HediffDef>
-		<defName>ABF_RegenArtificial</defName>
+		<defName>ABF_Hediff_Synstruct_ArtificialRegeneration</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>regeneration</label>
 		<description>A synthetic solution absorbed into the system is fortifying damaged regions of the body against loss of fluid and acting as useful material for repairs.</description>
@@ -169,7 +169,7 @@
                 <showHoursToRecover>true</showHoursToRecover>
 			</li>
 			<li Class="ArtificialBeings.HediffCompProperties_RemoveHediffOnApply">
-				<hediffToRemove>ABF_CoolantLoss</hediffToRemove>
+				<hediffToRemove>ABF_Hediff_Synstruct_CoolantLoss</hediffToRemove>
 			</li>
 		</comps>
 	</HediffDef>

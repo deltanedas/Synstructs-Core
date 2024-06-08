@@ -29,7 +29,7 @@ namespace ArtificialBeings
             if (bed != null)
             {
                 pawn.ownership.ClaimBedIfNonMedical(bed);
-                return new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(bed));
+                return new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(bed));
             }
 
             // Downed pawns can not use charging stations.
@@ -42,7 +42,7 @@ namespace ArtificialBeings
             Building_ChargingStation station = (Building_ChargingStation)GenClosest.ClosestThingReachable(pawn.PositionHeld, pawn.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.Touch, TraverseParms.For(pawn), validator: building => building is Building_ChargingStation chargeStation && building.Position.InAllowedArea(pawn) && building.TryGetComp<CompPowerTrader>()?.PowerOn == true && chargeStation.GetOpenRechargeSpot(pawn) != IntVec3.Invalid);
             if (station != null)
             {
-                return new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
+                return new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
             }
             return null;
         }

@@ -3,7 +3,7 @@
 
     <!-- Charging Speed -->
     <StatDef>
-        <defName>ABF_ChargingSpeed</defName>
+        <defName>ABF_Stat_Synstruct_ChargingSpeed</defName>
         <label>charging speed</label>
         <description>How quickly this pawn gains energy while charging. This stat directly affects the amount of energy required to achieve a full charge and how long it takes to reach full charge. It is primarily affected by the unit's battery.</description>
         <category>BasicsPawn</category>
@@ -16,7 +16,7 @@
 
     <!-- Nutritional Intake Efficiency -->
     <StatDef>
-        <defName>ABF_NutritionalIntakeEfficiency</defName>
+        <defName>ABF_Stat_Synstruct_NutritionalIntakeEfficiency</defName>
         <label>nutrition intake efficiency</label>
         <description>How much energy this pawn gains from consuming nutrition. This stat directly affects how much the energy need is replenished by eating food. It is primarily affected by the unit's generator.</description>
         <category>BasicsPawn</category>

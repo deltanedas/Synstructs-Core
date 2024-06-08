@@ -2,8 +2,8 @@
 <Defs>
 
     <HediffDef>
-        <defName>ABF_SynstructOverclocking</defName>
-        <label>Overclocking</label>
+        <defName>ABF_Hediff_Synstruct_Overclocking</defName>
+        <label>overclocking</label>
         <description>This unit is overclocking its core processor, with a noticeable boost to performance. This requires significant additional power consumption, and strains heat and coherence systems. The unusually heightened processor activity stresses the host consciousness as well.</description>
         <initialSeverity>1</initialSeverity>
         <isBad>false</isBad>
@@ -18,14 +18,14 @@
                 </capMods>
 		        <statOffsets>
 					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
-                    <ABF_CoherenceRetention>-0.25</ABF_CoherenceRetention>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.25</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
             </li>
         </stages>
     </HediffDef>
 
     <HediffDef>
-        <defName>ABF_RemainingCharge</defName>
+        <defName>ABF_Hediff_Synstruct_RemainingCharge</defName>
         <label>battery life</label>
         <description>Battery life remaining before loss of function.</description>
 	    <hediffClass>HediffWithComps</hediffClass>
@@ -42,7 +42,7 @@
         <stages>
             <li>
                 <minSeverity>0</minSeverity>
-                <label>Empty</label>
+                <label>empty</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
@@ -52,29 +52,29 @@
             </li>
             <li>
                 <minSeverity>0.1</minSeverity>
-                <label>Critical</label>
+                <label>critical</label>
             </li>
             <li>
                 <minSeverity>0.25</minSeverity>
-                <label>Low</label>
+                <label>low</label>
             </li>
             <li>
                 <minSeverity>0.45</minSeverity>
-                <label>Moderate</label>
+                <label>moderate</label>
             </li>
             <li>
                 <minSeverity>0.6</minSeverity>
-                <label>High</label>
+                <label>high</label>
             </li>
             <li>
                 <minSeverity>0.8</minSeverity>
-                <label>Full</label>
+                <label>full</label>
             </li>
         </stages>
     </HediffDef>
 
     <HediffDef ParentName="DiseaseBase">
-        <defName>ABF_CoreLockout</defName>
+        <defName>ABF_Hediff_Synstruct_CoreLockout</defName>
         <label>core lockout</label>
         <description>A condition that leaves the unit unable to move by locking access to all motor components responsible for movement. After enough time, the consciousness will disable the lockout as it decrypts the controls, but the process is slow. There is also a chance of a lucky early recovery. This condition can not be solved by external forces in a way that does not kill the consciousness.</description>
         <descriptionShort>A condition that prevents the unit from moving. The unit will recover naturally but the process is slow.</descriptionShort>

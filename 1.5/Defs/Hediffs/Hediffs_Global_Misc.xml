@@ -2,15 +2,15 @@
 <Defs>
 
 	<HediffDef>
-        <hediffClass>HediffWithComps</hediffClass>
-		<defName>ABF_CoolantLoss</defName>
+		<defName>ABF_Hediff_Synstruct_CoolantLoss</defName>
 		<label>coolant loss</label>
 		<description>Loss of coolant in the chassis, resulting in reduced cooling capacity and loss of finetuned motor control. Lack of circulation prevents restorative mechanites from functioning properly, leading to extended recovery times. \n\nPrioritization ensures core functionality receives sufficient coolant flow until critical levels are reached.</description>
+        <hediffClass>HediffWithComps</hediffClass>
 		<maxSeverity>1.0</maxSeverity>
 	    <defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
         <comps>
             <li Class="ArtificialBeings.HediffCompProperties_SeverityAffectsNeed">
-                <needDef>ABF_Coolant</needDef>
+                <needDef>ABF_Need_Synstruct_Coolant</needDef>
                 <changePerDayAtOneSeverity>-3</changePerDayAtOneSeverity>
                 <changeByPercent>true</changeByPercent>
             </li>
@@ -51,7 +51,7 @@
 	</HediffDef>
 
 	<HediffDef>
-		<defName>ABF_Overheating</defName>
+		<defName>ABF_Hediff_Synstruct_Overheating</defName>
 		<label>overheating</label>
 		<description>Unsafe levels of heat retention in the chassis. At minor levels, artificial units can reduce some high power/heat functionality to offset the impact. At major levels, the unit will suffer from increasing system failures. If it surpasses a critical threshold, the core will shut down and the unit will die.</description>
 		<lethalSeverity>1</lethalSeverity>
@@ -134,7 +134,7 @@
 	</HediffDef>
 
     <HediffDef>
-        <defName>ABF_SynstructHypothermia</defName>
+        <defName>ABF_Hediff_Synstruct_Hypothermia</defName>
         <label>hypothermic reaction</label>
         <description>While artificial parts do not suffer from frostbite like organic flesh does, cold is an existential threat to machinery. At critical levels, the unit must focus all heat generation to internal systems - effectively immobilizing it - and power drains at an alarming rate.</description>
         <defaultLabelColor>(0.8, 0.8, 1)</defaultLabelColor>

@@ -75,7 +75,7 @@ namespace ArtificialBeings
 
         public float CoherenceFallPerDay()
         {
-            return Mathf.Clamp(DailyFallPerStage(Stage) / Pawn.GetStatValue(ABF_StatDefOf.ABF_CoherenceRetention, cacheStaleAfterTicks: 2000), 0.005f, 2f);
+            return Mathf.Clamp(DailyFallPerStage(Stage) / Pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_CoherenceRetention, cacheStaleAfterTicks: 2000), 0.005f, 2f);
         }
 
         public override void PostPostMake()

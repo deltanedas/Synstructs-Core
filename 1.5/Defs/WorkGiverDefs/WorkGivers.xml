@@ -2,13 +2,13 @@
 <Defs>
 
     <WorkGiverDef>
-        <defName>ABF_DoBillsAssemblyPod</defName>
-        <label>assemble mechanical units at assembly pod</label>
+        <defName>ABF_WorkGiver_Synstruct_AssembleSynstruct</defName>
+        <label>assemble synstructs at cradle</label>
         <giverClass>WorkGiver_DoBill</giverClass>
-        <workType>ABF_Artificer</workType>
+        <workType>ABF_WorkType_Artificial_Artificer</workType>
         <priorityInType>10</priorityInType>
         <fixedBillGiverDefs>
-          <li>ABF_SynstructCradle</li>
+          <li>ABF_Thing_Synstruct_Cradle</li>
         </fixedBillGiverDefs>
         <verb>work</verb>
         <gerund>working at</gerund>
@@ -19,13 +19,13 @@
       </WorkGiverDef>
 
       <WorkGiverDef>
-        <defName>ABF_DoBillsPartWorkbench</defName>
-        <label>assemble parts at parts workbench</label>
+        <defName>ABF_WorkGiver_Synstruct_ManufactureParts</defName>
+        <label>assemble synstruct parts at parts workbench</label>
         <giverClass>WorkGiver_DoBill</giverClass>
-        <workType>ABF_Artificer</workType>
+        <workType>ABF_WorkType_Artificial_Artificer</workType>
         <priorityInType>5</priorityInType>
         <fixedBillGiverDefs>
-          <li>ABF_SynstructPartWorkbench</li>
+          <li>ABF_Thing_Synstruct_PartWorkbench</li>
         </fixedBillGiverDefs>
         <verb>work</verb>
         <gerund>working at</gerund>

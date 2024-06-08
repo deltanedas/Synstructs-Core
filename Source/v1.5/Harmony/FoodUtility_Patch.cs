@@ -13,7 +13,7 @@ namespace ArtificialBeings
             [HarmonyPostfix]
             public static void Listener(Pawn eater, Thing foodSource, ThingDef foodDef, ref float __result)
             {
-                __result *= eater.GetStatValue(ABF_StatDefOf.ABF_NutritionalIntakeEfficiency, cacheStaleAfterTicks: 1200);
+                __result *= eater.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_NutritionalIntakeEfficiency, cacheStaleAfterTicks: 1200);
             }
         }
     }

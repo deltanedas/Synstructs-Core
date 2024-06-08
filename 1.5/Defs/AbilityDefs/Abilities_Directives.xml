@@ -2,7 +2,7 @@
 <Defs>
 
     <AbilityDef>
-        <defName>ABF_InitiateBerserkDirective</defName>
+        <defName>ABF_Ability_Synstruct_Directive_Berserker</defName>
         <label>trigger berserker directives</label>
         <description>Remotely trigger combat protocols and turn off IFF sensors for a few hours.</description>
         <iconPath>UI/Icons/Gizmos/ABF_RestrictionGizmo</iconPath>
@@ -24,19 +24,19 @@
         <comps>
             <li Class="CompProperties_AbilityGiveMentalState">
                 <compClass>CompAbilityEffect_GiveMentalState</compClass>
-                <stateDef>ABF_DirectiveBerserker</stateDef>
+                <stateDef>ABF_MentalState_Synstruct_Directive_Berserker</stateDef>
                 <applyToSelf>true</applyToSelf>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>ABF_DirectiveBerserker</hediffDef>
+                <hediffDef>ABF_Hediff_Synstruct_Directive_Berserker</hediffDef>
                 <onlyApplyToSelf>true</onlyApplyToSelf>
             </li>
         </comps>
     </AbilityDef>
 
     <AbilityDef>
-        <defName>ABF_InitiateInterferenceDirective</defName>
+        <defName>ABF_Ability_Synstruct_Directive_Interference</defName>
         <label>trigger interference directives</label>
         <description>Release an incredibly loud and painful metallic screech by scraping parts that are intentionally moved improperly while outputting a massive wave of radio signals so as to impair both organic and inorganic sensory implements. Doing this crashes the unit, requiring a full restart.</description>
         <iconPath>UI/Icons/Gizmos/ABF_RestrictionGizmo</iconPath>
@@ -58,8 +58,8 @@
         <comps>
             <li Class="ArtificialBeings.CompProperties_AbilityGiveHediffsUserTarget">
                 <compClass>ArtificialBeings.CompAbilityEffect_GiveHediffsUserTarget</compClass>
-                <hediffDefSelf>ABF_Incapacitated</hediffDefSelf>
-                <hediffDefTarget>ABF_DirectiveInterference</hediffDefTarget>
+                <hediffDefSelf>ABF_Hediff_Artificial_Incapacitated</hediffDefSelf>
+                <hediffDefTarget>ABF_Hediff_Synstruct_Directive_Interdictor</hediffDefTarget>
                 <severitySelf>0.5</severitySelf>
                 <severityTarget>1</severityTarget>
             </li>

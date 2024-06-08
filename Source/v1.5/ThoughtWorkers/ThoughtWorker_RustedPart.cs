@@ -14,7 +14,7 @@ namespace ArtificialBeings
 
             for (int i = p.health.hediffSet.hediffs.Count - 1; i >= 0; i--)
             {
-                if (p.health.hediffSet.hediffs[i].def == ABF_HediffDefOf.ABF_RustedPart)
+                if (p.health.hediffSet.hediffs[i].def == ABF_HediffDefOf.ABF_Hediff_Synstruct_Coherence_RustedPart)
                     return true;
             }
             return ThoughtState.Inactive;

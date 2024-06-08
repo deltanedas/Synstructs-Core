@@ -29,7 +29,7 @@ namespace ArtificialBeings
                         if (bed != null)
                         {
                             pawn.ownership.ClaimBedIfNonMedical(bed);
-                            __result = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(bed));
+                            __result = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(bed));
                             return;
                         }
                     }

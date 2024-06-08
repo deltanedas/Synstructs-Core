@@ -16,7 +16,7 @@ namespace ArtificialBeings
             {
                 ABF_DetonateOnIncapacitation detonationExtension = __instance.def.GetModExtension<ABF_DetonateOnIncapacitation>();
                 bool isExploding = detonationExtension != null;
-                bool isMartyr = ABF_Utils.IsProgrammableDrone(__instance) && !__instance.Destroyed && __instance.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_DirectiveMartyrdom);
+                bool isMartyr = ABF_Utils.IsProgrammableDrone(__instance) && !__instance.Destroyed && __instance.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_Directive_Synstruct_Martyr);
                 if (!__instance.Destroyed && (isExploding || isMartyr))
                 {
                     // Save details and destroy before doing the explosion to avoid the damage hitting the pawn, killing them again.

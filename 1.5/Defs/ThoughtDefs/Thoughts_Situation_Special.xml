@@ -2,13 +2,13 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ABF_MentalAssistant</defName>
+        <defName>ABF_Thought_Synstruct_MentalAssistant</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>ABF_MentalAssistant</hediff>
+        <hediff>ABF_Hediff_Synstruct_Assistant_Mental</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
-                <label>Mental Assistant</label>
+                <label>receiving mental support</label>
                 <description>This mental assistant chip helps remove terrible stressors and helps me to be mentally resilient. I feel strong.</description>
                 <baseMoodEffect>20</baseMoodEffect>
             </li>
@@ -16,7 +16,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_Thought_Situational_PaintedColor_Favorite</defName>
+        <defName>ABF_Thought_Synstruct_PaintedFavoriteColor</defName>
         <thoughtClass>Thought_Situational</thoughtClass>
         <workerClass>ArtificialBeings.ThoughtWorker_PaintedColor_Favorite</workerClass>
         <validWhileDespawned>true</validWhileDespawned>

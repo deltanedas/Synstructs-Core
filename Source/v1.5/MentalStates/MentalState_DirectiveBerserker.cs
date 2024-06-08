@@ -10,7 +10,7 @@ namespace ArtificialBeings
     {
         public override bool ForceHostileTo(Thing t)
         {
-            if (t is Pawn pawn && ABF_Utils.IsProgrammableDrone(pawn) && pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_DirectiveBerserker))
+            if (t is Pawn pawn && ABF_Utils.IsProgrammableDrone(pawn) && pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_Directive_Synstruct_Berserker))
             {
                 return false;
             }

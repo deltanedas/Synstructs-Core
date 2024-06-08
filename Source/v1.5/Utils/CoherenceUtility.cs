@@ -34,7 +34,7 @@ namespace ArtificialBeings
                 float preferabilityScore = 1f / Mathf.Max(item.Cell.DistanceToSquared(pawn.Position), 0.1f);
                 Room room = item.Cell.GetRoom(pawn.Map);
 
-                if (item.Thing != null && item.Thing is Building building && building.def == ABF_ThingDefOf.ABF_CoherenceSpot)
+                if (item.Thing != null && item.Thing is Building building && building.def == ABF_ThingDefOf.ABF_Thing_Synstruct_CoherenceSpot)
                 {
                     // Assigned coherence spot to this pawn or assigned to no one, give an additive weight of 100.
                     if (building.GetAssignedPawns()?.Contains(pawn) == true)
@@ -92,7 +92,7 @@ namespace ArtificialBeings
             // Coherence spots are always (and only) candidates for units of the player faction.
             if (pawn.Faction == Faction.OfPlayer)
             {
-                foreach (Building item in pawn.Map.listerBuildings.AllBuildingsColonistOfDef(ABF_ThingDefOf.ABF_CoherenceSpot))
+                foreach (Building item in pawn.Map.listerBuildings.AllBuildingsColonistOfDef(ABF_ThingDefOf.ABF_Thing_Synstruct_CoherenceSpot))
                 {
                     yield return item;
                 }

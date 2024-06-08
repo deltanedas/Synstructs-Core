@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ABF_CoherenceMood</defName>
+        <defName>ABF_Thought_Synstruct_CoherenceMood</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_CoherenceMood</workerClass>
         <nullifyingTraits>
             <li>Masochist</li>

@@ -2,7 +2,7 @@
 <Defs>
 
 	<BackstoryDef>
-		<defName>ABF_Synstruct_Childhood_Newboot</defName>
+		<defName>ABF_Backstory_Synstruct_Childhood_Newboot</defName>
 		<title>synstruct</title>
 		<titleShort>synstruct</titleShort>
 		<baseDesc>{PAWN_nameDef} first awakened on this RimWorld as an infantile intelligence.</baseDesc>
@@ -13,7 +13,7 @@
 	</BackstoryDef>
 
     <AlienRace.AlienBackstoryDef>
-		<defName>ABF_Synstruct_Adulthood_Newboot</defName>
+		<defName>ABF_Backstory_Synstruct_Adulthood_Newboot</defName>
 		<title>synstruct</title>
 		<titleShort>synstruct</titleShort>
 		<baseDesc>{PAWN_nameDef} was first awakened on this world. The story for {PAWN_nameDef} has yet to be truly written.</baseDesc>

@@ -2,7 +2,7 @@
 <Defs>
 
     <!-- Mechanical Humanlike Base -->
-	<AlienRace.ThingDef_AlienRace Name="ABF_SynstructBasePawn" ParentName="BasePawn" Abstract="True">
+	<AlienRace.ThingDef_AlienRace Name="ABF_Thing_Synstruct_HumanlikeBase" ParentName="BasePawn" Abstract="True">
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<statBases>
 			<Mass>70</Mass>
@@ -42,7 +42,7 @@
                 <notXenophobistTowards />
 				<alienPartGenerator>
 					<headTypes>
-                        <li>ABF_SynstructBaseHead</li>
+                        <li>ABF_HeadType_Synstruct_BaseHead</li>
                     </headTypes>
                     <colorChannels Inherit="False">
 						<li>
@@ -169,12 +169,12 @@
 			<makesFootprints>true</makesFootprints>
 			<lifeExpectancy>100</lifeExpectancy>
 			<leatherDef>Leather_Human</leatherDef>
-			<nameGenerator>ABF_Names_MaleSynstruct</nameGenerator>
-            <nameGeneratorFemale>ABF_Names_FemaleSynstruct</nameGeneratorFemale>
+			<nameGenerator>ABF_RulePack_Synstruct_NameRulesMale</nameGenerator>
+            <nameGeneratorFemale>ABF_RulePack_Synstruct_NameRulesFemale</nameGeneratorFemale>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreHuman</foodType>
-			<fleshType>ABF_FleshSynstruct</fleshType>
-			<bloodDef>ABF_CoolantSynstruct</bloodDef>
+			<fleshType>ABF_FleshType_Synstruct_Base</fleshType>
+			<bloodDef>ABF_Thing_Synstruct_CoolantFilth</bloodDef>
             <specificMeatDef>Steel</specificMeatDef>
 			<canBePredatorPrey>false</canBePredatorPrey>
             <isImmuneToInfections>true</isImmuneToInfections>
@@ -182,7 +182,7 @@
             <hasMeat>false</hasMeat>
 			<lifeStageAges>
 				<li>
-					<def>ABF_ArtificialComplete</def>
+					<def>ABF_LifeStage_Artificial_Complete</def>
 					<minAge>0.0</minAge>
 				</li>
 			</lifeStageAges>
@@ -217,7 +217,8 @@
 				</points>
 			</ageGenerationCurve>
 			<hediffGiverSets>
-				<li>ABF_SynstructStandard</li>
+				<li>ABF_HediffGiverSet_Synstruct_BleedsCoolant</li>
+                <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
 			</hediffGiverSets>
 		</race>
         <comps>

@@ -2,7 +2,7 @@
 <Defs>
 
     <!-- Base Def for repair items -->
-    <ThingDef Name="ABF_RepairItemBase" ParentName="ResourceBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_RepairItemBase" ParentName="ResourceBase" Abstract="True">
         <soundInteract>Standard_Drop</soundInteract>
         <soundDrop>Standard_Drop</soundDrop>
         <thingCategories>
@@ -16,16 +16,16 @@
             <soundWorking>Recipe_Smelt</soundWorking>
             <recipeUsers>
                 <li>TableMachining</li>
-                <li>ABF_SynstructPartWorkbench</li>
+                <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </recipeUsers>
             <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
         </recipeMaker>
     </ThingDef>
 
     <!-- Mechanical Part Pack -->
-    <ThingDef ParentName="ABF_RepairItemBase">
-        <defName>ABF_PartPack</defName>
-        <label>Mechanical Part Pack</label>
+    <ThingDef ParentName="ABF_Thing_Synstruct_RepairItemBase">
+        <defName>ABF_Thing_Synstruct_PartPack</defName>
+        <label>synstruct part pack</label>
         <description>This pack of half-assembled parts is designed to replace standard components ranging from whole legs and arms to intricate batteries and adaptors. Basic materials are included for rapid creation of more specific pieces.</description>
         <graphicData>
             <texPath>Things/Items/Manufactured/PartPack</texPath>
@@ -50,6 +50,7 @@
             <skillRequirements>
                 <Crafting>6</Crafting>
             </skillRequirements>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
         <thingSetMakerTags>
             <li>Manufactured</li>
@@ -58,7 +59,7 @@
     </ThingDef>
 
     <!-- Repair Stim Base Def -->
-    <ThingDef Name="ABF_RepairStimBase" ParentName="ABF_RepairItemBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_RepairStimBase" ParentName="ABF_Thing_Synstruct_RepairItemBase" Abstract="True">
         <thingClass>Medicine</thingClass>
         <stackLimit>25</stackLimit>
         <healthAffectsPrice>false</healthAffectsPrice>
@@ -76,9 +77,9 @@
     </ThingDef>
 
     <!-- Simple Repair Stim -->
-    <ThingDef ParentName="ABF_RepairStimBase">
-        <defName>ABF_RepairStimSimple</defName>
-        <label>Simple Repair Stim</label>
+    <ThingDef ParentName="ABF_Thing_Synstruct_RepairStimBase">
+        <defName>ABF_Thing_Synstruct_RepairStimMinor</defName>
+        <label>minor repair stim</label>
         <description>A small, simple assembled kit of industrial components, and tools for assisting and stimulating synstruct repairs. The kit lacks a number of very helpful assets for more serious injuries or operations, and is suited more for battlefield triage than professional use.</description>
         <graphicData>
             <texPath>Things/Items/Manufactured/ABF_RepairStimSimple</texPath>
@@ -99,16 +100,15 @@
             <bulkRecipeCount>4</bulkRecipeCount>
             <skillRequirements>
                 <Crafting>4</Crafting>
-                <Intellectual>4</Intellectual>
             </skillRequirements>
-            <researchPrerequisite>Electricity</researchPrerequisite>
+            <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <!-- Intermediate Repair Stim -->
-    <ThingDef ParentName="ABF_RepairStimBase">
-        <defName>ABF_RepairStimIntermediate</defName>
-        <label>Intermediate Repair Stim</label>
+    <!-- Repair Stim -->
+    <ThingDef ParentName="ABF_Thing_Synstruct_RepairStimBase">
+        <defName>ABF_Thing_Synstruct_RepairStim</defName>
+        <label>repair stim</label>
         <description>An assembled kit of industrial components and tools for assisting and stimulating mechanical repairs. Stimulation kits like this are the core tools of any synstruct's artificer who believes in quality. Well-suited to a range of tasks, it is functionally capable and practical.</description>
         <graphicData>
             <texPath>Things/Items/Manufactured/ABF_RepairStimIntermediate</texPath>
@@ -128,26 +128,26 @@
             <ComponentIndustrial>2</ComponentIndustrial>
         </costList>
         <recipeMaker>
-            <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
             <bulkRecipeCount>4</bulkRecipeCount>
             <skillRequirements>
                 <Crafting>6</Crafting>
-                <Intellectual>6</Intellectual>
+                <Intellectual>2</Intellectual>
             </skillRequirements>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <!-- Advanced Repair Stim -->
-    <ThingDef ParentName="ABF_RepairStimBase">
-        <defName>ABF_RepairStimAdvanced</defName>
-        <label>Advanced Repair Stim</label>
-        <description>An array of high-tech tools for assisting and stimulating mechanical repairs. Relatively uncommon outside Glitterworlds, kits like these are highly prized by artificers and any self-respecting mechanical unit. This can make even poor artificers seem very competent.</description>
+    <!-- Ultra Repair Stim -->
+    <ThingDef ParentName="ABF_Thing_Synstruct_RepairStimBase">
+        <defName>ABF_Thing_Synstruct_RepairStimUltra</defName>
+        <label>ultra repair stim</label>
+        <description>An array of high-tech tools for assisting and stimulating mechanical repairs. Relatively uncommon outside Glitterworlds, kits like these are highly prized by artificers and any self-respecting synstruct. This can make even poor artificers seem very competent.</description>
         <graphicData>
             <texPath>Things/Items/Manufactured/ABF_RepairStimAdvanced</texPath>
             <graphicClass>Graphic_StackCount</graphicClass>
             <drawSize>0.85</drawSize>
         </graphicData>
-        <techLevel>Spacer</techLevel>
+        <techLevel>Ultra</techLevel>
         <statBases>
             <MarketValue>60</MarketValue>
             <MedicalPotency>1.60</MedicalPotency>
@@ -160,17 +160,17 @@
             <ComponentSpacer>1</ComponentSpacer>
         </costList>
         <recipeMaker>
-            <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+            <researchPrerequisite>ABF_ResearchProject_Synstruct_Optimization</researchPrerequisite>
             <bulkRecipeCount>4</bulkRecipeCount>
             <skillRequirements>
                 <Crafting>12</Crafting>
-                <Intellectual>12</Intellectual>
+                <Intellectual>4</Intellectual>
             </skillRequirements>
         </recipeMaker>
     </ThingDef>
 
     <!-- Synstruct Resurrection Kit Base -->
-    <ThingDef ParentName="ABF_RepairItemBase" Name="ABF_RestructKitBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_RestructKitBase" ParentName="ABF_Thing_Synstruct_RepairItemBase" Abstract="True">
 	    <thingClass>ThingWithComps</thingClass>
         <stackLimit>10</stackLimit>
         <statBases>
@@ -185,8 +185,8 @@
     </ThingDef>
 
     <!-- Resurrection Kit for sapient synstructs -->
-    <ThingDef ParentName="ABF_RestructKitBase">
-        <defName>ABF_SapientSynstructResurrectorKit</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_RestructKitBase">
+        <defName>ABF_Thing_Synstruct_RestructKitSapient</defName>
         <label>sapient restruct kit</label>
         <description>A one-use highly specialized suite of tools and components specifically designed to recover and restore a lost sapient synstruct's personality and consciousness. Due to those precisely specialized tools, these are useless for resuscitating non-sapient synstructs. Synstructs which have had their core destroyed cannot be recovered, but these tools would still be necessary to reconstruct the body.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
         <graphicData>
@@ -197,7 +197,7 @@
             <MarketValue>300</MarketValue>
             <WorkToMake>4550</WorkToMake>
         </statBases>
-        <techLevel>Ultra</techLevel>
+        <techLevel>Spacer</techLevel>
         <costList>
             <Steel>80</Steel>
             <Plasteel>40</Plasteel>
@@ -220,7 +220,7 @@
         </comps>
         <recipeMaker>
             <recipeUsers>
-                <li>ABF_SynstructPartWorkbench</li>
+                <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </recipeUsers>
             <skillRequirements>
                 <Crafting>8</Crafting>
@@ -230,9 +230,9 @@
         <tradeability>Sellable</tradeability>
     </ThingDef>
 
-    <!-- Resurrection Kit for sapient synstructs -->
-    <ThingDef ParentName="ABF_RestructKitBase">
-        <defName>ABF_DroneSynstructResurrectorKit</defName>
+    <!-- Resurrection Kit for drone synstructs -->
+    <ThingDef ParentName="ABF_Thing_Synstruct_RestructKitBase">
+        <defName>ABF_Thing_Synstruct_RestructKitDrone</defName>
         <label>drone restruct kit</label>
         <description>A one-use suite of tools and components specifically designed to recover and restore a lost sapient synstruct's personality and consciousness. Due to those precisely specialized tools, these are useless for resuscitating non-sapient synstructs. Synstructs which have had their core destroyed cannot be recovered, but these tools would still be necessary to reconstruct the body.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
         <graphicData>
@@ -266,7 +266,7 @@
         </comps>
         <recipeMaker>
             <recipeUsers>
-                <li>ABF_SynstructPartWorkbench</li>
+                <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </recipeUsers>
             <skillRequirements>
                 <Crafting>6</Crafting>
@@ -279,9 +279,9 @@
     <!-- Mechanical Need Fulfillment Items -->
 
     <ThingDef>
-        <defName>ABF_CoolantPack</defName>
+        <defName>ABF_Thing_Synstruct_CoolantPack</defName>
         <label>coolant pack</label>
-        <description>A tightly sealed package of coolant for mechanical units. Mechanical units consume it to replenish internal coolant reserves. It only fills the reserve and can not replenish immediately lost coolant.</description>
+        <description>A tightly sealed package of coolant for synstructs that can consume it to replenish internal coolant reserves. It only fills the reserve and can not replenish immediately lost coolant.</description>
         <category>Item</category>
         <thingClass>ThingWithComps</thingClass>
         <drawerType>MapMeshOnly</drawerType>
@@ -335,16 +335,16 @@
         <modExtensions>
             <li Class="ArtificialBeings.ABF_NeedFulfillerExtension">
                 <needOffsetRelations>
-                    <li><key>ABF_Coolant</key><value>0.5</value></li>
+                    <li><key>ABF_Need_Synstruct_Coolant</key><value>0.5</value></li>
                 </needOffsetRelations>
             </li>
         </modExtensions>
     </ThingDef>
 
     <ThingDef>
-        <defName>ABF_LubricantPack</defName>
+        <defName>ABF_Thing_Synstruct_LubricantPack</defName>
         <label>lubricant pack</label>
-        <description>A tightly sealed package of lubricant for mechanical units. Mechanical units consume it to replenish internal lubricant reserves.</description>
+        <description>A tightly sealed package of lubricant for synstructs that can consume it to replenish internal lubricant reserves.</description>
         <category>Item</category>
         <thingClass>ThingWithComps</thingClass>
         <drawerType>MapMeshOnly</drawerType>
@@ -398,7 +398,7 @@
         <modExtensions>
             <li Class="ArtificialBeings.ABF_NeedFulfillerExtension">
                 <needOffsetRelations>
-                    <li><key>ABF_Lubricant</key><value>0.5</value></li>
+                    <li><key>ABF_Need_Synstruct_Lubricant</key><value>0.5</value></li>
                 </needOffsetRelations>
             </li>
         </modExtensions>

@@ -2,7 +2,7 @@
 <Defs>
 
     <BodyPartDef>
-        <defName>ABF_SynstructTorso</defName>
+        <defName>ABF_BodyPart_Synstruct_Torso</defName>
         <label>torso</label>
         <hitPoints>40</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -13,7 +13,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructNeck</defName>
+        <defName>ABF_BodyPart_Synstruct_Neck</defName>
         <label>neck</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -29,7 +29,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructHead</defName>
+        <defName>ABF_BodyPart_Synstruct_Head</defName>
         <label>head</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -39,8 +39,8 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructVoiceSynthesizer</defName>
-        <label>Voice synthesizer</label>
+        <defName>ABF_BodyPart_Synstruct_Vocalizer</defName>
+        <label>vocalizer</label>
         <hitPoints>15</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
@@ -52,7 +52,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructVisualSensor</defName>
+        <defName>ABF_BodyPart_Synstruct_VisualSensor</defName>
         <label>visual sensor</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -65,7 +65,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructAudioSensor</defName>
+        <defName>ABF_BodyPart_Synstruct_AudialSensor</defName>
         <label>audio sensor</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -78,17 +78,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructSmellSensor</defName>
-        <label>smell sensor</label>
-        <hitPoints>10</hitPoints>
-        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-        <skinCovered>false</skinCovered>
-        <bleedRate>0</bleedRate>
-        <solid>true</solid>
-    </BodyPartDef>
-
-    <BodyPartDef>
-        <defName>ABF_SynstructShoulder</defName>
+        <defName>ABF_BodyPart_Synstruct_Shoulder</defName>
         <label>shoulder</label>
         <hitPoints>25</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -101,7 +91,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructArm</defName>
+        <defName>ABF_BodyPart_Synstruct_Arm</defName>
         <label>arm</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -114,7 +104,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructHand</defName>
+        <defName>ABF_BodyPart_Synstruct_Hand</defName>
         <label>hand</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -127,7 +117,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructFinger</defName>
+        <defName>ABF_BodyPart_Synstruct_Finger</defName>
         <label>finger</label>
         <hitPoints>8</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -141,7 +131,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructWaist</defName>
+        <defName>ABF_BodyPart_Synstruct_Waist</defName>
         <label>utility slot</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -153,7 +143,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructLeg</defName>
+        <defName>ABF_BodyPart_Synstruct_Leg</defName>
         <label>leg</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -166,7 +156,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructFoot</defName>
+        <defName>ABF_BodyPart_Synstruct_Foot</defName>
         <label>foot</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>

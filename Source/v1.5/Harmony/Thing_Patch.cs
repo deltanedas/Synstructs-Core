@@ -18,7 +18,7 @@ namespace ArtificialBeings
             // Player charge-capable synstructs (to avoid issues with foreign pawns not bringing enough food) have their ingested nutrition modified.
             if (SC_Utils.IsSynstruct(ingester) && SC_Utils.CanCharge(ingester) && ingester.Faction == Faction.OfPlayer)
             {
-                nutritionIngested *= ingester.GetStatValue(ABF_StatDefOf.ABF_NutritionalIntakeEfficiency);
+                nutritionIngested *= ingester.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_NutritionalIntakeEfficiency);
             }
         }
     }

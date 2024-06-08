@@ -3,7 +3,7 @@
 
     <!-- This Rulepackdef is what finds the txt files to be used in the later rulepacks -->
     <RulePackDef>
-        <defName>ABF_NameRules</defName>
+        <defName>ABF_RulePack_Synstruct_NameRulesBase</defName>
         <rulePack>
             <rulesFiles>
                 <li>ABF_Male->ABF_Names/SynstructMaleNames</li>
@@ -14,11 +14,11 @@
     </RulePackDef>
 
     <!-- This is the item that goes into the racedef's namegenerator
-        Example - <nameGenerator>ABF_Names_MaleSynstruct</nameGenerator> -->
+        Example - <nameGenerator>ABF_RulePack_Synstruct_NameRulesMale</nameGenerator> -->
     <RulePackDef>
-        <defName>ABF_Names_MaleSynstruct</defName>
+        <defName>ABF_RulePack_Synstruct_NameRulesMale</defName>
         <include>
-            <li>ABF_NameRules</li>
+            <li>ABF_RulePack_Synstruct_NameRulesBase</li>
         </include>
         <rulePack>
             <rulesStrings>
@@ -28,9 +28,9 @@
     </RulePackDef>
 
     <RulePackDef>
-        <defName>ABF_Names_FemaleSynstruct</defName>
+        <defName>ABF_RulePack_Synstruct_NameRulesFemale</defName>
         <include>
-            <li>ABF_NameRules</li>
+            <li>ABF_RulePack_Synstruct_NameRulesBase</li>
         </include>
         <rulePack>
             <rulesStrings>

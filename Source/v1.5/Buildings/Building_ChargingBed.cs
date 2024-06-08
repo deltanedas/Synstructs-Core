@@ -57,7 +57,7 @@ namespace ArtificialBeings
                 yield return new FloatMenuOption("ABF_ForceCharge".Translate(), delegate ()
                 {
                     myPawn.ownership.ClaimBedIfNonMedical(this);
-                    Job job = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(this));
+                    Job job = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(this));
                     if (Medical)
                     {
                         job.restUntilHealed = true;

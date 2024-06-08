@@ -38,7 +38,7 @@ namespace ArtificialBeings
             {
                 return false;
             }
-            ChoiceLetter_PersonalityShiftRequest choiceLetter = (ChoiceLetter_PersonalityShiftRequest)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_PersonalityShiftRequestLetter);
+            ChoiceLetter_PersonalityShiftRequest choiceLetter = (ChoiceLetter_PersonalityShiftRequest)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_Letter_Synstruct_PersonalityShiftRequest);
             choiceLetter.subject = pawn;
             choiceLetter.Label = "ABF_PersonalityShiftFreewilled".Translate();
             choiceLetter.Text = "ABF_PersonalityShiftFreewilledDesc".Translate(pawn);

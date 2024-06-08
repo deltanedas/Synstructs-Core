@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingCategoryDef>
-        <defName>ABF_BodyParts_Synstruct</defName>
+        <defName>ABF_ThingCategory_Synstruct_BodyParts</defName>
         <label>synstruct</label>
         <parent>BodyParts</parent>
     </ThingCategoryDef>

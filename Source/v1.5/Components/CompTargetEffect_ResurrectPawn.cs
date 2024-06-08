@@ -25,7 +25,7 @@ namespace ArtificialBeings
             // Only player controlled pawns that can reach the target can use the kit, and only on pawns in a valid state.
             if (user.Faction == Faction.OfPlayer && target is Corpse corpse && Props.validStates.Contains(ABF_Utils.PawnStateFor(corpse.InnerPawn)) && user.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly))
             {
-                Job job = JobMaker.MakeJob(ABF_JobDefOf.ABF_ResurrectArtificial, target, parent);
+                Job job = JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_ResurrectArtificial, target, parent);
                 job.count = 1;
                 user.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             }

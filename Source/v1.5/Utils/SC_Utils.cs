@@ -22,7 +22,7 @@ namespace ArtificialBeings
         /* === POWER UTILITIES === */
         public static bool CanCharge(Pawn pawn)
         {
-            return pawn.GetStatValue(ABF_StatDefOf.ABF_ChargingSpeed, cacheStaleAfterTicks: 10000) > 0;
+            return pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks: 10000) > 0;
         }
 
         // Locate the nearest available charging bed for the given pawn user, as carried by the given pawn carrier. Pawns may carry themselves here, if they are not downed.
@@ -71,8 +71,8 @@ namespace ArtificialBeings
             // Create the Blank pawn that will be used for all blank synstructs
             PawnGenerationRequest request = new PawnGenerationRequest(Faction.OfPlayer.def.basicMemberKind, null, PawnGenerationContext.PlayerStarter, canGeneratePawnRelations: false, forceNoIdeo: true, forceBaselinerChance: 1, colonistRelationChanceFactor: 0f, forceGenerateNewPawn: true, fixedGender: Gender.None);
             Pawn blankMechanical = PawnGenerator.GeneratePawn(request);
-            blankMechanical.story.Childhood = ABF_BackstoryDefOf.ABF_Synstruct_Childhood_Blank;
-            blankMechanical.story.Adulthood = ABF_BackstoryDefOf.ABF_Synstruct_Adulthood_Blank;
+            blankMechanical.story.Childhood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Childhood_Blank;
+            blankMechanical.story.Adulthood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Adulthood_Blank;
             blankMechanical.story.traits.allTraits.Clear();
             blankMechanical.skills.Notify_SkillDisablesChanged();
             blankMechanical.skills.skills.ForEach(delegate (SkillRecord record)
@@ -477,7 +477,7 @@ namespace ArtificialBeings
             for (int i = playerPawns.Count - 1; i >= 0; i--)
             {
                 Pawn pawn = playerPawns[i];
-                if (ABF_Utils.IsProgrammableDrone(pawn) && pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_DirectiveAmicability))
+                if (ABF_Utils.IsProgrammableDrone(pawn) && pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_Directive_Synstruct_Friend))
                 {
                     resultCount++;
                 }

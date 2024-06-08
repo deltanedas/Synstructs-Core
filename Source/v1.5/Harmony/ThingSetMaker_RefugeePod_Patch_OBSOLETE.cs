@@ -36,7 +36,7 @@ namespace ArtificialBeings
 
         //                if (ABF_Utils.IsConsideredMechanical(pawn))
         //                {
-        //                    pawn.health.AddHediff(ABF_HediffDefOf.ABF_Incapacitated);
+        //                    pawn.health.AddHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated);
         //                }
         //            }
         //        }

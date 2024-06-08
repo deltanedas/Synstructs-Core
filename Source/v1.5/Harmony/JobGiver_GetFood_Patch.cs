@@ -21,8 +21,8 @@ namespace ArtificialBeings
                     return true;
                 }
 
-                float nutritionalEfficiency = pawn.GetStatValue(ABF_StatDefOf.ABF_NutritionalIntakeEfficiency, cacheStaleAfterTicks: 1200);
-                float chargingEfficiency = pawn.GetStatValue(ABF_StatDefOf.ABF_ChargingSpeed, cacheStaleAfterTicks: 1200);
+                float nutritionalEfficiency = pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_NutritionalIntakeEfficiency, cacheStaleAfterTicks: 1200);
+                float chargingEfficiency = pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks: 1200);
 
                 // If the pawn can neither charge nor consume food, return no job and don't bother looking for food or a charging spot.
                 if (nutritionalEfficiency <= 0 && chargingEfficiency <= 0)
@@ -43,7 +43,7 @@ namespace ArtificialBeings
                 if (bed != null)
                 {
                     pawn.ownership.ClaimBedIfNonMedical(bed);
-                    __result = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(bed));
+                    __result = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(bed));
                     return false;
                 }
 
@@ -54,7 +54,7 @@ namespace ArtificialBeings
                     Building_ChargingStation station = (Building_ChargingStation)GenClosest.ClosestThingReachable(pawn.PositionHeld, pawn.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.Touch, TraverseParms.For(pawn), validator: building => building is Building_ChargingStation chargeStation && pawn.CanReach(chargeStation, PathEndMode.Touch, Danger.Some) && building.Position.InAllowedArea(pawn) && building.TryGetComp<CompPowerTrader>()?.PowerOn == true && chargeStation.GetOpenRechargeSpot(pawn) != IntVec3.Invalid);
                     if (station != null)
                     {
-                        __result = new Job(ABF_JobDefOf.ABF_GetRecharge, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
+                        __result = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
                         return false;
                     }
                 }

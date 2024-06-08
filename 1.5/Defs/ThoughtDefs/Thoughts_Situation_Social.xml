@@ -1,52 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!-- <ThoughtDef>
-        <defName>ABF_FeelingsTowardOrganics</defName>
-        <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ArtificialBeings.ThoughtWorker_FeelingsTowardOrganics</workerClass>
-        <validWhileDespawned>true</validWhileDespawned>
-        <stages>
-            <li>
-                <label>Adores organics</label>
-                <baseOpinionOffset>30</baseOpinionOffset>
-            </li>
-            <li>
-                <label>Respects organics</label>
-                <baseOpinionOffset>15</baseOpinionOffset>
-            </li>
-            <li>
-                <label>Disrespects organics</label>
-                <baseOpinionOffset>-15</baseOpinionOffset>
-            </li>
-            <li>
-                <label>Hates organics</label>
-                <baseOpinionOffset>-30</baseOpinionOffset>
-            </li>
-        </stages>
-    </ThoughtDef> -->
-
     <ThoughtDef>
-        <defName>ABF_AutomodulatedVoiceSynthesizer</defName>
+        <defName>ABF_Thought_Synstruct_InduciveVocalizer</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>ArtificialBeings.ThoughtWorker_ModulatedVoiceSynthesizer</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
-                <label>Sonorous voice</label>
+                <label>sonorous voice</label>
                 <baseOpinionOffset>10</baseOpinionOffset>
             </li>
         </stages>
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_CoerciveVoiceSynthesizer</defName>
+        <defName>ABF_Thought_Synstruct_CoerciveVocalizer</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
         <workerClass>ArtificialBeings.ThoughtWorker_CoerciveVoiceSynthesizer</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
-                <label>Threatening voice</label>
+                <label>threatening voice</label>
                 <baseOpinionOffset>-10</baseOpinionOffset>
             </li>
         </stages>

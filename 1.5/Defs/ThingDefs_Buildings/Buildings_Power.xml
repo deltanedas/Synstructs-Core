@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef Name="ABF_ChargingStationBase" ParentName="BuildingBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_ChargingStationBase" ParentName="BuildingBase" Abstract="True">
         <altitudeLayer>Building</altitudeLayer>
         <thingClass>ArtificialBeings.Building_ChargingStation</thingClass>
         <selectable>true</selectable>
@@ -37,8 +37,8 @@
         <hasInteractionCell>false</hasInteractionCell>
     </ThingDef>
 
-    <ThingDef ParentName="ABF_ChargingStationBase">
-        <defName>ABF_ChargingStation</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_ChargingStationBase">
+        <defName>ABF_Thing_Synstruct_ChargingStation</defName>
         <label>charging station</label>
         <description>A station built to charge up to 8 adjacent pawns simultaneously.</description>
         <graphicData>
@@ -76,7 +76,7 @@
 
     <!-- Bedside Charger -->
     <ThingDef ParentName="BuildingBase">
-        <defName>ABF_BedsideChargerFacility</defName>
+        <defName>ABF_Thing_Synstruct_BedsideCharger</defName>
         <label>bedside charger</label>
         <description>A bedside device that allows the occupant of the linked bed to charge. It provides energy while in bed, but consumes a lot of power to do so. It must be placed directly adjacent to and facing the head of the bed.</description>
         <graphicData>
@@ -143,7 +143,7 @@
 
     <!-- Charging Pods -->
 
-    <ThingDef Name="ABF_ChargingPodBase" ParentName="BedWithQualityBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_ChargingPodBase" ParentName="BedWithQualityBase" Abstract="True">
         <thingClass>ArtificialBeings.Building_ChargingBed</thingClass>
         <graphicData>
             <texPath>Things/Buildings/ChargingPod/ChargingPod</texPath>
@@ -159,8 +159,8 @@
             <WorkToBuild>2800</WorkToBuild>
             <Mass>45</Mass>
             <Flammability>0.4</Flammability>
-            <ABF_ArtificialSurgerySuccessChanceFactor>1.05</ABF_ArtificialSurgerySuccessChanceFactor>
-            <ABF_ArtificialTendQualityOffset>0.1</ABF_ArtificialTendQualityOffset>
+            <ABF_Stat_Artificial_SurgerySuccessChanceFactor>1.05</ABF_Stat_Artificial_SurgerySuccessChanceFactor>
+            <ABF_Stat_Artificial_TendQualityOffset>0.1</ABF_Stat_Artificial_TendQualityOffset>
             <BedRestEffectiveness>1.1</BedRestEffectiveness>
             <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
             <Comfort>0.5</Comfort>
@@ -211,8 +211,8 @@
     </ThingDef>
 
 
-    <ThingDef ParentName="ABF_ChargingPodBase">
-	    <defName>ABF_ChargingPod</defName>
+    <ThingDef ParentName="ABF_Thing_Synstruct_ChargingPodBase">
+	    <defName>ABF_Thing_Synstruct_ChargingPod</defName>
         <label>charging pod</label>
         <description>A simple charging pod that can charge synstructs. It is not designed for comfort.</description>
 	    <costList>

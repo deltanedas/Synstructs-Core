@@ -34,7 +34,7 @@ namespace ArtificialBeings
             // Returns true if the pawn is not charge capable or is not currently charging.
             private static bool NeedsFood(bool eatsFood, Pawn pawn)
             {
-                return eatsFood && (!SC_Utils.CanCharge(pawn) || pawn.CurJob.def != ABF_JobDefOf.ABF_GetRecharge);
+                return eatsFood && (!SC_Utils.CanCharge(pawn) || pawn.CurJob.def != ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf);
             }
         }
     }

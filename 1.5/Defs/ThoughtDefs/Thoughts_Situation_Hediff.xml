@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ABF_ChronicAnnoyance</defName>
+        <defName>ABF_Thought_Synstruct_Coherence_ChronicAnnoyance</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_ChronicAnnoyance</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -34,7 +34,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_RustedPart</defName>
+        <defName>ABF_Thought_Synstruct_Coherence_RustedPart</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_RustedPart</workerClass>
         <nullifyingTraits>
             <li>Ascetic</li>
@@ -51,12 +51,12 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_VisualAbberrationsThought</defName>
+        <defName>ABF_Thought_Synstruct_Coherence_OpticalAberrations</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>ABF_OpticalDriverAbberrations</hediff>
+		<hediff>ABF_Hediff_Synstruct_Coherence_OpticalDriverAberrations</hediff>
         <stages>
             <li>
-                <label>visual abberrations</label>
+                <label>optical abberrations</label>
                 <description>My visual sensors are providing false information and interpretations. I can't tell what is real or not. This is extremely frustrating!</description>
                 <baseMoodEffect>-6</baseMoodEffect>
             </li>
@@ -65,9 +65,9 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_OverclockedThought</defName>
+        <defName>ABF_Thought_Synstruct_Overclocking</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>ABF_SynstructOverclocking</hediff>
+		<hediff>ABF_Hediff_Synstruct_Overclocking</hediff>
         <stages>
             <li>
                 <label>overclocked</label>

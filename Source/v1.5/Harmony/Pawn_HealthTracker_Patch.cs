@@ -17,7 +17,7 @@ namespace ArtificialBeings
                 // Pawns that should detonate on incapacitation die on being downed. Drones with the Martyrdom Directive also die on being downed.
                 if (___pawn.def.HasModExtension<ABF_DetonateOnIncapacitation>()
                     || (ABF_Utils.IsProgrammableDrone(___pawn) && ___pawn.Faction != Faction.OfPlayerSilentFail
-                    && ___pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_DirectiveMartyrdom)))
+                    && ___pawn.GetComp<CompArtificialPawn>().ActiveDirectives.Contains(ABF_DirectiveDefOf.ABF_Directive_Synstruct_Martyr)))
                 {
                     ___pawn.Kill(dinfo, hediff);
                     return false;

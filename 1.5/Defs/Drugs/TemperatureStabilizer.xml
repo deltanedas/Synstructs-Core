@@ -2,8 +2,8 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ABF_TemperatureStabilizer</defName>
-		<label>synstruct temperature stabilizer</label>
+		<defName>ABF_Thing_Synstruct_ThermalPill</defName>
+		<label>thermal pill</label>
 		<description>A synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - on both extremes. Organics will suffer severe toxic effects if they consume this.</description>
 		<graphicData>
 			<texPath>Things/Drugs/TemperatureStabilizer</texPath>
@@ -24,9 +24,9 @@
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
 				<li Class="ArtificialBeings.IngestionOutcomeDoer_SplitEffects">
-					<organicEffect>ABF_Toxicated</organicEffect>
+					<organicEffect>ABF_Hediff_Synstruct_Toxicated</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<artificialEffect>ABF_TemperatureStabilizer</artificialEffect>
+					<artificialEffect>ABF_Hediff_Synstruct_ThermalPill</artificialEffect>
 					<artificialSeverity>1</artificialSeverity>
 				</li>
 			</outcomeDoers>
@@ -49,7 +49,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ABF_Toxicated</defName>
+		<defName>ABF_Hediff_Synstruct_Toxicated</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>toxicated</label>
 		<description>Toxic synthetic compounds within the bloodstream, causing severe health complications.</description>
@@ -66,12 +66,12 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Insignificant</label>
+				<label>insignificant</label>
 				<becomeVisible>false</becomeVisible>
 			</li>
 			<li>
 				<minSeverity>0.1</minSeverity>
-				<label>Minor</label>
+				<label>minor</label>
 				<painOffset>0.1</painOffset>
 				<capMods>
 					<li>
@@ -87,7 +87,7 @@
 
 			<li>
 				<minSeverity>0.25</minSeverity>
-				<label>Moderate</label>
+				<label>moderate</label>
 				<painOffset>0.15</painOffset>
 				<capMods>
 					<li>
@@ -107,7 +107,7 @@
 
 			<li>
 				<minSeverity>0.5</minSeverity>
-				<label>Major</label>
+				<label>significant</label>
 				<painOffset>0.2</painOffset>
 				<vomitMtbDays>1.5</vomitMtbDays>
 				<capMods>
@@ -128,7 +128,7 @@
 
 			<li>
 				<minSeverity>0.7</minSeverity>
-				<label>Systemic</label>
+				<label>extreme</label>
 				<painOffset>0.35</painOffset>
 				<vomitMtbDays>0.5</vomitMtbDays>
 				<capMods>
@@ -150,7 +150,7 @@
 	</HediffDef>
 
 	<HediffDef>
-		<defName>ABF_TemperatureStabilizer</defName>
+		<defName>ABF_Hediff_Synstruct_ThermalPill</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>chassis temperature stabilizer</label>
 		<description>Synthetic chemical compounds designed to reduce chassis susceptibility to adverse temperature - positive and negative - are flowing through the chassis.</description>
@@ -166,13 +166,13 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Insignificant</label>
+				<label>insignificant</label>
 				<becomeVisible>false</becomeVisible>
 			</li>
 
 			<li>
 				<minSeverity>0.1</minSeverity>
-				<label>Minor</label>
+				<label>minor</label>
 				<statOffsets>
 					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
 					<ComfyTemperatureMax>10</ComfyTemperatureMax>
@@ -181,7 +181,7 @@
 
 			<li>
 				<minSeverity>0.25</minSeverity>
-				<label>Moderate</label>
+				<label>moderate</label>
 				<statOffsets>
 					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
 					<ComfyTemperatureMax>20</ComfyTemperatureMax>
@@ -190,7 +190,7 @@
 
 			<li>
 				<minSeverity>0.5</minSeverity>
-				<label>Significant</label>
+				<label>significant</label>
 				<statOffsets>
 					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 					<ComfyTemperatureMax>30</ComfyTemperatureMax>
@@ -199,7 +199,7 @@
 
 			<li>
 				<minSeverity>0.8</minSeverity>
-				<label>Peak</label>
+				<label>peak</label>
 				<statOffsets>
 					<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 					<ComfyTemperatureMax>40</ComfyTemperatureMax>

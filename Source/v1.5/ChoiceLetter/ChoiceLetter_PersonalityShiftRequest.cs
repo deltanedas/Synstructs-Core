@@ -23,19 +23,19 @@ namespace ArtificialBeings
                 DiaOption optionReject = new DiaOption("RejectLetter".Translate());
                 diaOption.action = delegate
                 {
-                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_PersonalityShiftLetter);
+                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_Letter_Synstruct_PersonalityShift);
                     choiceLetter.ConfigureChoiceLetter(subject, 3, 3, true, true);
                     choiceLetter.Label = "ABF_PersonalityShiftRequest".Translate(subject);
                     choiceLetter.StartTimeout(2500);
                     Find.LetterStack.ReceiveLetter(choiceLetter);
                     Find.LetterStack.RemoveLetter(this);
-                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ABF_ThoughtDefOf.ABF_PersonalityShiftAllowed);
+                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ABF_ThoughtDefOf.ABF_Thought_Synstruct_PersonalityShiftAllowed);
                 };
                 diaOption.resolveTree = true;
                 optionReject.action = delegate
                 {
                     Find.LetterStack.RemoveLetter(this);
-                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ABF_ThoughtDefOf.ABF_PersonalityShiftDenied);
+                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ABF_ThoughtDefOf.ABF_Thought_Synstruct_PersonalityShiftDenied);
                 };
                 optionReject.resolveTree = true;
                 yield return diaOption;

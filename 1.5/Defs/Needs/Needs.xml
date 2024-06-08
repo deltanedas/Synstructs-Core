@@ -2,7 +2,7 @@
 <Defs>
 
     <NeedDef>
-        <defName>ABF_Coolant</defName>
+        <defName>ABF_Need_Synstruct_Coolant</defName>
         <needClass>ArtificialBeings.Need_Artificial</needClass>
         <label>coolant</label>
         <description>Coolant is the amount of reserve coolant a pawn currently retains. If it is at zero, the pawn will swiftly shut down and become incapacitated.</description>
@@ -13,7 +13,7 @@
         <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
         <modExtensions>
             <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
-                <hediffToApplyOnEmpty>ABF_CoolantShortage</hediffToApplyOnEmpty>
+                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_CoolantShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>1</hediffRisePerDay>
                 <hediffFallPerDay>0.25</hediffFallPerDay>
             </li>
@@ -21,7 +21,7 @@
     </NeedDef>
 
     <NeedDef>
-        <defName>ABF_Lubricant</defName>
+        <defName>ABF_Need_Synstruct_Lubricant</defName>
         <needClass>ArtificialBeings.Need_Artificial</needClass>
         <label>lubricant</label>
         <description>Lubricant is the amount of reserve lubricant a pawn currently retains. If it is at zero, the pawn will lose coherence, manipulation, and moving efficiency.</description>
@@ -32,7 +32,7 @@
         <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
         <modExtensions>
             <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
-                <hediffToApplyOnEmpty>ABF_LubricantShortage</hediffToApplyOnEmpty>
+                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_LubricantShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>0.1</hediffRisePerDay>
                 <hediffFallPerDay>0.5</hediffFallPerDay>
             </li>

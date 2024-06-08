@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef ParentName="BuildingBase">
-        <defName>ABF_CoherenceSpot</defName>
+        <defName>ABF_Thing_Synstruct_CoherenceSpot</defName>
         <label>coherence spot</label>
         <description>Designates a spot for coherence. Synstructs will prefer to build coherence here, and can be assigned to specific pawns.</description>
         <graphicData>

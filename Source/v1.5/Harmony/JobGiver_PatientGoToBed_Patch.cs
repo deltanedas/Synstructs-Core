@@ -17,7 +17,7 @@ namespace ArtificialBeings
                 if (__result == null || __result.targetA.Thing.TryGetComp<CompPowerTrader>() == null || !SC_Utils.CanCharge(pawn))
                     return;
 
-                __result = JobMaker.MakeJob(ABF_JobDefOf.ABF_GetRecharge, __result.targetA.Thing);
+                __result = JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, __result.targetA.Thing);
             }
         }
     }

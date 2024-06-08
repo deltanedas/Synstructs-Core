@@ -37,9 +37,9 @@ namespace ArtificialBeings
             }
 
             // If the pawn is currently urgently rebuilding coherence and is not at their target level, continue building coherence.
-            if (pawn.CurJobDef == ABF_JobDefOf.ABF_BuildCoherenceUrgent && compCoherenceNeed.TargetCoherenceLevel > compCoherenceNeed.CoherenceLevel)
+            if (pawn.CurJobDef == ABF_JobDefOf.ABF_Job_Synstruct_BuildCoherenceUrgently && compCoherenceNeed.TargetCoherenceLevel > compCoherenceNeed.CoherenceLevel)
             {
-                return JobMaker.MakeJob(ABF_JobDefOf.ABF_BuildCoherenceUrgent, pawn.Position, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(pawn.Position));
+                return JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_BuildCoherenceUrgently, pawn.Position, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(pawn.Position));
             }
 
             // Urgent coherence building is otherwise skipped if it is less than 30% away from the target level and above Poor.
@@ -52,7 +52,7 @@ namespace ArtificialBeings
             LocalTargetInfo coherenceSpot = CoherenceUtility.FindCoherenceSpot(pawn);
             if (coherenceSpot.IsValid)
             {
-                return JobMaker.MakeJob(ABF_JobDefOf.ABF_BuildCoherenceUrgent, coherenceSpot.Cell, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(coherenceSpot.Cell));
+                return JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_BuildCoherenceUrgently, coherenceSpot.Cell, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(coherenceSpot.Cell));
             }
             return null;
         }

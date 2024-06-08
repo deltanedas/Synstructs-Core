@@ -43,7 +43,7 @@ namespace ArtificialBeings
                         ___pawn.Position = RestUtility.GetBedSleepingSlotPosFor(___pawn, bed);
                         ___pawn.Notify_Teleported(endCurrentJob: false);
                         ___pawn.stances.CancelBusyStanceHard();
-                        __instance.StartJob(JobMaker.MakeJob(ABF_JobDefOf.ABF_GetRecharge, bed), JobCondition.InterruptForced, tag: JobTag.TuckedIntoBed);
+                        __instance.StartJob(JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, bed), JobCondition.InterruptForced, tag: JobTag.TuckedIntoBed);
                         return false;
                     }
                 }

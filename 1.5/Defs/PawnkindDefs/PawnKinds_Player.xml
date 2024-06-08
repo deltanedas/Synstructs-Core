@@ -3,7 +3,7 @@
 
     <!-- Newboot pawns are blank synstructs -->
 
-    <PawnKindDef Name="ABF_PlayerPawnKindBase_Synstruct_Newboot" ParentName="BasePlayerPawnKind" Abstract="True">
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_NewbootBase" ParentName="BasePlayerPawnKind" Abstract="True">
         <label>synstruct colonist</label>
         <defaultFactionType>PlayerColony</defaultFactionType>
 		<backstoryFiltersOverride>
@@ -26,7 +26,7 @@
 
 	<!-- Refugee pawns are sapient synstructs -->
 
-    <PawnKindDef Name="ABF_PlayerPawnKindBase_Synstruct_Refugee" ParentName="BasePlayerPawnKind" Abstract="True">
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_RefugeeBase" ParentName="BasePlayerPawnKind" Abstract="True">
         <label>synstruct colonist</label>
         <defaultFactionType>PlayerColony</defaultFactionType>
 		<minGenerationAge>20</minGenerationAge>

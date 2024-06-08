@@ -30,10 +30,10 @@ namespace ArtificialBeings
             personality.story.Childhood = synstructExtension?.sapientChildhoodBackstoryDef;
             personality.story.Adulthood = synstructExtension?.sapientAdulthoodBackstoryDef;
             SC_Utils.Duplicate(personality, pawn, false);
-            Hediff rebootHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Incapacitated);
+            Hediff rebootHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated);
             if (rebootHediff == null)
             {
-                rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Incapacitated, pawn, null);
+                rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated, pawn, null);
                 pawn.health.AddHediff(rebootHediff);
             }
             rebootHediff.Severity = 1;
@@ -41,7 +41,7 @@ namespace ArtificialBeings
             // Allow the player to pick a few passions and a trait for the new synstruct, akin to child growth moments in Biotech.
             if (ModLister.BiotechInstalled)
             {
-                ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_PersonalityShiftLetter);
+                ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ABF_LetterDefOf.ABF_Letter_Synstruct_PersonalityShift);
                 choiceLetter.ConfigureChoiceLetter(pawn, 3, 3, false, false);
                 choiceLetter.Label = "ABF_PersonalityShiftNewboot".Translate();
                 choiceLetter.disappearAtTick = Find.TickManager.TicksGame;

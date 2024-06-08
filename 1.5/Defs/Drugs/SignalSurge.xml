@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ABF_SignalSurge</defName>
+		<defName>ABF_Thing_Synstruct_SignalSurge</defName>
 		<label>signal surge</label>
 		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds. Synstructs can absorb these materials into their sensor and data-transfer networks to greatly enhance control over their chassis until the compounds break down into harmless detritus. The substances are highly toxic for organic life, and should not be consumed by them.</description>
 		<graphicData>
@@ -24,9 +24,9 @@
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
 				<li Class="ArtificialBeings.IngestionOutcomeDoer_SplitEffects">
-					<organicEffect>ABF_Toxicated</organicEffect>
+					<organicEffect>ABF_Hediff_Synstruct_Toxicated</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<artificialEffect>ABF_SignalSurge</artificialEffect>
+					<artificialEffect>ABF_Hediff_Synstruct_SignalSurge</artificialEffect>
 					<artificialSeverity>1</artificialSeverity>
 				</li>
 			</outcomeDoers>
@@ -50,7 +50,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ABF_SignalSurge</defName>
+		<defName>ABF_Hediff_Synstruct_SignalSurge</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>signal surge</label>
 		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds is surging through the sensor and control networks of the chassis, greatly improving information flow. Until it wears off, the unit will benefit from a minor consciousness boost.</description>
@@ -67,13 +67,13 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Insignificant</label>
+				<label>insignificant</label>
 				<becomeVisible>false</becomeVisible>
 			</li>
 
 			<li>
 				<minSeverity>0.1</minSeverity>
-				<label>Minor</label>
+				<label>minor</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -83,7 +83,7 @@
 			</li>
 			<li>
 				<minSeverity>0.25</minSeverity>
-				<label>Moderate</label>
+				<label>moderate</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -93,7 +93,7 @@
 			</li>
 			<li>
 				<minSeverity>0.6</minSeverity>
-				<label>Significant</label>
+				<label>significant</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -103,7 +103,7 @@
 			</li>
 			<li>
 				<minSeverity>0.8</minSeverity>
-				<label>Peak</label>
+				<label>peak</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>

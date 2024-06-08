@@ -2,7 +2,7 @@
 <Defs>
 
     <MentalStateDef ParentName="BaseMentalState">
-        <defName>ABF_MentalState_Exterminator</defName>
+        <defName>ABF_MentalState_Synstruct_Exterminator</defName>
         <stateClass>ArtificialBeings.MentalState_Exterminator</stateClass>
         <label>seeking targets</label>
         <category>Aggro</category>
@@ -16,17 +16,17 @@
     </MentalStateDef>
 
     <MentalStateDef ParentName="BaseMentalState">
-          <defName>ABF_DirectiveBerserker</defName>
-          <stateClass>ArtificialBeings.MentalState_DirectiveBerserker</stateClass>
-          <label>berserk directives</label>
-          <category>Aggro</category>
-          <blockRandomInteraction>true</blockRandomInteraction>
-          <nameColor>(0.9,0.2,0.5)</nameColor>
-          <recoveryMessage>{0}'s berserk directives have terminated.</recoveryMessage>
-          <baseInspectLine>Mental state: Berserk directives</baseInspectLine>
-          <recoverFromSleep>true</recoverFromSleep>
-          <inCaravanCanDo>false</inCaravanCanDo>
-          <blocksDefendAndExpandHive>true</blocksDefendAndExpandHive>
+        <defName>ABF_MentalState_Synstruct_Directive_Berserker</defName>
+        <stateClass>ArtificialBeings.MentalState_DirectiveBerserker</stateClass>
+        <label>berserk directives</label>
+        <category>Aggro</category>
+        <blockRandomInteraction>true</blockRandomInteraction>
+        <nameColor>(0.9,0.2,0.5)</nameColor>
+        <recoveryMessage>{0}'s berserk directives have terminated.</recoveryMessage>
+        <baseInspectLine>Mental state: Berserk directives</baseInspectLine>
+        <recoverFromSleep>true</recoverFromSleep>
+        <inCaravanCanDo>false</inCaravanCanDo>
+        <blocksDefendAndExpandHive>true</blocksDefendAndExpandHive>
     </MentalStateDef>
 
 </Defs>

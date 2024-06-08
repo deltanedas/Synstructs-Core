@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ABF_CoherenceMood_Masochist</defName>
+        <defName>ABF_Thought_Synstruct_CoherenceMood_Masochist</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_CoherenceMood</workerClass>
         <requiredTraits>
           <li>Masochist</li>
@@ -50,7 +50,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_CoherenceMood_Greedy</defName>
+        <defName>ABF_Thought_Synstruct_CoherenceMood_Demanding</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_CoherenceMood</workerClass>
         <requiredTraits>
           <li>Greedy</li>
@@ -99,7 +99,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ABF_CoherenceMood_Ascetic</defName>
+        <defName>ABF_Thought_Synstruct_CoherenceMood_Ascetic</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_CoherenceMood</workerClass>
         <requiredTraits>
           <li>Ascetic</li>

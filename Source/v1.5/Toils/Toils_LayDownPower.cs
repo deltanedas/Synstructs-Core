@@ -8,9 +8,9 @@ namespace ArtificialBeings
     {
         private const int TicksBetweenFlecks = 200;
 
-        private static readonly FleckDef fullChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_FullChargeFleck");
-        private static readonly FleckDef halfChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_HalfChargeFleck");
-        private static readonly FleckDef emptyChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_EmptyChargeFleck");
+        private static readonly FleckDef fullChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_Fleck_Synstruct_FullCharge");
+        private static readonly FleckDef halfChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_Fleck_Synstruct_HalfCharge");
+        private static readonly FleckDef emptyChargeFleck = DefDatabase<FleckDef>.GetNamed("ABF_Fleck_Synstruct_EmptyCharge");
 
         public static Toil LayDown(TargetIndex chargingBuilding, bool hasBed, bool lookForOtherJobs = true, bool canSleep = true)
         {
@@ -194,7 +194,7 @@ namespace ArtificialBeings
                     // Recache this value relatively frequently or calculate it if it is illegal.
                     if (actor.IsHashIntervalTick(120) || chargeRate < 0)
                     {
-                        chargeRate = 0.0001f * actor.GetStatValue(ABF_StatDefOf.ABF_ChargingSpeed, cacheStaleAfterTicks: 120);
+                        chargeRate = 0.0001f * actor.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks: 120);
                         if (chargeRate > 0)
                         {
                             // Beds get charging effectiveness from their BedRestEffectiveness stat.

@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef ParentName="BenchBase">
-        <defName>ABF_SynstructCradle</defName>
+        <defName>ABF_Thing_Synstruct_Cradle</defName>
         <label>synstruct cradle</label>
         <thingClass>Building_WorkTable</thingClass>
         <description>A specialized workbench that holds the chassis and frame of a synstruct in place while they are under construction. Many synstructs hold fond opinions of these workbenches, regarding them almost like a wellspring of life.</description>
@@ -71,7 +71,7 @@
     </ThingDef>
 
     <ThingDef ParentName="BenchBase">
-        <defName>ABF_SynstructPartWorkbench</defName>
+        <defName>ABF_Thing_Synstruct_PartWorkbench</defName>
         <label>synstruct parts workbench</label>
         <thingClass>Building_WorkTable</thingClass>
         <description>A workbench that holds all equipment needed to make a variety of synstruct parts.</description>

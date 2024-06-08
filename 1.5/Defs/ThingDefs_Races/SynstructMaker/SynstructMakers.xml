@@ -4,7 +4,7 @@
     <!-- Unfinished Thing for synstruct production being paused without losing progress -->
 
     <ThingDef ParentName="UnfinishedBase">
-        <defName>ABF_UnfinishedSynstruct</defName>
+        <defName>ABF_Thing_Synstruct_UnfinishedSynstruct</defName>
         <label>unfinished synstruct</label>
         <graphicData>
             <texPath>Things/Items/UnfinishedSynstruct</texPath>
@@ -14,7 +14,7 @@
         <stuffCategories Inherit="False" />
     </ThingDef>
 
-    <ThingDef Name="ABF_GeneratorBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_Generator_Base" Abstract="True">
         <thingClass>ThingWithComps</thingClass>
         <graphicData>
             <texPath>Things/NullImage</texPath>
@@ -23,19 +23,19 @@
         <tickerType>Normal</tickerType>
     </ThingDef>
 
-    <ThingDef Name="ABF_MakeableGeneratorBase" ParentName="ABF_GeneratorBase" Abstract="True">
+    <ThingDef Name="ABF_Thing_Synstruct_Generator_MakeableBase" ParentName="ABF_Thing_Synstruct_Generator_Base" Abstract="True">
         <recipeMaker>
-            <unfinishedThingDef>ABF_UnfinishedSynstruct</unfinishedThingDef>
+            <unfinishedThingDef>ABF_Thing_Synstruct_UnfinishedSynstruct</unfinishedThingDef>
             <workAmount>16500</workAmount>
             <workSkill>Crafting</workSkill>
             <effectWorking>Repair</effectWorking>
             <soundWorking>Recipe_Machining</soundWorking>
-            <workSpeedStat>ABF_ArtificialOperationSpeed</workSpeedStat>
+            <workSpeedStat>ABF_Stat_Artificial_OperationSpeed</workSpeedStat>
             <skillRequirements>
                 <Crafting>6</Crafting>
             </skillRequirements>
             <recipeUsers>
-                <li>ABF_SynstructCradle</li>
+                <li>ABF_Thing_Synstruct_Cradle</li>
             </recipeUsers>
         </recipeMaker>
     </ThingDef>

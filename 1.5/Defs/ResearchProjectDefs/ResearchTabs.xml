@@ -2,8 +2,8 @@
 <Defs>
 
 	<ResearchTabDef>
-		<defName>ABF_SynstructResearch</defName>
-		<label>Synstructs</label>
+		<defName>ABF_ResearchTab_Synstruct_Primary</defName>
+		<label>synstructs</label>
 	</ResearchTabDef>
 
 </Defs>

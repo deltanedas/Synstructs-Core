@@ -2,7 +2,7 @@
 <Defs>
 
     <BodyPartDef>
-        <defName>ABF_CoreIntelligence</defName>
+        <defName>ABF_BodyPart_Synstruct_Core</defName>
         <label>core</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -15,8 +15,8 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_InternalCorePump</defName>
-        <label>Coolant Pump</label>
+        <defName>ABF_BodyPart_Synstruct_CoolantPump</defName>
+        <label>coolant Pump</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
@@ -28,8 +28,8 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_SynstructHeatsink</defName>
-        <label>Heatsink</label>
+        <defName>ABF_BodyPart_Synstruct_Heatsink</defName>
+        <label>heatsink</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
@@ -41,8 +41,8 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_InternalBattery</defName>
-        <label>Battery</label>
+        <defName>ABF_BodyPart_Synstruct_Battery</defName>
+        <label>battery</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
@@ -54,8 +54,8 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ABF_InternalGenerator</defName>
-        <label>Generator</label>
+        <defName>ABF_BodyPart_Synstruct_Generator</defName>
+        <label>generator</label>
         <hitPoints>25</hitPoints>
         <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
