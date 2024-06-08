@@ -28,6 +28,7 @@
             <li>ABF_ResearchProject_Synstruct_Infrastructure</li>
         </prerequisites>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <discoveredLetterText>Synstructs may be repaired overtime with repair stims or far more swiftly with part packs. Part packs can be assembled at the machining table, synstruct cradle, or in bulk at the parts workbench. They restore missing body parts and can restore many injuries to a synstruct at once, regardless of where the injury is. Fallen synstructs may be restored via restruct kits, created at the parts workbench.\n\nSynstructs can be enhanced by swapping out their chassis and frame. They may have one of each upgrade at a time, greatly improving their capability in a particular role. Chassis upgrades are lost if the synstruct is killed, while frame upgrades are lost if the synstruct sustains too much damage or is killed.</discoveredLetterText>
 		<researchViewX>1</researchViewX>
 		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>

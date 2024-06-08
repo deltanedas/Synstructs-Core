@@ -52,7 +52,7 @@
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
-        <discoveredLetterText>Core Assistants are powerful implants that can be installed into any non-biomimetic synstruct to enhance their capabilities. Create them at a parts workbench, and install them using repair stims. Due to limited space in the core, each synstruct may have exactly one core assistant at a time.This enhancement will be lost if the core itself is ever destroyed.</discoveredLetterText>
+        <discoveredLetterText>Core Assistants are powerful implants that can be installed into any non-biomimetic synstruct to enhance their capabilities. Create them at a parts workbench, and install them using repair stims. Due to limited space in the core, each synstruct may have exactly one core assistant at a time. This enhancement will be lost if the pawn dies due to their core being destroyed.</discoveredLetterText>
     </ResearchProjectDef>
 
 </Defs>
