@@ -7,7 +7,7 @@
 		<defName>ABF_Backstory_Synstruct_Childhood_GenericDrone</defName>
 		<title>drone</title>
 		<titleShort>drone</titleShort>
-		<baseDesc>Drone "childhoods" are as uninteresting as they are often forgotten. Many creators don't bother marking the moment of awakening, and no drone knows {PAWN_possessive} own history.</baseDesc>
+		<baseDesc>Drone "childhoods" are as uninteresting as they are often forgotten. Many creators don't bother marking the moment of awakening, and no drone knows its own history.</baseDesc>
 		<slot>Childhood</slot>
 		<spawnCategories>
 			<li>ABF_GenericDrone</li>

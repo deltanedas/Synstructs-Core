@@ -19,7 +19,7 @@
         <defName>ABF_Backstory_Synstruct_Adulthood_Blank</defName>
         <title>blank</title>
 		<titleShort>unit</titleShort>
-		<baseDesc>This unit has neither intelligence nor memory. {PAWN_objective} is entirely devoid of character and utility.</baseDesc>
+		<baseDesc>This unit has neither intelligence nor memory. {PAWN_pronoun} is entirely devoid of character and utility.</baseDesc>
 		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>ABF_Synstruct_Blank</li>
