@@ -38,6 +38,10 @@ namespace ArtificialBeings
             // Pawns may sometimes spawn with apparel somewhere in the generation process. Ensure they don't actually spawn with any - if they even can have apparel.
             pawn.apparel?.DestroyAll();
 
+            if (Props.hediffOnSpawn != null)
+            {
+                pawn.health.AddHediff(Props.hediffOnSpawn);
+            }
             GenSpawn.Spawn(pawn, parent.Position, parent.Map);
             if (pawn.Faction == Faction.OfPlayer)
             {
