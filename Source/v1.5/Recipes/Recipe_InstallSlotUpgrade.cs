@@ -14,6 +14,27 @@ namespace ArtificialBeings
             return base.AvailableOnNow(thing, part) && thing is Pawn pawn && !pawn.health.hediffSet.hediffs.Any(hediff => hediff.def.hediffClass == recipe.addsHediff?.hediffClass);
         }
 
+        public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)
+        {
+            if (recipe.targetsBodyPart)
+            {
+                foreach (BodyPartRecord bodyPartRecord in pawn.health.hediffSet.GetNotMissingParts())
+                {
+                    if (recipe.appliedOnFixedBodyParts.Contains(bodyPartRecord.def))
+                    {
+                        yield return bodyPartRecord;
+                    }
+                }
+            }
+            else
+            {
+                foreach (BodyPartRecord bodyPartRecord in base.GetPartsToApplyOn(pawn, recipe))
+                {
+                    yield return bodyPartRecord;
+                }
+            }
+        }
+
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
