@@ -2,6 +2,7 @@
 using System.Reflection;
 using Verse;
 using System.Collections.Generic;
+using RimWorld;
 
 namespace ArtificialBeings
 {
@@ -19,13 +20,22 @@ namespace ArtificialBeings
     {
         static SynstructsCore_PostInit()
         {
-            // Must dynamically modify some ThingDefs based on certain qualifications.
+            CompProperties_Facility bedsideChargerLinkables = ABF_ThingDefOf.ABF_Thing_Synstruct_BedsideCharger.GetCompProperties<CompProperties_Facility>();
+
+            // Dynamically modify some ThingDefs based on certain qualifications.
             foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefsListForReading)
             {
                 // Check race to see if the thingDef is for a Pawn.
                 if (thingDef.race != null && thingDef.HasModExtension<ABF_SynstructExtension>())
                 {
                     SC_Utils.cachedSynstructs.Add(thingDef);
+                }
+
+                // Beds that accept linkables should have the bedside charger added as a linkable.
+                if (thingDef.IsBed && thingDef.GetCompProperties<CompProperties_AffectedByFacilities>() is CompProperties_AffectedByFacilities linkable)
+                {
+                    linkable.linkableFacilities.Add(ABF_ThingDefOf.ABF_Thing_Synstruct_BedsideCharger);
+                    bedsideChargerLinkables.linkableBuildings.Add(thingDef);
                 }
             }
 

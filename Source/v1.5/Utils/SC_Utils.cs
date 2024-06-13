@@ -34,7 +34,7 @@ namespace ArtificialBeings
             // Downed pawns in beds may count their current bed as a charging bed if it is charge-capable.
             if (user.Downed && user == carrier && user.CurrentBed() is Building_Bed bed)
             {
-                if (RestUtility.IsValidBedFor(bed, user, carrier, true) && ((bed.GetComp<CompPawnCharger>() != null && (bed.GetComp<CompPowerTrader>()?.PowerOn ?? false)) || (bed.GetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.TryGetComp<CompPawnCharger>() != null && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false)))
+                if (RestUtility.IsValidBedFor(bed, user, carrier, true) && (bed.GetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false))
                 {
                     return bed;
                 }
@@ -48,13 +48,13 @@ namespace ArtificialBeings
             if (user.ownership?.OwnedBed != null)
             {
                 Building_Bed ownedBed = user.ownership.OwnedBed;
-                if ((int)ownedBed.Position.GetDangerFor(user, user.Map) <= (int)Danger.Deadly && RestUtility.IsValidBedFor(ownedBed, user, carrier, true) && ((ownedBed.TryGetComp<CompPawnCharger>() != null && ownedBed.TryGetComp<CompPowerTrader>()?.PowerOn == true) || ownedBed.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.TryGetComp<CompPawnCharger>() != null && thing.TryGetComp<CompPowerTrader>()?.PowerOn == true) == true))
+                if ((int)ownedBed.Position.GetDangerFor(user, user.Map) <= (int)Danger.Deadly && RestUtility.IsValidBedFor(ownedBed, user, carrier, true) && (ownedBed.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && thing.TryGetComp<CompPowerTrader>()?.PowerOn == true) == true))
                 {
                     return ownedBed;
                 }
             }
 
-            return (Building_Bed)GenClosest.ClosestThingReachable(user.PositionHeld, user.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(carrier), 9999f, (Thing b) => b.def.IsBed && (int)b.Position.GetDangerFor(user, user.Map) <= (int)Danger.Deadly && RestUtility.IsValidBedFor(b, user, carrier, true) && ((b.TryGetComp<CompPawnCharger>() != null && (b.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) || (b.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.TryGetComp<CompPawnCharger>() != null && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false)));
+            return (Building_Bed)GenClosest.ClosestThingReachable(user.PositionHeld, user.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(carrier), 9999f, (Thing b) => b.def.IsBed && (int)b.Position.GetDangerFor(user, user.Map) <= (int)Danger.Deadly && RestUtility.IsValidBedFor(b, user, carrier, true) && (b.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false));
         }
 
         /* === HEALTH UTILITIES === */

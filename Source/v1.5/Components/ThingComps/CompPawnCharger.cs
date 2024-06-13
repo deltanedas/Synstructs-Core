@@ -6,6 +6,12 @@ namespace ArtificialBeings
 {
     public class CompPawnCharger : ThingComp
     {
+        private CompPowerTrader compPowerTrader;
+
+        private List<Pawn> users;
+
+        private float cachedConsumption;
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -95,9 +101,5 @@ namespace ArtificialBeings
             }
             UpdatePowerConsumption();
         }
-
-        protected CompPowerTrader compPowerTrader;
-        protected List<Pawn> users;
-        protected float cachedConsumption;
     }
 }

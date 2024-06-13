@@ -178,7 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buildings\Building_ChargingStation.cs" />
-    <Compile Include="Buildings\Building_ChargingBed.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShiftRequest.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShift.cs" />
     <Compile Include="Components\CompTargetEffectProperties_ResurrectPawn.cs" />
