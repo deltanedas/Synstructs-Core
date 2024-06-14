@@ -27,10 +27,14 @@ namespace ArtificialBeings
             if (cachedPawnCoherenceSpots.ContainsKey(pawn.thingIDNumber))
             {
                 Pair<IntVec3, int> cachedCoherenceTimedSpot = cachedPawnCoherenceSpots[pawn.thingIDNumber];
-                if (cachedCoherenceTimedSpot != null && cachedCoherenceTimedSpot.First == pawn.Position && Find.TickManager.TicksGame - cachedCoherenceTimedSpot.Second < 30000 && CoherenceUtility.SafeEnvironmentalConditions(pawn, pawn.Position, pawn.Map) && pawn.CanReserveAndReach(pawn.Position, PathEndMode.OnCell, Danger.None))
+                if (cachedCoherenceTimedSpot != null && cachedCoherenceTimedSpot.First == pawn.Position && Find.TickManager.TicksGame - cachedCoherenceTimedSpot.Second < 30000 && CoherenceUtility.SafeEnvironmentalConditions(pawn, pawn.Position, pawn.Map) && pawn.Position.Standable(pawn.Map) && !pawn.Position.IsForbidden(pawn) && pawn.CanReserveAndReach(pawn.Position, PathEndMode.OnCell, Danger.None))
                 {
                     cachedPawnCoherenceSpots[pawn.thingIDNumber] = new Pair<IntVec3, int>(pawn.Position, Find.TickManager.TicksGame);
                     return JobMaker.MakeJob(ABF_JobDefOf.ABF_Job_Synstruct_BuildCoherenceIdly, pawn.Position, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(pawn.Position));
+                }
+                else
+                {
+                    cachedPawnCoherenceSpots.Remove(pawn.thingIDNumber);
                 }
             }
 
