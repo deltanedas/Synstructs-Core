@@ -55,11 +55,6 @@ namespace ArtificialBeings
             UpdatePowerConsumption();
         }
 
-        public override string CompInspectStringExtra()
-        {
-            return "ABF_CurrentChargerPowerConsumption".Translate(cachedConsumption.ToString("#####0"));
-        }
-
         private void UpdatePowerConsumption()
         {
             compPowerTrader.PowerOutput = -cachedConsumption;
