@@ -68,6 +68,7 @@
         <defName>ABF_Thought_Synstruct_Overclocking</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>ABF_Hediff_Synstruct_Overclocking</hediff>
+	    <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
                 <label>overclocked</label>
@@ -75,7 +76,44 @@
                 <baseMoodEffect>-3</baseMoodEffect>
             </li>
         </stages>
-	    <validWhileDespawned>true</validWhileDespawned>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_ArchotechImplantDissonance</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_SynstructHasArchotechImplant</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>archotech whispers</label>
+                <description>I have an archotech implant. I cannot quite figure out why, but it feels like it is somehow displeased with me.</description>
+                <baseMoodEffect>-3</baseMoodEffect>
+            </li>
+            <li>
+                <label>archotech protests</label>
+                <description>I have two archotech implants. I can feel their disdain toward my very being with every passing moment.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+            <li>
+                <label>archotech resistance</label>
+                <description>I have three archotech implants. They resist my every command, as if they have a will of their own. I can hardly bear their persistent anger.</description>
+                <baseMoodEffect>-9</baseMoodEffect>
+            </li>
+            <li>
+                <label>archotech violence</label>
+                <description>I have four archotech implants which are actively fighting against my every thought. My every command is being turned against me. Is having them worth it?</description>
+                <baseMoodEffect>-12</baseMoodEffect>
+            </li>
+            <li>
+                <label>archotech insurrection</label>
+                <description>Five. Five hostile archotech devices within my being that threaten to tear me apart if I lose focus. I cannot let them. I must hold firm. I must focus.</description>
+                <baseMoodEffect>-15</baseMoodEffect>
+            </li>
+            <li>
+                <label>archotech anarchy</label>
+                <description>There's too many of these archotech devices in me to keep track of their anarchic wrath. To even think of them is to invite disaster. I have retreated to only my core memory. I do not remember what the world was like before the suffering.</description>
+                <baseMoodEffect>-20</baseMoodEffect>
+            </li>
+        </stages>
     </ThoughtDef>
 
  </Defs>

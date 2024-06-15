@@ -43,7 +43,7 @@ namespace ArtificialBeings
 
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (ThoughtUtility.ThoughtNullified(p, def) || !SC_Utils.IsSynstruct(p) || ABF_Utils.PawnStateFor(p) != ABF_ArtificialState.Sapient || !p.Spawned)
+            if (ThoughtUtility.ThoughtNullified(p, def) || !SC_Utils.IsSynstruct(p) || !ABF_Utils.IsArtificialSapient(p) || !p.Spawned)
             {
                 return ThoughtState.Inactive;
             }

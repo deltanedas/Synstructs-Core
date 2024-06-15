@@ -22,7 +22,7 @@ namespace ArtificialBeings
         {
             base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
 
-            SC_Utils.Duplicate(SC_Utils.GetBlank(), pawn, ABF_Utils.PawnStateFor(pawn) == ABF_ArtificialState.Sapient);
+            SC_Utils.Duplicate(SC_Utils.GetBlank(), pawn, ABF_Utils.IsArtificialSapient(pawn));
             pawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Blank;
 
             // Ensure the pawn is disabled as it is blank.

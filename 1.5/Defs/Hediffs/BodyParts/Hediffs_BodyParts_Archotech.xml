@@ -15,7 +15,7 @@
     <ThingDef ParentName="ABF_Thing_Synstruct_BodyPartBase">
         <defName>ABF_Thing_Synstruct_ArchotechPartReplacer</defName>
         <label>archotech part replacer</label>
-        <description>A small archotech device - with no known proper purpose - that can be inserted into various places of a synstruct to replace the original part there. Batteries, coolant pumps, reactors, even audial and visual sensors can all be replaced by a vastly higher functioning part. The fact that it can be removed from the synstruct's body and then become a different part afterwards is nothing short of miraculous.</description>
+        <description>A small archotech device - with no known proper purpose - that can be inserted into various places of a synstruct to replace the original part there. Batteries, coolant pumps, reactors, even audial and visual sensors can all be replaced by a vastly higher functioning part. The fact that it can be removed from the synstruct's body and then become a different part afterwards is nothing short of miraculous.\n\nUnfortunately, synstructs are widely spurned by archotechs, and devices like these are known to resist and fight against synstructs once installed. Overcoming this resistance strains the synstruct's focus and coherence.</description>
         <techLevel>Archotech</techLevel>
         <graphicData>
             <texPath>Things/Items/BodyParts/OrganGold</texPath>
@@ -109,19 +109,26 @@
         <defName>ABF_Hediff_Synstruct_Archotech_VisualSensor</defName>
         <label>archotech visual sensor</label>
         <labelNoun>an archotech visual sensor</labelNoun>
-        <description>An installed archotech eye.</description>
+        <description>An archotech device in the form of a visual sensor. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.1</ABF_Stat_Synstruct_CoherenceRetention>
+                </statOffsets>
+            </li>
+        </stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
     </HediffDef>
 
     <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
 		<defName>ABF_Recipe_Synstruct_Archotech_InstallVisualSensor</defName>
-        <label>install archotech eye</label>
-        <description>Install an archotech eye.</description>
+        <label>install archotech visual sensor</label>
+        <description>Install an archotech visual sensor.</description>
         <descriptionHyperlinks>
             <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
             <HediffDef>ABF_Hediff_Synstruct_Archotech_VisualSensor</HediffDef>
         </descriptionHyperlinks>
-        <jobString>Installing archotech eye.</jobString>
+        <jobString>Installing archotech visual sensor.</jobString>
 		<ingredients>
 			<li>
 				<filter>
@@ -147,7 +154,14 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
         <defName>ABF_Hediff_Synstruct_Archotech_AudialSensor</defName>
         <label>archotech audial sensor</label>
-        <description>An archotech device in the form of an audial sensor. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <description>An archotech device in the form of an audial sensor. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.1</ABF_Stat_Synstruct_CoherenceRetention>
+                </statOffsets>
+            </li>
+        </stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
     </HediffDef>
 
@@ -185,13 +199,14 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
         <defName>ABF_Hediff_Synstruct_Archotech_Heatsink</defName>
         <label>archotech heatsink</label>
-        <description>An archotech device in the form of a heatsink. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <description>An archotech device in the form of a heatsink. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
         <stages>
 			<li>
 		        <statOffsets>
                     <ComfyTemperatureMax>30</ComfyTemperatureMax>
 		            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.1</ABF_Stat_Synstruct_CoherenceRetention>
 		        </statOffsets>
 			</li>
 		</stages>
@@ -231,13 +246,14 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
         <defName>ABF_Hediff_Synstruct_Archotech_CoolantPump</defName>
         <label>archotech coolant pump</label>
-        <description>An archotech device in the form of a coolant pump. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <description>An archotech device in the form of a coolant pump. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
         <stages>
 			<li>
 		        <statOffsets>
                     <ComfyTemperatureMax>12</ComfyTemperatureMax>
                     <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.1</ABF_Stat_Synstruct_CoherenceRetention>
 		        </statOffsets>
 			</li>
 		</stages>
@@ -277,10 +293,13 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
         <defName>ABF_Hediff_Synstruct_Archotech_Battery</defName>
         <label>archotech battery pack</label>
-        <description>An archotech device in the form of a battery. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <description>An archotech device in the form of a battery. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
         <stages>
 			<li>
                 <hungerRateFactor>0.5</hungerRateFactor>
+		        <statOffsets>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.2</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statOffsets>
 			</li>
 		</stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
@@ -320,10 +339,13 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
         <defName>ABF_Hediff_Synstruct_Archotech_Reactor</defName>
         <label>archotech reactor</label>
-        <description>An archotech device in the form of a reactor - but it seems to reduce power consumption as well. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
+        <description>An archotech device in the form of a reactor - but it seems to reduce power consumption as well. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
 		<stages>
 			<li>
 			    <hungerRateFactor>0.5</hungerRateFactor>
+		        <statOffsets>
+                    <ABF_Stat_Synstruct_CoherenceRetention>-0.2</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statOffsets>
 			</li>
 		</stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>

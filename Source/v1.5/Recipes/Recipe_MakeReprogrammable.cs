@@ -13,7 +13,7 @@ namespace ArtificialBeings
                 return false;
             }
 
-            return ABF_Utils.PawnStateFor(pawn) == ABF_ArtificialState.Blank && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeReprogrammable == true;
+            return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeReprogrammable == true;
         }
 
         // Programmable drones need to have their appropriate features initialized.

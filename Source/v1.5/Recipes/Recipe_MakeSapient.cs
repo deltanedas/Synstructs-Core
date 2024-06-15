@@ -13,7 +13,7 @@ namespace ArtificialBeings
                 return false;
             }
 
-            return ABF_Utils.PawnStateFor(pawn) == ABF_ArtificialState.Blank && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeSapient == true;
+            return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeSapient == true;
         }
 
         // Sapients need to have their intelligence generated and appropriate story and skills populated.

@@ -62,7 +62,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
     	<defName>ABF_Hediff_Synstruct_Assistant_Insight</defName>
     	<label>insight assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized in the identification, categorization, and application of new insights and opportunities for learning in whatever field the core intelligence handles. It is also capable of independently generating new theories and assisting with research.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized in the identification, categorization, and application of new insights and opportunities for learning in whatever field the core intelligence handles. It is also capable of independently generating new theories and assisting with research.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -80,7 +80,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
     	<defName>ABF_Thing_Synstruct_Assistant_Insight</defName>
     	<label>insight assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized in the identification, categorization, and application of new insights and opportunities for learning in whatever field the core intelligence handles. It is also capable of independently generating new theories and assisting with research.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized in the identification, categorization, and application of new insights and opportunities for learning in whatever field the core intelligence handles. It is also capable of independently generating new theories and assisting with research.</description>
 		<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -116,7 +116,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_General</defName>
 		<label>general assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is deliberately unspecialized, instead possessing dedicated processes to a wide range of tasks. This results in vast speed increases in the rate at which any task where quality is a concern can be completed - it allows the core intelligence to focus on quality while it handles less intricate details.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is deliberately unspecialized, instead possessing dedicated processes to a wide range of tasks. This results in vast speed increases in the rate at which any task where quality is a concern can be completed - it allows the core intelligence to focus on quality while it handles less intricate details.</description>
 		<stages>
 			<li>
                 <statFactors>
@@ -131,7 +131,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_General</defName>
 		<label>general assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is deliberately unspecialized, instead possessing dedicated processes to a wide range of tasks. This results in vast speed increases in the rate at which any task where quality is a concern can be completed - it allows the core intelligence to focus on quality while it handles less intricate details.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is deliberately unspecialized, instead possessing dedicated processes to a wide range of tasks. This results in vast speed increases in the rate at which any task where quality is a concern can be completed - it allows the core intelligence to focus on quality while it handles less intricate details.</description>
 		<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -167,7 +167,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
     	<defName>ABF_Hediff_Synstruct_Assistant_Combat</defName>
     	<label>combat assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for combat and threat analysis scenarios. Capable of autonomously identifying tactical opportunities and suggesting real-time responses to incoming fire on the battlefield, this chip is widely considered to be responsible for stories of veteran synstructs making tactical analysts and commanders look obsolete.\n\nThe assistant's constant tactical analysis drains work efficiency, however.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for combat and threat analysis scenarios. Capable of autonomously identifying tactical opportunities and suggesting real-time responses to incoming fire on the battlefield, this chip is widely considered to be responsible for stories of veteran synstructs making tactical analysts and commanders look obsolete.\n\nThe assistant's constant tactical analysis drains work efficiency, however.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -190,7 +190,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
     	<defName>ABF_Thing_Synstruct_Assistant_Combat</defName>
     	<label>combat assistant chip</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for combat and threat analysis scenarios. Capable of autonomously identifying tactical opportunities and suggesting real-time responses to incoming fire on the battlefield, this chip is widely considered to be responsible for stories of veteran synstructs making tactical analysts and commanders look obsolete.\n\nThe assistant's constant tactical analysis drains work efficiency, however.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for combat and threat analysis scenarios. Capable of autonomously identifying tactical opportunities and suggesting real-time responses to incoming fire on the battlefield, this chip is widely considered to be responsible for stories of veteran synstructs making tactical analysts and commanders look obsolete.\n\nThe assistant's constant tactical analysis drains work efficiency, however.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -226,7 +226,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Artificer</defName>
 		<label>artificer assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for engineering and artificing tasks. Possessing a large library of sub-routines for optimally designing and creating parts as well as installing, repairing, or altering them, chips like these are often banned on worlds with strong unions to prevent total dominance of the industry by purpose built machines.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for engineering and artificing tasks. Possessing a large library of sub-routines for optimally designing and creating parts as well as installing, repairing, or altering them, chips like these are often banned on worlds with strong unions to prevent total dominance of the industry by purpose built machines.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -246,7 +246,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
     	<defName>ABF_Thing_Synstruct_Assistant_Artificer</defName>
     	<label>artificer assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for engineering and artificing tasks. Possessing a large library of sub-routines for optimally designing and creating parts as well as installing, repairing, or altering them, chips like these are often banned on worlds with strong unions to prevent total dominance of the industry by purpose built machines.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for engineering and artificing tasks. Possessing a large library of sub-routines for optimally designing and creating parts as well as installing, repairing, or altering them, chips like these are often banned on worlds with strong unions to prevent total dominance of the industry by purpose built machines.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -282,7 +282,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
     	<defName>ABF_Hediff_Synstruct_Assistant_Construction</defName>
     	<label>construction assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for architecture and construction tasks. An in-depth archive of the exact characteristics of building materials, tools, practices, and styles ensures the unit has every piece of information it could possibly need when approaching a task. Automatic sub-routines for measuring, examining, and analyzing physical objects and spaces also permit quicker calculations on placement, force, and safety.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for architecture and construction tasks. An in-depth archive of the exact characteristics of building materials, tools, practices, and styles ensures the unit has every piece of information it could possibly need when approaching a task. Automatic sub-routines for measuring, examining, and analyzing physical objects and spaces also permit quicker calculations on placement, force, and safety.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -301,7 +301,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
     	<defName>ABF_Thing_Synstruct_Assistant_Construction</defName>
     	<label>construction assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for architecture and construction tasks. An in-depth archive of the exact characteristics of building materials, tools, practices, and styles ensures the unit has every piece of information it could possibly need when approaching a task. Automatic sub-routines for measuring, examining, and analyzing physical objects and spaces also permit quicker calculations on placement, force, and safety.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for architecture and construction tasks. An in-depth archive of the exact characteristics of building materials, tools, practices, and styles ensures the unit has every piece of information it could possibly need when approaching a task. Automatic sub-routines for measuring, examining, and analyzing physical objects and spaces also permit quicker calculations on placement, force, and safety.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -337,7 +337,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Excavation</defName>
 		<label>excavation assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for optimizing mineral identification, categorization, and extraction. A comprehension archive of mineral and material properties permits much more precise and efficient mining operations, leading to significant yield increases and operational capacity. Autonomous sub-routines also optimize the processes of excavator technology like deep drills.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for optimizing mineral identification, categorization, and extraction. A comprehension archive of mineral and material properties permits much more precise and efficient mining operations, leading to significant yield increases and operational capacity. Autonomous sub-routines also optimize the processes of excavator technology like deep drills.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -355,7 +355,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
     	<defName>ABF_Thing_Synstruct_Assistant_Excavation</defName>
     	<label>excavation assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for optimizing mineral identification, categorization, and extraction. A comprehension archive of mineral and material properties permits much more precise and efficient mining operations, leading to significant yield increases and operational capacity. Autonomous sub-routines also optimize the processes of excavator technology like deep drills.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for optimizing mineral identification, categorization, and extraction. A comprehension archive of mineral and material properties permits much more precise and efficient mining operations, leading to significant yield increases and operational capacity. Autonomous sub-routines also optimize the processes of excavator technology like deep drills.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -391,7 +391,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Victual</defName>
 		<label>victual assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for the processing and preparation of organic substances - namely, food and drugs. An array of autonomous sub-routines combined with a vast library of references on the nature, composition, and behavior of organic matter tailored with a focus on their proper usage ensures top-of-the-line quality substances with minimal waste.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for the processing and preparation of organic substances - namely, food and drugs. An array of autonomous sub-routines combined with a vast library of references on the nature, composition, and behavior of organic matter tailored with a focus on their proper usage ensures top-of-the-line quality substances with minimal waste.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -410,7 +410,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_Victual</defName>
 		<label>victual assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for the processing and preparation of organic substances - namely, food. An array of autonomous sub-routines combined with a vast library of references on the nature, composition, and behavior of organic matter tailored with a focus on their proper usage ensures top-of-the-line quality substances with minimal waste.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for the processing and preparation of organic substances - namely, food. An array of autonomous sub-routines combined with a vast library of references on the nature, composition, and behavior of organic matter tailored with a focus on their proper usage ensures top-of-the-line quality substances with minimal waste.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -446,7 +446,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Cultivation</defName>
 		<label>cultivation assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for the cultivation of flora and fauna. With a massive archive of data with painstakingly accurate insights on every plant and animal known to exist on the planet, autonomous sub-routines allow the unit to identify key behaviors, stressors, and to some base extent allow "communication" with target species via specific behaviors and pheromones. \n\nCuriously, this occasionally makes the synstruct itself display almost parental affection for lesser intelligences.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for the cultivation of flora and fauna. With a massive archive of data with painstakingly accurate insights on every plant and animal known to exist on the planet, autonomous sub-routines allow the unit to identify key behaviors, stressors, and to some base extent allow "communication" with target species via specific behaviors and pheromones. \n\nCuriously, this occasionally makes the synstruct itself display almost parental affection for lesser intelligences.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -469,7 +469,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_Cultivation</defName>
 		<label>cultivation assistant</label>
-	  	<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for the cultivation of flora and fauna. With a massive archive of data with painstakingly accurate insights on every plant and animal known to exist on the planet, autonomous sub-routines allow the unit to identify key behaviors, stressors, and to some base extent allow "communication" with target species via specific behaviors and pheromones. \n\nCuriously, this occasionally makes the synstruct itself display almost parental affection for lesser intelligences.</description>
+	  	<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for the cultivation of flora and fauna. With a massive archive of data with painstakingly accurate insights on every plant and animal known to exist on the planet, autonomous sub-routines allow the unit to identify key behaviors, stressors, and to some base extent allow "communication" with target species via specific behaviors and pheromones. \n\nCuriously, this occasionally makes the synstruct itself display almost parental affection for lesser intelligences.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -505,7 +505,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Medicine</defName>
 		<label>medicine assistant</label>
-		<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for treatment of organic injuries and for organic surgeries. An array of sub-routines and procedures assists in identifying, categorizing, and analyzing organic issues and provides remedial suggestions. \n\nThis device also lends itself well to performing simple repairs on artifical beings.</description>
+		<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for treatment of organic injuries and for organic surgeries. An array of sub-routines and procedures assists in identifying, categorizing, and analyzing organic issues and provides remedial suggestions. \n\nThis device also lends itself well to performing simple repairs on artifical beings.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -524,7 +524,7 @@
    	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_Medicine</defName>
 		<label>medicine assistant</label>
-		<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for treatment of organic injuries and for organic surgeries. An array of sub-routines and procedures assists in identifying, categorizing, and analyzing organic issues and provides remedial suggestions. \n\nThis device also lends itself well to performing simple repairs on artifical beings.</description>
+		<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for treatment of organic injuries and for organic surgeries. An array of sub-routines and procedures assists in identifying, categorizing, and analyzing organic issues and provides remedial suggestions. \n\nThis device also lends itself well to performing simple repairs on artifical beings.</description>
     	<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -560,7 +560,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
     	<defName>ABF_Hediff_Synstruct_Assistant_Social</defName>
     	<label>social assistant</label>
-	  	<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for social situations. From reading individual body movements and expressions to referencing all known histories of targets, every day negotiations are optimized and analyzed for advancing the core intelligence's ability to handle social situations. Maximizing popularity, infamy, prestige - all are considered viable objectives.</description>
+	  	<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for social situations. From reading individual body movements and expressions to referencing all known histories of targets, every day negotiations are optimized and analyzed for advancing the core intelligence's ability to handle social situations. Maximizing popularity, infamy, prestige - all are considered viable objectives.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -582,7 +582,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_Social</defName>
 		<label>social assistant</label>
-		<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for social situations. From reading individual body movements and expressions to referencing all known histories of targets, every day negotiations are optimized and analyzed for advancing the core intelligence's ability to handle social situations. Maximizing popularity, infamy, prestige - all are considered viable objectives.</description>
+		<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for social situations. From reading individual body movements and expressions to referencing all known histories of targets, every day negotiations are optimized and analyzed for advancing the core intelligence's ability to handle social situations. Maximizing popularity, infamy, prestige - all are considered viable objectives.</description>
 		<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -618,7 +618,7 @@
   	<HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
 		<defName>ABF_Hediff_Synstruct_Assistant_Mental</defName>
 		<label>mental assistant</label>
-		<description>Installed assistant that assists the core intelligence with a number of tasks. This assistant is specialized for imbuing the core intelligence with a much stronger mental resilience. A suite of individualized sub-routines remove many stressors and unpleasant issues from the intelligence's cognition, while training a greater capacity for overcoming difficult situations. Many synstructs view devices like this as a trusted - if somewhat dimwitted - friend, and find their own immortal-like existence much more bearable with it around.</description>
+		<description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant is specialized for imbuing the core intelligence with a much stronger mental resilience. A suite of individualized sub-routines remove many stressors and unpleasant issues from the intelligence's cognition, while training a greater capacity for overcoming difficult situations. Many synstructs view devices like this as a trusted - if somewhat dimwitted - friend, and find their own immortal-like existence much more bearable with it around.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -636,7 +636,7 @@
   	<ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
 		<defName>ABF_Thing_Synstruct_Assistant_Mental</defName>
 		<label>mental assistant</label>
-		<description>This sub-core chip assists the core intelligence with a number of tasks. This assistant is specialized for imbuing the core intelligence with a much stronger mental resilience. A suite of individualized sub-routines remove many stressors and unpleasant issues from the intelligence's cognition, while training a greater capacity for overcoming difficult situations. Many synstructs view devices like this as a trusted - if somewhat dimwitted - friend, and find their own immortal-like existence much more bearable with it around.</description>
+		<description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant is specialized for imbuing the core intelligence with a much stronger mental resilience. A suite of individualized sub-routines remove many stressors and unpleasant issues from the intelligence's cognition, while training a greater capacity for overcoming difficult situations. Many synstructs view devices like this as a trusted - if somewhat dimwitted - friend, and find their own immortal-like existence much more bearable with it around.</description>
 		<costList>
 			<Plasteel>20</Plasteel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -670,23 +670,24 @@
     <!-- Complexity Assistant -->
 
     <HediffDef ParentName="ABF_Hediff_Synstruct_Assistant_AddedBodyPartBase">
-      <defName>ABF_Hediff_Synstruct_Assistant_Complexity</defName>
-      <label>complexity assistant</label>
-        <description>Installed hardware using the core assistant slot. Unlike other assistants, this chip offers no intrinsic aid to the core intelligence, but rather, serves as formatted memory storage for additional programming.\n\nSapient units do not benefit from this chip, but drone units will be able to maintain higher complexity with this.</description>
-      <stages>
-          <li>
-              <statOffsets>
-                  <ABF_Stat_Artificial_ComplexityLimit>10</ABF_Stat_Artificial_ComplexityLimit>
-              </statOffsets>
-          </li>
-      </stages>
-      <spawnThingOnRemoved>ABF_Thing_Synstruct_Assistant_Complexity</spawnThingOnRemoved>
+        <defName>ABF_Hediff_Synstruct_Assistant_Complexity</defName>
+        <label>complexity assistant</label>
+        <description>A chip installed into the core assistant slot, this device aids the core intelligence with a variety of tasks. This assistant has relatively little specialization in itself. Instead, it serves as a high powered storage and processing center for whatever the core assistant may need at a moment's notice. Synstructs develop internal sub-routines for it to run to assist with maintaining coherence, and increases the maximum complexity achievable for reprogrammable drones.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ABF_Stat_Artificial_ComplexityLimit>10</ABF_Stat_Artificial_ComplexityLimit>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.75</ABF_Stat_Synstruct_CoherenceRetention>
+                </statOffsets>
+            </li>
+        </stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Assistant_Complexity</spawnThingOnRemoved>
     </HediffDef>
 
     <ThingDef ParentName="ABF_Thing_Synstruct_Assistant_BodyPartBase">
         <defName>ABF_Thing_Synstruct_Assistant_Complexity</defName>
         <label>complexity assistant</label>
-        <description>This assistant chip, unlike other assistants, this chip offers no intrinsic aid to the core intelligence, but rather, serves as formatted memory storage for additional programming.\n\nSapient units do not benefit from this chip, but drone units will be able to maintain higher complexity with this.</description>
+        <description>This assistant chip can be installed into a synstruct to aid the core intelligence with a variety of tasks. This assistant has relatively little specialization in itself. Instead, it serves as a high powered storage and processing center for whatever the core assistant may need at a moment's notice. Synstructs develop internal sub-routines for it to run to assist with maintaining coherence, and increases the maximum complexity achievable for reprogrammable drones.</description>
         <costList>
             <Plasteel>10</Plasteel>
             <ComponentIndustrial>2</ComponentIndustrial>
