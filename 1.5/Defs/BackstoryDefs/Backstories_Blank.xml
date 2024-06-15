@@ -10,8 +10,8 @@
 		<baseDesc>{PAWN_nameDef} was left entirely devoid of character and individuality, and has no concept of childhood.</baseDesc>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ABF_Synstruct_Generic</li>
-			<li>ABF_Synstruct_Blank</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Blank</li>
 		</spawnCategories>
 	</BackstoryDef>
 
@@ -22,7 +22,7 @@
 		<baseDesc>This unit has neither intelligence nor memory. {PAWN_pronoun} is entirely devoid of character and utility.</baseDesc>
 		<slot>Adulthood</slot>
 		<spawnCategories>
-			<li>ABF_Synstruct_Blank</li>
+			<li>ABF_SpawnCategory_Synstruct_Blank</li>
 		</spawnCategories>
         <shuffleable>false</shuffleable>
     </BackstoryDef>

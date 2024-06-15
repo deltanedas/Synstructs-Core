@@ -69,7 +69,7 @@ namespace ArtificialBeings
             }
 
             // Create the Blank pawn that will be used for all blank synstructs
-            PawnGenerationRequest request = new PawnGenerationRequest(Faction.OfPlayer.def.basicMemberKind, null, PawnGenerationContext.PlayerStarter, canGeneratePawnRelations: false, forceNoIdeo: true, forceBaselinerChance: 1, colonistRelationChanceFactor: 0f, forceGenerateNewPawn: true, fixedGender: Gender.None);
+            PawnGenerationRequest request = new PawnGenerationRequest(Faction.OfPlayer.def.basicMemberKind, Faction.OfPlayer, PawnGenerationContext.PlayerStarter, canGeneratePawnRelations: false, forceNoIdeo: true, forceBaselinerChance: 1, colonistRelationChanceFactor: 0f, forceGenerateNewPawn: true, fixedGender: Gender.None);
             Pawn blankMechanical = PawnGenerator.GeneratePawn(request);
             blankMechanical.story.Childhood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Childhood_Blank;
             blankMechanical.story.Adulthood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Adulthood_Blank;

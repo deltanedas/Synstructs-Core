@@ -24,12 +24,28 @@ namespace ArtificialBeings
             pawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Sapient;
 
             // Create a pawn that has some age and appropriate features to duplicate into the blank to act as its new intelligence.
-            PawnGenerationRequest request = new PawnGenerationRequest(pawn.kindDef, Faction.OfPlayer, forceNoBackstory: true, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 50, forceNoIdeo: true, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
+            ABF_SynstructExtension synstructExtension = pawn.def.GetModExtension<ABF_SynstructExtension>();
+            PawnKindDef pawnKindDef = synstructExtension.playerSapientPawnKindDef ?? pawn.kindDef;
+
+            if (synstructExtension.playerSapientPawnKindDef?.GetModExtension<ABF_ArtificialPawnKindExtension>() is ABF_ArtificialPawnKindExtension pawnKindExtension && pawnKindExtension.pawnState != ABF_ArtificialState.Sapient)
+            {
+                Log.Warning($"[ABF] Operation to make a pawn into a sapient encountered an issue: {pawnKindDef.LabelCap} is not a pawn kind def for sapients!");
+            }
+
+            if (pawnKindDef.race != pawn.def)
+            {
+                Log.Error($"[ABF] Operation to make a pawn with race {pawn.def.defName} into a drone was given race {pawnKindDef.race.defName} to copy from! Severe errors may occur.");
+            }
+            else
+            {
+                pawn.kindDef = pawnKindDef;
+            }
+
+            PawnGenerationRequest request = new PawnGenerationRequest(pawnKindDef, Faction.OfPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 50, forceNoIdeo: billDoer.ideo == null, fixedIdeo: billDoer.Ideo, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
             Pawn personality = PawnGenerator.GeneratePawn(request);
-            ABF_SynstructExtension synstructExtension = personality.def.GetModExtension<ABF_SynstructExtension>();
-            personality.story.Childhood = synstructExtension?.sapientChildhoodBackstoryDef;
-            personality.story.Adulthood = synstructExtension?.sapientAdulthoodBackstoryDef;
             SC_Utils.Duplicate(personality, pawn, false);
+
+            // Incapacitated the unit for a small amount of time.
             Hediff rebootHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated);
             if (rebootHediff == null)
             {

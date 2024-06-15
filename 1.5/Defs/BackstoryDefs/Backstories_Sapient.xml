@@ -8,7 +8,8 @@
 		<baseDesc>{PAWN_nameDef} first awakened on this RimWorld as an infantile intelligence.</baseDesc>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ABF_Synstruct_Newboots</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Newboot</li>
 		</spawnCategories>
 	</BackstoryDef>
 
@@ -19,7 +20,8 @@
 		<baseDesc>{PAWN_nameDef} was first awakened on this world. The story for {PAWN_nameDef} has yet to be truly written.</baseDesc>
 		<slot>Adulthood</slot>
 		<spawnCategories>
-			<li>ABF_Synstruct_Newboots</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Newboot</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 

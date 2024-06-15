@@ -21,17 +21,32 @@ namespace ArtificialBeings
         {
             base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
 
-            // Set the pawn's backstories to its drone backstories, controlled via its synstruct mod settings. Null backstories are okay.
-            if (pawn.story != null)
+            pawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Reprogrammable;
+
+            if (pawn.RaceProps.Humanlike)
             {
+                // Create a pawn that has some age and appropriate features to duplicate into the blank to act as its new intelligence
                 ABF_SynstructExtension synstructExtension = pawn.def.GetModExtension<ABF_SynstructExtension>();
-                pawn.story.Childhood = synstructExtension?.droneChildhoodBackstoryDef;
-                pawn.story.Adulthood = synstructExtension?.droneAdulthoodBackstoryDef;
+                PawnKindDef pawnKindDef = synstructExtension.playerReprogrammableDronePawnKindDef ?? pawn.kindDef;
+
+                if (synstructExtension.playerReprogrammableDronePawnKindDef?.GetModExtension<ABF_ArtificialPawnKindExtension>() is ABF_ArtificialPawnKindExtension pawnKindExtension && pawnKindExtension.pawnState != ABF_ArtificialState.Reprogrammable)
+                {
+                    Log.Warning($"[ABF] Operation to make a pawn into a reprogrammable drone encountered an issue: {pawnKindDef.LabelCap} is not a pawn kind def for reprogrammable drones!");
+                }
+
+                if (pawnKindDef.race != pawn.def)
+                {
+                    Log.Error($"[ABF] Operation to make a pawn with race {pawn.def.defName} into a drone was given race {pawnKindDef.race.defName} to copy from! Severe errors may occur.");
+                }
+                else
+                {
+                    pawn.kindDef = pawnKindDef;
+                }
+
+                PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(pawn, pawn.Faction?.def, new PawnGenerationRequest(pawn.kindDef));
                 pawn.Notify_DisabledWorkTypesChanged();
                 pawn.skills?.Notify_SkillDisablesChanged();
             }
-
-            pawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Reprogrammable;
         }
     }
 }

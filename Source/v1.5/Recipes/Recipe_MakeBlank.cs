@@ -27,6 +27,12 @@ namespace ArtificialBeings
 
             // Ensure the pawn is disabled as it is blank.
             pawn.health.AddHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Disabled);
+
+            // Remove the incapacitated condition if it is present.
+            if (pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated) is Hediff hediff)
+            {
+                pawn.health.RemoveHediff(hediff);
+            }
         }
     }
 }

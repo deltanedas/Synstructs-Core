@@ -176,10 +176,6 @@ namespace ArtificialBeings
             {
                 return true;
             }
-            if (!letter.passionChoices.NullOrEmpty() && chosenPassions.NullOrEmpty() && letter.passionGainsCount > 0)
-            {
-                return false;
-            }
             if (!letter.traitChoices.NullOrEmpty() && chosenTrait == null)
             {
                 return false;
@@ -193,13 +189,9 @@ namespace ArtificialBeings
             {
                 return true;
             }
-            if (chosenPassions.Count != letter.passionGainsCount)
+            if (chosenPassions.Count > letter.passionGainsCount)
             {
-                if (letter.passionGainsCount == 1)
-                {
-                    return "SelectPassionSingular".Translate();
-                }
-                return "SelectPassionsPlural".Translate(letter.passionGainsCount);
+                return "ABF_SelectPassionsUpToLimit".Translate(letter.passionGainsCount);
             }
             if (!letter.traitChoices.NullOrEmpty() && chosenTrait == null)
             {
@@ -250,7 +242,7 @@ namespace ArtificialBeings
         {
             if (!letter.ArchiveView && !letter.passionChoices.NullOrEmpty() && letter.passionGainsCount > 0)
             {
-                Widgets.Label(0f, ref curY, width, ((letter.passionGainsCount == 1) ? "BirthdayPickPassion".Translate(letter.pawn) : "BirthdayPickPassions".Translate(letter.pawn, letter.passionGainsCount)).Resolve() + ":");
+                Widgets.Label(0f, ref curY, width, "ABF_SelectPassionsUpToLimitHeader".Translate(letter.passionGainsCount, letter.pawn) + ":");
                 Listing_Standard listing_Standard = new Listing_Standard();
                 Rect rect = new Rect(0f, curY, PassionListingWidth, 99999f);
                 listing_Standard.Begin(rect);
