@@ -246,6 +246,7 @@
     <Compile Include="Components\ThingComps\CompPawnSpawner.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker_Patch.cs" />
     <Compile Include="StockGenerators\StockGenerator_Drones.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_DronesOfSameModelMood.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_CoherenceMood.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_DirectiveAmicability.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_CoerciveVoiceSynthesizer.cs" />
