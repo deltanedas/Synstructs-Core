@@ -31,7 +31,7 @@
             <allowAutoroof>false</allowAutoroof>
         </building>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-        <designationCategory>Furniture</designationCategory>
+        <designationCategory>Power</designationCategory>
         <constructEffect>ConstructMetal</constructEffect>
         <canOverlapZones>false</canOverlapZones>
         <hasInteractionCell>false</hasInteractionCell>
@@ -135,7 +135,7 @@
             </li>
         </comps>
         <designationHotKey>Misc6</designationHotKey>
-        <designationCategory>Furniture</designationCategory>
+        <designationCategory>Power</designationCategory>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>
         </placeWorkers>
