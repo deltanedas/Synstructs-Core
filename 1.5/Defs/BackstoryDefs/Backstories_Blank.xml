@@ -21,6 +21,8 @@
 		<titleShort>unit</titleShort>
 		<baseDesc>This unit has neither intelligence nor memory. {PAWN_pronoun} is entirely devoid of character and utility.</baseDesc>
 		<slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
 		<spawnCategories>
 			<li>ABF_SpawnCategory_Synstruct_Blank</li>
 		</spawnCategories>

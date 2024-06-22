@@ -199,7 +199,6 @@
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
     <Compile Include="Extensions\HediffExtensions.cs" />
-    <Compile Include="Extensions\FactionExtensions.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
     <Compile Include="Harmony\FoodUtility_Patch.cs" />
@@ -211,8 +210,6 @@
     <Compile Include="Harmony\JobGiver_GetRest_Patch.cs" />
     <Compile Include="Harmony\FeedPatientUtility_Patch.cs" />
     <Compile Include="Harmony\Alert_RoyalNoAcceptableFood_Patch.cs" />
-    <Compile Include="Harmony\QuestGen_Pawns_Patch_OBSOLETE.cs" />
-    <Compile Include="Harmony\ThingSetMaker_RefugeePod_Patch_OBSOLETE.cs" />
     <Compile Include="Harmony\Pawn_Patch.cs" />
     <Compile Include="Hediffs\HediffGiver_MechHypothermia.cs" />
     <Compile Include="Hediffs\Hediff_SynstructCoreAssistant.cs" />
