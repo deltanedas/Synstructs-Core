@@ -29,6 +29,21 @@ namespace ArtificialBeings
                 job.count = 1;
                 user.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             }
+            else
+            {
+                if (!(target is Corpse body))
+                {
+                    Messages.Message("ABF_TargetMustBeCorpse".Translate(target.LabelCap), MessageTypeDefOf.RejectInput, false);
+                }
+                else if (!Props.validStates.Contains(ABF_Utils.PawnStateFor(body.InnerPawn)))
+                {
+                    Messages.Message("ABF_InvalidPawnState".Translate(parent.LabelCap, target.Label), MessageTypeDefOf.RejectInput, false);
+                }
+                else if (!user.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly))
+                {
+                    Messages.Message("CannotReach".Translate(), MessageTypeDefOf.RejectInput, false);
+                }
+            }
         }
     }
 }

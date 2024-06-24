@@ -212,6 +212,9 @@
                 <useDuration>0</useDuration>
                 <warmupMote>Mote_ResurrectAbility</warmupMote>
             </li>
+            <li Class="CompProperties_Targetable">
+                <compClass>CompTargetable_SingleCorpse</compClass>
+            </li>
             <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
                 <validStates>
                     <li>Sapient</li>
@@ -255,6 +258,9 @@
                 <useLabel>Use restruct kit</useLabel>
                 <useDuration>0</useDuration>
                 <warmupMote>Mote_ResurrectAbility</warmupMote>
+            </li>
+            <li Class="CompProperties_Targetable">
+                <compClass>CompTargetable_SingleCorpse</compClass>
             </li>
             <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
                 <validStates>
