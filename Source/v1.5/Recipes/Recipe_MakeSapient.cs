@@ -41,10 +41,6 @@ namespace ArtificialBeings
                 pawn.kindDef = pawnKindDef;
             }
 
-            PawnGenerationRequest request = new PawnGenerationRequest(pawnKindDef, Faction.OfPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 50, forceNoIdeo: billDoer.ideo == null, fixedIdeo: billDoer.Ideo, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
-            Pawn personality = PawnGenerator.GeneratePawn(request);
-            SC_Utils.Duplicate(personality, pawn, false);
-
             // Incapacitated the unit for a small amount of time.
             Hediff rebootHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated);
             if (rebootHediff == null)
@@ -53,6 +49,11 @@ namespace ArtificialBeings
                 pawn.health.AddHediff(rebootHediff);
             }
             rebootHediff.Severity = 1;
+
+            PawnGenerationRequest request = new PawnGenerationRequest(pawnKindDef, Faction.OfPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 50, forceNoIdeo: billDoer.ideo == null, fixedIdeo: billDoer.Ideo, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
+            Pawn personality = PawnGenerator.GeneratePawn(request);
+            SC_Utils.Duplicate(personality, pawn, false);
+
 
             // Allow the player to pick a few passions and a trait for the new synstruct, akin to child growth moments in Biotech.
             if (ModLister.BiotechInstalled)

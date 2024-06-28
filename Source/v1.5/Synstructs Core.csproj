@@ -203,6 +203,7 @@
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
     <Compile Include="Harmony\FoodUtility_Patch.cs" />
     <Compile Include="Harmony\JobGiver_GetFood_Patch.cs" />
+    <Compile Include="Harmony\CompGoldenCube_Patch.cs" />
     <Compile Include="Harmony\QualityUtility_Patch.cs" />
     <Compile Include="Harmony\Thing_Patch.cs" />
     <Compile Include="Harmony\Pawn_JobTracker_Patch.cs" />
