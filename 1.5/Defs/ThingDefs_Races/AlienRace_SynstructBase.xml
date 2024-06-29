@@ -20,27 +20,53 @@
 			<raceRestriction>
                 <onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
                 <blackFoodList>
-                    <li>Beer</li>
-                    <li>Ambrosia</li>
-                    <li>GoJuice</li>
                     <li>Penoxycyline</li>
-                    <li>Flake</li>
-                    <li>PsychiteTea</li>
-                    <li>Yayo</li>
-                    <li>SmokeleafJoint</li>
-                    <li>WakeUp</li>
                 </blackFoodList>
                 <blackTraitList>
                     <li>Transhumanist</li>
                     <li>BodyPurist</li>
+                    <li>Tough</li>
+                    <li>Wimp</li>
+                    <li>Masochist</li>
+                    <li>Nudist</li>
+                    <li>Gourmand</li>
+                    <li>QuickSleeper</li>
+                    <li>DrugDesire</li>
+                    <li>PsychicSensitivity</li>
+                    <li>Immunity</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">Delicate</li>
                 </blackTraitList>
 			</raceRestriction>
 			<generalSettings>
 				<allowHumanBios>false</allowHumanBios>
-				<maxDamageForSocialfight>20</maxDamageForSocialfight>
-				<immuneToAge>false</immuneToAge>
                 <additionalTraits>1~3</additionalTraits>
-                <notXenophobistTowards />
+                <minAgeForAdulthood>0</minAgeForAdulthood>
+                <chemicalSettings>
+                    <li>
+                        <chemical>Alcohol</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Ambrosia</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>GoJuice</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Psychite</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Smokeleaf</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>WakeUp</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                </chemicalSettings>
 				<alienPartGenerator>
 					<headTypes>
                         <li>ABF_HeadType_Synstruct_BaseHead</li>
