@@ -32,7 +32,7 @@ namespace ArtificialBeings
         // Generate and spawn the created pawn.
         public virtual Pawn SpawnPawn()
         {
-            PawnGenerationRequest request = new PawnGenerationRequest(Props.pawnKind, Find.FactionManager.FirstFactionOfDef(Props.pawnKind.defaultFactionType), PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowFood: false, allowAddictions: false, fixedBiologicalAge: 0, fixedChronologicalAge: 0, fixedIdeo: null, forceNoIdeo: true, forceBaselinerChance: 1f);
+            PawnGenerationRequest request = new PawnGenerationRequest(Props.pawnKind, Find.FactionManager.FirstFactionOfDef(Props.pawnKind.defaultFactionType), PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowFood: false, allowAddictions: false, fixedBiologicalAge: 20, fixedChronologicalAge: 0, fixedIdeo: null, forceNoIdeo: true, forceBaselinerChance: 1f);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
 
             // Pawns may sometimes spawn with apparel somewhere in the generation process. Ensure they don't actually spawn with any - if they even can have apparel.
