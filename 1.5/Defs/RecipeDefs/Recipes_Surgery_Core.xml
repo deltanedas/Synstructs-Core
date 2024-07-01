@@ -193,7 +193,7 @@
 	<!-- Surgery to make a synstruct into a drone -->
 	<RecipeDef ParentName="ABF_Recipe_Synstruct_SurgeryBase">
 		<defName>ABF_Recipe_Synstruct_FormatDrone</defName>
-		<label>format drone</label>
+		<label>format as drone</label>
 		<description>Makes this synstruct into a drone.</description>
 		<workerClass>ArtificialBeings.Recipe_MakeDrone</workerClass>
         <targetsBodyPart>false</targetsBodyPart>
@@ -204,7 +204,7 @@
 	<!-- Surgery to make a synstruct into a reprogrammable drone -->
 	<RecipeDef ParentName="ABF_Recipe_Synstruct_SurgeryBase">
 		<defName>ABF_Recipe_Synstruct_FormatReprogrammable</defName>
-		<label>format reprogrammable drone</label>
+		<label>format as reprogrammable drone</label>
 		<description>Makes this synstruct into a reprogrammable drone.</description>
 		<workerClass>ArtificialBeings.Recipe_MakeReprogrammable</workerClass>
         <targetsBodyPart>false</targetsBodyPart>
@@ -218,7 +218,7 @@
 	<!-- Surgery to make a synstruct into a sapient -->
 	<RecipeDef ParentName="ABF_Recipe_Synstruct_SurgeryBase">
 		<defName>ABF_Recipe_Synstruct_FormatSapient</defName>
-		<label>format sapient</label>
+		<label>format as sapient</label>
 		<description>Makes this synstruct into a sapient individual.</description>
 		<workerClass>ArtificialBeings.Recipe_MakeSapient</workerClass>
         <targetsBodyPart>false</targetsBodyPart>

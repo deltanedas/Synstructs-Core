@@ -46,6 +46,20 @@ namespace ArtificialBeings
                 PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(pawn, pawn.Faction?.def, new PawnGenerationRequest(pawn.kindDef));
                 pawn.Notify_DisabledWorkTypesChanged();
                 pawn.skills?.Notify_SkillDisablesChanged();
+
+                Find.WindowStack.Add(new Dialog_ReprogramDrone(pawn));
+                // If the unit had the no programming hediff, remove that hediff.
+                Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Disabled);
+                if (hediff != null)
+                {
+                    pawn.health.RemoveHediff(hediff);
+                }
+                // Reprogrammable drones do not need to restart after programming is complete.
+                hediff = pawn.health.hediffSet.GetFirstHediffOfDef(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated);
+                if (hediff != null)
+                {
+                    pawn.health.RemoveHediff(hediff);
+                }
             }
         }
     }
