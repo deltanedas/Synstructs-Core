@@ -43,15 +43,21 @@ namespace ArtificialBeings
                 pawn.health.AddHediff(Props.hediffOnSpawn);
             }
             GenSpawn.Spawn(pawn, parent.Position, parent.Map);
-            if (pawn.Faction == Faction.OfPlayer)
+            if (pawn.Faction == Faction.OfPlayer && Props.pawnKind.GetModExtension<ABF_ArtificialPawnKindExtension>() is ABF_ArtificialPawnKindExtension ext)
             {
-                Find.LetterStack.ReceiveLetter("ABF_NewbootSynstructCreatedLabel".Translate(), "ABF_NewbootSynstructCreatedText".Translate(pawn.def.label), LetterDefOf.PositiveEvent, pawn, hyperlinkThingDefs: new System.Collections.Generic.List<ThingDef> { pawn.def });
+                if (ext.pawnState == ABF_ArtificialState.Blank)
+                {
+                    Find.LetterStack.ReceiveLetter("ABF_NewbootSynstructCreatedLabel".Translate(), "ABF_NewbootSynstructCreatedText".Translate(pawn.def.label), LetterDefOf.PositiveEvent, pawn, hyperlinkThingDefs: new System.Collections.Generic.List<ThingDef> { pawn.def });
+                }
+                else
+                {
+                    Find.LetterStack.ReceiveLetter("ABF_NewbootSynstructCreatedLabel".Translate(), "ABF_NewbootSynstructCreatedTextSimple".Translate(pawn.def.label), LetterDefOf.PositiveEvent, pawn, hyperlinkThingDefs: new System.Collections.Generic.List<ThingDef> { pawn.def });
+                }
+                if (Props.mentalStateOnSpawn != null)
+                {
+                    pawn.mindState.mentalStateHandler.TryStartMentalState(Props.mentalStateOnSpawn, transitionSilently: true);
+                }
             }
-            if (Props.mentalStateOnSpawn != null)
-            {
-                pawn.mindState.mentalStateHandler.TryStartMentalState(Props.mentalStateOnSpawn, transitionSilently: true);
-            }
-
 
             return pawn;
         }
