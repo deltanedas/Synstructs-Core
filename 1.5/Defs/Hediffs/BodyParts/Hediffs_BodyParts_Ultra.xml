@@ -89,8 +89,8 @@
     <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Recipe_Synstruct_Ultrapart_Arm</defName>
 		<label>install ultra arm</label>
-		<description>Installs an advanced arm.</description>
-		<jobString>Installing advanced arm.</jobString>
+		<description>Installs an ultra arm.</description>
+		<jobString>Installing ultra arm.</jobString>
 		<ingredients>
 			<li>
 				<filter>
@@ -191,8 +191,8 @@
     <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Recipe_Synstruct_Ultrapart_VisualSensor</defName>
 		<label>install ultra visual sensor</label>
-		<description>Installs an advanced visual sensor.</description>
-		<jobString>Installing advanced visual sensor.</jobString>
+		<description>Installs an ultra visual sensor.</description>
+		<jobString>Installing ultra visual sensor.</jobString>
 		<ingredients>
 			<li>
 				<filter>
@@ -242,8 +242,8 @@
     <RecipeDef ParentName="ABF_Recipe_Synstruct_UltrapartBase">
 		<defName>ABF_Recipe_Synstruct_Ultrapart_AudialSensor</defName>
 		<label>install ultra audial sensor</label>
-		<description>Installs an advanced audial sensor.</description>
-		<jobString>Installing advanced audial sensor.</jobString>
+		<description>Installs an ultra audial sensor.</description>
+		<jobString>Installing ultra audial sensor.</jobString>
 		<ingredients>
 			<li>
 				<filter>
