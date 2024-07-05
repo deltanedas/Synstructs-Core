@@ -141,7 +141,7 @@
 		<defName>ABF_Recipe_Synstruct_Ultrapart_Leg</defName>
 		<label>install ultra leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
-		<jobString>Installing high power leg.</jobString>
+		<jobString>Installing ultra leg.</jobString>
 		<ingredients>
 			<li>
 				<filter>
