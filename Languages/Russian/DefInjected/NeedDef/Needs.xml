@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_Need_Synstruct_Coolant.label>хладагент</ABF_Need_Synstruct_Coolant.label>
+  <ABF_Need_Synstruct_Coolant.description>Хладагент — это количество хладагента, которое пешка сейчас хранит. Если оно равно нулю, пешка отключается и становится недееспособной.</ABF_Need_Synstruct_Coolant.description>
+
+  <ABF_Need_Synstruct_Lubricant.label>смазка</ABF_Need_Synstruct_Lubricant.label>
+  <ABF_Need_Synstruct_Lubricant.description>Смазка — это количество смазки, которое пешка сейчас хранит. Если оно равно нулю, пешка теряет качество стабильности, работы и движения.</ABF_Need_Synstruct_Lubricant.description>
+
+
+</LanguageData>

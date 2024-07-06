@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_Ability_Synstruct_Directive_Berserker.label>запуск директив «Берсерк»</ABF_Ability_Synstruct_Directive_Berserker.label>
+  <ABF_Ability_Synstruct_Directive_Berserker.description>Дистанционное включение боевых протоколов и отключение датчиков «друг/враг» на несколько часов.</ABF_Ability_Synstruct_Directive_Berserker.description>
+
+  <ABF_Ability_Synstruct_Directive_Interference.label>запуск директив «Помехи»</ABF_Ability_Synstruct_Directive_Interference.label>
+  <ABF_Ability_Synstruct_Directive_Interference.description>Издаёт невероятно громкий и болезненный металлический визг, скребя деталями, которые намеренно неправильно перемещаются, при этом излучая мощную волну радиосигналов, чтобы нарушить работу как органических, так и неорганических сенсоров. При этом происходит сбой работы юнита, требующий его перезапуска.</ABF_Ability_Synstruct_Directive_Interference.description>
+
+
+</LanguageData>

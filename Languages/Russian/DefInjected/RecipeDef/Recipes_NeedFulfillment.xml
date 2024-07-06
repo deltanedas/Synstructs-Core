@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.label>изготовить упаковку хладагента</ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.label>
+  <ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.description>Создавать пакеты с хладагентом, пополняющие резервы синтоидов, если она в этом нуждается.</ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.description>
+  <ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.jobString>Изготовление хладагента.</ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk.jobString>
+
+  <ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.label>изготовить упаковки смазки</ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.label>
+  <ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.description>Создавать пакеты смазки, пополняющие резервы синтоидов, если она в этом нуждается.</ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.description>
+  <ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.jobString>Изготовление смазки.</ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk.jobString>
+
+
+</LanguageData>

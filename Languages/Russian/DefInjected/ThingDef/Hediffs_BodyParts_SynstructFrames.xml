@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Plasteel Plating -->
+
+  <ABF_Thing_Synstruct_Frame_Plasteel.label>пласталевый каркас</ABF_Thing_Synstruct_Frame_Plasteel.label>
+  <ABF_Thing_Synstruct_Frame_Plasteel.description>Каркас из закалённой и очищенной пластали.</ABF_Thing_Synstruct_Frame_Plasteel.description>
+
+
+  <!-- Refined -->
+
+  <ABF_Thing_Synstruct_Frame_Refined.label>изысканный каркас</ABF_Thing_Synstruct_Frame_Refined.label>
+  <ABF_Thing_Synstruct_Frame_Refined.description>Каркас, вырезанный и спроектированный таким образом, чтобы выглядеть как можно более утончённо и благородно. Каркас может и не преследовать какой-либо конкретной цели, но он определённо влияет на восприятие носителя.</ABF_Thing_Synstruct_Frame_Refined.description>
+
+
+  <!-- Sanitary -->
+
+  <ABF_Thing_Synstruct_Frame_Sanitary.label>стерильный каркас</ABF_Thing_Synstruct_Frame_Sanitary.label>
+  <ABF_Thing_Synstruct_Frame_Sanitary.description>Каркас безжалостно дезинфицируется для достижения нулевой жизнеспособности микрофлоры. Этот каркас полностью отвергает пятна, грязь и патогены. Каркас также оптимизирован для абсолютно плавного движения, хорошо подходит для операций и процедур.</ABF_Thing_Synstruct_Frame_Sanitary.description>
+
+
+</LanguageData>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_Thing_Synstruct_StasisPill.label>Таблетка стазиса</ABF_Thing_Synstruct_StasisPill.label>
+  <ABF_Thing_Synstruct_StasisPill.description>Небольшая таблетка, содержащая суспензию, слегка успокаивающих синтетических химикатов. Синтоид может поглощать химические вещества в своей системе, значительно снижая энергопотребление за счёт снижения эффективности работы.\n\nРазработана для дальних путешествий без доступа к постоянному источнику энергии, эта таблетка снижает потребление энергии на 75% при 50% снижении скорости работы. Обычно используется пиратами, торговцами и солдатами, которые ценят эффективность и не занимаются трудом.</ABF_Thing_Synstruct_StasisPill.description>
+  <ABF_Thing_Synstruct_StasisPill.ingestible.ingestCommandString>Принять {0}</ABF_Thing_Synstruct_StasisPill.ingestible.ingestCommandString>
+  <ABF_Thing_Synstruct_StasisPill.ingestible.ingestReportString>Принимает {0}.</ABF_Thing_Synstruct_StasisPill.ingestible.ingestReportString>
+
+
+</LanguageData>

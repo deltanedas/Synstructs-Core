@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Plasteel Plating -->
+
+  <ABF_Recipe_Synstruct_Frame_Plasteel.label>установить пласталевый каркас</ABF_Recipe_Synstruct_Frame_Plasteel.label>
+  <ABF_Recipe_Synstruct_Frame_Plasteel.description>Заменить каркас юнита на каркас из закалённой пластали, повышая живучесть.</ABF_Recipe_Synstruct_Frame_Plasteel.description>
+  <ABF_Recipe_Synstruct_Frame_Plasteel.jobString>Установка другого каркаса.</ABF_Recipe_Synstruct_Frame_Plasteel.jobString>
+
+
+  <!-- Refined -->
+
+  <ABF_Recipe_Synstruct_Frame_Refined.label>установить изысканный каркас</ABF_Recipe_Synstruct_Frame_Refined.label>
+  <ABF_Recipe_Synstruct_Frame_Refined.description>Заменить каркас юнита на изысканный, подчёркивающую общительность и придающую ему благородный и яркий вид. Сам каркас физически мало чем отличился и поэтому очень прост в установке — сложность заключается в необходимых навыках искусства установщика, поскольку нет возможности стандартизировать красоту замысловатого дизайна.</ABF_Recipe_Synstruct_Frame_Refined.description>
+  <ABF_Recipe_Synstruct_Frame_Refined.jobString>Установка другого каркаса.</ABF_Recipe_Synstruct_Frame_Refined.jobString>
+
+
+  <!-- Sanitary -->
+
+  <ABF_Recipe_Synstruct_Frame_Sanitary.label>установить стерильный каркас</ABF_Recipe_Synstruct_Frame_Sanitary.label>
+  <ABF_Recipe_Synstruct_Frame_Sanitary.description>Заменить каркас юнита на стерильный, обеспечивая полное отсутствие грязи и полную санитарную обработку.</ABF_Recipe_Synstruct_Frame_Sanitary.description>
+  <ABF_Recipe_Synstruct_Frame_Sanitary.jobString>Установка другого каркаса.</ABF_Recipe_Synstruct_Frame_Sanitary.jobString>
+
+
+</LanguageData>

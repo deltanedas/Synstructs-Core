@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_ResurrectionSuccessful>{0} {PAWN_gender ? был : была} успешно {PAWN_gender ? реанимирован : реанимирована}. Перед восстановлением полной функциональности, {PAWN_pronoun} {PAWN_gender ? должен : должна} перезагрузиться.</ABF_ResurrectionSuccessful>
+
+  <ABF_SelectPassionsUpToLimit>Выберите до {0} интересов.</ABF_SelectPassionsUpToLimit>
+  <ABF_SelectPassionsUpToLimitHeader>Выберите до {0} навыков для {1_nameDef}, чтобы увеличить {1_possessive} интерес к</ABF_SelectPassionsUpToLimitHeader>
+
+</LanguageData>

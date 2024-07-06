@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ABF_Thing_Synstruct_RegenerativePill.label>Таблетка регенерации</ABF_Thing_Synstruct_RegenerativePill.label>
+  <ABF_Thing_Synstruct_RegenerativePill.description>Редкий случай синтетического решения, (в основном) безопасного для органического потребления. Регенеративные таблетки представляют собой сложный синтетический раствор, который проходит через кровь, хладагент или другие внутренние потоки хозяина и накапливается вокруг мест повреждений таким образом, чтобы ускорить восстановление и перекрыть потерю жидкости.\n\nХотя опыт использования таблеток может быть неприятным для органиков, никаких негативных эффектов от их воздействия не будет. Неорганические юниты, благодаря её составу, ускоряют восстановление повреждений без негативных последствий.</ABF_Thing_Synstruct_RegenerativePill.description>
+  <ABF_Thing_Synstruct_RegenerativePill.ingestible.ingestCommandString>Принять {0}</ABF_Thing_Synstruct_RegenerativePill.ingestible.ingestCommandString>
+  <ABF_Thing_Synstruct_RegenerativePill.ingestible.ingestReportString>Принимает {0}.</ABF_Thing_Synstruct_RegenerativePill.ingestible.ingestReportString>
+
+
+</LanguageData>

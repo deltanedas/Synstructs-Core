@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Charging Speed -->
+
+  <ABF_Stat_Synstruct_ChargingSpeed.label>скорость зарядки</ABF_Stat_Synstruct_ChargingSpeed.label>
+  <ABF_Stat_Synstruct_ChargingSpeed.description>Как быстро эта пешка набирает энергию во время зарядки. Этот показатель влияет на количество энергии, нужное для полной зарядки, и на время для её достижения. В первую очередь на него влияет аккумулятор юнита.</ABF_Stat_Synstruct_ChargingSpeed.description>
+
+
+  <!-- Nutritional Intake Efficiency -->
+
+  <ABF_Stat_Synstruct_NutritionalIntakeEfficiency.label>эффективность потребления пищи</ABF_Stat_Synstruct_NutritionalIntakeEfficiency.label>
+  <ABF_Stat_Synstruct_NutritionalIntakeEfficiency.description>Сколько энергии получает эта пешка от потребления пищи. Этот показатель влияет на то, насколько восполняется заряд аккумулятора от потребления пищи. В первую очередь на него влияет генератор юнита.</ABF_Stat_Synstruct_NutritionalIntakeEfficiency.description>
+
+
+</LanguageData>

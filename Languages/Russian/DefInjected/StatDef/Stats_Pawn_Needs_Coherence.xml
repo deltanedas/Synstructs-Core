@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Coherence Retention -->
+
+  <ABF_Stat_Synstruct_CoherenceRetention.label>качество стабильности</ABF_Stat_Synstruct_CoherenceRetention.label>
+  <ABF_Stat_Synstruct_CoherenceRetention.description>Насколько хорошо синтоид сохраняет состояние корпуса с течением времени. Эта статистика влияет на то, как быстро изменяется стабильность пешки, и в первую очередь зависит от фильтрации и перекачки хладагента.</ABF_Stat_Synstruct_CoherenceRetention.description>
+
+
+</LanguageData>

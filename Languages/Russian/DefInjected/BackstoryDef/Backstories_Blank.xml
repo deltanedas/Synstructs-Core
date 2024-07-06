@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Blank -->
+
+  <ABF_Backstory_Synstruct_Childhood_Blank.title>заготовка</ABF_Backstory_Synstruct_Childhood_Blank.title>
+  <ABF_Backstory_Synstruct_Childhood_Blank.titleShort>пустышка</ABF_Backstory_Synstruct_Childhood_Blank.titleShort>
+  <ABF_Backstory_Synstruct_Childhood_Blank.baseDesc>{PAWN_nameDef} полностью {PAWN_gender ? лишён : лишена} характера, полезности и детства.</ABF_Backstory_Synstruct_Childhood_Blank.baseDesc>
+
+  <ABF_Backstory_Synstruct_Adulthood_Blank.title>заготовка</ABF_Backstory_Synstruct_Adulthood_Blank.title>
+  <ABF_Backstory_Synstruct_Adulthood_Blank.titleShort>пустышка</ABF_Backstory_Synstruct_Adulthood_Blank.titleShort>
+  <ABF_Backstory_Synstruct_Adulthood_Blank.baseDesc>{PAWN_nameDef} не имеет ни интеллекта, ни памяти. {PAWN_pronoun} полностью {PAWN_gender ? лишён : лишена} характера и полезности.</ABF_Backstory_Synstruct_Adulthood_Blank.baseDesc>
+
+
+</LanguageData>

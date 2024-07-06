@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Archotech Arm -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallArm.label>установить руку архотек</ABF_Recipe_Synstruct_Archotech_InstallArm.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallArm.description>Установить руку архотек.</ABF_Recipe_Synstruct_Archotech_InstallArm.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallArm.jobString>Устанавливает руку архотек.</ABF_Recipe_Synstruct_Archotech_InstallArm.jobString>
+
+
+  <!-- Archotech Leg -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallLeg.label>установить ногу архотек</ABF_Recipe_Synstruct_Archotech_InstallLeg.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallLeg.description>Установить ногу архотек.</ABF_Recipe_Synstruct_Archotech_InstallLeg.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallLeg.jobString>Устанавливает ногу архотек.</ABF_Recipe_Synstruct_Archotech_InstallLeg.jobString>
+
+
+  <!-- Archotech Visual Sensor -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.label>установить оптический датчик архотек</ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.description>Установить оптический датчик архотек.</ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.jobString>Устанавливает оптический датчик архотек.</ABF_Recipe_Synstruct_Archotech_InstallVisualSensor.jobString>
+
+
+  <!-- Archotech Audial Sensor -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.label>установить звуковой датчик архотек</ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.description>Установить звуковой датчик Архотек.</ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.jobString>Устанавливает звуковой датчик Архотек.</ABF_Recipe_Synstruct_Archotech_InstallAudialSensor.jobString>
+
+
+  <!-- Archotech Heatsink -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallHeatsink.label>установить радиатор Архотек</ABF_Recipe_Synstruct_Archotech_InstallHeatsink.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallHeatsink.description>Установить радиатор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallHeatsink.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallHeatsink.jobString>Устанавливает радиатор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallHeatsink.jobString>
+
+
+  <!-- Archotech Coolant Pump -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.label>установить гидронасос Архотек</ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.description>Установить гидронасос Архотек.</ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.jobString>Устанавливает гидронасос Архотек.</ABF_Recipe_Synstruct_Archotech_InstallCoolantPump.jobString>
+
+
+  <!-- Archotech Battery -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallBattery.label>установить аккумулятор Архотек</ABF_Recipe_Synstruct_Archotech_InstallBattery.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallBattery.description>Установить аккумулятор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallBattery.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallBattery.jobString>Устанавливает аккумулятор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallBattery.jobString>
+
+
+  <!-- Archotech Reactor -->
+
+  <ABF_Recipe_Synstruct_Archotech_InstallReactor.label>установить реактор Архотек</ABF_Recipe_Synstruct_Archotech_InstallReactor.label>
+  <ABF_Recipe_Synstruct_Archotech_InstallReactor.description>Установить реактор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallReactor.description>
+  <ABF_Recipe_Synstruct_Archotech_InstallReactor.jobString>Устанавливает реактор Архотек.</ABF_Recipe_Synstruct_Archotech_InstallReactor.jobString>
+
+
+</LanguageData>

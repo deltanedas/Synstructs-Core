@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Guardian -->
+
+  <ABF_Thing_Synstruct_Chassis_Guardian.label>бронированное шасси</ABF_Thing_Synstruct_Chassis_Guardian.label>
+  <ABF_Thing_Synstruct_Chassis_Guardian.description>Шасси, разработанное для того, чтобы выдерживать экстремальные перепады температур и внушать страх. Это шасси было разработано для борьбы с огнём (природным, случайным, неважно), и всеми угрозами, которые с ним связаны. Меры изоляции также сохраняют юнита в условиях смертельного холода.</ABF_Thing_Synstruct_Chassis_Guardian.description>
+
+
+  <!-- Hydraulic -->
+
+  <ABF_Thing_Synstruct_Chassis_Hydraulic.label>гидравлическое шасси</ABF_Thing_Synstruct_Chassis_Hydraulic.label>
+  <ABF_Thing_Synstruct_Chassis_Hydraulic.description>Шасси разработано таким образом, чтобы максимально увеличить вес, который можно безопасно выдержать. Шасси также способствует повышению эффективности при выполнении широкого круга задач.</ABF_Thing_Synstruct_Chassis_Hydraulic.description>
+
+
+  <!-- Repression -->
+
+  <ABF_Thing_Synstruct_Chassis_Repression.label>подавляющее шасси</ABF_Thing_Synstruct_Chassis_Repression.label>
+  <ABF_Thing_Synstruct_Chassis_Repression.description>Шасси, разработанный для выборочного запрета боевых возможностей. Шасси использует внутреннее, изолированное программное обеспечение, для препятствия в использовании оружия, и намеренно является более хрупким, чем стандартное шасси, для снижения боевых характеристик без ухудшения рабочих возможностей.</ABF_Thing_Synstruct_Chassis_Repression.description>
+
+
+  <!-- Mobility -->
+
+  <ABF_Thing_Synstruct_Chassis_Mobility.label>мобильное шасси</ABF_Thing_Synstruct_Chassis_Mobility.label>
+  <ABF_Thing_Synstruct_Chassis_Mobility.description>Шасси разработан и оптимизирован для плавности и эффективности движения. Это шасси имеет уникальные конструкционные решения для минимизации сопротивления, максимально обеспечения превосходную гибкость и манёвренность.</ABF_Thing_Synstruct_Chassis_Mobility.description>
+
+
+</LanguageData>

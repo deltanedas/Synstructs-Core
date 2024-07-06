@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mining Utility Arm -->
+
+  <ABF_Thing_Synstruct_Utility_MiningArm.label>рука бур</ABF_Thing_Synstruct_Utility_MiningArm.label>
+  <ABF_Thing_Synstruct_Utility_MiningArm.description>Простая механическая рука, разработанная для добычи и переработки минералов. В руке имеется сверло из пластали, которое подаёт содержимое во внутренний процессор, эффективно отделяя минералы и быстро выбрасывая отходы, обеспечивая максимальное количество бурений.</ABF_Thing_Synstruct_Utility_MiningArm.description>
+
+
+  <!-- Agriculture Utility Arm -->
+
+  <ABF_Thing_Synstruct_Utility_AgricultureArm.label>рука садовник</ABF_Thing_Synstruct_Utility_AgricultureArm.label>
+  <ABF_Thing_Synstruct_Utility_AgricultureArm.description>Простая механическая рука, разработанная для сельского хозяйства и садоводства. Рука имеет несколько внутренни мульти-инструментов, которые собирают продукты и подают содержимое во внутренний процессор, отбрасывая отходы, обеспечивая оптимальный урожай. Выталкивание продуктов из специальных локтевых портов эффективно, хотя выглядит странно.</ABF_Thing_Synstruct_Utility_AgricultureArm.description>
+
+
+  <!-- Pacification Utility Arm -->
+
+  <ABF_Thing_Synstruct_Utility_PacificationArm.label>усмиряющая рука</ABF_Thing_Synstruct_Utility_PacificationArm.label>
+  <ABF_Thing_Synstruct_Utility_PacificationArm.description>Простая механическая рука со встроенными поглотителями и генераторами энергии. Кулаки способны достигать опасно высоких температур и выпускать тепло при столкновении с целью, эффективно испепеляя её и применяя перегрузочное количество энергии — по сути ЭМИ. Они часто используются полицией для нанесения болезненных, но несмертельных ожогов и вывода из строя транспорт.\n\nЭксцентричные повара ценят постоянную и быструю передачу тепла.</ABF_Thing_Synstruct_Utility_PacificationArm.description>
+
+
+  <!-- Scalpel Utility Arm -->
+
+  <ABF_Thing_Synstruct_Utility_ScalpelArm.label>рука скальпель</ABF_Thing_Synstruct_Utility_ScalpelArm.label>
+  <ABF_Thing_Synstruct_Utility_ScalpelArm.description>Механическая рука с модифицированной структурой, разработанной для точного и идеально плавного движения. Множество встроенных противовесов и уникальных деталей обеспечивают этой руке гораздо более тонкий, но деликатный, контроль. Хотя эта рука не подходит для выполнения общих рабочих задач, она невероятная находка для хирургов, или механиков. Тонкая структура в сочетании с небольшими изменениями в каркасе делает пользователя более уязвимым к повреждениям, но при необходимости скальпель можно использовать как оружие.</ABF_Thing_Synstruct_Utility_ScalpelArm.description>
+
+
+  <!-- Rending Utility Arm -->
+
+  <ABF_Thing_Synstruct_Utility_RendingArm.label>рука палач</ABF_Thing_Synstruct_Utility_RendingArm.label>
+  <ABF_Thing_Synstruct_Utility_RendingArm.description>Механическая рука, служащая для разложения органической или неорганической массы на составные части. Массив специальных внутренних сенсоров, сортировщиков и процессоров обеспечивает этой руке невероятные возможности разборки. Конструкция позволяет свободно передвигаться, не требуя особых наказаний, но вызывает тревожное ощущение. Конструкция позволяет свободно передвигаться, не требуя особых наказаний, но вызывает тревожное ощущение. Войска известных жестоких командиров часто можно встретить оснащёнными этой рукой для проведения шокирующих казней и быстрого устранения проблем с трупами.\n\nПроцесс разрыва тщательно уничтожает патогены и загрязнения, что делает руку идеальным приспособлением для одержимых эффективностью и чистотой мясников и поваров.</ABF_Thing_Synstruct_Utility_RendingArm.description>
+
+
+  <!-- Voice Synthesizers share a single ThingDef, with different HediffDefs and RecipeDefs -->
+
+  <ABF_Thing_Synstruct_Utility_Vocalizer.label>неспециализированный вокализёр</ABF_Thing_Synstruct_Utility_Vocalizer.label>
+  <ABF_Thing_Synstruct_Utility_Vocalizer.description>Специализированная, настраиваемая замена вокализёра, при установке которого можно выбрать один из двух режимов голоса.</ABF_Thing_Synstruct_Utility_Vocalizer.description>
+
+
+</LanguageData>
