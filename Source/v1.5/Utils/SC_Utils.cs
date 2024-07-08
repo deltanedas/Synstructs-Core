@@ -32,16 +32,16 @@ namespace ArtificialBeings
                 return null;
 
             // Downed pawns in beds may count their current bed as a charging bed if it is charge-capable.
-            if (user.Downed && user == carrier && user.CurrentBed() is Building_Bed bed)
+            if (user.Downed && user == carrier)
             {
-                if (RestUtility.IsValidBedFor(bed, user, carrier, true) && (bed.GetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false))
+                if (user.CurrentBed() is Building_Bed bed && RestUtility.IsValidBedFor(bed, user, carrier, true) && (bed.GetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false))
                 {
                     return bed;
                 }
-            }
-            else if (user.Downed && user == carrier)
-            {
-                return null;
+                else
+                {
+                    return null;
+                }
             }
 
             // Try to use the user's owned bed if it is legal.
