@@ -14,6 +14,7 @@ This mod contains content that is shared between the various types of synstructs
 * Drugs that directly benefit synstructs in particular while mostly being toxic for other races to consume.
 * Implants ranging from part upgrades to implants to whole new chassis and frame replacements.
 * Hediffs unique to synstructs that replace vanilla hediffs like hypothermia or heatstroke.
+* Researches necessary to unlock general features in its own research tree.
 * An event that can fire for synstructs where they will ask for permission to change their personality slightly from time to time.
 * Abstract information defined for all synstruct humanlike and animal pawns to use.
 * Unique thoughts for synstructs.
