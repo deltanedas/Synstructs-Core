@@ -237,7 +237,7 @@
     <ThingDef ParentName="ABF_Thing_Synstruct_RestructKitBase">
         <defName>ABF_Thing_Synstruct_RestructKitDrone</defName>
         <label>drone restruct kit</label>
-        <description>A one-use suite of tools and components specifically designed to recover and restore a lost sapient synstruct's personality and consciousness. Due to those precisely specialized tools, these are useless for resuscitating non-sapient synstructs. Synstructs which have had their core destroyed cannot be recovered, but these tools would still be necessary to reconstruct the body.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
+        <description>A one-use suite of tools and components designed to restore most synstructs to full operability. The tools are too simple to recover the intelligence of a sapient synstruct, and cannot be used on them.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
         <graphicData>
             <texPath>Things/Items/Manufactured/SapientRestructKit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
