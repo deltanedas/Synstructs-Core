@@ -22,7 +22,7 @@ namespace ArtificialBeings
         // Fail-safe if an error should happen to occur at spawn, attempt to do it again repeatedly somewhat infrequently until success.
         public override void CompTick()
         {
-            if (parent.IsHashIntervalTick(339))
+            if (parent.IsHashIntervalTick(339) && parent.Spawned)
             {
                 SpawnPawn();
                 parent.Destroy();
@@ -33,7 +33,7 @@ namespace ArtificialBeings
         public virtual Pawn SpawnPawn()
         {
             Faction faction;
-            if (Props.pawnKind.defaultFactionType.isPlayer)
+            if (Props.pawnKind.defaultFactionType?.isPlayer == true)
             {
                 faction = Faction.OfPlayer;
             }
@@ -62,10 +62,10 @@ namespace ArtificialBeings
                 {
                     Find.LetterStack.ReceiveLetter("ABF_NewbootSynstructCreatedLabel".Translate(), "ABF_NewbootSynstructCreatedTextSimple".Translate(pawn.def.label), LetterDefOf.PositiveEvent, pawn, hyperlinkThingDefs: new System.Collections.Generic.List<ThingDef> { pawn.def });
                 }
-                if (Props.mentalStateOnSpawn != null)
-                {
-                    pawn.mindState.mentalStateHandler.TryStartMentalState(Props.mentalStateOnSpawn, transitionSilently: true);
-                }
+            }
+            if (Props.mentalStateOnSpawn != null)
+            {
+                pawn.mindState.mentalStateHandler.TryStartMentalState(Props.mentalStateOnSpawn, transitionSilently: true);
             }
 
             return pawn;

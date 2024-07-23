@@ -51,7 +51,7 @@
                 </capMods>
             </li>
             <li>
-                <minSeverity>0.1</minSeverity>
+                <minSeverity>0.001</minSeverity>
                 <label>critical</label>
             </li>
             <li>
