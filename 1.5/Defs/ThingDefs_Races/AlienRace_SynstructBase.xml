@@ -205,7 +205,6 @@
             <specificMeatDef>Steel</specificMeatDef>
 			<canBePredatorPrey>false</canBePredatorPrey>
             <isImmuneToInfections>true</isImmuneToInfections>
-            <alwaysAwake>true</alwaysAwake>
             <hasMeat>false</hasMeat>
 			<lifeStageAges>
 				<li>
