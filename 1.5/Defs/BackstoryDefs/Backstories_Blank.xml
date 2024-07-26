@@ -26,7 +26,6 @@
 		<spawnCategories>
 			<li>ABF_SpawnCategory_Synstruct_Blank</li>
 		</spawnCategories>
-        <shuffleable>false</shuffleable>
     </BackstoryDef>
 
 </Defs>
