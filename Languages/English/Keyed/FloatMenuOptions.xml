@@ -2,5 +2,6 @@
 <LanguageData>
 
     <ABF_CoherenceNeedMissing>{0} does not have a coherence need.</ABF_CoherenceNeedMissing>
+    <ABF_SynstructsCannotUseThis>Synstructs cannot use this.</ABF_SynstructsCannotUseThis>
 
 </LanguageData>
