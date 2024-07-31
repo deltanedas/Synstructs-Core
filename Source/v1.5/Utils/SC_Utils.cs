@@ -69,44 +69,44 @@ namespace ArtificialBeings
             }
 
             // Create the Blank pawn that will be used for all blank synstructs
-            PawnGenerationRequest request = new PawnGenerationRequest(Faction.OfPlayer.def.basicMemberKind, Faction.OfPlayer, PawnGenerationContext.PlayerStarter, canGeneratePawnRelations: false, forceNoIdeo: true, forceBaselinerChance: 1, colonistRelationChanceFactor: 0f, forceGenerateNewPawn: true, fixedGender: Gender.None);
-            Pawn blankMechanical = PawnGenerator.GeneratePawn(request);
-            blankMechanical.story.Childhood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Childhood_Blank;
-            blankMechanical.story.Adulthood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Adulthood_Blank;
-            blankMechanical.story.traits.allTraits.Clear();
-            blankMechanical.skills.Notify_SkillDisablesChanged();
-            blankMechanical.skills.skills.ForEach(delegate (SkillRecord record)
+            PawnGenerationRequest request = new PawnGenerationRequest(Faction.OfPlayer.def.basicMemberKind, Faction.OfPlayer, PawnGenerationContext.PlayerStarter, canGeneratePawnRelations: false, forceNoIdeo: true, forceBaselinerChance: 1, colonistRelationChanceFactor: 0f, forceGenerateNewPawn: true);
+            Pawn pawn = PawnGenerator.GeneratePawn(request);
+            pawn.story.Childhood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Childhood_Blank;
+            pawn.story.Adulthood = ABF_BackstoryDefOf.ABF_Backstory_Synstruct_Adulthood_Blank;
+            pawn.story.traits.allTraits.Clear();
+            pawn.skills.Notify_SkillDisablesChanged();
+            pawn.skills.skills.ForEach(delegate (SkillRecord record)
             {
                 record.passion = 0;
                 record.Level = 0;
                 record.xpSinceLastLevel = 0;
                 record.xpSinceMidnight = 0;
             });
-            blankMechanical.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
-            blankMechanical.workSettings.DisableAll();
+            pawn.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+            pawn.workSettings.DisableAll();
             if (ModsConfig.BiotechActive)
             {
-                for (int i = blankMechanical.genes.GenesListForReading.Count - 1; i >= 0; i--)
+                for (int i = pawn.genes.GenesListForReading.Count - 1; i >= 0; i--)
                 {
-                    blankMechanical.genes.RemoveGene(blankMechanical.genes.GenesListForReading[i]);
+                    pawn.genes.RemoveGene(pawn.genes.GenesListForReading[i]);
                 }
             }
-            if (blankMechanical.ideo != null)
+            if (ModsConfig.IdeologyActive && pawn.Ideo != null)
             {
-                blankMechanical.ideo.SetIdeo(null);
+                pawn.ideo.SetIdeo(null);
             }
-            if (blankMechanical.timetable == null)
-                blankMechanical.timetable = new Pawn_TimetableTracker(blankMechanical);
-            if (blankMechanical.playerSettings == null)
-                blankMechanical.playerSettings = new Pawn_PlayerSettings(blankMechanical);
-            if (blankMechanical.foodRestriction == null)
-                blankMechanical.foodRestriction = new Pawn_FoodRestrictionTracker(blankMechanical);
-            if (blankMechanical.drugs == null)
-                blankMechanical.drugs = new Pawn_DrugPolicyTracker(blankMechanical);
-            if (blankMechanical.outfits == null)
-                blankMechanical.outfits = new Pawn_OutfitTracker(blankMechanical);
-            blankMechanical.Name = new NameTriple("ABF_BlankPawnFirstName".Translate(), "ABF_BlankPawnNickname".Translate(), "ABF_BlankPawnLastName".Translate());
-            blankPawn = blankMechanical;
+            if (pawn.timetable == null)
+                pawn.timetable = new Pawn_TimetableTracker(pawn);
+            if (pawn.playerSettings == null)
+                pawn.playerSettings = new Pawn_PlayerSettings(pawn);
+            if (pawn.foodRestriction == null)
+                pawn.foodRestriction = new Pawn_FoodRestrictionTracker(pawn);
+            if (pawn.drugs == null)
+                pawn.drugs = new Pawn_DrugPolicyTracker(pawn);
+            if (pawn.outfits == null)
+                pawn.outfits = new Pawn_OutfitTracker(pawn);
+            pawn.Name = new NameTriple("ABF_BlankPawnFirstName".Translate(), "ABF_BlankPawnNickname".Translate(), "ABF_BlankPawnLastName".Translate());
+            blankPawn = pawn;
             return blankPawn;
         }
 
@@ -299,18 +299,8 @@ namespace ArtificialBeings
         // Duplicate applicable needs from the source to the destination. This includes mood thoughts, memories, and ensuring it updates its needs as appropriate.
         public static void DuplicateNeeds(Pawn source, Pawn dest)
         {
-            dest.needs.AllNeeds.Clear();
-            foreach (Need allNeed in source.needs.AllNeeds)
-            {
-                Need need = (Need)Activator.CreateInstance(allNeed.def.needClass, dest);
-                need.def = allNeed.def;
-                dest.needs.AllNeeds.Add(need);
-                need.SetInitialLevel();
-                need.CurLevel = allNeed.CurLevel;
-                dest.needs.BindDirectNeedFields();
-            }
             dest.needs?.AddOrRemoveNeedsAsAppropriate();
-            if (source.needs.mood == null)
+            if (source.needs.mood == null || dest.needs.mood == null)
             {
                 return;
             }
