@@ -1,10 +1,13 @@
 ﻿using HarmonyLib;
+using LudeonTK;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Noise;
 
 namespace ArtificialBeings
 {
@@ -475,6 +478,70 @@ namespace ArtificialBeings
             amicableDroneCount[map] = resultCount;
         }
 
+        [DebugOutput]
+        public static void ChargingStatistics()
+        {
+            Func<ThingDef, string, string> chargingStatistic = delegate (ThingDef def, string desiredCase)
+            {
+                float result = 0;
+                switch (desiredCase)
+                {
+                    case "max nutrition":
+                        result = def.GetStatValueAbstract(StatDefOf.MaxNutrition);
+                        break;
+                    case "hunger rate":
+                        result = def.race.baseHungerRate;
+                        break;
+                    case "charging rate":
+                        result = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) * chargingRatePerDay;
+                        break;
+                    case "nutrition intake efficiency":
+                        result = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_NutritionalIntakeEfficiency);
+                        break;
+                    default:
+                        float maxNutrition = def.GetStatValueAbstract(StatDefOf.MaxNutrition);
+                        float depletionRate = def.race.baseHungerRate;
+                        float chargingRate = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed);
+                        if (maxNutrition <= 0 || depletionRate <= 0 || chargingRate * chargingRatePerDay <= depletionRate)
+                        {
+                            result = -1f;
+                            break;
+                        }
+                        float timeSpentCharging = maxNutrition * 0.7f / ((chargingRate * chargingRatePerDay) - depletionRate) * 24f;
+                        if (desiredCase == "hours to charge")
+                        {
+                            result = timeSpentCharging;
+                        }
+                        else if (desiredCase == "hours between charges")
+                        {
+                            result = maxNutrition * 0.7f / depletionRate * 24f;
+                        }
+                        else if (desiredCase == "hours per day charging")
+                        {
+                            result = timeSpentCharging / (timeSpentCharging + (maxNutrition * 0.7f / depletionRate * 24f)) * 24f;
+                        }
+                        else
+                        {
+                            Log.Warning($"[ABF] {desiredCase} is not accounted for.");
+                        }
+                        break;
+                }
+                return result.ToString(format: "F2");
+            };
+            List<TableDataGetter<ThingDef>> list = new List<TableDataGetter<ThingDef>>
+            {
+                new TableDataGetter<ThingDef>("|defName|", (ThingDef d) => d.defName),
+                new TableDataGetter<ThingDef>("|capacity|", (ThingDef d) => chargingStatistic(d, "max nutrition")),
+                new TableDataGetter<ThingDef>("|loss rate|\n(per day)", (ThingDef d) => chargingStatistic(d, "hunger rate")),
+                new TableDataGetter<ThingDef>("|charge rate|\n(per day)", (ThingDef d) => chargingStatistic(d, "charging rate")),
+                new TableDataGetter<ThingDef>("|nutrition intake efficiency|", (ThingDef d) => chargingStatistic(d, "nutrition intake efficiency")),
+                new TableDataGetter<ThingDef>("|hours to charge|\n(From 30%)", (ThingDef d) => chargingStatistic(d, "hours to charge")),
+                new TableDataGetter<ThingDef>("|hours between charges|\n(To 30%)", (ThingDef d) => chargingStatistic(d, "hours between charges")),
+                new TableDataGetter<ThingDef>("|hours per day charging|", (ThingDef d) => chargingStatistic(d, "hours per day charging"))
+            };
+            DebugTables.MakeTablesDialog(DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) > 0f), list.ToArray());
+        }
+
         // Cached races that are considered synstructs for establishing correct behavior, cached at startup.
         public static HashSet<ThingDef> cachedSynstructs = new HashSet<ThingDef>();
 
@@ -484,5 +551,7 @@ namespace ArtificialBeings
 
         // Cached dictionary matching maps to the number of drones on it that have the amicability directive. Cached via map component regularly.
         public static Dictionary<Map, int> amicableDroneCount = new Dictionary<Map, int>();
+
+        public const float chargingRatePerDay = 6f;
     }
 }

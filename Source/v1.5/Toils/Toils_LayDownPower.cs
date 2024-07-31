@@ -194,7 +194,7 @@ namespace ArtificialBeings
                     // Recache this value relatively frequently or calculate it if it is illegal.
                     if (actor.IsHashIntervalTick(120) || chargeRate < 0)
                     {
-                        chargeRate = 0.0001f * actor.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks: 120);
+                        chargeRate = SC_Utils.chargingRatePerDay / GenDate.TicksPerDay * actor.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks: 120);
                         if (chargeRate > 0)
                         {
                             // Beds get charging effectiveness from their BedRestEffectiveness stat.
