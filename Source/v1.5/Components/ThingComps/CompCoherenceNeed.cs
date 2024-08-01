@@ -195,14 +195,7 @@ namespace ArtificialBeings
 
         public string CoherenceTipString()
         {
-            if (coherenceLevelInfoCached == null)
-            {
-                for (int stageInt = 0; stageInt < CoherenceThresholdBandPercentages.Count - 1; stageInt++)
-                {
-                    coherenceLevelInfoCached += "ABF_CoherenceLevelInfoRange".Translate((CoherenceThresholdBandPercentages[stageInt] * 100f).ToStringDecimalIfSmall(), (CoherenceThresholdBandPercentages[stageInt + 1] * 100f).ToStringDecimalIfSmall()) + ": " + "ABF_CoherenceLevelInfoFallRate".Translate(DailyFallPerStage((ABF_CoherenceStage)stageInt).ToStringPercent()) + "\n";
-                }
-            }
-            return (("ABF_CoherenceGizmoLabel".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + CoherenceLevel.ToStringPercent("0.#") + "\n" + "ABF_CoherenceTargetLabel".Translate() + ": " + TargetCoherenceLevel.ToStringPercent("0.#") + "\n\n" + "ABF_CoherenceTargetLabelDesc".Translate() + "\n\n" + "ABF_CoherenceDesc".Translate() + ":\n\n" + coherenceLevelInfoCached).Resolve();
+            return (("ABF_CoherenceGizmoLabel".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + CoherenceLevel.ToStringPercent("0.#") + "\n" + "ABF_CoherenceTargetLabel".Translate() + ": " + TargetCoherenceLevel.ToStringPercent("0.#") + "\n\n" + "ABF_CoherenceTargetLabelDesc".Translate() + "\n\n" + "ABF_CoherenceDesc".Translate()).Resolve();
         }
 
         // Randomly applies coherence effects based on random chances from the ticksSincePoorCoherence level.
