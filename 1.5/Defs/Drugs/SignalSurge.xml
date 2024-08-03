@@ -4,7 +4,7 @@
 	<ThingDef ParentName="MakeableDrugPillBase">
 		<defName>ABF_Thing_Synstruct_SignalSurge</defName>
 		<label>signal surge</label>
-		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds. Synstructs can absorb these materials into their sensor and data-transfer networks to greatly enhance control over their chassis until the compounds break down into harmless detritus. The substances are highly toxic for organic life, and should not be consumed by them.</description>
+		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds. Synstructs can absorb these materials into their sensor and data-transfer networks to greatly enhance control over their chassis until the compounds break down into harmless detritus.\n\nThe substances are highly toxic for organic life, and should not be consumed by them.</description>
 		<graphicData>
 			<texPath>Things/Drugs/SignalSurge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -4,7 +4,7 @@
 	<ThingDef ParentName="MakeableDrugPillBase">
 		<defName>ABF_Thing_Synstruct_ThermalPill</defName>
 		<label>thermal pill</label>
-		<description>A synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - on both extremes. Organics will suffer severe toxic effects if they consume this.</description>
+		<description>A synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - on both extremes.\n\nThe compounds are highly toxic for organic life, and should not be consumed by them.</description>
 		<graphicData>
 			<texPath>Things/Drugs/TemperatureStabilizer</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
