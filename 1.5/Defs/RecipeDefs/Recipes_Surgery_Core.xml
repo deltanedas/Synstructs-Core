@@ -32,7 +32,7 @@
 		<defName>ABF_Recipe_Synstruct_Incapacitate</defName>
 		<label>incapacitate unit</label>
 		<description>Temporarily incapacitate the unit.</description>
-        <workerClass>Recipe_Surgery</workerClass>
+        <workerClass>Recipe_AddHediff</workerClass>
         <jobString>Incapacitating.</jobString>
 		<workAmount>0</workAmount>
         <hideBodyPartNames>true</hideBodyPartNames>
