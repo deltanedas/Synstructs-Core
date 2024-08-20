@@ -24,7 +24,6 @@
             <canBePredatorPrey>false</canBePredatorPrey>
 			<foodType>OmnivoreRoughAnimal</foodType>
             <trainability>None</trainability>
-            <petness>0.6</petness>
             <wildness>0</wildness>
 			<manhunterOnDamageChance>0</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
