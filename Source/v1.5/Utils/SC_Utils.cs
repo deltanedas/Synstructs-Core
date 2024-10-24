@@ -479,9 +479,9 @@ namespace ArtificialBeings
         }
 
         [DebugOutput]
-        public static void ChargingStatistics()
+        public static void SynstructStatistics()
         {
-            Func<ThingDef, string, string> chargingStatistic = delegate (ThingDef def, string desiredCase)
+            Func<ThingDef, string, string> synstructStatistic = delegate (ThingDef def, string desiredCase)
             {
                 float result = 0;
                 switch (desiredCase)
@@ -493,19 +493,33 @@ namespace ArtificialBeings
                         result = def.race.baseHungerRate;
                         break;
                     case "charging rate":
+                        if (def.race.foodType == FoodTypeFlags.None)
+                        {
+                            return "N/A";
+                        }
                         result = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) * chargingRatePerDay;
                         break;
                     case "nutrition intake efficiency":
+                        if (def.race.foodType == FoodTypeFlags.None)
+                        {
+                            return "N/A";
+                        }
                         result = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_NutritionalIntakeEfficiency);
+                        break;
+                    case "coherence stability requirement":
+                        if (!def.HasComp<CompCoherenceNeed>())
+                        {
+                            return "N/A";
+                        }
+                        result = 0.2f / 0.00002f / GenDate.TicksPerDay * 24 / def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_CoherenceRetention);
                         break;
                     default:
                         float maxNutrition = def.GetStatValueAbstract(StatDefOf.MaxNutrition);
                         float depletionRate = def.race.baseHungerRate;
                         float chargingRate = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed);
-                        if (maxNutrition <= 0 || depletionRate <= 0 || chargingRate * chargingRatePerDay <= depletionRate)
+                        if (maxNutrition <= 0 || depletionRate <= 0 || def.race.foodType == FoodTypeFlags.None ||  chargingRate * chargingRatePerDay <= depletionRate)
                         {
-                            result = -1f;
-                            break;
+                            return "N/A";
                         }
                         float timeSpentCharging = maxNutrition * 0.7f / ((chargingRate * chargingRatePerDay) - depletionRate) * 24f;
                         if (desiredCase == "hours to charge")
@@ -523,6 +537,7 @@ namespace ArtificialBeings
                         else
                         {
                             Log.Warning($"[ABF] {desiredCase} is not accounted for.");
+                            return "N/A";
                         }
                         break;
                 }
@@ -531,15 +546,16 @@ namespace ArtificialBeings
             List<TableDataGetter<ThingDef>> list = new List<TableDataGetter<ThingDef>>
             {
                 new TableDataGetter<ThingDef>("|defName|", (ThingDef d) => d.defName),
-                new TableDataGetter<ThingDef>("|capacity|", (ThingDef d) => chargingStatistic(d, "max nutrition")),
-                new TableDataGetter<ThingDef>("|loss rate|\n(per day)", (ThingDef d) => chargingStatistic(d, "hunger rate")),
-                new TableDataGetter<ThingDef>("|charge rate|\n(per day)", (ThingDef d) => chargingStatistic(d, "charging rate")),
-                new TableDataGetter<ThingDef>("|nutrition intake efficiency|", (ThingDef d) => chargingStatistic(d, "nutrition intake efficiency")),
-                new TableDataGetter<ThingDef>("|hours to charge|\n(From 30%)", (ThingDef d) => chargingStatistic(d, "hours to charge")),
-                new TableDataGetter<ThingDef>("|hours between charges|\n(To 30%)", (ThingDef d) => chargingStatistic(d, "hours between charges")),
-                new TableDataGetter<ThingDef>("|hours per day charging|", (ThingDef d) => chargingStatistic(d, "hours per day charging"))
+                new TableDataGetter<ThingDef>("|capacity|", (ThingDef d) => synstructStatistic(d, "max nutrition")),
+                new TableDataGetter<ThingDef>("|loss rate|\n(per day)", (ThingDef d) => synstructStatistic(d, "hunger rate")),
+                new TableDataGetter<ThingDef>("|charge rate|\n(per day)", (ThingDef d) => synstructStatistic(d, "charging rate")),
+                new TableDataGetter<ThingDef>("|nutrition intake efficiency|", (ThingDef d) => synstructStatistic(d, "nutrition intake efficiency")),
+                new TableDataGetter<ThingDef>("|hours to charge|\n(From 30%)", (ThingDef d) => synstructStatistic(d, "hours to charge")),
+                new TableDataGetter<ThingDef>("|hours between charges|\n(To 30%)", (ThingDef d) => synstructStatistic(d, "hours between charges")),
+                new TableDataGetter<ThingDef>("|hours per day charging|", (ThingDef d) => synstructStatistic(d, "hours per day charging")),
+                new TableDataGetter<ThingDef>("|hours per day building coherence|\n(Keeping at 50%)", (ThingDef d) => synstructStatistic(d, "coherence stability requirement"))
             };
-            DebugTables.MakeTablesDialog(DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && d.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) > 0f), list.ToArray());
+            DebugTables.MakeTablesDialog(DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && (d.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) > 0 || d.HasComp<CompCoherenceNeed>())), list.ToArray());
         }
 
         // Cached races that are considered synstructs for establishing correct behavior, cached at startup.

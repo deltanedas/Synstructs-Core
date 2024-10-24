@@ -42,7 +42,7 @@ namespace ArtificialBeings
                     }
                     foreach (ColorDef colorDef in DefDatabase<ColorDef>.AllDefs)
                     {
-                        if (colorDef.colorType == ColorType.Misc || colorDef.colorType == ColorType.Ideo)
+                        if (colorDef.colorType == ColorType.Structure || colorDef.colorType == ColorType.Ideo)
                         {
                             colors.Add(colorDef.color);
                         }
@@ -66,7 +66,7 @@ namespace ArtificialBeings
             Text.Font = GameFont.Medium;
             Rect TitleRect = new Rect(inRect);
             TitleRect.height = Text.LineHeight * 2f;
-            Widgets.Label(TitleRect, "StylePawn".Translate().CapitalizeFirst() + ": " + Find.ActiveLanguageWorker.WithDefiniteArticle(pawn.Name.ToStringShort, pawn.gender, plural: false, name: true).ApplyTag(TagType.Name));
+            Widgets.Label(TitleRect, "ABF_PaintSynstruct".Translate() + ": " + Find.ActiveLanguageWorker.WithDefiniteArticle(pawn.Name.ToStringShort, pawn.gender, plural: false, name: true).ApplyTag(TagType.Name));
             Text.Font = GameFont.Small;
             inRect.yMin = TitleRect.yMax + 4f;
             Rect PortraitRect = inRect;
