@@ -20,7 +20,6 @@
         <skinCovered>false</skinCovered>
         <tags>
             <li>BreathingPathway</li>
-            <li>EatingPathway</li>
             <li>TalkingPathway</li>
         </tags>
         <bleedRate>0</bleedRate>

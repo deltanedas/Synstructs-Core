@@ -264,7 +264,7 @@
     <HediffDef ParentName="ABF_Hediff_Synstruct_Coherence_RandomEffectsBase">
         <defName>ABF_Hediff_Synstruct_Coherence_FailingValves</defName>
         <label>failing coolant valves</label>
-        <description>The internal coolant valves of this unit are degrading. Over time, the chassis will lose the ability to circulate coolant, leading to severe impediments to repairs and cooling efficiency until repaired.</description>
+        <description>The internal coolant valves of this unit are degrading. Over time, the chassis will lose the ability to circulate coolant, leading to severe reductions in available power output due to the generator overheating losing efficiency.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <initialSeverity>0.001</initialSeverity>
         <lethalSeverity>1</lethalSeverity>
