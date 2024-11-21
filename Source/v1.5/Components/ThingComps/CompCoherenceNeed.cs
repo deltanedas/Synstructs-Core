@@ -12,27 +12,41 @@ namespace ArtificialBeings
     {
         Pawn Pawn => (Pawn)parent;
 
-        private static float ThresholdCritical => 0.1f;
+        private const float initialLevel = 0.6f;
 
-        private static float ThresholdPoor => 0.3f;
+        private const float initialTargetLevel = 0.5f;
 
-        private static float ThresholdSatisfactory => 0.7f;
+        private const float thresholdCritical = 0.1f;
 
-        public static readonly List<float> CoherenceThresholdBandPercentages = new List<float> { 0f, ThresholdCritical, ThresholdPoor, ThresholdSatisfactory, 1f };
+        private const float thresholdPoor = 0.3f;
 
-        private static readonly float TicksPerDay = 60000;
+        private const float thresholdSatisfactory = 0.7f;
 
-        private static readonly float TicksPerLong = 2000;
+        public static string coherenceLevelInfoCached;
+
+        public static readonly List<float> CoherenceThresholdBandPercentages = new List<float> { 0f, thresholdCritical, thresholdPoor, thresholdSatisfactory, 1f };
+
+        private float coherenceLevel = -1;
+
+        private float cachedFallRatePerDay = 0.1f;
+
+        private int disablingSources = 0;
+
+        public float targetLevel = -1;
+
+        public float coherenceEffectTicks = GenDate.TicksPerDay;
+
+        public bool Disabled => disablingSources > 0;
 
         public ABF_CoherenceStage Stage
         {
             get
             {
-                if (coherenceLevel < ThresholdCritical)
+                if (coherenceLevel < thresholdCritical)
                     return ABF_CoherenceStage.Critical;
-                else if (coherenceLevel < ThresholdPoor)
+                else if (coherenceLevel < thresholdPoor)
                     return ABF_CoherenceStage.Poor;
-                else if (coherenceLevel < ThresholdSatisfactory)
+                else if (coherenceLevel < thresholdSatisfactory)
                     return ABF_CoherenceStage.Sufficient;
                 return ABF_CoherenceStage.Satisfactory;
             }
@@ -75,7 +89,7 @@ namespace ArtificialBeings
 
         public float CoherenceFallPerDay()
         {
-            return Mathf.Clamp(DailyFallPerStage(Stage) / Pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_CoherenceRetention, cacheStaleAfterTicks: 2000), 0.005f, 2f);
+            return Mathf.Clamp(DailyFallPerStage(Stage) / Pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_CoherenceRetention, cacheStaleAfterTicks: GenTicks.TickLongInterval), 0.005f, 2f);
         }
 
         public override void PostPostMake()
@@ -83,11 +97,11 @@ namespace ArtificialBeings
             base.PostPostMake();
             if (coherenceLevel < 0)
             {
-                coherenceLevel = 0.6f;
+                coherenceLevel = initialLevel;
             }
             if (targetLevel < 0)
             {
-                targetLevel = 0.5f;
+                targetLevel = initialTargetLevel;
             }
         }
 
@@ -97,19 +111,20 @@ namespace ArtificialBeings
             Scribe_Values.Look(ref coherenceLevel, "ABF_coherenceLevel", -1);
             Scribe_Values.Look(ref targetLevel, "ABF_targetLevel", -1);
             Scribe_Values.Look(ref cachedFallRatePerDay, "ABF_cachedFallRatePerDay", -1);
-            Scribe_Values.Look(ref coherenceEffectTicks, "ABF_coherenceEffectTicks", TicksPerDay);
+            Scribe_Values.Look(ref coherenceEffectTicks, "ABF_coherenceEffectTicks", GenDate.TicksPerDay);
+            Scribe_Values.Look(ref disablingSources, "ABF_disablingSources", 0);
         }
 
         public override void CompTickRare()
         {
             base.CompTickRare();
-            if (!Pawn.Spawned || Find.TickManager.TicksGame % 2000 != 0)
+            if (!Pawn.Spawned || Disabled || Find.TickManager.TicksGame % GenTicks.TickLongInterval != 0)
             {
                 return;
             }
 
             // Recache fall rate every in game day.
-            if (Find.TickManager.TicksGame % 60000 == 0)
+            if (Find.TickManager.TicksGame % GenDate.TicksPerDay == 0)
             {
                 cachedFallRatePerDay = CoherenceFallPerDay();
             }
@@ -117,7 +132,25 @@ namespace ArtificialBeings
             TryCoherenceCheck();
 
             ChangeCoherenceEffectTicks();
-            ChangeCoherenceLevel(-cachedFallRatePerDay * TicksPerLong / TicksPerDay);
+            ChangeCoherenceLevel(-cachedFallRatePerDay * GenTicks.TickLongInterval / GenDate.TicksPerDay);
+        }
+
+        public void IncrementDisablingSources()
+        {
+            disablingSources += 1;
+        }
+
+        // When a source stops disabling the "need", check to see if it is now enabled. If it is, reinitialize it.
+        public void DecrementDisablingSources()
+        {
+            disablingSources -= 1;
+            if (disablingSources <= 0)
+            {
+                coherenceEffectTicks = 0;
+                coherenceLevel = initialLevel;
+                targetLevel = initialTargetLevel;
+                cachedFallRatePerDay = CoherenceFallPerDay();
+            }
         }
 
         // Alter the coherence level by the provided amount (decreases are assumed to be negative). Ensure the level never falls outside 0 - 1 range and handle stage changes appropriately.
@@ -150,7 +183,7 @@ namespace ArtificialBeings
         {
             if (coherenceLevel < 0.3f)
             {
-                coherenceEffectTicks -= TicksPerLong;
+                coherenceEffectTicks -= GenTicks.TickLongInterval;
 
                 if (coherenceEffectTicks > 0)
                 {
@@ -159,7 +192,7 @@ namespace ArtificialBeings
             }
             else if (coherenceLevel > 0.7f)
             {
-                coherenceEffectTicks += TicksPerLong;
+                coherenceEffectTicks += GenTicks.TickLongInterval;
 
                 if (coherenceEffectTicks < 0)
                 {
@@ -168,16 +201,16 @@ namespace ArtificialBeings
             }
             else
             {
-                coherenceEffectTicks = Mathf.MoveTowards(coherenceEffectTicks, 0, (Mathf.Log((Mathf.Abs(coherenceEffectTicks) / TicksPerDay) + 2, 2) - 1) * TicksPerLong);
+                coherenceEffectTicks = Mathf.MoveTowards(coherenceEffectTicks, 0, (Mathf.Log((Mathf.Abs(coherenceEffectTicks) / GenDate.TicksPerDay) + 2, 2) - 1) * GenTicks.TickLongInterval);
             }
             // Prevent the ticks from going outside a 60 day value positively or negatively.
-            coherenceEffectTicks = Mathf.Clamp(coherenceEffectTicks, -3600000, 3600000);
+            coherenceEffectTicks = Mathf.Clamp(coherenceEffectTicks, -(60 * GenDate.TicksPerDay), 60 * GenDate.TicksPerDay);
         }
 
         // Coherence need has associated gizmos for displaying and controlling the coherence level of pawns.
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (Find.Selector.SingleSelectedThing == parent)
+            if (Find.Selector.SingleSelectedThing == parent && !Disabled)
             {
                 Gizmo_CoherenceStatus coherenceStatusGizmo = new Gizmo_CoherenceStatus
                 {
@@ -227,7 +260,7 @@ namespace ArtificialBeings
                     }
 
                     // If coherence effect ticks is higher than days before can occur, it can not occur (both are negative here).
-                    if (coherenceEffectTicks > effectExtension.daysBeforeCanOccur * 60000)
+                    if (coherenceEffectTicks > effectExtension.daysBeforeCanOccur * GenDate.TicksPerDay)
                     {
                         continue;
                     }
@@ -244,7 +277,7 @@ namespace ArtificialBeings
                     }
 
                     // If coherence effect ticks is lower than days before can occur, it can not occur (both are positive here).
-                    if (coherenceEffectTicks < effectExtension.daysBeforeCanOccur * 60000)
+                    if (coherenceEffectTicks < effectExtension.daysBeforeCanOccur * GenDate.TicksPerDay)
                     {
                         continue;
                     }
@@ -258,7 +291,7 @@ namespace ArtificialBeings
         {
             // Check the chance to occur based on the extensions curve, with 0 corresponding to the days before it can occur. If it should, apply the appropriate effects.
             // For example, if 4 average coherence days must pass before an effect is applied, and 5 days have passed, the curve will evaluate at 1.
-            if (Rand.MTBEventOccurs(effectExtension.meanDaysToOccur.Evaluate(Math.Abs(effectTicks) - Math.Abs(effectExtension.daysBeforeCanOccur)), TicksPerDay, 60f))
+            if (Rand.MTBEventOccurs(effectExtension.meanDaysToOccur.Evaluate(Math.Abs(effectTicks) - Math.Abs(effectExtension.daysBeforeCanOccur)), GenDate.TicksPerDay, 60f))
             {
                 HashSet<BodyPartRecord> validParts = ValidBodyPartsForEffect(effectExtension, pawn);
                 // If there are no legal parts identified, this effect can not occur.
@@ -358,11 +391,5 @@ namespace ArtificialBeings
                 Find.LetterStack.ReceiveLetter("ABF_CoherenceEffectOccurredLetterLabel".Translate(pawn.LabelShort, cause.LabelCap, pawn.Named("PAWN")).CapitalizeFirst(), "ABF_CoherenceEffectOccurredLetter".Translate(pawn.LabelShortCap, cause.LabelCap, pawn.Named("PAWN")).CapitalizeFirst(), LetterDefOf.NeutralEvent, pawn);
             }
         }
-
-        private float coherenceLevel = -1;
-        public float targetLevel = -1;
-        private float cachedFallRatePerDay = 0.1f;
-        public float coherenceEffectTicks = TicksPerDay;
-        public static string coherenceLevelInfoCached;
     }
 }

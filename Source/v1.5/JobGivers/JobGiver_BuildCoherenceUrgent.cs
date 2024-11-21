@@ -25,7 +25,7 @@ namespace ArtificialBeings
         {
             CompCoherenceNeed compCoherenceNeed = pawn.GetComp<CompCoherenceNeed>();
 
-            if (compCoherenceNeed == null || pawn.InAggroMentalState || !pawn.Spawned || pawn.Downed)
+            if (compCoherenceNeed == null || compCoherenceNeed.Disabled || pawn.InAggroMentalState || !pawn.Spawned || pawn.Downed)
             {
                 return null;
             }

@@ -187,6 +187,7 @@
     <Compile Include="Components\HediffComps\HediffCompProperties_CoherenceStageEffect.cs" />
     <Compile Include="Components\HediffComps\HediffComp_CoherenceThresholdToRemove.cs" />
     <Compile Include="Components\HediffComps\HediffComp_CoherenceStageEffect.cs" />
+    <Compile Include="Components\HediffComps\HediffComp_DisablesCoherence.cs" />
     <Compile Include="Components\HediffComps\HediffComp_SeverityAffectsNeed.cs" />
     <Compile Include="Components\HediffComps\HediffComp_RemoveHediffOnApply.cs" />
     <Compile Include="Components\CompTargetEffect_ResurrectPawn.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Harmony\Alert_RoyalNoAcceptableFood_Patch.cs" />
     <Compile Include="Harmony\Pawn_Patch.cs" />
     <Compile Include="Hediffs\HediffGiver_MechHypothermia.cs" />
+    <Compile Include="Hediffs\HediffWithComps_SynstructCoreAssistant.cs" />
     <Compile Include="Hediffs\Hediff_SynstructCoreAssistant.cs" />
     <Compile Include="Hediffs\Hediff_SynstructFrame.cs" />
     <Compile Include="Hediffs\Hediff_SynstructChassis.cs" />
