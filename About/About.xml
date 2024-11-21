@@ -24,6 +24,6 @@
 		<li>majorhoff.rimthreaded</li>
 	</loadBefore>
     <description>
-        <![CDATA[Synstructs Core holds all of the common code and data necessary for synstruct race submods.\n\nVersion <color=#FFD800>1.0.0</color> with more to come.]]>
+        <![CDATA[Synstructs Core holds all of the common code and data necessary for synstruct race submods.]]>
     </description>
 </ModMetaData>
