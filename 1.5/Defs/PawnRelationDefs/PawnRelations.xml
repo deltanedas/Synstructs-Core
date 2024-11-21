@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- These are not generated randomly and have no effects besides opinion. Making a synstruct sapient manually adds these. -->
+
+    <PawnRelationDef>
+        <workerClass>PawnRelationWorker</workerClass>
+        <defName>ABF_PawnRelation_Synstruct_Creator</defName>
+        <label>creator</label>
+        <importance>194</importance>
+        <diedThought>ABF_Thought_Synstruct_CreatorDied</diedThought>
+        <killedThought>ABF_Thought_Synstruct_KilledMyCreator</killedThought>
+        <lostThought>ABF_Thought_Synstruct_MyCreatorLost</lostThought>
+        <opinionOffset>30</opinionOffset>
+        <generationChanceFactor>0</generationChanceFactor>
+        <implied>false</implied>
+    </PawnRelationDef>
+
+    <PawnRelationDef>
+        <workerClass>PawnRelationWorker</workerClass>
+        <defName>ABF_PawnRelation_Synstruct_Creation</defName>
+        <label>creation</label>
+        <importance>189</importance>
+        <diedThought>ABF_Thought_Synstruct_CreationDied</diedThought>
+        <killedThought>ABF_Thought_Synstruct_KilledMyCreation</killedThought>
+        <lostThought>ABF_Thought_Synstruct_MyCreationLost</lostThought>
+        <opinionOffset>30</opinionOffset>
+        <generationChanceFactor>0</generationChanceFactor>
+        <implied>false</implied>
+    </PawnRelationDef>
+
+</Defs>

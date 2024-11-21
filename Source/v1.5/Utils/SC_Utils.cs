@@ -135,6 +135,27 @@ namespace ArtificialBeings
                     }
                     Traverse.Create(dest.relations).Method("AffectBondedAnimalsOnMyDeath").GetValue();
                     dest.health.NotifyPlayerOfKilled(null, null, null);
+
+                    // Synstructs may have up to one creator.
+                    Pawn creator = dest.relations?.GetFirstDirectRelationPawn(SC_PawnRelationDefOf.ABF_PawnRelation_Synstruct_Creator);
+                    if (creator != null && !creator.Dead && creator.needs.mood != null)
+                    {
+                        creator.relations.TryRemoveDirectRelation(SC_PawnRelationDefOf.ABF_PawnRelation_Synstruct_Creation, dest);
+                    }
+                    // Synstructs may have many creations.
+                    List<DirectPawnRelation> relationsToRemove = new List<DirectPawnRelation>();
+                    foreach (DirectPawnRelation directPawnRelation in dest.relations.DirectRelations)
+                    {
+                        if (directPawnRelation.def == SC_PawnRelationDefOf.ABF_PawnRelation_Synstruct_Creation)
+                        {
+                            relationsToRemove.Add(directPawnRelation);
+                        }
+                    }
+                    for (int i = relationsToRemove.Count - 1; i >= 0; i--)
+                    {
+                        relationsToRemove[i].otherPawn.relations.RemoveDirectRelation(relationsToRemove[i]);
+                    }
+
                     dest.relations.ClearAllRelations();
                 }
 

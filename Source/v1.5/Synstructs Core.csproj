@@ -197,6 +197,7 @@
     <Compile Include="Components\ThingComps\CompAssignableToPawn_CoherenceSpot.cs" />
     <Compile Include="DeathActions\DeathActionProperties_DeadSynstructSwitch.cs" />
     <Compile Include="DeathActions\DeathActionWorker_DeadSynstructSwitch.cs" />
+    <Compile Include="DefOfs\SC_PawnRelationDefOf.cs" />
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
     <Compile Include="Extensions\HediffExtensions.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="MaintenanceWorkers\CoherenceWorker_NoConsciousnessSource.cs" />
     <Compile Include="MentalStates\MentalState_DirectiveBerserker.cs" />
     <Compile Include="MentalStates\MentalState_Exterminator.cs" />
+    <Compile Include="PawnRelationWorkers\PawnRelationWorker_Creator.cs" />
     <Compile Include="Recipes\Recipe_InstallSlotUpgrade.cs" />
     <Compile Include="Recipes\Recipe_MakeBlank.cs" />
     <Compile Include="Recipes\Recipe_MakeReprogrammable.cs" />

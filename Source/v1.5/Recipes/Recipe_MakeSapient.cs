@@ -54,6 +54,12 @@ namespace ArtificialBeings
             Pawn personality = PawnGenerator.GeneratePawn(request);
             SC_Utils.Duplicate(personality, pawn, false);
 
+            // Create a pawn relation between the creator and creation.
+            if (billDoer != null)
+            {
+                billDoer.relations?.AddDirectRelation(SC_PawnRelationDefOf.ABF_PawnRelation_Synstruct_Creation, pawn);
+                pawn.relations?.AddDirectRelation(SC_PawnRelationDefOf.ABF_PawnRelation_Synstruct_Creator, billDoer);
+            }
 
             // Allow the player to pick a few passions and a trait for the new synstruct, akin to child growth moments in Biotech.
             if (ModLister.BiotechInstalled)
