@@ -229,11 +229,13 @@
     <Compile Include="JobGivers\JobGiver_BuildCoherenceUrgent.cs" />
     <Compile Include="JobGivers\JobGiver_AIBerserkerRage.cs" />
     <Compile Include="JobGivers\JobGiver_BuildCoherenceIdle.cs" />
+    <Compile Include="JobGivers\JobGiver_WanderGrassObsession.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_RandomMemoryLoss.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_SapientsOnly.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_AdaptationPractice.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_NoConsciousnessSource.cs" />
+    <Compile Include="MentalStateWorkers\MentalStateWorker_GrassObsession.cs" />
     <Compile Include="MentalStates\MentalState_DirectiveBerserker.cs" />
     <Compile Include="MentalStates\MentalState_Exterminator.cs" />
     <Compile Include="PawnRelationWorkers\PawnRelationWorker_Creator.cs" />

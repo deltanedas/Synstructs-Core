@@ -13,6 +13,13 @@
                     <AnimalsLearningFactor>0.4</AnimalsLearningFactor>
                     <BondAnimalChanceFactor>1</BondAnimalChanceFactor>
                 </statOffsets>
+                <randomMentalState>ABF_MentalState_Synstruct_FriendlyGrassObsession</randomMentalState>
+                <randomMentalStateMtbDaysMoodCurve>
+                  <points>
+                    <li>(0, 50)</li>
+                  </points>
+                </randomMentalStateMtbDaysMoodCurve>
+                <allowedMeditationFocusTypes><li>Natural</li></allowedMeditationFocusTypes>
             </li>
             <li>
                 <label>biophobe</label>
@@ -24,6 +31,12 @@
                 <statFactors>
                     <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
                 </statFactors>
+                <randomMentalState>ABF_MentalState_Synstruct_HostileGrassObsession</randomMentalState>
+                <randomMentalStateMtbDaysMoodCurve>
+                  <points>
+                    <li>(0, 50)</li>
+                  </points>
+                </randomMentalStateMtbDaysMoodCurve>
             </li>
         </degreeDatas>
     </TraitDef>

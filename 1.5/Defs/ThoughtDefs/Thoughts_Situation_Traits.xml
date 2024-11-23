@@ -40,6 +40,10 @@
     <ThoughtDef>
         <defName>ABF_Thought_Synstruct_BiophilePreferenceTowardOrganics</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardOrganics</workerClass>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>1</requiredTraitsDegree>
         <stages>
             <li>
                 <label>organic footprint</label>
@@ -103,6 +107,10 @@
     <ThoughtDef>
         <defName>ABF_Thought_Synstruct_BiophobePreferenceTowardOrganics</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardOrganics</workerClass>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>-1</requiredTraitsDegree>
         <stages>
             <li>
                 <label>organic footprint</label>
@@ -130,6 +138,10 @@
     <ThoughtDef>
         <defName>ABF_Thought_Synstruct_BiophobePreferenceTowardBiomimetics</defName>
         <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardBiomimetics</workerClass>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>-1</requiredTraitsDegree>
         <stages>
             <li>
                 <label>biomimetic presence</label>

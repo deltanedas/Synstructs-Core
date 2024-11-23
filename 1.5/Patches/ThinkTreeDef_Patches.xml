@@ -42,6 +42,31 @@
 		</value>
 	</Operation>
 
+	<!-- Add the grass obsession mental state think trees to the MentalStateNonCritical think tree so it can be used -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes</xpath>
+		<value>
+            <li Class="ThinkNode_ConditionalMentalStates">
+                <states>
+                    <li>ABF_MentalState_Synstruct_FriendlyGrassObsession</li>
+                    <li>ABF_MentalState_Synstruct_HostileGrassObsession</li>
+                </states>
+                <subNodes>
+                  <li Class="ThinkNode_PrioritySorter">
+                    <subNodes>
+                      <li Class="JobGiver_GetFood">
+                        <maxLevelPercentage>0.05</maxLevelPercentage>
+                      </li>
+                    </subNodes>
+                  </li>
+                  <li Class="ArtificialBeings.JobGiver_WanderGrassObsession">
+                    <maxDanger>Deadly</maxDanger>
+                  </li>
+                </subNodes>
+            </li>
+		</value>
+	</Operation>
+
     <!-- Humanlike colonists should idly charge and build coherence instead of wandering if possible. -->
     <Operation Class="PatchOperationInsert">
         <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes/li[@Class="JobGiver_WanderColony"]</xpath>
