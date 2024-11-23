@@ -499,6 +499,46 @@ namespace ArtificialBeings
             amicableDroneCount[map] = resultCount;
         }
 
+        // For a given map, recache the number of player organic colonists and animals.
+        public static void UpdatePlayerOrganicPawnCount(Map map)
+        {
+            List<Pawn> playerPawns = map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer);
+            playerOrganicPawnCount = new Dictionary<Map, int>();
+            int organicPawnCount = 0;
+            int organicAnimalCount = 0;
+            for (int i = playerPawns.Count - 1; i >= 0; i--)
+            {
+                Pawn pawn = playerPawns[i];
+                if (!ABF_Utils.IsArtificial(pawn))
+                {
+                    organicPawnCount++;
+                    if (pawn.RaceProps.intelligence == Intelligence.Animal)
+                    {
+                        organicAnimalCount++;
+                    }
+                }
+            }
+            playerOrganicPawnCount[map] = organicPawnCount;
+            playerOrganicAnimalCount[map] = organicAnimalCount;
+        }
+
+        // For a given map, recache the number of player biomimetics.
+        public static void UpdatePlayerBiomimeticCount(Map map)
+        {
+            List<Pawn> playerPawns = map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer);
+            playerBiomimeticCount = new Dictionary<Map, int>();
+            int resultCount = 0;
+            for (int i = playerPawns.Count - 1; i >= 0; i--)
+            {
+                Pawn pawn = playerPawns[i];
+                if (ABF_Utils.IsArtificial(pawn) && pawn.RaceProps.intelligence == Intelligence.Animal)
+                {
+                    resultCount++;
+                }
+            }
+            playerBiomimeticCount[map] = resultCount;
+        }
+
         [DebugOutput]
         public static void SynstructStatistics()
         {
@@ -588,6 +628,15 @@ namespace ArtificialBeings
 
         // Cached dictionary matching maps to the number of drones on it that have the amicability directive. Cached via map component regularly.
         public static Dictionary<Map, int> amicableDroneCount = new Dictionary<Map, int>();
+
+        // Cached dictionary matching maps to the number of organic beings in the player's colony. Cached via map component regularly.
+        public static Dictionary<Map, int> playerOrganicPawnCount = new Dictionary<Map, int>();
+
+        // Cached dictionary matching maps to the number of organic animals in the player's colony. Cached via map component regularly.
+        public static Dictionary<Map, int> playerOrganicAnimalCount = new Dictionary<Map, int>();
+
+        // Cached dictionary matching maps to the number of biomimetics in the player's colony. Cached via map component regularly.
+        public static Dictionary<Map, int> playerBiomimeticCount = new Dictionary<Map, int>();
 
         public const float chargingRatePerDay = 6f;
     }

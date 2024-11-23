@@ -13,6 +13,7 @@ namespace ArtificialBeings
             if (map.IsHashIntervalTick(GenTicks.TickLongInterval))
             {
                 SC_Utils.UpdateAmicableDroneCount(map);
+                SC_Utils.UpdatePlayerOrganicPawnCount(map);
             }
         }
     }

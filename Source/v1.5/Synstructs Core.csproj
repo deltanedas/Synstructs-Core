@@ -248,6 +248,13 @@
     <Compile Include="Components\ThingComps\CompPawnSpawner.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker_Patch.cs" />
     <Compile Include="StockGenerators\StockGenerator_Drones.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_OrganicVsBiophobe.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiologicalPreferenceTowardBiomimetics.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiophileHappyWorkTypes.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiophobeUnhappyWorkTypes.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiophileUnhappyWorkTypes.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiologicalPreferenceTowardOrganics.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_BiologicalOther.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_SynstructHasArchotechImplant.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_DronesOfSameModelMood.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_CoherenceMood.cs" />

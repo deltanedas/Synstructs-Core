@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TraitDef>
+        <defName>ABF_Trait_Synstruct_BiologicalPreference</defName>
+        <commonality>2</commonality>
+        <degreeDatas>
+            <li>
+                <label>biophile</label>
+                <description>[PAWN_nameDef] possesses a natural affinity for organic life, and is cheered up by its mere existence. [PAWN_pronoun] could spend all day admiring it.</description>
+                <degree>1</degree>
+                <statOffsets>
+                    <AnimalsLearningFactor>0.4</AnimalsLearningFactor>
+                    <BondAnimalChanceFactor>1</BondAnimalChanceFactor>
+                </statOffsets>
+            </li>
+            <li>
+                <label>biophobe</label>
+                <description>[PAWN_nameDef] possesses an irrational fear of organic life, bordering on hysteria. [PAWN_pronoun] believes all life is out to get [PAWN_objective].</description>
+                <degree>-1</degree>
+                <statOffsets>
+                    <AnimalsLearningFactor>-0.4</AnimalsLearningFactor>
+                </statOffsets>
+                <statFactors>
+                    <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+                </statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>

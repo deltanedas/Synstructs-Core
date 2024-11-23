@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Biophile thoughts -->
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophileUnhappyWithWork</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiophileUnhappyWorkTypes</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>1</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>biophile is a hunter</label>
+                <description>I love animals! I don't want to intervene in the cycle of nature like this!</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophileHappyWithWork</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiophileHappyWorkTypes</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>1</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>biophile works with organics</label>
+                <description>I love life! I'm happy I get to work with the natural world and its lifecycle.</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophilePreferenceTowardOrganics</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardOrganics</workerClass>
+        <stages>
+            <li>
+                <label>organic footprint</label>
+                <description>I like having some organics around.</description>
+                <baseMoodEffect>1</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic foothold</label>
+                <description>We've got quite a few organics around. I like it.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic stronghold</label>
+                <description>We've forged ourselves a proper bastion of synstruct and organic harmony. I'm proud to be a part of it.</description>
+                <baseMoodEffect>4</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic union</label>
+                <description>We've achieved something that few have done - created a society that holds synstructs and organic life in balance! I feel blessed to be a part of it.</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophileApproval</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiologicalOther</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>1</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>living person</label>
+                <baseOpinionOffset>40</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Biophobe thoughts -->
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophobeUnhappyWithWork</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiophobeUnhappyWorkTypes</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>-1</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>biophobe works with organics</label>
+                <description>I hate life! It could get me even if it's dead! I don't want to go anywhere near it! Gross!</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophobePreferenceTowardOrganics</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardOrganics</workerClass>
+        <stages>
+            <li>
+                <label>organic footprint</label>
+                <description>There's organic, thinking things around. I don't trust them.</description>
+                <baseMoodEffect>-3</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic foothold</label>
+                <description>There's a lot of organics around. I can barely go anywhere without seeing them. They're plotting against me.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic stronghold</label>
+                <description>I'm surrounded. They're everywhere. The organics are planning to get rid of me - I just know it!</description>
+                <baseMoodEffect>-12</baseMoodEffect>
+            </li>
+            <li>
+                <label>organic union</label>
+                <description>Such an overwhelming presence of organics can mean only one thing - they're preparing for a purge! They won't take me! I'll fight to the last processor cycle!</description>
+                <baseMoodEffect>-24</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophobePreferenceTowardBiomimetics</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiologicalPreferenceTowardBiomimetics</workerClass>
+        <stages>
+            <li>
+                <label>biomimetic presence</label>
+                <description>We have some biomimetics. They're clearly superior to organics... but I still don't want to go near them.</description>
+                <baseMoodEffect>1</baseMoodEffect>
+            </li>
+            <li>
+                <label>biomimetic foothold</label>
+                <description>We have a number of biomietics. We are asserting the superiority of steel over flesh with them, but I can't help but wonder why we're replicating organics.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+            <li>
+                <label>biomimetic stronghold</label>
+                <description>We have a solid force of biomimetics. Good - we'll teach the organics the true power of steel! Now if only we could come up with some new designs. These ones creep me out.</description>
+                <baseMoodEffect>4</baseMoodEffect>
+            </li>
+            <li>
+                <label>biomimetic fortress</label>
+                <description>We have a small army of biomimetics. I still can't get over the uncanny resemblance, but I am proud that we are asserting dominance over the creatures of evolution!</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophobeDisapproval</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_BiologicalOther</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <requiredTraits>
+            <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+        </requiredTraits>
+        <requiredTraitsDegree>-1</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>living person</label>
+                <baseOpinionOffset>-40</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_BiophobeResentment</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_OrganicVsBiophobe</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>resentment toward biophobe</label>
+                <baseOpinionOffset>-20</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>
