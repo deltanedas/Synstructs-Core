@@ -16,6 +16,16 @@ namespace ArtificialBeings
             return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeReprogrammable == true;
         }
 
+        public override bool CompletableEver(Pawn surgeryTarget)
+        {
+            if (!(surgeryTarget is Pawn pawn) || !base.AvailableOnNow(pawn))
+            {
+                return false;
+            }
+
+            return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeReprogrammable == true;
+        }
+
         // Programmable drones need to have their appropriate features initialized.
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {

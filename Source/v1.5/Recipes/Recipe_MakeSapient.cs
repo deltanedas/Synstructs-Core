@@ -16,6 +16,16 @@ namespace ArtificialBeings
             return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeSapient == true;
         }
 
+        public override bool CompletableEver(Pawn surgeryTarget)
+        {
+            if (!(surgeryTarget is Pawn pawn) || !base.AvailableOnNow(pawn))
+            {
+                return false;
+            }
+
+            return ABF_Utils.IsArtificialBlank(pawn) && pawn.def.GetModExtension<ABF_ArtificialPawnExtension>()?.canBeSapient == true;
+        }
+
         // Sapients need to have their intelligence generated and appropriate story and skills populated.
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
