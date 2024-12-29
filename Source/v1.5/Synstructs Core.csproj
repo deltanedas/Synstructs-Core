@@ -235,6 +235,8 @@
     <Compile Include="MaintenanceWorkers\CoherenceWorker_SapientsOnly.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_AdaptationPractice.cs" />
     <Compile Include="MaintenanceWorkers\CoherenceWorker_NoConsciousnessSource.cs" />
+    <Compile Include="MentalBreakWorkers\MentalBreakWorker_HasFriendlyGrassObsession.cs" />
+    <Compile Include="MentalBreakWorkers\MentalBreakWorker_HasHostileGrassObsession.cs" />
     <Compile Include="MentalStateWorkers\MentalStateWorker_GrassObsession.cs" />
     <Compile Include="MentalStates\MentalState_DirectiveBerserker.cs" />
     <Compile Include="MentalStates\MentalState_Exterminator.cs" />

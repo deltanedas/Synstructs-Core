@@ -3,6 +3,7 @@
 
     <MentalBreakDef>
         <defName>ABF_MentalBreak_Synstruct_FriendlyGrassObsession</defName>
+        <workerClass>ArtificialBeings.MentalBreakWorker_HasFriendlyGrassObsession</workerClass>
         <mentalState>ABF_MentalState_Synstruct_FriendlyGrassObsession</mentalState>
         <baseCommonality>2</baseCommonality>
         <intensity>Minor</intensity>
@@ -30,6 +31,7 @@
 
     <MentalBreakDef>
         <defName>ABF_MentalBreak_Synstruct_HostileGrassObsession</defName>
+        <workerClass>ArtificialBeings.MentalBreakWorker_HasHostileGrassObsession</workerClass>
         <mentalState>ABF_MentalState_Synstruct_HostileGrassObsession</mentalState>
         <baseCommonality>2</baseCommonality>
         <intensity>Minor</intensity>
@@ -37,7 +39,7 @@
     <MentalStateDef ParentName="ABF_MentalState_Synstruct_GrassObsession">
         <defName>ABF_MentalState_Synstruct_HostileGrassObsession</defName>
         <label>waging war against nature</label>
-        <allowGuilty>true</allowGuilty>
+        <allowGuilty>false</allowGuilty>
         <recoveryMessage>{0} is no longer psychotically waging war against nature.</recoveryMessage>
         <beginLetterLabel>paranoid outburst</beginLetterLabel>
         <beginLetter>{0} is wandering around in a psychotic state, "to wage war against nature." They refuse to actually touch anything living, though. What they hope to achieve by angrily wandering around plants and staring them down and occasionally shouting nonsense about some organic conspiracy, no one knows.</beginLetter>
