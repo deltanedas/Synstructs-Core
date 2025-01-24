@@ -8,7 +8,14 @@ namespace ArtificialBeings
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            return p.workSettings?.WorkIsActive(WorkTypeDefOf.Hunting) == true;
+            Pawn_WorkSettings settings = p.workSettings;
+
+            if (settings == null || !settings.Initialized)
+            {
+                return false;
+            }
+
+            return settings.WorkIsActive(WorkTypeDefOf.Hunting) == true;
         }
     }
 }

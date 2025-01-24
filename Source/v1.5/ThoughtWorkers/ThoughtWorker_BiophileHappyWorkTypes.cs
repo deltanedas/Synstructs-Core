@@ -10,7 +10,7 @@ namespace ArtificialBeings
         {
             Pawn_WorkSettings settings = p.workSettings;
 
-            if (settings == null)
+            if (settings == null || !settings.Initialized)
             {
                 return false;
             }
