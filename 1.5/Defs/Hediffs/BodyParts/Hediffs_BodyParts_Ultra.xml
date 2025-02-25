@@ -107,7 +107,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ABF_BodyPart_Synstruct_Arm</li>
+			<li>ABF_BodyPart_Synstruct_Shoulder</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Arm</addsHediff>
 	</RecipeDef>
