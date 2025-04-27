@@ -634,7 +634,7 @@ namespace ArtificialBeings
                         result = def.GetStatValueAbstract(StatDefOf.MaxNutrition);
                         break;
                     case "hunger rate":
-                        result = def.race.baseHungerRate;
+                        result = def.race.baseHungerRate * (Need_Food.BaseFoodFallPerTick * GenDate.TicksPerDay); // Base fall rate is 1.6 per 60000 ticks, for some reason.
                         break;
                     case "charging rate":
                         if (def.race.foodType == FoodTypeFlags.None)
@@ -659,7 +659,7 @@ namespace ArtificialBeings
                         break;
                     default:
                         float maxNutrition = def.GetStatValueAbstract(StatDefOf.MaxNutrition);
-                        float depletionRate = def.race.baseHungerRate;
+                        float depletionRate = def.race.baseHungerRate * (Need_Food.BaseFoodFallPerTick * GenDate.TicksPerDay); // Base fall rate is 1.6 per 60000 ticks, for some reason.
                         float chargingRate = def.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed);
                         if (maxNutrition <= 0 || depletionRate <= 0 || def.race.foodType == FoodTypeFlags.None ||  chargingRate * chargingRatePerDay <= depletionRate)
                         {
@@ -699,7 +699,7 @@ namespace ArtificialBeings
                 new TableDataGetter<ThingDef>("|hours per day charging|", (ThingDef d) => synstructStatistic(d, "hours per day charging")),
                 new TableDataGetter<ThingDef>("|hours per day building coherence|\n(Keeping at 50%)", (ThingDef d) => synstructStatistic(d, "coherence stability requirement"))
             };
-            DebugTables.MakeTablesDialog(DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && (d.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) > 0 || d.HasComp<CompCoherenceNeed>())), list.ToArray());
+            DebugTables.MakeTablesDialog(DefDatabase<ThingDef>.AllDefs.Where((ThingDef d) => d.category == ThingCategory.Pawn && (d.GetStatValueAbstract(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed) > 0 || d.HasComp<CompCoherenceNeed>())).OrderBy((ThingDef d) => d.defName), list.ToArray());
         }
 
         // Cached races that are considered synstructs for establishing correct behavior, cached at startup.
