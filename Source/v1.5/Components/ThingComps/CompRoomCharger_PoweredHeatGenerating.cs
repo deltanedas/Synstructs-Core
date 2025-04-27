@@ -56,7 +56,7 @@ namespace ArtificialBeings
             }
 
             int validPawns = roomPawns.Count;
-            float powerConsumptionModifier = 1f + ((Mathf.Pow(validPawns - 1, 1.5f) + 2 * (validPawns - 1)) / (4 * Mathf.Pow(3f, Mathf.Max(activeChargers - 1, 0))));
+            float powerConsumptionModifier = validPawns + (0.25f * (validPawns - 1) / Mathf.Max(activeChargers, 1f));
             cachedPowerConsumption = compPowerTrader.Props.PowerConsumption * powerConsumptionModifier;
             cachedHeatGeneration = 0.5f * validPawns;
         }
