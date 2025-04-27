@@ -23,6 +23,7 @@
 			<predator>false</predator>
             <canBePredatorPrey>false</canBePredatorPrey>
 			<foodType>OmnivoreRoughAnimal</foodType>
+            <baseHungerRate>0.625</baseHungerRate> <!-- Base fall rate is 1.6, but we want to treat it as 1. -->
             <trainability>None</trainability>
             <wildness>0</wildness>
 			<manhunterOnDamageChance>0</manhunterOnDamageChance>
