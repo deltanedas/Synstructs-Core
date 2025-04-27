@@ -12,6 +12,7 @@
         </tags>
         <bleedRate>0</bleedRate>
         <solid>true</solid>
+        <executionPartPriority>1000</executionPartPriority>
     </BodyPartDef>
 
     <BodyPartDef>

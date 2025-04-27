@@ -18,13 +18,8 @@
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
-        <tags>
-            <li>BreathingPathway</li>
-            <li>TalkingPathway</li>
-        </tags>
         <bleedRate>0</bleedRate>
         <solid>true</solid>
-        <executionPartPriority>1000</executionPartPriority>
     </BodyPartDef>
 
     <BodyPartDef>
