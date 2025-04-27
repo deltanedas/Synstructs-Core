@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <ABF_InoperableOutdoors>Cannot operate: Outdoors</ABF_InoperableOutdoors>
+    <ABF_InoperableInLargeRooms>Cannot operate: Room too large</ABF_InoperableInLargeRooms>
+    <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad>
+
+</LanguageData>

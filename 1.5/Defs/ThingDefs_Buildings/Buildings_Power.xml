@@ -4,7 +4,6 @@
     <ThingDef Name="ABF_Thing_Synstruct_ChargingStationBase" ParentName="BuildingBase" Abstract="True">
         <altitudeLayer>Building</altitudeLayer>
         <thingClass>ArtificialBeings.Building_ChargingStation</thingClass>
-        <selectable>true</selectable>
         <passability>PassThroughOnly</passability>
         <pathCost>70</pathCost>
         <blockWind>false</blockWind>
@@ -13,7 +12,7 @@
         <tickerType>Rare</tickerType>
         <rotatable>false</rotatable>
         <thingCategories>
-            <li>BuildingsMisc</li>
+            <li>BuildingsPower</li>
         </thingCategories>
         <comps>
             <li>
@@ -74,6 +73,70 @@
         <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
     </ThingDef>
 
+    <!-- Beamcoil -->
+    <ThingDef ParentName="BuildingBase">
+        <defName>ABF_Thing_Synstruct_Beamcoil</defName>
+        <label>beamcoil</label>
+        <description>An autonomous charger that uses targeted beams of energy to recharge units in the same room, increasing in power and heat cost as the number rises and decreasing when offset by other beamcoils. It takes a moment to respond to units entering the room, and units that leave the room will residually charge for a few moments.</description>
+        <passability>PassThroughOnly</passability>
+        <pathCost>20</pathCost>
+        <blockWind>false</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.40</fillPercent>
+        <tickerType>Rare</tickerType>
+        <rotatable>false</rotatable>
+        <thingCategories>
+            <li>BuildingsPower</li>
+        </thingCategories>
+        <comps>
+            <li Class="ArtificialBeings.CompProperties_RoomCharger">
+                <compClass>ArtificialBeings.CompRoomCharger_PoweredHeatGenerating</compClass>
+                <inoperableInLargeRooms>true</inoperableInLargeRooms>
+                <inoperableOutdoors>true</inoperableOutdoors>
+                <baseChargeRatePerDay>4</baseChargeRatePerDay>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>500</basePowerConsumption>
+                <idlePowerDraw>20</idlePowerDraw>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+        </comps>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>Power</designationCategory>
+        <constructEffect>ConstructMetal</constructEffect>
+        <graphicData>
+            <texPath>Things/Buildings/ChargingStation</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1, 1)</drawSize>
+            <shadowData>
+                <volume>(0.4, 0.1, 0.4)</volume>
+                <offset>(0,0,-0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <uiIconPath>Things/Buildings/ChargingStation</uiIconPath>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <statBases>
+            <Mass>10</Mass>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToBuild>1600</WorkToBuild>
+            <Flammability>0.5</Flammability>
+            <Beauty>-2</Beauty>
+        </statBases>
+        <size>(1,1)</size>
+        <costList>
+            <Steel>150</Steel>
+            <Silver>50</Silver>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <researchPrerequisites>
+            <li>Electricity</li>
+        </researchPrerequisites>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    </ThingDef>
+
     <!-- Bedside Charger -->
     <ThingDef ParentName="BuildingBase">
         <defName>ABF_Thing_Synstruct_BedsideCharger</defName>
@@ -116,7 +179,7 @@
         </building>
         <minifiedDef>MinifiedThing</minifiedDef>
         <thingCategories>
-            <li>BuildingsMisc</li>
+            <li>BuildingsPower</li>
         </thingCategories>
         <tickerType>Rare</tickerType>
         <comps>

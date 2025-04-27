@@ -1,7 +1,9 @@
 ﻿using HarmonyLib;
 using LudeonTK;
+using Mono.Unix.Native;
 using RimWorld;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -537,6 +539,87 @@ namespace ArtificialBeings
                 }
             }
             playerBiomimeticCount[map] = resultCount;
+        }
+
+        // For a given enumerable of room chargers, recalculate their cached values.
+        public static void UpdateRoomChargers(IEnumerable<CompRoomCharger> roomChargers)
+        {
+            // Build a dict matching rooms to the list of chargers in that room. Each charger will want to know how many other chargers are within it.
+            Dictionary<Room, List<CompRoomCharger>> chargersInRoom = new Dictionary<Room, List<CompRoomCharger>>();
+            foreach (CompRoomCharger roomCharger in roomChargers)
+            {
+                Room room = roomCharger.parent.GetRoom();
+                // No need to do store chargers that are in improper rooms or are inactive - they only calculate baselines.
+                if (room == null || !room.ProperRoom || (roomCharger.Props.inoperableOutdoors && room.UsesOutdoorTemperature) || (roomCharger.Props.inoperableInLargeRooms && room.IsHuge))
+                {
+                    roomCharger.RecalculateCaches(null, null, null, baselineOnly: true);
+                    continue;
+                }
+                if (chargersInRoom.ContainsKey(room))
+                {
+                    chargersInRoom[room].Add(roomCharger);
+                }
+                else
+                {
+                    chargersInRoom[room] = new List<CompRoomCharger>
+                    {
+                        roomCharger
+                    };
+                }
+            }
+
+            // Rooms are not required to be on the same Map, but if they happen to be, then there's no reason to search the pawn list repeatedly for valid pawns.
+            Dictionary<Map, List<Pawn>> validPawnsInMap = new Dictionary<Map, List<Pawn>>();
+            Dictionary<Room, List<Pawn>> validPawnsInRoom = new Dictionary<Room, List<Pawn>>();
+            foreach (Room room in chargersInRoom.Keys)
+            {
+                validPawnsInRoom[room] = new List<Pawn>();
+
+                Map map = room.Map;
+                // If we haven't gotten a list of valid pawns on the map, we need to scan them all.
+                if (!validPawnsInMap.ContainsKey(map))
+                {
+                    List<Pawn> validPawns = new List<Pawn>();
+                    foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned)
+                    {
+                        if (CanCharge(pawn))
+                        {
+                            // If the valid pawn happened to be in the right room, they aren't in any other room, so no need to check them later.
+                            if (pawn.GetRoom() == room)
+                            {
+                                validPawnsInRoom[room].Add(pawn);
+                            }
+                            else
+                            {
+                                validPawns.Add(pawn);
+                            }
+                        }
+                    }
+                    validPawnsInMap[map] = validPawns;
+                }
+                // If we do have a list of known, valid pawns on the map already, we can scan them and remove found pawns for other iterations.
+                else
+                {
+                    List<Pawn> validPawns = validPawnsInMap[map];
+                    for (int i = validPawns.Count - 1; i >= 0; i--)
+                    {
+                        if (validPawns[i].GetRoom() == room)
+                        {
+                            validPawnsInRoom[room].Add(validPawns[i]);
+                            validPawnsInMap[map].RemoveAt(i);
+                        }
+                    }
+                }
+            }
+
+            // Having the chargers and pawns in each room, it should now be relatively straightforward to recalculate the caches.
+            foreach (Room room in chargersInRoom.Keys)
+            {
+                foreach (CompRoomCharger roomCharger in chargersInRoom[room])
+                {
+                    roomCharger.RecalculateCaches(room, chargersInRoom[room], validPawnsInRoom[room]);
+                }
+            }
         }
 
         [DebugOutput]
