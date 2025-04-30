@@ -2,6 +2,8 @@
 <LanguageData>
 
   <ABF_CoherenceNeedMissing>{0} не требует повышение стабильности.</ABF_CoherenceNeedMissing>
+  <ABF_IncapableOfCharging>{0} не может заряжаться таким образом.</ABF_IncapableOfCharging>
+  <ABF_ForceCharge>Принудительная зарядка</ABF_ForceCharge>
   <ABF_SynstructsCannotUseThis>Синтоиды не могут это использовать.</ABF_SynstructsCannotUseThis>
 
 </LanguageData>

@@ -12,4 +12,8 @@
     <ABF_CoherenceEffectGizmoLabelNegative>Negative</ABF_CoherenceEffectGizmoLabelNegative>
     <ABF_CoherenceEffectDesc>Average coherence is a measure of how well maintained this unit's core memory and internal systems have been over time, and changes based on the coherence level of the pawn. High levels will improve mood, while low levels will eventually degrade both mood and health. It rises if coherence is above 70% and falls if below 30%, and otherwise slowly returns to a baseline.\n\nNote: Coherence is a deeply personal quality for each individual and cannot be handled by others.</ABF_CoherenceEffectDesc>
 
+    <!-- Reservoir -->
+    <ABF_ReservoirGizmoLabel>Energy</ABF_ReservoirGizmoLabel>
+    <ABF_ReservoirLevel>Reserve available: {0}</ABF_ReservoirLevel>
+
 </LanguageData>

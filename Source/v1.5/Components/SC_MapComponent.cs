@@ -7,6 +7,8 @@ namespace ArtificialBeings
     {
         public HashSet<CompRoomCharger> chargers = new HashSet<CompRoomCharger>();
 
+        public HashSet<ThingWithComps> reservoirs = new HashSet<ThingWithComps>();
+
         public SC_MapComponent(Map map) : base(map)
         {
         }

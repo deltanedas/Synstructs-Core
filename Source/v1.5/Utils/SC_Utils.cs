@@ -1,15 +1,11 @@
 ﻿using HarmonyLib;
 using LudeonTK;
-using Mono.Unix.Native;
 using RimWorld;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Verse;
 using Verse.AI;
-using Verse.Noise;
 
 namespace ArtificialBeings
 {
@@ -60,6 +56,17 @@ namespace ArtificialBeings
             }
 
             return (Building_Bed)GenClosest.ClosestThingReachable(user.PositionHeld, user.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.Bed), PathEndMode.OnCell, TraverseParms.For(carrier), 9999f, (Thing b) => b.def.IsBed && (int)b.Position.GetDangerFor(user, user.Map) <= (int)Danger.Deadly && RestUtility.IsValidBedFor(b, user, carrier, true) && (b.TryGetComp<CompAffectedByFacilities>()?.LinkedFacilitiesListForReading.Any(thing => thing.HasComp<CompPawnCharger>() && (thing.TryGetComp<CompPowerTrader>()?.PowerOn ?? false)) ?? false));
+        }
+
+        // Locate the nearest available energy reservoir for the given pawn user. 
+        public static Thing GetReservoir(Pawn user)
+        {
+            if (user.Map == null)
+            {
+                return null;
+            }
+
+            return GenClosest.ClosestThingReachable(user.PositionHeld, user.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.Touch, TraverseParms.For(user), 9999f, (Thing b) => b.TryGetComp<CompEnergyReservoir>() is CompEnergyReservoir reservoir && reservoir.AutomaticallyUsableFor(user), user.Map.GetComponent<SC_MapComponent>().reservoirs);
         }
 
         /* === HEALTH UTILITIES === */

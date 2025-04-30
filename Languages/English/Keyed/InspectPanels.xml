@@ -3,6 +3,7 @@
 
     <ABF_InoperableOutdoors>Cannot operate: Outdoors</ABF_InoperableOutdoors>
     <ABF_InoperableInLargeRooms>Cannot operate: Room too large</ABF_InoperableInLargeRooms>
+    <ABF_InsufficientReserve>Cannot operate: Insufficient reserve</ABF_InsufficientReserve>
     <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad>
 
 </LanguageData>

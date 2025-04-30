@@ -36,6 +36,13 @@ namespace ArtificialBeings
                     return true;
                 }
 
+                // Attempt to locate an available charging reservoir.
+                if (SC_Utils.GetReservoir(pawn) is Thing reservoir)
+                {
+                    __result = new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(reservoir));
+                    return false;
+                }
+
                 // Attempt to locate a viable charging bed for the pawn. This can suit comfort, rest, and room needs whereas the charging station can not.
                 Building_Bed bed;
                 bed = SC_Utils.GetChargingBed(pawn, pawn);

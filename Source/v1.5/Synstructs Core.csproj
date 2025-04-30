@@ -192,7 +192,11 @@
     <Compile Include="Components\HediffComps\HediffComp_RemoveHediffOnApply.cs" />
     <Compile Include="Components\CompTargetEffect_ResurrectPawn.cs" />
     <Compile Include="Components\SC_MapComponent.cs" />
+    <Compile Include="Components\ThingComps\CompAssignableToPawn_EnergyReservoir.cs" />
+    <Compile Include="Components\ThingComps\CompEnergyReservoir_Powered.cs" />
+    <Compile Include="Components\ThingComps\CompProperties_EnergyReservoir.cs" />
     <Compile Include="Components\ThingComps\CompProperties_RoomCharger.cs" />
+    <Compile Include="Components\ThingComps\CompEnergyReservoir.cs" />
     <Compile Include="Components\ThingComps\CompRoomCharger_PoweredHeatGenerating.cs" />
     <Compile Include="Components\ThingComps\CompRoomCharger.cs" />
     <Compile Include="Components\ThingComps\CompPawnCharger.cs" />
@@ -204,6 +208,7 @@
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
     <Compile Include="Extensions\HediffExtensions.cs" />
+    <Compile Include="Gizmos\Gizmo_EnergyReservoir.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
     <Compile Include="Harmony\FoodUtility_Patch.cs" />
