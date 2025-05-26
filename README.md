@@ -55,9 +55,3 @@ Some content may not be accessible without races to use them! It is designed to 
 
 ## Links
 [Discord](https://discord.gg/udNCpbkABT)
-
-Background by starline on Freepik
-(https://www.freepik.com/free-vector/blue-technology-circuit-diagram-glowing-lines_8765544.htm#page=2&query=blue%20circuit%20background&position=25&from_view=search&track=robertav1_2_sidr%22%3E%22%3EImage)
-
-Corner Reflective Metal by macrovector on Freepik
-(https://www.freepik.com/free-vector/realistic-metal-button-with-circular-processing-cone-reflection_11060526.htm#query=shining%20metal&position=39&from_view=search&track=robertav1_2_sidr%22%3EImage)
