@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Base Utility -->
+
+    <HediffDef Name="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase" ParentName="ABF_Hediff_Synstruct_AddedBodyPartBase" Abstract="True">
+        <hediffClass>Hediff_AddedPart</hediffClass>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+
+    <ThingDef Name="ABF_Thing_Synstruct_Utility_BodyPartBase" ParentName="ABF_Thing_Synstruct_BodyPartBase" Abstract="True">
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Things/Items/BodyParts/OrganOrange</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <techHediffsTags>
+            <li>Simple</li>
+        </techHediffsTags>
+        <statBases>
+            <WorkToMake>15000</WorkToMake>
+            <Mass>4</Mass>
+        </statBases>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>ABF_Thing_Synstruct_PartWorkbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
+    </ThingDef>
+
+	<RecipeDef Name="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase" ParentName="ABF_Recipe_Synstruct_InstallBodyPartBase" Abstract="True">
+		<jobString>Replacing component.</jobString>
+        <skillRequirements>
+            <Crafting>4</Crafting>
+        </skillRequirements>
+		<workAmount>1300</workAmount>
+		<anesthetize>false</anesthetize>
+	</RecipeDef>
+
+    <!-- Mining Utility Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_MiningArm</defName>
+        <label>mining arm</label>
+	    <description>A simple mechanical arm designed with the extraction and processing of minerals in mind. The arm prominently features a plasteel drill which feeds contents into an internal processor, separating minerals efficiently and swiftly discarding waste to ensure maximal drilling and minimal sorting time.</description>
+        <stages>
+			<li>
+				<statOffsets>
+                    <DeepDrillingSpeed>0.25</DeepDrillingSpeed>
+					<MiningSpeed>0.25</MiningSpeed>
+					<MiningYield>0.2</MiningYield>
+				</statOffsets>
+			</li>
+		</stages>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>drill</label>
+                        <capacities>
+                            <li>Scratch</li>
+                        </capacities>
+                        <power>8</power>
+                        <cooldownTime>2.25</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_MiningArm</spawnThingOnRemoved>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_MiningArm</defName>
+        <label>mining arm</label>
+	    <description>A simple mechanical arm designed with the extraction and processing of minerals in mind. The arm prominently features a plasteel drill which feeds contents into an internal processor, separating minerals efficiently and swiftly discarding waste to ensure maximal drilling and minimal sorting time.</description>
+        <costList>
+            <Steel>40</Steel>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_MiningArm</defName>
+		<label>install mining arm</label>
+		<description>Installs a mining arm.</description>
+		<jobString>Installing mining arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_MiningArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_MiningArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_MiningArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Agriculture Utility Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_AgricultureArm</defName>
+        <label>agriculture arm</label>
+	    <description>A simple mechanical arm designed with agriculture and horticulture in mind. The arm features several internal multi-tools that appropriately harvest products and feeds contents into an internal processor, discarding waste products to ensure optimal harvest and minimal sorting time. Ejecting products out of specialized elbow ports is efficient, if rather odd to observe.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantWorkSpeed>0.25</PlantWorkSpeed>
+					<PlantHarvestYield>0.2</PlantHarvestYield>
+                    <AnimalGatherSpeed>0.25</AnimalGatherSpeed>
+                    <AnimalGatherYield>0.2</AnimalGatherYield>
+				</statOffsets>
+			</li>
+		</stages>
+	    <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>scythe</label>
+                        <capacities>
+                            <li>Scratch</li>
+                        </capacities>
+                        <power>8</power>
+                        <cooldownTime>2.25</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_AgricultureArm</spawnThingOnRemoved>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_AgricultureArm</defName>
+        <label>agriculture arm</label>
+	    <description>A simple mechanical arm designed with agriculture and horticulture in mind. The arm features several internal multi-tools that appropriately harvest products and feeds contents into an internal processor, discarding waste products to ensure optimal harvest and minimal sorting time. Ejecting products out of specialized elbow ports is efficient, if rather odd to observe.</description>
+        <costList>
+            <Steel>40</Steel>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_AgricultureArm</defName>
+		<label>install agriculture arm</label>
+		<description>Installs an agriculture arm.</description>
+		<jobString>Installing agriculture arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_AgricultureArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_AgricultureArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_AgricultureArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Pacification Utility Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_PacificationArm</defName>
+        <label>pacification arm</label>
+	    <description>A simple mechanical arm with built-in energy absorbers and generators. The fists are capable of reaching dangerously high temperatures and are able to vent heat upon impacting something - effectively scorching a target - and applying an overloading amount of energy - an EMP in all but name. They are often used by riot police to impart highly painful but non-lethal burns and disable vehicles.\n\nEccentric chefs appreciate the consistent and rapid heat transfer.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<CookSpeed>0.5</CookSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	    <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>charged fist</label>
+                        <capacities>
+                            <li>Blunt</li>
+                        </capacities>
+                        <power>6</power>
+                        <cooldownTime>2</cooldownTime>
+                        <extraMeleeDamages>
+                            <li>
+                                <def>Flame</def>
+                                <amount>12</amount>
+                            </li>
+                            <li>
+                                <def>EMP</def>
+                                <amount>5</amount>
+                            </li>
+                        </extraMeleeDamages>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_PacificationArm</spawnThingOnRemoved>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_PacificationArm</defName>
+        <label>pacification arm</label>
+	    <description>A simple mechanical arm with built-in energy absorbers and generators. The fists are capable of reaching dangerously high temperatures and are able to vent heat upon impacting something - effectively scorching a target - and applying an overloading amount of energy - an EMP in all but name. They are often used by riot police to impart highly painful but non-lethal burns and disable vehicles.\n\nEccentric chefs appreciate the consistent and rapid heat transfer.</description>
+        <costList>
+            <Steel>20</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_PacificationArm</defName>
+		<label>install pacification arm</label>
+		<description>Installs a pacification arm.</description>
+		<jobString>Installing pacification arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_PacificationArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_PacificationArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_PacificationArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Scalpel Utility Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_ScalpelArm</defName>
+        <label>scalpel arm</label>
+	    <description>A mechanical arm with a very modified structure designed for precision and perfectly smooth movement. A number of integrated counterbalances, unique parts, and multi-tools provide this arm with much finer - but delicate - control. While unsuited for general work tasks, this arm is an incredible boon to surgeons and mechanics alike. The delicate structure combined with minor changes to the the larger chassis leave the user more vulnerable to damage, but the scalpel can be used as a very dangerous piercing weapon if needed.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<GeneralLaborSpeed>-0.1</GeneralLaborSpeed>
+                    <MedicalTendSpeed>0.45</MedicalTendSpeed>
+                    <MedicalOperationSpeed>0.45</MedicalOperationSpeed>
+                    <MedicalTendQuality>0.15</MedicalTendQuality>
+                    <MedicalSurgerySuccessChance>0.05</MedicalSurgerySuccessChance>
+                    <ABF_Stat_Artificial_TendSpeed>0.45</ABF_Stat_Artificial_TendSpeed>
+                    <ABF_Stat_Artificial_OperationSpeed>0.45</ABF_Stat_Artificial_OperationSpeed>
+                    <ABF_Stat_Artificial_TendQuality>0.15</ABF_Stat_Artificial_TendQuality>
+                    <ABF_Stat_Artificial_SurgerySuccessChance>0.05</ABF_Stat_Artificial_SurgerySuccessChance>
+				</statOffsets>
+                <statFactors>
+                    <IncomingDamageFactor>1.05</IncomingDamageFactor>
+                </statFactors>
+			</li>
+		</stages>
+	    <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>scalpel</label>
+                        <capacities>
+                            <li>Scratch</li>
+                            <li>Stab</li>
+                        </capacities>
+                        <power>16</power>
+                        <cooldownTime>2.25</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_ScalpelArm</spawnThingOnRemoved>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_ScalpelArm</defName>
+        <label>scalpel arm</label>
+	    <description>A mechanical arm with a very modified structure designed for precision and perfectly smooth movement. A number of integrated counterbalances, unique parts, and multi-tools provide this arm with much finer - but delicate - control. While unsuited for general work tasks, this arm is an incredible boon to surgeons and mechanics alike. The delicate structure combined with minor changes to the the larger chassis leave the user more vulnerable to damage, but the scalpel can be used as a very dangerous piercing weapon if needed.</description>
+        <costList>
+            <Steel>20</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_ScalpelArm</defName>
+		<label>install scalpel arm</label>
+		<description>Installs a scalpel arm.</description>
+		<jobString>Installing scalpel arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_ScalpelArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_ScalpelArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_ScalpelArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Rending Utility Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_RendingArm</defName>
+        <label>rending arm</label>
+	    <description>A mechanical arm designed to rend down organic or inorganic mass into component parts. An array of specialized internal sensors, sorters, and processors provide this arm with powerful disassembly capacities. The design permits free range of movement and no outstanding penalties, but is uncanny and disturbing to observe. The arm is capable of breaking down living tissue just as well as dead tissue, and can make short work of buildings. Synstruct troops of notoriously brutal commanders will often be found equipped with these to carry out public executions and rapidly eliminating issues with corpses.\n\nThe rending process thoroughly destroys pathogens and contaminants, make it an ideal attachment for efficiency and cleanliness obsessed butchers and chefs.</description>
+		<stages>
+			<li>
+				<statOffsets>
+                    <PawnBeauty>-1</PawnBeauty>
+					<ButcheryFleshSpeed>0.5</ButcheryFleshSpeed>
+                    <ButcheryMechanoidSpeed>0.5</ButcheryMechanoidSpeed>
+                    <ButcheryFleshEfficiency>0.25</ButcheryFleshEfficiency>
+                    <ButcheryMechanoidEfficiency>0.25</ButcheryMechanoidEfficiency>
+				</statOffsets>
+                <statFactors>
+                    <FoodPoisonChance>0</FoodPoisonChance>
+                </statFactors>
+			</li>
+		</stages>
+	    <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>carver</label>
+                        <capacities>
+                            <li>Scratch</li>
+                            <li>Stab</li>
+                        </capacities>
+                        <power>16</power>
+                        <cooldownTime>2</cooldownTime>
+                    </li>
+                    <li>
+                        <label>demolisher</label>
+                        <capacities>
+                            <li>Demolish</li>
+                        </capacities>
+                        <power>10</power>
+                        <cooldownTime>2</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_RendingArm</spawnThingOnRemoved>
+    </HediffDef>
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_RendingArm</defName>
+        <label>rending arm</label>
+	    <description>A mechanical arm designed to rend down organic or inorganic mass into component parts. An array of specialized internal sensors, sorters, and processors provide this arm with powerful disassembly capacities. The design permits free range of movement and no outstanding penalties, but is uncanny and disturbing to observe. The arm is capable of breaking down living tissue just as well as dead tissue, and can make short work of buildings. Synstruct troops of notoriously brutal commanders will often be found equipped with these to handle shocking executions and rapidly eliminating issues with corpses.\n\nThe rending process thoroughly destroys pathogens and contaminants, make it an ideal attachment for efficiency and cleanliness obsessed butchers and chefs.</description>
+        <costList>
+            <Steel>20</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+    </ThingDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_RendingArm</defName>
+		<label>install rending arm</label>
+		<description>Installs a rending arm.</description>
+		<jobString>Installing rending arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_RendingArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_RendingArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_RendingArm</addsHediff>
+	</RecipeDef>
+
+    <!-- Voice Synthesizers share a single ThingDef, with different HediffDefs and RecipeDefs -->
+
+    <ThingDef ParentName="ABF_Thing_Synstruct_Utility_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_Utility_Vocalizer</defName>
+        <label>unspecialized vocalizer</label>
+        <description>An unprogrammed vocalizer replacement for synstructs that can be given specialized roles upon installation into a unit to enhance either their inducive or coercive capabilities.</description>
+        <costList>
+            <Steel>10</Steel>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+	    	<researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
+        </recipeMaker>
+        <statBases>
+            <Mass>4</Mass>
+        </statBases>
+    </ThingDef>
+
+    <!-- Inducive Vocalizer -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_InduciveVocalizer</defName>
+        <label>inducive Vocalizer</label>
+        <description>A vocalizer replacement utilizing a built-in large language modelling algorithm that can rapidly modulate the unit's voice output to perfectly reflect their desired tone, intonation, and connotation in a wide array of languages and even dialects of those languages. While organics do occasionally find dynamically changing voices to be unnerving, this device ensures that the synstruct's voice is sonorous, perfectly crisp, and with the exact sound desired to maximize positive outcomes in social interactions, leading others to have higher opinions of the unit.</description>
+        <descriptionHyperlinks><ThingDef>ABF_Thing_Synstruct_Utility_Vocalizer</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+                    <SocialImpact>0.5</SocialImpact>
+				</statOffsets>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_Vocalizer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_InduciveVocalizer</defName>
+		<label>install inducive vocalizer</label>
+		<description>Installs an inducive vocalizer.</description>
+		<jobString>Installing inducive vocalizer.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_Vocalizer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_Vocalizer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Vocalizer</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_InduciveVocalizer</addsHediff>
+	</RecipeDef>
+
+    <!-- Coercive Vocalizer -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_UltrapartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_CoerciveVocalizer</defName>
+        <label>coercive Vocalizer</label>
+        <description>A vocalizer replacement programmed to maximize coercive capabilities by greatly increasing volume and intensity. Specialized to operate only in various menacing tones and manipulative modes, others find units equipped with this to be terrifying and threatening and generally more conducive to obeying the will of the unit. The module has a single "normal" mode for instances where threatening is unnecessary, but others still find it mildly offputting.</description>
+        <descriptionHyperlinks><ThingDef>ABF_Thing_Synstruct_Utility_Vocalizer</ThingDef></descriptionHyperlinks>
+		<stages>
+			<li>
+				<statOffsets>
+                    <SocialImpact>-0.25</SocialImpact>
+                    <NegotiationAbility>0.5</NegotiationAbility>
+                    <ArrestSuccessChance>0.25</ArrestSuccessChance>
+                    <TradePriceImprovement>0.05</TradePriceImprovement>
+                    <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.25</ConversionPower>
+                    <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.5</SuppressionPower>
+				</statOffsets>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_Utility_Vocalizer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Utility_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Utility_CoerciveVocalizer</defName>
+		<label>install coercive vocalizer</label>
+		<description>Installs a coercive vocalizer.</description>
+		<jobString>Installing coercive vocalizer.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_Utility_Vocalizer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_Utility_Vocalizer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Vocalizer</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_CoerciveVocalizer</addsHediff>
+	</RecipeDef>
+
+    <!-- Makeshift Leg -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_MakeshiftLeg</defName>
+        <label>makeshift leg</label>
+	    <description>An installed makeshift leg, with only minimal functionality. While it functions admirably given its ad-hoc nature and its lack of distinct feet or toes, it is still significantly inferior to a properly designed and manufactured leg.</description>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>0.4</partEfficiency>
+        </addedPartProps>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_SurgeryBase">
+		<defName>ABF_Recipe_Synstruct_Utility_MakeshiftLeg</defName>
+		<label>install makeshift leg</label>
+		<description>Installs a makeshift mechanical leg.</description>
+		<jobString>Installing makeshift mechanical leg.</jobString>
+        <workAmount>2500</workAmount>
+        <skillRequirements>
+            <Crafting>2</Crafting>
+        </skillRequirements>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+                <li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_MakeshiftLeg</addsHediff>
+	</RecipeDef>
+
+    <!-- Makeshift Arm -->
+
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Utility_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Utility_MakeshiftArm</defName>
+        <label>makeshift arm</label>
+	    <description>An installed makeshift arm, with only minimal functionality. While it functions admirably given its ad-hoc nature and its lack of distinct hands or fingers, it is still significantly inferior to a properly designed and manufactured arm.</description>
+	    <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>fist</label>
+                        <capacities>
+                            <li>Blunt</li>
+                        </capacities>
+                        <power>2</power>
+                        <cooldownTime>2.65</cooldownTime>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>0.4</partEfficiency>
+        </addedPartProps>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_SurgeryBase">
+		<defName>ABF_Recipe_Synstruct_Utility_MakeshiftArm</defName>
+		<label>install makeshift mechanical arm</label>
+		<description>Installs a makeshift mechanical arm.</description>
+		<jobString>Installing makeshift mechanical arm.</jobString>
+        <workAmount>2500</workAmount>
+        <skillRequirements>
+            <Crafting>2</Crafting>
+        </skillRequirements>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+			</li>
+        </ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+                <li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Arm</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Utility_MakeshiftArm</addsHediff>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Coherence Retention -->
+    <StatDef>
+        <defName>ABF_Stat_Synstruct_CoherenceRetention</defName>
+        <label>coherence retention efficiency</label>
+        <description>How well this synstruct retains its level of coherence over time. This stat affects how quickly the pawn's coherence need naturally falls, and is primarily affected by coolant filtration and pumping. At average retention, a synstruct will spend roughly four hours a day maintaining average coherence.\n\nBuilding Coherence:\n- Only done if the target threshold is above 30%.\n- Only done if there is at least a 30% difference between the target level and current level OR the current level is in poor coherence.\n- Is a very high priority task in the meditation and recreation time assignments, and a medium priority task otherwise.\n- Will idly be done by pawns that would otherwise wander.</description>
+        <workerClass>ArtificialBeings.StatWorker_Coherence</workerClass>
+        <category>BasicsPawn</category>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <minValue>0.2</minValue>
+        <maxValue>5</maxValue>
+        <capacityFactors>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <weight>0.5</weight>
+            </li>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <weight>0.5</weight>
+            </li>
+        </capacityFactors>
+        <parts>
+            <li Class="StatPart_Food">
+                <factorStarving>0.6</factorStarving>
+            </li>
+            <li Class="StatPart_Resting">
+                <factor>3</factor>
+            </li>
+        </parts>
+    </StatDef>
+
+</Defs>

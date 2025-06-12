@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- This Rulepackdef is what finds the txt files to be used in the later rulepacks -->
+    <RulePackDef>
+        <defName>ABF_RulePack_Synstruct_NameRulesBase</defName>
+        <rulePack>
+            <rulesFiles>
+                <li>ABF_Male->ABF_Names/SynstructMaleNames</li>
+                <li>ABF_Female->ABF_Names/SynstructFemaleNames</li>
+                <li>ABF_IDs->ABF_Names/ABF_IDs</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- This is the item that goes into the racedef's namegenerator
+        Example - <nameGenerator>ABF_RulePack_Synstruct_NameRulesMale</nameGenerator> -->
+    <RulePackDef>
+        <defName>ABF_RulePack_Synstruct_NameRulesMale</defName>
+        <include>
+            <li>ABF_RulePack_Synstruct_NameRulesBase</li>
+        </include>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name(p=12)->[ABF_Male] [ABF_IDs]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>ABF_RulePack_Synstruct_NameRulesFemale</defName>
+        <include>
+            <li>ABF_RulePack_Synstruct_NameRulesBase</li>
+        </include>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name(p=12)->[ABF_Female] [ABF_IDs]</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Blank -->
+
+	<BackstoryDef>
+		<defName>ABF_Backstory_Synstruct_Childhood_Blank</defName>
+		<title>blank</title>
+		<titleShort>unit</titleShort>
+		<baseDesc>{PAWN_nameDef} was left entirely devoid of character and individuality, and has no concept of childhood.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Blank</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+    <BackstoryDef>
+        <defName>ABF_Backstory_Synstruct_Adulthood_Blank</defName>
+        <title>blank</title>
+		<titleShort>unit</titleShort>
+		<baseDesc>This unit has neither intelligence nor memory. {PAWN_pronoun} is entirely devoid of character and utility.</baseDesc>
+		<slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Blank</li>
+		</spawnCategories>
+    </BackstoryDef>
+
+</Defs>

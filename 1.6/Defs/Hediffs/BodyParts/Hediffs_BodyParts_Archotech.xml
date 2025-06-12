@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Base Archotech -->
+
+    <HediffDef Name="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase" ParentName="ABF_Hediff_Synstruct_AddedBodyPartBase" Abstract="True">
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>1.5</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- Archotech Replacement Part -->
+    <ThingDef ParentName="ABF_Thing_Synstruct_BodyPartBase">
+        <defName>ABF_Thing_Synstruct_ArchotechPartReplacer</defName>
+        <label>archotech part replacer</label>
+        <description>A small archotech device - with no known proper purpose - that can be inserted into various places of a synstruct to replace the original part there. Batteries, coolant pumps, reactors, even audial and visual sensors can all be replaced by a vastly higher functioning part. The fact that it can be removed from the synstruct's body and then become a different part afterwards is nothing short of miraculous.\n\nUnfortunately, synstructs are widely spurned by archotechs, and devices like these are known to resist and fight against synstructs once installed. Overcoming this resistance strains the synstruct's focus and coherence.</description>
+        <techLevel>Archotech</techLevel>
+        <graphicData>
+            <texPath>Things/Items/BodyParts/OrganGold</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <techHediffsTags>
+            <li>Archotech</li>
+        </techHediffsTags>
+        <statBases>
+            <MarketValue>2800</MarketValue>
+            <DeteriorationRate>0</DeteriorationRate>
+            <WorkToMake>78000</WorkToMake>
+            <Mass>2</Mass>
+        </statBases>
+        <thingSetMakerTags>
+            <li>RewardStandardCore</li>
+        </thingSetMakerTags>
+    </ThingDef>
+
+	<RecipeDef Name="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase" ParentName="ABF_Recipe_Synstruct_InstallBodyPartBase" Abstract="True">
+		<jobString>Implanting Archotech component.</jobString>
+		<workAmount>4000</workAmount>
+        <surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<anesthetize>false</anesthetize>
+	</RecipeDef>
+
+    <!-- Archotech Arm -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_Arm</defName>
+        <label>archotech arm</label>
+        <labelNoun>an archotech arm</labelNoun>
+        <description>An archotech device in the form of an arm. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>fist</label>
+                        <capacities>
+                        <li>Blunt</li>
+                        </capacities>
+                        <power>14</power>
+                        <cooldownTime>2</cooldownTime>
+                        <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+                        <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <stages>
+            <li>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+            </li>
+        </stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallArm</defName>
+		<label>install archotech arm</label>
+		<description>Install an archotech arm.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_Arm</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech arm.</jobString>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_Arm</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Leg -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_Leg</defName>
+        <label>archotech leg</label>
+        <labelNoun>an archotech leg</labelNoun>
+        <description>An archotech device in the form of a leg. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+            <li>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+            </li>
+        </stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallLeg</defName>
+		<label>install archotech leg</label>
+		<description>Install an archotech leg.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_Leg</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech leg.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Leg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_Leg</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Visual Sensor -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_VisualSensor</defName>
+        <label>archotech visual sensor</label>
+        <labelNoun>an archotech visual sensor</labelNoun>
+        <description>An archotech device in the form of a visual sensor. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+            <li>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+            </li>
+        </stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallVisualSensor</defName>
+        <label>install archotech visual sensor</label>
+        <description>Install an archotech visual sensor.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_VisualSensor</HediffDef>
+        </descriptionHyperlinks>
+        <jobString>Installing archotech visual sensor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_VisualSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_VisualSensor</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Audial Sensor -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_AudialSensor</defName>
+        <label>archotech audial sensor</label>
+        <description>An archotech device in the form of an audial sensor. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+            <li>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+            </li>
+        </stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+        <defName>ABF_Recipe_Synstruct_Archotech_InstallAudialSensor</defName>
+		<label>install archotech audial sensor</label>
+		<description>Install an Archotech audial sensor.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_AudialSensor</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Archotech audial sensor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_AudialSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_AudialSensor</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Heatsink -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_Heatsink</defName>
+        <label>archotech heatsink</label>
+        <description>An archotech device in the form of a heatsink. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+        <stages>
+			<li>
+		        <statOffsets>
+                    <ComfyTemperatureMax>30</ComfyTemperatureMax>
+		            <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+		        </statOffsets>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+			</li>
+		</stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallHeatsink</defName>
+		<label>install Archotech heatsink</label>
+		<description>Install an Archotech heatsink.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_Heatsink</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Archotech heatsink.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Heatsink</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_Heatsink</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Coolant Pump -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_CoolantPump</defName>
+        <label>archotech coolant pump</label>
+        <description>An archotech device in the form of a coolant pump. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+        <stages>
+			<li>
+		        <statOffsets>
+                    <ComfyTemperatureMax>12</ComfyTemperatureMax>
+                    <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
+		        </statOffsets>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.9</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+			</li>
+		</stages>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallCoolantPump</defName>
+		<label>install Archotech coolant pump</label>
+		<description>Install an Archotech coolant pump.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_CoolantPump</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Archotech coolant pump.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_CoolantPump</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_CoolantPump</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Battery -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_Battery</defName>
+        <label>archotech battery pack</label>
+        <description>An archotech device in the form of a battery. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+        <stages>
+			<li>
+                <hungerRateFactor>0.5</hungerRateFactor>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.8</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallBattery</defName>
+		<label>install Archotech battery</label>
+		<description>Install an Archotech battery.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_Battery</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Archotech battery.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Battery</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_Battery</addsHediff>
+	</RecipeDef>
+
+    <!-- Archotech Reactor -->
+    <HediffDef ParentName="ABF_Hediff_Synstruct_Archotech_AddedBodyPartBase">
+        <defName>ABF_Hediff_Synstruct_Archotech_Reactor</defName>
+        <label>archotech reactor</label>
+        <description>An archotech device in the form of a reactor - but it seems to reduce power consumption as well. Synstructs derive great benefit from these devices, but at a cost. Synstructs are manmade creations that are neither psychic nor organic in nature. It is not clear whether Archotechs despise them for being out of their grasp, or for some other esoteric reason. The displeasure of the unknowable beings manifests through even the simplest of their implants, steadily whittling away at the consciousness of synstructs.</description>
+		<stages>
+			<li>
+			    <hungerRateFactor>0.5</hungerRateFactor>
+		        <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.8</ABF_Stat_Synstruct_CoherenceRetention>
+		        </statFactors>
+			</li>
+		</stages>
+        <spawnThingOnRemoved>ABF_Thing_Synstruct_ArchotechPartReplacer</spawnThingOnRemoved>
+    </HediffDef>
+
+    <RecipeDef ParentName="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase">
+		<defName>ABF_Recipe_Synstruct_Archotech_InstallReactor</defName>
+		<label>install Archotech reactor</label>
+		<description>Install an Archotech reactor.</description>
+        <descriptionHyperlinks>
+            <ThingDef>ABF_Thing_Synstruct_ArchotechPartReplacer</ThingDef>
+            <HediffDef>ABF_Hediff_Synstruct_Archotech_Reactor</HediffDef>
+        </descriptionHyperlinks>
+		<jobString>Installing Archotech reactor.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ABF_Thing_Synstruct_ArchotechPartReplacer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ABF_BodyPart_Synstruct_Generator</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABF_Hediff_Synstruct_Archotech_Reactor</addsHediff>
+	</RecipeDef>
+
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<BackstoryDef>
+		<defName>ABF_Backstory_Synstruct_Childhood_Newboot</defName>
+		<title>synstruct</title>
+		<titleShort>synstruct</titleShort>
+		<baseDesc>{PAWN_nameDef} first awakened on this RimWorld as an infantile intelligence.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Newboot</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+    <AlienRace.AlienBackstoryDef>
+		<defName>ABF_Backstory_Synstruct_Adulthood_Newboot</defName>
+		<title>synstruct</title>
+		<titleShort>synstruct</titleShort>
+		<baseDesc>{PAWN_nameDef} was first awakened on this world. The story for {PAWN_nameDef} has yet to be truly written.</baseDesc>
+		<slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+			<li>ABF_SpawnCategory_Synstruct_Sapient_Newboot</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+</Defs>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef Name="ABF_PawnKindSynstruct_Player_AbstractBase" ParentName="BasePlayerPawnKind" Abstract="True">
+        <label>synstruct colonist</label>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+		<initialResistanceRange>13~21</initialResistanceRange>
+    </PawnKindDef>
+
+    <!-- Blank synstructs -->
+
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_BlankBase" ParentName="ABF_PawnKindSynstruct_Player_AbstractBase" Abstract="True">
+		<backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>ABF_SpawnCategory_Synstruct_Blank</li>
+                </categories>
+            </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>1</maxGenerationAge>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Blank</pawnState>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+    <!-- Drone synstructs -->
+
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_DroneBase" ParentName="ABF_PawnKindSynstruct_Player_AbstractBase" Abstract="True">
+		<backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>ABF_SpawnCategory_Synstruct_Drone_Generic</li>
+                </categories>
+            </li>
+		</backstoryFiltersOverride>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Drone</pawnState>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+    <!-- Reprogrammable synstructs -->
+
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_ReprogrammableBase" ParentName="ABF_PawnKindSynstruct_Player_AbstractBase" Abstract="True">
+		<backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>ABF_SpawnCategory_Synstruct_Drone_Generic</li>
+                </categories>
+            </li>
+		</backstoryFiltersOverride>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Reprogrammable</pawnState>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+	<!-- Sapient synstructs -->
+
+    <PawnKindDef Name="ABF_PawnKind_Synstruct_Player_SapientBase" ParentName="ABF_PawnKindSynstruct_Player_AbstractBase" Abstract="True">
+		<minGenerationAge>20</minGenerationAge>
+		<backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>ABF_SpawnCategory_Synstruct_Sapient_Basic</li>
+                </categories>
+            </li>
+		</backstoryFiltersOverride>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Sapient</pawnState>
+            </li>
+        </modExtensions>
+    </PawnKindDef>
+
+</Defs>

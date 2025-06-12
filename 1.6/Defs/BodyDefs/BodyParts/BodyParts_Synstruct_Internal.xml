@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <BodyPartDef>
+        <defName>ABF_BodyPart_Synstruct_Core</defName>
+        <label>core</label>
+        <hitPoints>30</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <tags>
+            <li>ConsciousnessSource</li>
+        </tags>
+        <bleedRate>0</bleedRate>
+        <solid>true</solid>
+        <executionPartPriority>1000</executionPartPriority>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_BodyPart_Synstruct_CoolantPump</defName>
+        <label>coolant Pump</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>5</bleedRate>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_BodyPart_Synstruct_Heatsink</defName>
+        <label>heatsink</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>1</bleedRate>
+        <tags>
+            <li>BreathingSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_BodyPart_Synstruct_Battery</defName>
+        <label>battery</label>
+        <hitPoints>20</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>1</bleedRate>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+    <BodyPartDef>
+        <defName>ABF_BodyPart_Synstruct_Generator</defName>
+        <label>generator</label>
+        <hitPoints>25</hitPoints>
+        <permanentInjuryChanceFactor>0.25</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <bleedRate>2</bleedRate>
+        <tags>
+            <li>BloodPumpingSource</li>
+        </tags>
+        <canSuggestAmputation>false</canSuggestAmputation>
+    </BodyPartDef>
+
+</Defs>

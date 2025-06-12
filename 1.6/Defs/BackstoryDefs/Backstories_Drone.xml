@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Generic Drone -->
+
+	<BackstoryDef>
+		<defName>ABF_Backstory_Synstruct_Childhood_GenericDrone</defName>
+		<title>drone</title>
+		<titleShort>drone</titleShort>
+		<baseDesc>Drone "childhoods" are as uninteresting as they are often forgotten. Many creators don't bother marking the moment of awakening, and no drone knows its own history.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Drone_Generic</li>
+		</spawnCategories>
+		<workDisables>
+			<li>Animals</li>
+            <li>Social</li>
+            <li>Artistic</li>
+            <li>Intellectual</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>ABF_Backstory_Synstruct_Adulthood_GenericDrone</defName>
+		<title>drone</title>
+		<titleShort>drone</titleShort>
+		<baseDesc>{PAWN_nameDef} is a drone, with no concept of personal history. {PAWN_pronoun} exists to serve.</baseDesc>
+		<slot>Adulthood</slot>
+        <bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<spawnCategories>
+			<li>ABF_SpawnCategory_Synstruct_Drone_Generic</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+</Defs>

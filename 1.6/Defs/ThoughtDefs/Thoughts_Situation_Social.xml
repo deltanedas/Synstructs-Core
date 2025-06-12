@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_InduciveVocalizer</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_ModulatedVoiceSynthesizer</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>sonorous voice</label>
+                <baseOpinionOffset>10</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_CoerciveVocalizer</defName>
+        <thoughtClass>Thought_SituationalSocial</thoughtClass>
+        <workerClass>ArtificialBeings.ThoughtWorker_CoerciveVoiceSynthesizer</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>threatening voice</label>
+                <baseOpinionOffset>-10</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

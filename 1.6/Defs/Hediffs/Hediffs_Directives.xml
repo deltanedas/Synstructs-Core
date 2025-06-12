@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+        <defName>ABF_Hediff_Synstruct_Directive_Berserker</defName>
+        <label>berserking</label>
+        <description>This drone has had berserker directives activated, giving it unnatural durability and responsiveness at the cost of increased energy consumption. Curiously, the effects of the directive outlast the amount of time the IFF sensors are offline for, meaning the unit can benefit from the directives while accepting orders after the initial berserker state terminates.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>1</initialSeverity>
+        <defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-2</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <hungerRateFactor>1.5</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_CoherenceRetention>0.5</ABF_Stat_Synstruct_CoherenceRetention>
+                    <IncomingDamageFactor>0.8</IncomingDamageFactor>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>ABF_Hediff_Synstruct_Directive_Interdictor</defName>
+        <label>interference</label>
+        <description>This individual has been hit by a concussive blast of overwhelming audio and radiological signals, greatly impairing their hearing and focus, as well as causing a great deal of pain.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>1</initialSeverity>
+        <defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-2</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <painOffset>0.2</painOffset>
+                <statFactors>
+                    <PsychicSensitivity>0.5</PsychicSensitivity>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>4</mtbDays>
+					</li>
+				</mentalStateGivers>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

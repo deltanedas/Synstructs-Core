@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>ABF_Thing_Synstruct_SignalSurge</defName>
+		<label>signal surge</label>
+		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds. Synstructs can absorb these materials into their sensor and data-transfer networks to greatly enhance control over their chassis until the compounds break down into harmless detritus.\n\nThe substances are highly toxic for organic life, and should not be consumed by them.</description>
+		<graphicData>
+			<texPath>Things/Drugs/SignalSurge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>20</MarketValue>
+			<WorkToMake>1550</WorkToMake>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+            <preferability>NeverForNutrition</preferability>
+			<drugCategory>Medical</drugCategory>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="ArtificialBeings.IngestionOutcomeDoer_SplitEffects">
+					<organicEffect>ABF_Hediff_Synstruct_Toxicated</organicEffect>
+                    <organicSeverity>1</organicSeverity>
+					<artificialEffect>ABF_Hediff_Synstruct_SignalSurge</artificialEffect>
+					<artificialSeverity>1</artificialSeverity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>ABF_ResearchProject_Synstruct_Stimulators</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<costList>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>803</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>ABF_Hediff_Synstruct_SignalSurge</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>signal surge</label>
+		<description>A synthetic solution containing a wide range of highly conductive and signal-boosting compounds is surging through the sensor and control networks of the chassis, greatly improving information flow. Until it wears off, the unit will benefit from a minor consciousness boost.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+        <initialSeverity>1.0</initialSeverity>
+		<maxSeverity>4.0</maxSeverity>
+        <isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>insignificant</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>minor</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>moderate</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>significant</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>peak</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

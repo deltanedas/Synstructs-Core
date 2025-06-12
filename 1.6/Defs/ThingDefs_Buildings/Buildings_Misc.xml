@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>ABF_Thing_Synstruct_CoherenceSpot</defName>
+        <label>coherence spot</label>
+        <description>Designates a spot for coherence. Synstructs will prefer to build coherence here, and can be assigned to specific pawns.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/PartySpot</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <statBases>
+            <WorkToBuild>0</WorkToBuild>
+        </statBases>
+        <rotatable>false</rotatable>
+        <scatterableOnMapGen>false</scatterableOnMapGen>
+        <useHitPoints>False</useHitPoints>
+        <designationCategory>Furniture</designationCategory>
+        <uiOrder>2000</uiOrder>
+        <passability>Standable</passability>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <building>
+            <sowTag>SupportPlantsOnly</sowTag>
+            <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+            <ai_chillDestination>false</ai_chillDestination>
+            <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+        </building>
+        <comps>
+            <li Class="CompProperties_AssignableToPawn">
+                <maxAssignedPawnsCount>999</maxAssignedPawnsCount>
+                <drawUnownedAssignmentOverlay>false</drawUnownedAssignmentOverlay>
+                <compClass>ArtificialBeings.CompAssignableToPawn_CoherenceSpot</compClass>
+            </li>
+        </comps>
+        <designationHotKey>Misc12</designationHotKey>
+    </ThingDef>
+
+</Defs>

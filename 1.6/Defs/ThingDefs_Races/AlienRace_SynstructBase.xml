@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Mechanical Humanlike Base -->
+	<AlienRace.ThingDef_AlienRace Name="ABF_Thing_Synstruct_HumanlikeBase" ParentName="BasePawn" Abstract="True">
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<statBases>
+			<Mass>70</Mass>
+            <Flammability>0</Flammability>
+			<PainShockThreshold>1</PainShockThreshold>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+			<ImmunityGainSpeed>10</ImmunityGainSpeed>
+			<LeatherAmount>0</LeatherAmount>
+			<MeatAmount>0</MeatAmount>
+            <ABF_Stat_Synstruct_ChargingSpeed>1</ABF_Stat_Synstruct_ChargingSpeed>
+		</statBases>
+        <alienRace>
+			<raceRestriction>
+                <onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
+                <blackFoodList>
+                    <li>Penoxycyline</li>
+                </blackFoodList>
+                <traitList>
+                    <li>ABF_Trait_Synstruct_BiologicalPreference</li>
+                </traitList>
+                <blackTraitList>
+                    <li>Transhumanist</li>
+                    <li>BodyPurist</li>
+                    <li>Tough</li>
+                    <li>Wimp</li>
+                    <li>Masochist</li>
+                    <li>Nudist</li>
+                    <li>Gourmand</li>
+                    <li>QuickSleeper</li>
+                    <li>DrugDesire</li>
+                    <li>PsychicSensitivity</li>
+                    <li>Immunity</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">Delicate</li>
+                </blackTraitList>
+			</raceRestriction>
+			<generalSettings>
+				<allowHumanBios>false</allowHumanBios>
+                <additionalTraits>1~3</additionalTraits>
+                <minAgeForAdulthood>0</minAgeForAdulthood>
+                <chemicalSettings>
+                    <li>
+                        <chemical>Alcohol</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Ambrosia</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>GoJuice</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Psychite</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>Smokeleaf</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                    <li>
+                        <chemical>WakeUp</chemical>
+                        <ingestible>false</ingestible>
+                    </li>
+                </chemicalSettings>
+				<alienPartGenerator>
+					<headTypes>
+                        <li>ABF_HeadType_Synstruct_BaseHead</li>
+                    </headTypes>
+                    <colorChannels Inherit="False">
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options">
+								<options>
+									<li> <!--Khaki-->
+										<weight>10</weight>
+										<min>RGBA(74, 90, 41, 255)</min>
+										<max>RGBA(74, 90, 41, 255)</max>
+									</li>
+									<li> <!--Green-->
+										<weight>4</weight>
+										<min>RGBA(112, 158, 97, 255)</min>
+										<max>RGBA(112, 158, 97, 255)</max>
+									</li>
+									<li> <!--White-->
+										<weight>50</weight>
+										<min>RGBA(255, 255, 255, 255)</min>
+										<max>RGBA(255, 255, 255, 255)</max>
+									</li>
+									<li> <!--Black-->
+										<weight>10</weight>
+										<min>RGBA(45, 45, 45, 255)</min>
+										<max>RGBA(45, 45, 45, 255)</max>
+									</li>
+									<li> <!--Gray-->
+										<weight>30</weight>
+										<min>RGBA(127, 127, 127, 255)</min>
+										<max>RGBA(127, 127, 127, 255)</max>
+									</li>
+									<li> <!--Blue-->
+										<weight>10</weight>
+										<min>RGBA(67, 87, 159, 255)</min>
+										<max>RGBA(67, 87, 159, 255)</max>
+									</li>
+									<li> <!--Crimson-->
+										<weight>4</weight>
+										<min>RGBA(134, 23, 22, 255)</min>
+										<max>RGBA(134, 23, 22, 255)</max>
+									</li>
+									<li> <!--Orange-->
+										<weight>10</weight>
+										<min>RGBA(227, 131, 12, 255)</min>
+										<max>RGBA(227, 131, 12, 255)</max>
+									</li>
+									<li> <!--Yellow-->
+										<weight>4</weight>
+										<min>RGBA(207, 227, 12, 255)</min>
+										<max>RGBA(207, 227, 12, 255)</max>
+									</li>
+									<li> <!--Purple-->
+										<weight>4</weight>
+										<min>RGBA(148, 108, 169, 255)</min>
+										<max>RGBA(148, 108, 169, 255)</max>
+									</li>
+									<li> <!--Pink-->
+										<weight>4</weight>
+										<min>RGBA(179, 130, 155, 255)</min>
+										<max>RGBA(179, 130, 155, 255)</max>
+									</li>
+									<li> <!--Cyan-->
+										<weight>4</weight>
+										<min>RGBA(38, 164, 163, 255)</min>
+										<max>RGBA(38, 164, 163, 255)</max>
+									</li>
+								</options>
+							</first>
+							<second Class="ColorGenerator_Options">
+								<options>
+									<li>
+										<weight>100</weight>
+										<min>RGBA(255, 255, 255, 255)</min>
+										<max>RGBA(255, 255, 255, 255)</max>
+									</li>
+								</options>
+							</second>
+						</li>
+					</colorChannels>
+				</alienPartGenerator>
+                <growthAges>
+                </growthAges>
+                <corpseCategory>CorpsesMechanoid</corpseCategory>
+            </generalSettings>
+			<styleSettings>
+                <li>
+                    <key>HairDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
+				<li>
+                    <key>BeardDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
+				<li>
+                    <key>TattooDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
+            </styleSettings>
+			<relationSettings>
+				<relationChanceModifierChild>0</relationChanceModifierChild>
+				<relationChanceModifierExLover>0</relationChanceModifierExLover>
+				<relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+				<relationChanceModifierFiance>0</relationChanceModifierFiance>
+				<relationChanceModifierLover>0</relationChanceModifierLover>
+				<relationChanceModifierParent>0</relationChanceModifierParent>
+				<relationChanceModifierSibling>0</relationChanceModifierSibling>
+				<relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+			</relationSettings>
+			<compatibility>
+				<isFlesh>false</isFlesh>
+			</compatibility>
+        </alienRace>
+		<race>
+            <renderTree>Humanlike</renderTree>
+			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<intelligence>Humanlike</intelligence>
+			<makesFootprints>true</makesFootprints>
+			<lifeExpectancy>100</lifeExpectancy>
+            <baseHungerRate>0.625</baseHungerRate> <!-- Base fall rate is 1.6, but we want to treat it as 1. -->
+			<leatherDef>Leather_Human</leatherDef>
+			<nameGenerator>ABF_RulePack_Synstruct_NameRulesMale</nameGenerator>
+            <nameGeneratorFemale>ABF_RulePack_Synstruct_NameRulesFemale</nameGeneratorFemale>
+			<needsRest>false</needsRest>
+			<foodType>OmnivoreHuman</foodType>
+			<fleshType>ABF_FleshType_Synstruct_Base</fleshType>
+			<bloodDef>ABF_Thing_Synstruct_CoolantFilth</bloodDef>
+            <specificMeatDef>Steel</specificMeatDef>
+			<canBePredatorPrey>false</canBePredatorPrey>
+            <isImmuneToInfections>true</isImmuneToInfections>
+            <hasMeat>false</hasMeat>
+			<lifeStageAges>
+				<li>
+					<def>ABF_LifeStage_Artificial_Complete</def>
+					<minAge>0.0</minAge>
+				</li>
+			</lifeStageAges>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(1.01, 0.02)</li>
+					<li>(3.5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<specialShadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,0)</offset>
+			</specialShadowData>
+			<ageGenerationCurve>
+				<points>
+					<li>(0,0)</li>
+					<li>(0.2,300)</li>
+					<li>(1,400)</li>
+					<li>(20,300)</li>
+					<li>(50,200)</li>
+					<li>(75,50)</li>
+					<li>(100,15)</li>
+					<li>(200,12)</li>
+					<li>(400,8)</li>
+					<li>(480,3)</li>
+					<li>(500,0)</li>
+				</points>
+			</ageGenerationCurve>
+			<hediffGiverSets>
+				<li>ABF_HediffGiverSet_Synstruct_BleedsCoolant</li>
+                <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
+			</hediffGiverSets>
+		</race>
+        <comps>
+            <li>
+                <compClass>ArtificialBeings.CompArtificialPawn</compClass>
+            </li>
+        </comps>
+    </AlienRace.ThingDef_AlienRace>
+
+</Defs>

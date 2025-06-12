@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Ascetic</defName>
+        <label>ascetic</label>
+        <description>Sometimes the rate at which things get done are of little consequence and it's more important for a drone to simply keep going.\n\nSpecialized directives can permit drones to minimize energy usage and general coherence requirements at the cost of severely inhibiting general work capabilities - ideal for slow moving convoys, sentinels, and mobile turrets.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveEndurance</iconPath>
+        <hungerRateFactor>0.4</hungerRateFactor>
+        <statOffsets>
+            <ABF_Stat_Synstruct_CoherenceRetention>1</ABF_Stat_Synstruct_CoherenceRetention>
+        </statOffsets>
+        <statFactors>
+            <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+            <MoveSpeed>0.8</MoveSpeed>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Trader</key><value>4</value></li>
+        </groupKindWeights>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Grunt</defName>
+        <label>grunt</label>
+        <description>Sapients rarely enjoy grunt work. Many of humanity's greatest inventions were the result of trying to find ways to avoid it. Drones, unfeeling and uncomplaining as they are, present the perfect opportunity to rid sapients of the burden of such menial tasks.\n\nSpecialized directives allow drones to more precisely pick out and optimize menial tasks without relying on manual orders from nearby individuals - and without moving, touching, or trashing something they weren't supposed to.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveGrunt</iconPath>
+        <statOffsets>
+            <CleaningSpeed>0.75</CleaningSpeed>
+            <SmeltingSpeed>0.75</SmeltingSpeed>
+        </statOffsets>
+        <statFactors>
+            <CarryingCapacity>1.25</CarryingCapacity>
+            <FilthRate>0.5</FilthRate>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Peaceful</key><value>4</value></li>
+        </groupKindWeights>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Artisan</defName>
+        <label>artisan</label>
+        <description>Lacking creativity and the ability to innovate, drones are unable to truly master the finer details of producing goods. Quantity, rather than quality, has always been the lot of drone assembly lines - but that is not always what is needed.\n\nExtremely specialized directives can permit units to consistently produce Excellent quality goods, but the sheer intricacy of the programming severely impairs the rate of work - even for work that is unskilled.</description>
+        <customEffectsDescription>Units with this directive always produce Excellent quality products when completing bills.</customEffectsDescription>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <iconPath>UI/Icons/ABF_DirectiveArtisan</iconPath>
+        <statFactors>
+            <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+        </statFactors>
+        <complexityCost>4</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+        </groupKindWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_MinimumComplexity">
+                <complexityRequirement>25</complexityRequirement>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Assembler</defName>
+        <label>assembler</label>
+        <description>Sapient beings rarely have insurmountable difficulties grasping the differences in how best to assemble structures. To an unthinking machine lacking foresight and comprehension of physics and cause-and-effect, even the slightest order of operations failure or abnormality in material can cause catastrophe.\n\nSpecialized directives can offset the inherent intricacies and potential for failure by providing better conditional responsiveness and ability to overcome slight inconsistencies in building materials.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveMobileConstructor</iconPath>
+        <statOffsets>
+            <ConstructionSpeed>0.5</ConstructionSpeed>
+        </statOffsets>
+        <statFactors>
+            <ConstructSuccessChance>1.25</ConstructSuccessChance>
+            <FixBrokenDownBuildingSuccessChance>1.25</FixBrokenDownBuildingSuccessChance>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Peaceful</key><value>2</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Construction</key><value>4</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredSkill">
+                <requiredSkills>
+                    <li>Construction</li>
+                </requiredSkills>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Chef</defName>
+        <label>chef</label>
+        <description>Idealizing, preparing, cooking, and innovating upon meals is an art. The bare minimum, of course, is to avoid poisoning consumers and to manufacture nutritionally adequate sustenance - a task that any experienced chef would find trivial and mind-numbing. Specialized directives for drones may not be sufficient for appetizing gourmet cuisine, but it may offload a great deal of tedium.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveChef</iconPath>
+        <statOffsets>
+            <CookSpeed>0.5</CookSpeed>
+        </statOffsets>
+        <statFactors>
+            <FoodPoisonChance>0.75</FoodPoisonChance>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Cooking</key><value>4</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredSkill">
+                <requiredSkills>
+                    <li>Cooking</li>
+                </requiredSkills>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Renderer</defName>
+        <label>renderer</label>
+        <description>Career butchers are often viewed with disdain, disgust, or distrust - usually involving the fact that taking satisfaction or being unusually skilled in dismantling corpses for parts is deemed unsavory. Machines, of course, pay no heed to such views and generally do not elicit suspicion, carrying out the task unflinchingly and unemotionally.\n\nSpecialized directives allow drones to identify key differences in the hundreds of factors between species to achieve maximimum utility from corpses, sparing individuals from the thankless work.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveButcher</iconPath>
+        <statOffsets>
+            <ButcheryFleshSpeed>0.5</ButcheryFleshSpeed>
+        </statOffsets>
+        <statFactors>
+            <ButcheryFleshEfficiency>1.25</ButcheryFleshEfficiency>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Cooking</key><value>4</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredSkill">
+                <requiredSkills>
+                    <li>Cooking</li>
+                </requiredSkills>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Cultivator</defName>
+        <label>cultivator</label>
+        <description>Among the oldest and noblest of humanity's skillsets, agriculture has always been and continues to be a critical component of civilization - one that is also still constrained by the reality that plants are fickle and need close attention to avoid the myriad threats of disease, pests, over or under hydration and light, amongst others. Farmers tend to pick up necessary skills through strenuous practice and family tradition.\n\nSpecialized directives can provide drones with elements of that accumulated knowledge to streamline planting and tending operations.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveCultivation</iconPath>
+        <statOffsets>
+            <PlantWorkSpeed>0.5</PlantWorkSpeed>
+        </statOffsets>
+        <statFactors>
+            <PlantHarvestYield>1.25</PlantHarvestYield>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Plants</key><value>4</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredSkill">
+                <requiredSkills>
+                    <li>Plants</li>
+                </requiredSkills>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Excavator</defName>
+        <label>excavator</label>
+        <description>One of the single most hazardous occupations for organic sapients is to be responsible for the physical extraction of minerals. From cave-ins and noxious fumes to claustrophobia and breakdowns in team cohesion, the energy and sanity sapping work of mining can not be overstated - and that's not including the risk of suddenly being on the frontlines of a furious hive of lethal insects. It is only logical, then, to attempt to offset these risks by handing the work to durable, emotionless - and most importantly, expendable - drones.\n\nSpecialzed directives can greatly enhance their ability to autonomously identify, analyze, and extract mineral resources without oversight or structural destabilization of the work space.</description>
+        <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveExcavation</iconPath>
+        <statOffsets>
+            <MiningSpeed>0.5</MiningSpeed>
+            <DeepDrillingSpeed>0.5</DeepDrillingSpeed>
+        </statOffsets>
+        <statFactors>
+            <MiningYield>1.25</MiningYield>
+        </statFactors>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+        </groupKindWeights>
+        <skillChoiceWeights>
+            <li><key>Mining</key><value>4</value></li>
+        </skillChoiceWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredSkill">
+                <requiredSkills>
+                    <li>Mining</li>
+                </requiredSkills>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
+</Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_DronesOfSameModel</defName>
+        <workerClass>ArtificialBeings.ThoughtWorker_DronesOfSameModelMood</workerClass>
+        <validWhileDespawned>false</validWhileDespawned>
+        <stages>
+            <li>
+                <label>model discomfort</label>
+                <description>We have a drone that is the same model as I am. I don't like thinking about it.</description>
+                <baseMoodEffect>-1</baseMoodEffect>
+            </li>
+            <li>
+                <label>model anxiety</label>
+                <description>We have several drones that are the same model as I am. They look like me, but there is no consciousness there. It is unsettling.</description>
+                <baseMoodEffect>-3</baseMoodEffect>
+            </li>
+            <li>
+                <label>model dysmorphia</label>
+                <description>There are many drones of the same model as I am. I feel undervalued as an individual with so many synstructs that look like me but have no intelligence.</description>
+                <baseMoodEffect>-6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+ </Defs>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="ABF_Thing_Synstruct_AnimalBase" ParentName="AnimalThingBase" Abstract="True">
+		<statBases>
+			<Flammability>0</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+			<MeatAmount>0</MeatAmount>
+			<LeatherAmount>0</LeatherAmount>
+            <PainShockThreshold>1</PainShockThreshold>
+			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<ComfyTemperatureMax>120</ComfyTemperatureMax>
+            <Wildness>0</Wildness>
+		</statBases>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<race>
+			<fleshType>ABF_FleshType_Synstruct_Base</fleshType>
+			<bloodDef>ABF_Thing_Synstruct_CoolantFilth</bloodDef>
+			<hasGenders>false</hasGenders>
+            <packAnimal>false</packAnimal>
+			<herdAnimal>false</herdAnimal>
+            <herdMigrationAllowed>false</herdMigrationAllowed>
+			<predator>false</predator>
+            <canBePredatorPrey>false</canBePredatorPrey>
+			<foodType>OmnivoreRoughAnimal</foodType>
+            <baseHungerRate>0.625</baseHungerRate> <!-- Base fall rate is 1.6, but we want to treat it as 1. -->
+            <trainability>None</trainability>
+			<manhunterOnDamageChance>0</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+			<needsRest>false</needsRest>
+			<useMeatFrom>Alpaca</useMeatFrom>
+			<leatherDef>Leather_Human</leatherDef>
+            <lifeExpectancy>40</lifeExpectancy>
+			<hediffGiverSets Inherit="False">
+				<li>ABF_HediffGiverSet_Synstruct_BleedsCoolant</li>
+                <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
+			</hediffGiverSets>
+            <ageGenerationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(1,30)</li>
+                    <li>(2,10)</li>
+                    <li>(10,0)</li>
+                </points>
+            </ageGenerationCurve>
+		</race>
+        <comps>
+            <li>
+                <compClass>ArtificialBeings.CompArtificialPawn</compClass>
+            </li>
+        </comps>
+		<tradeTags>
+            <li>ABF_SynstructAnimal</li>
+		</tradeTags>
+	</ThingDef>
+
+	<PawnKindDef Name="ABF_PawnKind_Synstruct_AnimalBase" ParentName="AnimalKindBase" Abstract="True">
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.8</ecoSystemWeight>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialPawnKindExtension">
+                <pawnState>Drone</pawnState>
+            </li>
+        </modExtensions>
+	</PawnKindDef>
+
+</Defs>

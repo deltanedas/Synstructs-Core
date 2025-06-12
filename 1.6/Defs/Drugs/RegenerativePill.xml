@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>ABF_Thing_Synstruct_RegenerativePill</defName>
+		<label>regenerative pill</label>
+		<description>A rare case of a synstruct-designed solution (mostly) safe for organic consumption, regenerative pills are a complex synthetic solution that traverse the host's blood, coolant, or other internal streams and accumulates around injury sites in such a way as to accelerate recovery and cut off loss of fluids.\n\nOrganics will find the sensation quite unpleasant, but fully benefit from the pill's effects. Inorganic units benefit from the solution's materials to accelerate damage recovery without downsides.</description>
+		<graphicData>
+			<texPath>Things/Drugs/RegenerativePill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>14</MarketValue>
+			<WorkToMake>2500</WorkToMake>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="ArtificialBeings.IngestionOutcomeDoer_SplitEffects">
+					<organicEffect>ABF_Hediff_Synstruct_OrganicRegeneration</organicEffect>
+                    <organicSeverity>1</organicSeverity>
+					<artificialEffect>ABF_Hediff_Synstruct_ArtificialRegeneration</artificialEffect>
+					<artificialSeverity>1</artificialSeverity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>ABF_ResearchProject_Synstruct_Stimulators</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+		</recipeMaker>
+		<costList>
+			<Chemfuel>10</Chemfuel>
+			<Neutroamine>2</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>805</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>ABF_Hediff_Synstruct_OrganicRegeneration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>regeneration</label>
+		<description>A synthetic clotting and regenerative solution is leading to faster recovery times while causing great discomfort.</description>
+		<makesSickThought>true</makesSickThought>
+		<defaultLabelColor>(0.6,0.7,0.6)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>insignificant</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>minor</label>
+				<painOffset>0.05</painOffset>
+                <totalBleedFactor>0.8</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>moderate</label>
+				<painOffset>0.1</painOffset>
+                <totalBleedFactor>0.6</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>significant</label>
+				<painOffset>0.2</painOffset>
+				<vomitMtbDays>1.5</vomitMtbDays>
+                <totalBleedFactor>0.4</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>peak</label>
+				<painOffset>0.3</painOffset>
+				<vomitMtbDays>1</vomitMtbDays>
+                <totalBleedFactor>0.2</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThoughtDef>
+		<defName>ABF_Thought_Synstruct_OrganicRegeneration</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>ABF_Hediff_Synstruct_OrganicRegeneration</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>insignificant</label>
+				<description>The strangeness has faded. I'm alright.</description>
+				<baseMoodEffect>0</baseMoodEffect>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>regeneration (Minor)</label>
+				<description>I have a creeping sensation that something doesn't feel right, but it's just out of reach.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+			<li>
+				<label>regeneration (Moderate)</label>
+				<description>I feel uncomfortable and strange. This stuff is really nasty.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+			<li>
+				<label>regeneration (Significant)</label>
+				<description>My whole body feels really sluggish and and weighty, like I'm made of mud.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+			<li>
+				<label>regeneration (Peak)</label>
+				<description>My body feels really, really wrong - it feels like I have tar coating my organs! When will this end?</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<HediffDef>
+		<defName>ABF_Hediff_Synstruct_ArtificialRegeneration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>regeneration</label>
+		<description>A synthetic solution absorbed into the system is fortifying damaged regions of the body against loss of fluid and acting as useful material for repairs.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+        <initialSeverity>1.0</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+		<stages>
+			<li>
+                <totalBleedFactor>0.5</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="ArtificialBeings.HediffCompProperties_RemoveHediffOnApply">
+				<hediffToRemove>ABF_Hediff_Synstruct_CoolantLoss</hediffToRemove>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

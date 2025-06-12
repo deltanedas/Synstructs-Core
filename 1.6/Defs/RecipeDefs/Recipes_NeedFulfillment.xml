@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef>
+        <defName>ABF_Recipe_Synstruct_ManufactureCoolantPacksInBulk</defName>
+        <label>make coolant packs</label>
+        <description>Efficiently make coolant packs, simple containers that will replenish the coolant reserves of a synstruct that consumes it.</description>
+        <jobString>Making coolant.</jobString>
+        <workAmount>4000</workAmount>
+		<skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Neutroamine</li>
+                <li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+        <recipeUsers>
+            <li>BiofuelRefinery</li>
+        </recipeUsers>
+        <workSkill>Crafting</workSkill>
+        <products>
+            <ABF_Thing_Synstruct_CoolantPack>10</ABF_Thing_Synstruct_CoolantPack>
+        </products>
+        <displayPriority>1300</displayPriority>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>ABF_Recipe_Synstruct_ManufactureLubricantPacksInBulk</defName>
+        <label>make lubricant packs</label>
+        <description>Efficiently make lubricant packs, simple containers that will replenish the lubricant reserves of a synstruct that consumes it.</description>
+        <jobString>Making lubricant.</jobString>
+        <workAmount>3500</workAmount>
+		<skillRequirements>
+            <Crafting>6</Crafting>
+        </skillRequirements>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>140</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Neutroamine</li>
+                <li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+        <recipeUsers>
+            <li>BiofuelRefinery</li>
+        </recipeUsers>
+        <workSkill>Crafting</workSkill>
+        <products>
+            <ABF_Thing_Synstruct_LubricantPack>10</ABF_Thing_Synstruct_LubricantPack>
+        </products>
+        <displayPriority>1290</displayPriority>
+    </RecipeDef>
+
+</Defs>

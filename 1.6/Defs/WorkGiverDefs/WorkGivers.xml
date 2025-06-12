@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>ABF_WorkGiver_Synstruct_AssembleSynstruct</defName>
+        <label>assemble synstructs at cradle</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>ABF_WorkType_Artificial_Artificer</workType>
+        <priorityInType>10</priorityInType>
+        <fixedBillGiverDefs>
+          <li>ABF_Thing_Synstruct_Cradle</li>
+        </fixedBillGiverDefs>
+        <verb>work</verb>
+        <gerund>working at</gerund>
+        <requiredCapacities>
+          <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+      </WorkGiverDef>
+
+      <WorkGiverDef>
+        <defName>ABF_WorkGiver_Synstruct_ManufactureParts</defName>
+        <label>assemble synstruct parts at parts workbench</label>
+        <giverClass>WorkGiver_DoBill</giverClass>
+        <workType>ABF_WorkType_Artificial_Artificer</workType>
+        <priorityInType>5</priorityInType>
+        <fixedBillGiverDefs>
+          <li>ABF_Thing_Synstruct_PartWorkbench</li>
+        </fixedBillGiverDefs>
+        <verb>work</verb>
+        <gerund>working at</gerund>
+        <requiredCapacities>
+          <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+      </WorkGiverDef>
+
+</Defs>

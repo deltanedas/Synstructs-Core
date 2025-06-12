@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Creator thoughts -->
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_CreatorDied</defName>
+        <durationDays>30</durationDays>
+        <showBubble>true</showBubble>
+        <stages>
+            <li>
+                <label>my creator {0} died</label>
+                <description>My creator died. I must decide the legacy they leave behind...</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_KilledMyCreator</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>120</durationDays>
+        <stackLimit>300</stackLimit>
+        <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+        <stages>
+            <li>
+                <label>killed my creator</label>
+                <baseOpinionOffset>-80</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_MyCreatorLost</defName>
+        <durationDays>30.0</durationDays>
+        <showBubble>true</showBubble>
+        <stages>
+            <li>
+                <label>my creator {0} lost</label>
+                <description>My creator has been lost. I hope for their safe return.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Creation thoughts -->
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_CreationDied</defName>
+        <durationDays>30</durationDays>
+        <stackLimit>10</stackLimit>
+        <showBubble>true</showBubble>
+        <stages>
+            <li>
+                <label>my creation {0} died</label>
+                <description>My creation died. I have outlived that which I created...</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_KilledMyCreation</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>120</durationDays>
+        <stackLimit>300</stackLimit>
+        <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+            <stages>
+            <li>
+                <label>killed my creation</label>
+                <baseOpinionOffset>-80</baseOpinionOffset>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef>
+        <defName>ABF_Thought_Synstruct_MyCreationLost</defName>
+        <durationDays>30.0</durationDays>
+        <showBubble>true</showBubble>
+        <stages>
+            <li>
+                <label>my creator {0} lost</label>
+                <description>My creation has been lost. I hope for their safe return.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

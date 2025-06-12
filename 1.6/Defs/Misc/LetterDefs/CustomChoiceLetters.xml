@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <LetterDef ParentName="CustomChoiceLetterBase">
+        <defName>ABF_Letter_Synstruct_PersonalityShiftRequest</defName>
+        <letterClass>ArtificialBeings.ChoiceLetter_PersonalityShiftRequest</letterClass>
+    </LetterDef>
+
+    <LetterDef ParentName="CustomChoiceLetterBase">
+        <defName>ABF_Letter_Synstruct_PersonalityShift</defName>
+        <letterClass>ArtificialBeings.ChoiceLetter_PersonalityShift</letterClass>
+    </LetterDef>
+
+</Defs>
