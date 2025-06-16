@@ -318,7 +318,7 @@
             <WorkToMake>1600</WorkToMake>
         </statBases>
         <thingCategories>
-            <li>Drugs</li>
+            <li>Manufactured</li>
         </thingCategories>
         <recipeMaker>
             <recipeUsers>
@@ -381,7 +381,7 @@
             <WorkToMake>1400</WorkToMake>
         </statBases>
         <thingCategories>
-            <li>Drugs</li>
+            <li>Manufactured</li>
         </thingCategories>
         <recipeMaker>
             <recipeUsers>
