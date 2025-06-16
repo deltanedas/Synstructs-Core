@@ -18,6 +18,7 @@
 			<Mass>0.4</Mass>
 		</statBases>
 		<techLevel>Spacer</techLevel>
+        <tradeability>Sellable</tradeability>
 		<ingestible>
 			<drugCategory>Medical</drugCategory>
 			<useEatingSpeedStat>false</useEatingSpeedStat>
