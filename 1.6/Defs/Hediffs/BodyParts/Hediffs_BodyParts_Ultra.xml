@@ -37,7 +37,6 @@
                 <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     </ThingDef>
 
 	<RecipeDef Name="ABF_Recipe_Synstruct_UltrapartBase" ParentName="ABF_Recipe_Synstruct_InstallBodyPartBase" Abstract="True">

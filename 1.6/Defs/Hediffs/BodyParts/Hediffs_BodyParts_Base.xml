@@ -20,6 +20,9 @@
         <techHediffsTags>
             <li>ABF_SynstructParts</li>
         </techHediffsTags>
+        <tradeTags Inherit="False">
+            <li>ABF_SynstructParts</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Base Implant Installation Surgery Recipe -->
@@ -104,7 +107,6 @@
                 <li>ABF_Thing_Synstruct_PartWorkbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     </ThingDef>
 
 </Defs>

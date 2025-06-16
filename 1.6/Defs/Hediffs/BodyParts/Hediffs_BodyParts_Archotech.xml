@@ -30,9 +30,6 @@
             <WorkToMake>78000</WorkToMake>
             <Mass>2</Mass>
         </statBases>
-        <thingSetMakerTags>
-            <li>RewardStandardCore</li>
-        </thingSetMakerTags>
     </ThingDef>
 
 	<RecipeDef Name="ABF_Recipe_Synstruct_Archotech_InstallBodyPartBase" ParentName="ABF_Recipe_Synstruct_InstallBodyPartBase" Abstract="True">

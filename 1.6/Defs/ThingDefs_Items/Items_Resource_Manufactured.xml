@@ -52,10 +52,6 @@
             </skillRequirements>
             <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
-        <thingSetMakerTags>
-            <li>Manufactured</li>
-            <li>RewardSpecial</li>
-        </thingSetMakerTags>
     </ThingDef>
 
     <!-- Repair Stim Base Def -->

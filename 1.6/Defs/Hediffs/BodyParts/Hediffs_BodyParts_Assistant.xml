@@ -39,7 +39,6 @@
 				<li>ABF_Thing_Synstruct_PartWorkbench</li>
 			</recipeUsers>
 		</recipeMaker>
-		<thingSetMakerTags><li>RewardSpecial</li></thingSetMakerTags>
 	</ThingDef>
 
 	<RecipeDef Name="ABF_Recipe_Synstruct_Assistant_InstallBodyPartBase" ParentName="ABF_Recipe_Synstruct_InstallBodyPartBase" Abstract="True">
