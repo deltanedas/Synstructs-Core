@@ -188,6 +188,12 @@
 				<li>ABF_Thing_Synstruct_PartPack</li>
 			</thingDefs>
 		</fixedIngredientFilter>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_RestorePartExtension">
+                <severityToRestore>100</severityToRestore>
+                <propagateUpwards>true</propagateUpwards>
+            </li>
+        </modExtensions>
 	</RecipeDef>
 
 	<!-- Surgery to make a synstruct into a drone -->
