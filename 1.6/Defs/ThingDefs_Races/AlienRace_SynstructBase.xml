@@ -251,6 +251,9 @@
                 <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
 			</hediffGiverSets>
 		</race>
+        <inspectorTabs>
+            <li>ArtificialBeings.ITab_Programming</li>
+        </inspectorTabs>
         <comps>
             <li>
                 <compClass>ArtificialBeings.CompArtificialPawn</compClass>
