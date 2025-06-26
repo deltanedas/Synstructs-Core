@@ -4,6 +4,8 @@
 	<ResearchTabDef>
 		<defName>ABF_ResearchTab_Synstruct_Primary</defName>
 		<label>synstructs</label>
+        <generalTitle>Synstruct research projects</generalTitle>
+        <generalDescription>Develop new advances in synstruct technology by researching at a research bench. You can only have one active project at a time.</generalDescription>
 	</ResearchTabDef>
 
 </Defs>
