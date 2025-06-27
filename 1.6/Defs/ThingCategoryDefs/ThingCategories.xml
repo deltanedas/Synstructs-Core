@@ -7,4 +7,11 @@
         <parent>BodyParts</parent>
     </ThingCategoryDef>
 
+    <ThingCategoryDef>
+        <defName>ABF_ThingCategory_Synstruct_Stimulators</defName>
+        <label>stimulators</label>
+        <parent>Manufactured</parent>
+        <iconPath>Things/Drugs/SignalSurge</iconPath>
+    </ThingCategoryDef>
+
 </Defs>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ABF_Thing_Synstruct_StimulatorBase">
+		<defName>ABF_Thing_Synstruct_RegenerativePill</defName>
+		<label>regenerative pill</label>
+		<description>A rare case of a synstruct-designed solution (mostly) safe for organic consumption, regenerative pills are a complex synthetic solution that traverse the host's blood, coolant, or other internal streams and accumulates around injury sites in such a way as to accelerate recovery and cut off loss of fluids.\n\nOrganics will find the sensation quite unpleasant, but fully benefit from the pill's effects. Inorganic units benefit from the solution's materials to accelerate damage recovery without downsides.</description>
+		<graphicData>
+			<texPath>Things/Drugs/RegenerativePill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>14</MarketValue>
+			<WorkToMake>2500</WorkToMake>
+        </statBases>
+		<costList>
+			<Chemfuel>10</Chemfuel>
+			<Neutroamine>2</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="ArtificialBeings.CompProperties_SynstructStimulator">
+				<hediffToApply>ABF_Hediff_Synstruct_Regeneration</hediffToApply>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>ABF_Hediff_Synstruct_Regeneration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>regeneration</label>
+		<description>A synthetic solution absorbed into the system is fortifying damaged regions of the body against loss of fluid and acting as useful material for repairs.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+        <initialSeverity>1.0</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+		<stages>
+			<li>
+                <totalBleedFactor>0.5</totalBleedFactor>
+				<statOffsets>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="ArtificialBeings.HediffCompProperties_RemoveHediffOnApply">
+				<hediffToRemove>ABF_Hediff_Synstruct_CoolantLoss</hediffToRemove>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="ABF_Thing_Synstruct_StimulatorBase" Abstract="True">
+        <thingClass>ThingWithComps</thingClass>
+        <category>Item</category>
+        <drawerType>MapMeshOnly</drawerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <selectable>true</selectable>
+		<rotatable>false</rotatable>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <DeteriorationRate>2</DeteriorationRate>
+            <Beauty>-4</Beauty>
+			<Mass>0.4</Mass>
+        </statBases>
+		<techLevel>Spacer</techLevel>
+        <tradeability>Sellable</tradeability>
+        <altitudeLayer>Item</altitudeLayer>
+		<stackLimit>10</stackLimit>
+        <thingCategories>
+            <li>ABF_ThingCategory_Synstruct_Stimulators</li>
+        </thingCategories>
+        <alwaysHaulable>true</alwaysHaulable>
+        <recipeMaker>
+            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+            <workSkill>Intellectual</workSkill>
+            <effectWorking>Cook</effectWorking>
+            <soundWorking>Recipe_Drug</soundWorking>
+            <bulkRecipeCount>4</bulkRecipeCount>
+			<researchPrerequisite>ABF_ResearchProject_Synstruct_Stimulators</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+        </recipeMaker>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+        </comps>
+        <pathCost>14</pathCost>
+        <burnableByRecipe>true</burnableByRecipe>
+        <resourceReadoutPriority>Last</resourceReadoutPriority>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <allowedArchonexusCount>-1</allowedArchonexusCount>
+    </ThingDef>
+
+</Defs>

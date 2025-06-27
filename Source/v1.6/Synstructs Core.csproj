@@ -194,6 +194,7 @@
     <Compile Include="Components\ThingComps\CompAssignableToPawn_EnergyReservoir.cs" />
     <Compile Include="Components\ThingComps\CompEnergyReservoir_Powered.cs" />
     <Compile Include="Components\ThingComps\CompProperties_EnergyReservoir.cs" />
+    <Compile Include="Components\ThingComps\CompProperties_SynstructStimulator.cs" />
     <Compile Include="Components\ThingComps\CompProperties_RoomCharger.cs" />
     <Compile Include="Components\ThingComps\CompEnergyReservoir.cs" />
     <Compile Include="Components\ThingComps\CompRoomCharger_PoweredHeatGenerating.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="Components\ThingComps\CompPawnCharger.cs" />
     <Compile Include="Components\ThingComps\CompCoherenceNeed.cs" />
     <Compile Include="Components\ThingComps\CompAssignableToPawn_CoherenceSpot.cs" />
+    <Compile Include="Components\ThingComps\CompSynstructStimulator.cs" />
     <Compile Include="DeathActions\DeathActionProperties_DeadSynstructSwitch.cs" />
     <Compile Include="DeathActions\DeathActionWorker_DeadSynstructSwitch.cs" />
     <Compile Include="DefOfs\SC_PawnRelationDefOf.cs" />
@@ -219,6 +221,7 @@
     <Compile Include="Hediffs\Hediff_SynstructChassis.cs" />
     <Compile Include="Incidents\Incidents_PersonalityShift.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_SplitEffects.cs" />
+    <Compile Include="JobDrivers\JobDriver_TakeStimulator.cs" />
     <Compile Include="JobDrivers\JobDriver_RechargeSelf.cs" />
     <Compile Include="JobDrivers\JobDriver_BuildCoherenceUrgent.cs" />
     <Compile Include="JobDrivers\JobDriver_BuildCoherenceIdle.cs" />
@@ -249,7 +252,6 @@
     <Compile Include="Components\ThingComps\CompProperties_PawnSpawner.cs" />
     <Compile Include="Components\ThingComps\CompPawnSpawner.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker_Patch.cs" />
-    <Compile Include="StockGenerators\StockGenerator_Drones.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_OrganicVsBiophobe.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_BiologicalPreferenceTowardBiomimetics.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_BiophileHappyWorkTypes.cs" />

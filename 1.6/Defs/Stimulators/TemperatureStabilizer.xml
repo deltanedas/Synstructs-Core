@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ABF_Thing_Synstruct_StimulatorBase">
+		<defName>ABF_Thing_Synstruct_ThermalPill</defName>
+		<label>thermal pill</label>
+		<description>A synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - on both extremes.</description>
+		<graphicData>
+			<texPath>Things/Drugs/TemperatureStabilizer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>4</MarketValue>
+			<WorkToMake>550</WorkToMake>
+		</statBases>
+		<costList>
+			<Chemfuel>5</Chemfuel>
+		</costList>
+		<comps>
+			<li Class="ArtificialBeings.CompProperties_SynstructStimulator">
+				<hediffToApply>ABF_Hediff_Synstruct_ThermalPill</hediffToApply>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>ABF_Hediff_Synstruct_ThermalPill</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chassis temperature stabilizer</label>
+		<description>Synthetic chemical compounds designed to reduce chassis susceptibility to adverse temperature - positive and negative - are flowing through the chassis.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>5.0</maxSeverity>
+        <isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+                <showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>insignificant</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>minor</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+					<ComfyTemperatureMax>10</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>moderate</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>20</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>significant</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+					<ComfyTemperatureMax>30</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>peak</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+					<ComfyTemperatureMax>40</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

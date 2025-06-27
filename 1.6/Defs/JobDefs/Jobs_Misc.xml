@@ -15,6 +15,13 @@
     </JobDef>
 
     <JobDef>
+		<defName>ABF_Job_Synstruct_TakeStimulator</defName>
+		<driverClass>ArtificialBeings.JobDriver_TakeStimulator</driverClass>
+		<reportString>taking stimulator.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
         <defName>ABF_Job_Synstruct_BuildCoherenceUrgently</defName>
         <driverClass>ArtificialBeings.JobDriver_BuildCoherenceUrgent</driverClass>
         <reportString>building coherence.</reportString>
