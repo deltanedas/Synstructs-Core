@@ -39,4 +39,22 @@
         </modExtensions>
     </NeedDef>
 
+    <NeedDef>
+        <defName>ABF_Need_Synstruct_Energy</defName>
+        <needClass>ArtificialBeings.Need_SynstructEnergy</needClass>
+        <label>energy</label>
+        <description>Energy is required for this pawn to remain operational. If it hits zero, the pawn will very rapidly shutdown as the emergency reserve is depleted - but will not die if that happens.</description>
+        <listPriority>810</listPriority>
+        <major>true</major>
+        <showForCaravanMembers>true</showForCaravanMembers>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
+                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_EnergyShortage</hediffToApplyOnEmpty>
+                <hediffRisePerDay>2</hediffRisePerDay>
+                <hediffFallPerDay>4</hediffFallPerDay>
+            </li>
+        </modExtensions>
+    </NeedDef>
+
 </Defs>

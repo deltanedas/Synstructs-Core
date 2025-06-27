@@ -70,7 +70,9 @@
                         <postFactor>0.9</postFactor>
                     </li>
                 </capMods>
-                <hungerRateFactor>0.9</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.9</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>0.2</minSeverity>
@@ -85,7 +87,9 @@
                         <offset>-0.1</offset>
                     </li>
                 </capMods>
-                <hungerRateFactor>0.8</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.8</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>0.35</minSeverity>
@@ -100,7 +104,9 @@
                         <offset>-0.3</offset>
                     </li>
                 </capMods>
-                <hungerRateFactor>0.9</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.9</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>0.55</minSeverity>
@@ -116,7 +122,9 @@
                         <offset>-0.3</offset>
                     </li>
                 </capMods>
-                <hungerRateFactor>1.2</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.2</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>0.7</minSeverity>
@@ -128,7 +136,9 @@
                         <setMax>0.1</setMax>
                     </li>
                 </capMods>
-                <hungerRateFactor>1.4</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.4</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
 	    </stages>
 	</HediffDef>
@@ -146,7 +156,9 @@
             <li>
                 <label>minor</label>
                 <minSeverity>0.04</minSeverity>
-                <hungerRateFactor>1.25</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.25</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <label>moderate</label>
@@ -157,7 +169,9 @@
                         <postFactor>0.9</postFactor>
                     </li>
                 </capMods>
-                <hungerRateFactor>1.5</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.5</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <label>significant</label>
@@ -168,7 +182,9 @@
                         <postFactor>0.75</postFactor>
                     </li>
                 </capMods>
-                <hungerRateFactor>1.75</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.75</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <label>threatening</label>
@@ -179,7 +195,9 @@
                         <postFactor>0.5</postFactor>
                     </li>
                 </capMods>
-                <hungerRateFactor>2.5</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>2.5</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <label>critical</label>
@@ -190,7 +208,9 @@
                         <setMax>0.1</setMax>
                     </li>
                 </capMods>
-                <hungerRateFactor>4</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>4</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
         </stages>
     </HediffDef>

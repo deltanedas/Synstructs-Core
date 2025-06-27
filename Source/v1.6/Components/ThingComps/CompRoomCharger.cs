@@ -112,7 +112,7 @@ namespace ArtificialBeings
             {
                 return "ABF_InoperableInLargeRooms".Translate();
             }
-            return null;
+            return "ABF_BaseChargeRatePerDay".Translate(Props.baseChargeRatePerDay);
         }
     }
 }

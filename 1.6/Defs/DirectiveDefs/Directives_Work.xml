@@ -8,11 +8,11 @@
         <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
         <directiveCategory>Work</directiveCategory>
         <iconPath>UI/Icons/ABF_DirectiveEndurance</iconPath>
-        <hungerRateFactor>0.4</hungerRateFactor>
         <statOffsets>
             <ABF_Stat_Synstruct_CoherenceRetention>1</ABF_Stat_Synstruct_CoherenceRetention>
         </statOffsets>
         <statFactors>
+            <ABF_Stat_Synstruct_EnergyConsumption>0.4</ABF_Stat_Synstruct_EnergyConsumption>
             <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
             <MoveSpeed>0.8</MoveSpeed>
         </statFactors>

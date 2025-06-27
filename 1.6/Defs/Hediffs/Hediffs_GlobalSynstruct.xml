@@ -9,7 +9,6 @@
         <isBad>false</isBad>
         <stages>
             <li>
-				<hungerRateFactorOffset>0.25</hungerRateFactorOffset>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
@@ -19,6 +18,7 @@
 		        <statOffsets>
 					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.25</ABF_Stat_Synstruct_CoherenceRetention>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.25</ABF_Stat_Synstruct_EnergyConsumption>
                 </statOffsets>
             </li>
         </stages>

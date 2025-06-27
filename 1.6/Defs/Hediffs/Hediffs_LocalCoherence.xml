@@ -102,8 +102,10 @@
         </comps>
         <stages>
             <li>
-                <hungerRateFactor>1.2</hungerRateFactor>
                 <partEfficiencyOffset>-0.8</partEfficiencyOffset>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.2</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
         </stages>
         <modExtensions>
@@ -426,8 +428,8 @@
         <initialSeverity>1</initialSeverity>
         <stages>
             <li>
-                <hungerRateFactor>1.05</hungerRateFactor>
                 <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.05</ABF_Stat_Synstruct_EnergyConsumption>
                     <GlobalLearningFactor>0.75</GlobalLearningFactor>
                     <InjuryHealingFactor>0.90</InjuryHealingFactor>
                 </statFactors>
@@ -483,8 +485,8 @@
         <initialSeverity>1</initialSeverity>
         <stages>
             <li>
-                <hungerRateFactor>0.95</hungerRateFactor>
                 <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.95</ABF_Stat_Synstruct_EnergyConsumption>
                     <GlobalLearningFactor>1.1</GlobalLearningFactor>
                     <InjuryHealingFactor>1.05</InjuryHealingFactor>
                 </statFactors>

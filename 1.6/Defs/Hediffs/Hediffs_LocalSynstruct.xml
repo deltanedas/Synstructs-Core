@@ -2,6 +2,36 @@
 <Defs>
 
     <HediffDef>
+        <defName>ABF_Hediff_Synstruct_EnergyShortage</defName>
+        <label>energy shortage</label>
+        <description>This unit has insufficient energy to remain functional and is on emergency power. Restoring power is required to reactivate it.</description>
+        <maxSeverity>1</maxSeverity>
+        <stages>
+            <li>
+                <label>reserve power</label>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.6</setMax>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>depleted energy</label>
+                <minSeverity>0.95</minSeverity>
+                <lifeThreatening>true</lifeThreatening>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
         <defName>ABF_Hediff_Synstruct_CoolantShortage</defName>
         <label>coolant shortage</label>
         <description>This unit has insufficient coolant to fully fill its coolant lines and is shutting down to avoid catastrophic failure.\nCoolant reserves must be refilled to ensure a return to proper functionality.</description>
@@ -29,25 +59,29 @@
             <li>
                 <label>severe</label>
                 <minSeverity>0.5</minSeverity>
-                <hungerRateFactor>0.8</hungerRateFactor>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
                         <setMax>0.4</setMax>
                     </li>
                 </capMods>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.8</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <label>extreme</label>
                 <minSeverity>0.75</minSeverity>
                 <lifeThreatening>true</lifeThreatening>
-                <hungerRateFactor>0.25</hungerRateFactor>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
                         <setMax>0.1</setMax>
                     </li>
                 </capMods>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.25</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
         </stages>
     </HediffDef>
@@ -141,83 +175,103 @@
         <stages>
             <li>
                 <minSeverity>1</minSeverity>
-                <hungerRateFactor>1.02</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>2</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.02</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.02</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>2</minSeverity>
-                <hungerRateFactor>1.04</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>4</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.04</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.04</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>3</minSeverity>
-                <hungerRateFactor>1.06</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>6</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.06</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.06</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>4</minSeverity>
-                <hungerRateFactor>1.08</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>8</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.08</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.08</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>5</minSeverity>
-                <hungerRateFactor>1.1</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>10</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.1</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.1</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>6</minSeverity>
-                <hungerRateFactor>1.15</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>12</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.15</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.15</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>7</minSeverity>
-                <hungerRateFactor>1.2</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>14</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.2</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.2</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>8</minSeverity>
-                <hungerRateFactor>1.25</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>16</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.25</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.25</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>9</minSeverity>
-                <hungerRateFactor>1.3</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>18</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.3</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.3</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
             <li>
                 <minSeverity>10</minSeverity>
-                <hungerRateFactor>1.4</hungerRateFactor>
                 <statOffsets>
                     <ABF_Stat_Artificial_ComplexityLimit>20</ABF_Stat_Artificial_ComplexityLimit>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.4</ABF_Stat_Synstruct_CoherenceRetention>
                 </statOffsets>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.4</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
             </li>
         </stages>
     </HediffDef>

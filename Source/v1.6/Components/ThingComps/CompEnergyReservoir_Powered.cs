@@ -16,38 +16,12 @@ namespace ArtificialBeings
             compPowerTrader = parent.GetComp<CompPowerTrader>();
         }
 
-        public override void CompTick()
-        {
-            base.CompTick();
-            if (compPowerTrader.PowerOn)
-            {
-                reserve = Mathf.Clamp(reserve + Mathf.Abs(compPowerTrader.PowerOutput * Props.energyEfficiency) / wattsToNeedUnits / GenDate.TicksPerDay, 0, Props.maximumReserve);
-            }
-            else
-            {
-                reserve = 0;
-            }
-        }
-
         public override void CompTickRare()
         {
             base.CompTickRare();
             if (compPowerTrader.PowerOn)
             {
-                reserve = Mathf.Clamp(reserve + Mathf.Abs(compPowerTrader.PowerOutput * Props.energyEfficiency * GenTicks.TickRareInterval) / wattsToNeedUnits / GenDate.TicksPerDay, 0, Props.maximumReserve);
-            }
-            else
-            {
-                reserve = 0;
-            }
-        }
-
-        public override void CompTickLong()
-        {
-            base.CompTickLong();
-            if (compPowerTrader.PowerOn)
-            {
-                reserve = Mathf.Clamp(reserve + Mathf.Abs(compPowerTrader.PowerOutput * Props.energyEfficiency * GenTicks.TickLongInterval) / wattsToNeedUnits / GenDate.TicksPerDay, 0, Props.maximumReserve);
+                reserve = Mathf.Clamp(reserve + Mathf.Abs(compPowerTrader.PowerOutput * Props.energyEfficiency * GenTicks.TickRareInterval) / GenDate.TicksPerDay, 0, Props.maximumReserve);
             }
             else
             {

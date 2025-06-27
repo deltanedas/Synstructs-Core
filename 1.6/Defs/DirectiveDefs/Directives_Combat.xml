@@ -129,16 +129,15 @@
         <exclusionTags>
             <li>CombatDirectives</li>
         </exclusionTags>
-        <hungerRateFactor>0.75</hungerRateFactor>
         <statOffsets>
             <ShootingAccuracyPawn>-20</ShootingAccuracyPawn>
             <MeleeHitChance>-20</MeleeHitChance>
             <MeleeDodgeChance>-10</MeleeDodgeChance>
-            <ABF_Stat_Synstruct_ChargingSpeed>0.5</ABF_Stat_Synstruct_ChargingSpeed>
             <ABF_Stat_Synstruct_CoherenceRetention>1</ABF_Stat_Synstruct_CoherenceRetention>
             <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
         </statOffsets>
         <statFactors>
+            <ABF_Stat_Synstruct_EnergyConsumption>0.75</ABF_Stat_Synstruct_EnergyConsumption>
             <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
             <PawnTrapSpringChance>10</PawnTrapSpringChance>
         </statFactors>

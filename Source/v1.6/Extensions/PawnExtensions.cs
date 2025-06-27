@@ -2,7 +2,7 @@
 
 namespace ArtificialBeings
 {
-    // Simple mod extension that marks the race as a synstruct and holds data for what pawn kinds should be applied when becoming a drone/sapient.
+    // Simple mod extension that marks the race as a synstruct and holds related data.
     public class ABF_SynstructExtension : DefModExtension
     {
         // These pawn kind defs will be used as part of the operations to switch the pawn states, to control details like backstories, skills, traits, etc.
@@ -10,6 +10,11 @@ namespace ArtificialBeings
         public PawnKindDef playerDronePawnKindDef;
         public PawnKindDef playerReprogrammableDronePawnKindDef;
         public PawnKindDef playerSapientPawnKindDef;
+
+        // These control whether the pawn has an energy need, and its baseline max level and fall rate.
+        public bool needsEnergy = false;
+        public int maxLevel = 200;
+        public int fallRatePerDay = 150;
     }
 
     // Mod extension for particular races to mark them as something that should explode on downed or death.

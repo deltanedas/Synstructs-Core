@@ -14,7 +14,6 @@
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
 			<MeatAmount>0</MeatAmount>
-            <ABF_Stat_Synstruct_ChargingSpeed>1</ABF_Stat_Synstruct_ChargingSpeed>
 		</statBases>
         <alienRace>
 			<raceRestriction>
@@ -198,12 +197,11 @@
 			<intelligence>Humanlike</intelligence>
 			<makesFootprints>true</makesFootprints>
 			<lifeExpectancy>100</lifeExpectancy>
-            <baseHungerRate>0.625</baseHungerRate> <!-- Base fall rate is 1.6, but we want to treat it as 1. -->
 			<leatherDef>Leather_Human</leatherDef>
 			<nameGenerator>ABF_RulePack_Synstruct_NameRulesMale</nameGenerator>
             <nameGeneratorFemale>ABF_RulePack_Synstruct_NameRulesFemale</nameGeneratorFemale>
 			<needsRest>false</needsRest>
-			<foodType>OmnivoreHuman</foodType>
+			<foodType>None</foodType>
 			<fleshType>ABF_FleshType_Synstruct_Base</fleshType>
 			<bloodDef>ABF_Thing_Synstruct_CoolantFilth</bloodDef>
             <specificMeatDef>Steel</specificMeatDef>

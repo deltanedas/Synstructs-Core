@@ -18,8 +18,8 @@
         </comps>
         <stages>
             <li>
-                <hungerRateFactor>1.5</hungerRateFactor>
                 <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>1.5</ABF_Stat_Synstruct_EnergyConsumption>
                     <ABF_Stat_Synstruct_CoherenceRetention>0.5</ABF_Stat_Synstruct_CoherenceRetention>
                     <IncomingDamageFactor>0.8</IncomingDamageFactor>
                 </statFactors>

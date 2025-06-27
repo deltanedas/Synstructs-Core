@@ -5,5 +5,6 @@
     <ABF_InoperableInLargeRooms>Cannot operate: Room too large</ABF_InoperableInLargeRooms>
     <ABF_InsufficientReserve>Cannot operate: Insufficient reserve</ABF_InsufficientReserve>
     <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad>
+    <ABF_BaseChargeRatePerDay>Charging {0} watts per day to each nearby unit</ABF_BaseChargeRatePerDay>
 
 </LanguageData>

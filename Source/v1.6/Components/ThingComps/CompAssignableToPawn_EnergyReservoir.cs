@@ -43,7 +43,7 @@ namespace ArtificialBeings
         // Can be assigned if the pawn can charge.
         public override AcceptanceReport CanAssignTo(Pawn pawn)
         {
-            if (pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_ChargingSpeed, cacheStaleAfterTicks:GenTicks.TickLongInterval) <= 0f)
+            if (SC_Utils.CanCharge(pawn))
             {
                 return "ABF_IncapableOfCharging".Translate(pawn.LabelShortCap);
             }

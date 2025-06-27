@@ -210,15 +210,7 @@
     <Compile Include="Gizmos\Gizmo_EnergyReservoir.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
-    <Compile Include="Harmony\FoodUtility_Patch.cs" />
-    <Compile Include="Harmony\JobGiver_GetFood_Patch.cs" />
     <Compile Include="Harmony\CompGoldenCube_Patch.cs" />
-    <Compile Include="Harmony\Thing_Patch.cs" />
-    <Compile Include="Harmony\Pawn_JobTracker_Patch.cs" />
-    <Compile Include="Harmony\JobGiver_PatientGoToBed_Patch.cs" />
-    <Compile Include="Harmony\JobGiver_GetRest_Patch.cs" />
-    <Compile Include="Harmony\FeedPatientUtility_Patch.cs" />
-    <Compile Include="Harmony\Alert_RoyalNoAcceptableFood_Patch.cs" />
     <Compile Include="Harmony\Pawn_Patch.cs" />
     <Compile Include="Hediffs\HediffGiver_MechHypothermia.cs" />
     <Compile Include="Hediffs\HediffWithComps_SynstructCoreAssistant.cs" />
@@ -231,7 +223,6 @@
     <Compile Include="JobDrivers\JobDriver_BuildCoherenceUrgent.cs" />
     <Compile Include="JobDrivers\JobDriver_BuildCoherenceIdle.cs" />
     <Compile Include="JobDrivers\JobDriver_ResuscitateSynstruct.cs" />
-    <Compile Include="JobGivers\JobGiver_RechargeIdle.cs" />
     <Compile Include="JobGivers\JobGiver_BuildCoherenceUrgent.cs" />
     <Compile Include="JobGivers\JobGiver_AIBerserkerRage.cs" />
     <Compile Include="JobGivers\JobGiver_BuildCoherenceIdle.cs" />
@@ -246,6 +237,7 @@
     <Compile Include="MentalStateWorkers\MentalStateWorker_GrassObsession.cs" />
     <Compile Include="MentalStates\MentalState_DirectiveBerserker.cs" />
     <Compile Include="MentalStates\MentalState_Exterminator.cs" />
+    <Compile Include="Needs\Need_SynstructEnergy.cs" />
     <Compile Include="PawnRelationWorkers\PawnRelationWorker_Creator.cs" />
     <Compile Include="Recipes\Recipe_InstallSlotUpgrade.cs" />
     <Compile Include="Recipes\Recipe_MakeBlank.cs" />

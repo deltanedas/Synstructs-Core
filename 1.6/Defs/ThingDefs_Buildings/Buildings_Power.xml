@@ -21,7 +21,7 @@
                 <compClass>ArtificialBeings.CompRoomCharger_PoweredHeatGenerating</compClass>
                 <inoperableInLargeRooms>true</inoperableInLargeRooms>
                 <inoperableOutdoors>true</inoperableOutdoors>
-                <baseChargeRatePerDay>4</baseChargeRatePerDay>
+                <baseChargeRatePerDay>200</baseChargeRatePerDay>
             </li>
             <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
@@ -89,8 +89,8 @@
             <li Class="ArtificialBeings.CompProperties_EnergyReservoir">
                 <compClass>ArtificialBeings.CompEnergyReservoir_Powered</compClass>
                 <minimumReserveBeforeReady>0.05</minimumReserveBeforeReady>
-                <maximumReserve>8</maximumReserve> <!-- 8 units of the "Food" bar -->
-                <energyEfficiency>0.9</energyEfficiency>
+                <maximumReserve>600</maximumReserve>
+                <energyEfficiency>0.6</energyEfficiency>
                 <reactsIfDamagedAboveMinimumReserve>true</reactsIfDamagedAboveMinimumReserve>
             </li>
             <li Class="CompProperties_Breakdownable"/>

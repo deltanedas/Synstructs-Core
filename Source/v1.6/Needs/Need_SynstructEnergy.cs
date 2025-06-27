@@ -1,0 +1,104 @@
+﻿using RimWorld;
+using System.Collections.Generic;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+
+namespace ArtificialBeings
+{
+    public class Need_SynstructEnergy : Need_Artificial
+    {
+        private float FallRateModifierPerStage
+        {
+            get
+            {
+                if (CurLevelPercentage < 0.1f)
+                {
+                    return 0.25f;
+                }
+                else if (CurLevelPercentage < 0.2f)
+                {
+                    return 0.5f;
+                }
+                return 1f;
+            }
+        }
+
+        public Need_SynstructEnergy(Pawn pawn) : base(pawn)
+        {
+        }
+
+        public override void SetInitialLevel()
+        {
+            CurLevelPercentage = 1.0f;
+        }
+
+        public override float MaxLevel
+        {
+            get
+            {
+                if (Current.ProgramState != ProgramState.Playing)
+                {
+                    return pawn.BodySize * 200f;
+                }
+                return pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_MaxEnergy, cacheStaleAfterTicks: 400);
+            }
+        }
+
+        public override int GUIChangeArrow
+        {
+            get
+            {
+                if (IsFrozen)
+                {
+                    return 0;
+                }
+                return -1;
+            }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+        }
+
+        public override string GetTipString()
+        {
+            return (LabelCap + ": " + CurLevelPercentage.ToStringPercent()).Colorize(ColoredText.TipSectionTitleColor) + " (" + CurLevel.ToString("0.##") + " / " + MaxLevel.ToString("0.##") + ")\n" + def.description;
+        }
+
+        // Add little tick markers to the points where the need starts falling slower.
+        public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = int.MaxValue, float customMargin = -1, bool drawArrows = true, bool doTooltip = true, Rect? rectForTooltip = null, bool drawLabel = true)
+        {
+            if (threshPercents == null)
+            {
+                threshPercents = new List<float>();
+            }
+            threshPercents.Clear();
+            threshPercents.Add(0.1f);
+            threshPercents.Add(0.2f);
+            base.DrawOnGUI(rect, maxThresholdMarkers, customMargin, drawArrows, doTooltip, rectForTooltip, drawLabel);
+        }
+
+        // Energy need fall rate is dependent on the pawn's energy consumption stat, not on the mod extension.
+        public override void HandleTicks(int delta)
+        {
+            CurLevel = Mathf.Clamp(CurLevel - (pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_EnergyConsumption, cacheStaleAfterTicks: 400) * FallRateModifierPerStage / GenDate.TicksPerDay * delta), 0, MaxLevel);
+        }
+
+        public override bool ShouldReplenishNow()
+        {
+            return base.ShouldReplenishNow();
+        }
+
+        // Pawns should try to replenish the energy need via resevoirs before trying to find an item that fulfills this need.
+        public override Job GetReplenishJob()
+        {
+            if (SC_Utils.GetReservoir(pawn) is Thing reservoir)
+            {
+                return new Job(ABF_JobDefOf.ABF_Job_Synstruct_ChargeSelf, new LocalTargetInfo(reservoir));
+            }
+            return base.GetReplenishJob();
+        }
+    }
+}

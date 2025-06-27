@@ -23,9 +23,6 @@
             </li>
         </capacityFactors>
         <parts>
-            <li Class="StatPart_Food">
-                <factorStarving>0.6</factorStarving>
-            </li>
             <li Class="StatPart_Resting">
                 <factor>3</factor>
             </li>

@@ -10,9 +10,6 @@ namespace ArtificialBeings
     {
         public float reserve = 0f;
 
-        // Food Need is measured in single digit units without a name. Treat 125 watts as one unit until someone ideates a better solution.
-        public const int wattsToNeedUnits = 125;
-
         public CompProperties_EnergyReservoir Props
         {
             get
@@ -66,7 +63,7 @@ namespace ArtificialBeings
                 yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
             }
             // Check if the pawn can charge.
-            else if (!SC_Utils.CanCharge(selPawn) || selPawn.needs?.food == null)
+            else if (!SC_Utils.CanCharge(selPawn))
             {
                 yield return new FloatMenuOption("ABF_IncapableOfCharging".Translate(selPawn), null);
             }
@@ -94,7 +91,7 @@ namespace ArtificialBeings
             List<Pawn> usableFor = new List<Pawn>();
             foreach (Pawn pawn in selPawns)
             {
-                if (pawn.CanReach(parent, PathEndMode.Touch, Danger.Deadly) && SC_Utils.CanCharge(pawn) && pawn.needs?.food != null)
+                if (pawn.CanReach(parent, PathEndMode.Touch, Danger.Deadly) && SC_Utils.CanCharge(pawn))
                 {
                     usableFor.Add(pawn);
                 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using Verse.AI;
-using RimWorld;
 using Verse;
 using System;
 using UnityEngine;
@@ -32,12 +31,12 @@ namespace ArtificialBeings
         // Replenish charge and drain the reservoir
         private void Recharge()
         {
-            if (!(Reservoir is ThingWithComps thing) || !(thing.GetComp<CompEnergyReservoir>() is CompEnergyReservoir reservoir) || !(pawn.needs.TryGetNeed(NeedDefOf.Food) is Need need))
+            if (!(Reservoir is ThingWithComps thing) || !(thing.GetComp<CompEnergyReservoir>() is CompEnergyReservoir reservoir) || !(pawn.needs.TryGetNeed(ABF_NeedDefOf.ABF_Need_Synstruct_Energy) is Need_SynstructEnergy need))
             {
                 return;
             }
 
-            float toCharge = Mathf.Min(reservoir.reserve, need.MaxLevel - need.CurLevel);
+            float toCharge = Mathf.Min(reservoir.reserve, need.AmountDesired);
             need.CurLevel += toCharge;
             reservoir.reserve -= toCharge;
         }

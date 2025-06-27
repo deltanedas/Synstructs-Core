@@ -91,7 +91,7 @@ namespace ArtificialBeings
 
             foreach (Pawn pawn in chargingPawns)
             {
-                if (pawn.needs?.TryGetNeed<Need_Food>() is Need need)
+                if (pawn.needs?.TryGetNeed(ABF_NeedDefOf.ABF_Need_Synstruct_Energy) is Need need)
                 {
                     need.CurLevel += effectiveCharge;
                 }

@@ -14,6 +14,6 @@
 
     <!-- Reservoir -->
     <ABF_ReservoirGizmoLabel>Energy</ABF_ReservoirGizmoLabel>
-    <ABF_ReservoirLevel>Reserve available: {0}</ABF_ReservoirLevel>
+    <ABF_ReservoirLevel>Reserve available: {0} watts</ABF_ReservoirLevel>
 
 </LanguageData>

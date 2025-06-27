@@ -392,7 +392,9 @@
         <descriptionHyperlinks><ThingDef>ABF_Thing_Synstruct_Ultrapart_Battery</ThingDef></descriptionHyperlinks>
         <stages>
 			<li>
-                <hungerRateFactor>0.8</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.8</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
 			</li>
 		</stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_Ultrapart_Battery</spawnThingOnRemoved>
@@ -448,7 +450,9 @@
         <descriptionHyperlinks><ThingDef>ABF_Thing_Synstruct_Ultrapart_Reactor</ThingDef></descriptionHyperlinks>
 		<stages>
 			<li>
-                <hungerRateFactor>0.8</hungerRateFactor>
+                <statFactors>
+                    <ABF_Stat_Synstruct_EnergyConsumption>0.8</ABF_Stat_Synstruct_EnergyConsumption>
+                </statFactors>
 			</li>
 		</stages>
         <spawnThingOnRemoved>ABF_Thing_Synstruct_Ultrapart_Reactor</spawnThingOnRemoved>
@@ -493,76 +497,6 @@
 			<li>ABF_BodyPart_Synstruct_Generator</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>ABF_Hediff_Synstruct_Ultrapart_Reactor</addsHediff>
-	</RecipeDef>
-
-    <!-- Organic Charger -->
-
-    <HediffDef ParentName="AddedBodyPartBase">
-        <defName>ABF_Hediff_Synstruct_OrganicCharger</defName>
-        <label>organic charger</label>
-        <description>A highly advanced bionic part that allows organics that have this installed to charge. It requires considerable energy itself, leading to faster consumption, and reduces the amount of nutrition absorbed when eating food.</description>
-		<descriptionHyperlinks><ThingDef>ABF_Thing_Synstruct_Ultrapart_OrganicCharger</ThingDef></descriptionHyperlinks>
-        <stages>
-			<li>
-                <hungerRateFactor>1.2</hungerRateFactor>
-                <statOffsets>
-                    <ABF_Stat_Synstruct_ChargingSpeed>1</ABF_Stat_Synstruct_ChargingSpeed>
-                </statOffsets>
-			</li>
-		</stages>
-        <spawnThingOnRemoved>ABF_Thing_Synstruct_Ultrapart_OrganicCharger</spawnThingOnRemoved>
-        <addedPartProps>
-            <solid>true</solid>
-            <partEfficiency>1.25</partEfficiency>
-            <betterThanNatural>true</betterThanNatural>
-        </addedPartProps>
-    </HediffDef>
-
-    <ThingDef ParentName="BodyPartBionicBase">
-        <defName>ABF_Thing_Synstruct_Ultrapart_OrganicCharger</defName>
-        <label>organic charger</label>
-        <description>A highly advanced bionic part that allows organics that have this installed to charge. It requires considerable energy itself, leading to faster consumption, and reduces the amount of nutrition absorbed when eating food.</description>
-        <costList>
-            <Steel>10</Steel>
-            <Plasteel>20</Plasteel>
-            <ComponentIndustrial>4</ComponentIndustrial>
-            <ComponentSpacer>2</ComponentSpacer>
-        </costList>
-        <statBases>
-            <Mass>4</Mass>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
-            <recipeUsers>
-                <li>ABF_Thing_Synstruct_PartWorkbench</li>
-            </recipeUsers>
-        </recipeMaker>
-    </ThingDef>
-
-    <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>ABF_Recipe_Synstruct_Ultrapart_OrganicCharger</defName>
-		<label>install organic charger</label>
-		<description>Installs an organic charger.</description>
-		<jobString>Installing organic charger.</jobString>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>ABF_Thing_Synstruct_Ultrapart_OrganicCharger</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>ABF_Thing_Synstruct_Ultrapart_OrganicCharger</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<appliedOnFixedBodyParts>
-			<li>Stomach</li>
-		</appliedOnFixedBodyParts>
-		<addsHediff>ABF_Hediff_Synstruct_OrganicCharger</addsHediff>
 	</RecipeDef>
 
 </Defs>
