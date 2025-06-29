@@ -57,16 +57,6 @@ namespace ArtificialBeings
             }
         }
 
-        public override void ExposeData()
-        {
-            base.ExposeData();
-        }
-
-        public override string GetTipString()
-        {
-            return (LabelCap + ": " + CurLevelPercentage.ToStringPercent()).Colorize(ColoredText.TipSectionTitleColor) + " (" + CurLevel.ToString("0.##") + " / " + MaxLevel.ToString("0.##") + ")\n" + def.description;
-        }
-
         // Add little tick markers to the points where the need starts falling slower.
         public override void DrawOnGUI(Rect rect, int maxThresholdMarkers = int.MaxValue, float customMargin = -1, bool drawArrows = true, bool doTooltip = true, Rect? rectForTooltip = null, bool drawLabel = true)
         {
@@ -84,11 +74,6 @@ namespace ArtificialBeings
         public override void HandleTicks(int delta)
         {
             CurLevel = Mathf.Clamp(CurLevel - (pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_EnergyConsumption, cacheStaleAfterTicks: 400) * FallRateModifierPerStage / GenDate.TicksPerDay * delta), 0, MaxLevel);
-        }
-
-        public override bool ShouldReplenishNow()
-        {
-            return base.ShouldReplenishNow();
         }
 
         // Pawns should try to replenish the energy need via resevoirs before trying to find an item that fulfills this need.
