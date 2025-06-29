@@ -15,6 +15,7 @@
                 <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_CoolantShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>1</hediffRisePerDay>
                 <hediffFallPerDay>0.25</hediffFallPerDay>
+                <unitsLabel>packs</unitsLabel>
             </li>
         </modExtensions>
     </NeedDef>
@@ -33,6 +34,7 @@
                 <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_LubricantShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>0.1</hediffRisePerDay>
                 <hediffFallPerDay>0.5</hediffFallPerDay>
+                <unitsLabel>packs</unitsLabel>
             </li>
         </modExtensions>
     </NeedDef>
@@ -51,6 +53,7 @@
                 <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_EnergyShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>2</hediffRisePerDay>
                 <hediffFallPerDay>4</hediffFallPerDay>
+                <unitsLabel>watts</unitsLabel>
             </li>
         </modExtensions>
     </NeedDef>

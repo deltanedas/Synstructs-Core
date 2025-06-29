@@ -33,6 +33,15 @@ namespace ArtificialBeings
             CurLevelPercentage = 1.0f;
         }
 
+        // Fall rate per day depends on the Energy Consumption statistic.
+        public override float FallRatePerDay
+        {
+            get
+            {
+                return pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_EnergyConsumption, cacheStaleAfterTicks: 400) * FallRateModifierPerStage;
+            }
+        }
+
         public override float MaxLevel
         {
             get
@@ -68,12 +77,6 @@ namespace ArtificialBeings
             threshPercents.Add(0.1f);
             threshPercents.Add(0.2f);
             base.DrawOnGUI(rect, maxThresholdMarkers, customMargin, drawArrows, doTooltip, rectForTooltip, drawLabel);
-        }
-
-        // Energy need fall rate is dependent on the pawn's energy consumption stat, not on the mod extension.
-        public override void HandleTicks(int delta)
-        {
-            CurLevel = Mathf.Clamp(CurLevel - (pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_EnergyConsumption, cacheStaleAfterTicks: 400) * FallRateModifierPerStage / GenDate.TicksPerDay * delta), 0, MaxLevel);
         }
 
         // Pawns should try to replenish the energy need via resevoirs before trying to find an item that fulfills this need.
