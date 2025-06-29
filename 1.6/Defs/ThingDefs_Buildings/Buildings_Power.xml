@@ -26,7 +26,7 @@
             <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
-                <basePowerConsumption>500</basePowerConsumption>
+                <basePowerConsumption>200</basePowerConsumption>
                 <idlePowerDraw>20</idlePowerDraw>
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
@@ -55,9 +55,8 @@
         </statBases>
         <size>(1,1)</size>
         <costList>
-            <Steel>150</Steel>
-            <Silver>50</Silver>
-            <ComponentIndustrial>4</ComponentIndustrial>
+            <Steel>50</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
         </costList>
         <researchPrerequisites>
             <li>Electricity</li>
@@ -90,7 +89,7 @@
                 <compClass>ArtificialBeings.CompEnergyReservoir_Powered</compClass>
                 <minimumReserveBeforeReady>0.05</minimumReserveBeforeReady>
                 <maximumReserve>600</maximumReserve>
-                <energyEfficiency>0.6</energyEfficiency>
+                <energyEfficiency>1</energyEfficiency> <!-- To be determined -->
                 <reactsIfDamagedAboveMinimumReserve>true</reactsIfDamagedAboveMinimumReserve>
             </li>
             <li Class="CompProperties_Breakdownable"/>
@@ -124,9 +123,8 @@
         </statBases>
         <size>(1,1)</size>
         <costList>
-            <Steel>150</Steel>
-            <Silver>50</Silver>
-            <ComponentIndustrial>4</ComponentIndustrial>
+            <Steel>50</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
         </costList>
         <researchPrerequisites>
             <li>Electricity</li>
