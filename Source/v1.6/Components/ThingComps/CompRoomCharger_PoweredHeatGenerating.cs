@@ -63,6 +63,12 @@ namespace ArtificialBeings
 
         public override void DoChargePulse()
         {
+            // Do nothing if not spawned.
+            if (!parent.Spawned)
+            {
+                return;
+            }
+
             // Update the power comp so it remains synced, regardless of whether the device is operating.
             compPowerTrader.PowerOutput = -cachedPowerConsumption;
 
