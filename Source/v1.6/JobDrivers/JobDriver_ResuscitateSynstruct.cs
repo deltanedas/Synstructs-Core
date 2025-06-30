@@ -44,16 +44,24 @@ namespace ArtificialBeings
         {
             Pawn innerPawn = Corpse.InnerPawn;
 
-            // Apply incapacitated to the pawn. This will ensure hostile units can be safely captured, and that friendly units can't be reactivated mid-combat.
-            Hediff rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated, innerPawn);
-            innerPawn.health.AddHediff(rebootHediff);
-
             bool shouldbeBlank = false;
             // Sapients have a special consideration attached: if the Core is destroyed, then the dead pawn is blank upon resurrection.
             if (SC_Utils.IsSynstruct(innerPawn) && innerPawn.health.hediffSet.GetBrain() == null)
             {
                 shouldbeBlank = true;
             }
+
+            // Apply an incapacitating hediff to the pawn. This will ensure hostile units can be safely captured, and that friendly units can't be reactivated mid-combat.
+            Hediff rebootHediff;
+            if (shouldbeBlank)
+            {
+                rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Disabled, innerPawn);
+            }
+            else
+            {
+                rebootHediff = HediffMaker.MakeHediff(ABF_HediffDefOf.ABF_Hediff_Artificial_Incapacitated, innerPawn);
+            }
+            innerPawn.health.AddHediff(rebootHediff);
 
             // This kit executes a full resurrection which removes all negative hediffs.
             ResurrectionUtility.TryResurrect(innerPawn);
@@ -63,7 +71,7 @@ namespace ArtificialBeings
             {
                 SC_Utils.Duplicate(SC_Utils.GetBlank(), innerPawn, false);
                 innerPawn.GetComp<CompArtificialPawn>().State = ABF_ArtificialState.Blank;
-                innerPawn.guest?.SetGuestStatus(Faction.OfPlayer);
+                //innerPawn.guest?.SetGuestStatus(Faction.OfPlayer);
                 if (innerPawn.playerSettings != null)
                     innerPawn.playerSettings.medCare = MedicalCareCategory.Best;
             }

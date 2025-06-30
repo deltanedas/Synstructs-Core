@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<!-- Charging -->
+	<!-- Charging - 1.5 only -->
 	<ABF_NoAvailableChargingSpots>Cannot use, charging spots are reserved.</ABF_NoAvailableChargingSpots>
 
-    <!-- Restruct kits -->
+    <!-- Restruct kits - both 1.5 only. -->
     <ABF_TargetMustBeCorpse>{0} is not a corpse.</ABF_TargetMustBeCorpse>
     <ABF_InvalidPawnState>{0} cannot be used on {1}.</ABF_InvalidPawnState>
 

@@ -179,7 +179,8 @@
   <ItemGroup>
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShiftRequest.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShift.cs" />
-    <Compile Include="Components\CompTargetEffectProperties_ResurrectPawn.cs" />
+    <Compile Include="Components\CompTargetable_SynstructCorpse.cs" />
+    <Compile Include="Components\CompTargetProperties_SynstructCorpse.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_CoherenceThresholdToRemove.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_SeverityAffectsNeed.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_RemoveHediffOnApply.cs" />

@@ -208,13 +208,13 @@
                 <useDuration>0</useDuration>
                 <warmupMote>Mote_ResurrectAbility</warmupMote>
             </li>
-            <li Class="CompProperties_Targetable">
-                <compClass>CompTargetable_SingleCorpse</compClass>
-            </li>
-            <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
+            <li Class="ArtificialBeings.CompTargetProperties_SynstructCorpse">
                 <validStates>
                     <li>Sapient</li>
                 </validStates>
+            </li>
+            <li>
+                <compClass>ArtificialBeings.CompTargetEffect_ResurrectPawn</compClass>
             </li>
         </comps>
         <recipeMaker>
@@ -235,7 +235,7 @@
         <label>drone restruct kit</label>
         <description>A one-use suite of tools and components designed to restore most synstructs to full operability. The tools are too simple to recover the intelligence of a sapient synstruct, and cannot be used on them.\n\nSynstructs resurrected with these tools must undergo a long startup sequence to return to full functionality.</description>
         <graphicData>
-            <texPath>Things/Items/Manufactured/SapientRestructKit</texPath>
+            <texPath>Things/Items/Manufactured/DroneRestructKit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
@@ -255,15 +255,15 @@
                 <useDuration>0</useDuration>
                 <warmupMote>Mote_ResurrectAbility</warmupMote>
             </li>
-            <li Class="CompProperties_Targetable">
-                <compClass>CompTargetable_SingleCorpse</compClass>
-            </li>
-            <li Class="ArtificialBeings.CompTargetEffectProperties_ResurrectPawn">
+            <li Class="ArtificialBeings.CompTargetProperties_SynstructCorpse">
                 <validStates>
                     <li>Blank</li>
                     <li>Drone</li>
                     <li>Reprogrammable</li>
                 </validStates>
+            </li>
+            <li>
+                <compClass>ArtificialBeings.CompTargetEffect_ResurrectPawn</compClass>
             </li>
         </comps>
         <recipeMaker>
