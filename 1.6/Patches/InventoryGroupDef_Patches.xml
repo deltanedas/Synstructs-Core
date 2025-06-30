@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- Repair stims should be included in this stock group so that pawns can be ordered to always carry a certain amount. -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/InventoryStockGroupDef[defName="Medicine"]/thingDefs</xpath>
+        <order>Append</order>
+        <value>
+            <li>ABF_Thing_Synstruct_RepairStimMinor</li>
+            <li>ABF_Thing_Synstruct_RepairStim</li>
+            <li>ABF_Thing_Synstruct_RepairStimUltra</li>
+        </value>
+    </Operation>
+
+</Patch>
