@@ -183,13 +183,11 @@
     <Compile Include="Components\CompTargetProperties_SynstructCorpse.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_CoherenceThresholdToRemove.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_SeverityAffectsNeed.cs" />
-    <Compile Include="Components\HediffComps\HediffCompProperties_RemoveHediffOnApply.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_CoherenceStageEffect.cs" />
     <Compile Include="Components\HediffComps\HediffComp_CoherenceThresholdToRemove.cs" />
     <Compile Include="Components\HediffComps\HediffComp_CoherenceStageEffect.cs" />
     <Compile Include="Components\HediffComps\HediffComp_DisablesCoherence.cs" />
     <Compile Include="Components\HediffComps\HediffComp_SeverityAffectsNeed.cs" />
-    <Compile Include="Components\HediffComps\HediffComp_RemoveHediffOnApply.cs" />
     <Compile Include="Components\CompTargetEffect_ResurrectPawn.cs" />
     <Compile Include="Components\SC_MapComponent.cs" />
     <Compile Include="Components\ThingComps\CompAssignableToPawn_EnergyReservoir.cs" />

@@ -34,6 +34,9 @@
         <initialSeverity>1.0</initialSeverity>
 		<maxSeverity>1.0</maxSeverity>
         <isBad>false</isBad>
+        <removeWithTags>
+            <li>ABF_Synstruct_CoolantShortage</li>
+        </removeWithTags>
 		<stages>
 			<li>
                 <totalBleedFactor>0.5</totalBleedFactor>
@@ -46,9 +49,6 @@
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-1</severityPerDay>
                 <showHoursToRecover>true</showHoursToRecover>
-			</li>
-			<li Class="ArtificialBeings.HediffCompProperties_RemoveHediffOnApply">
-				<hediffToRemove>ABF_Hediff_Synstruct_CoolantLoss</hediffToRemove>
 			</li>
 		</comps>
 	</HediffDef>
