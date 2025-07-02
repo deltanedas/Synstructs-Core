@@ -11,10 +11,8 @@ namespace ArtificialBeings
         public PawnKindDef playerReprogrammableDronePawnKindDef;
         public PawnKindDef playerSapientPawnKindDef;
 
-        // These control whether the pawn has an energy need, and its baseline max level and fall rate.
-        public bool needsEnergy = false;
-        public int maxLevel = 200;
-        public int fallRatePerDay = 150;
+        // This controls whether or not the pawn will allow other pawns with the energy need to siphon off from this pawn in caravans.
+        public bool mayHaveEnergySiphoned = false;
     }
 
     // Mod extension for particular races to mark them as something that should explode on downed or death.
