@@ -213,6 +213,7 @@
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
     <Compile Include="Harmony\CompGoldenCube_Patch.cs" />
+    <Compile Include="Harmony\FleeUtility_Patch.cs" />
     <Compile Include="Harmony\FloatMenuUtility_Patch.cs" />
     <Compile Include="Harmony\ITab_Pawn_Gear_Patch.cs" />
     <Compile Include="Harmony\PawnAttackGizmoUtility_Patch.cs" />

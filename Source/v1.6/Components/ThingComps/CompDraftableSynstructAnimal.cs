@@ -32,6 +32,15 @@ namespace ArtificialBeings
             }
         }
 
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            if (Drafter == null)
+            {
+                Log.ErrorOnce("[ABF] A draftable animal failed to generate its draft controller.", 912831);
+            }
+            base.PostSpawnSetup(respawningAfterLoad);
+        }
+
         // The extra selection overlay for drawing lines for paths only happens for Colonist pawns (ie. humanlikes).
         public override void PostDrawExtraSelectionOverlays()
         {
