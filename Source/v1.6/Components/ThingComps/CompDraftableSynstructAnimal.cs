@@ -11,18 +11,25 @@ namespace ArtificialBeings
 
         private Pawn Pawn => parent as Pawn;
 
-        public override void PostPostMake()
+        private Pawn_DraftController Drafter
         {
-            if (Pawn.drafter == null)
+            get
             {
-                Pawn.drafter = new Pawn_DraftController(Pawn);
+                if (drafter == null)
+                {
+                    if (Pawn.drafter == null)
+                    {
+                        Pawn.drafter = new Pawn_DraftController(Pawn);
+                    }
+                    drafter = Pawn.drafter;
+                }
+                // If the drafter exists, the equipment tracker also needs to exist, but isn't referenced directly.
+                if (Pawn.equipment == null)
+                {
+                    Pawn.equipment = new Pawn_EquipmentTracker(Pawn);
+                }
+                return drafter;
             }
-            // The game expects there to be an equipment tracker for anything with a draft tracker.
-            if (Pawn.equipment == null)
-            {
-                Pawn.equipment = new Pawn_EquipmentTracker(Pawn);
-            }
-            base.PostPostMake();
         }
 
         // The extra selection overlay for drawing lines for paths only happens for Colonist pawns (ie. humanlikes).
@@ -34,26 +41,22 @@ namespace ArtificialBeings
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (drafter == null)
-            {
-                drafter = Pawn.drafter;
-            }
-            if (drafter.ShowDraftGizmo)
+            if (Drafter.ShowDraftGizmo)
             {
                 Command_Toggle command_Toggle = new Command_Toggle
                 {
                     hotKey = KeyBindingDefOf.Command_ColonistDraft,
-                    isActive = () => drafter.Drafted,
+                    isActive = () => Drafter.Drafted,
                     toggleAction = delegate
                     {
-                        drafter.Drafted = !drafter.Drafted;
+                        Drafter.Drafted = !Drafter.Drafted;
                     },
                     defaultDesc = "CommandToggleDraftDesc".Translate(),
                     icon = TexCommand.Draft,
                     turnOnSound = SoundDefOf.DraftOn,
                     turnOffSound = SoundDefOf.DraftOff,
                     groupKeyIgnoreContent = 81729172,
-                    defaultLabel = (drafter.Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate()
+                    defaultLabel = (Drafter.Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate()
                 };
                 if (Pawn.Downed)
                 {
