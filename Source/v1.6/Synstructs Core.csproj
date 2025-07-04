@@ -191,6 +191,7 @@
     <Compile Include="Components\CompTargetEffect_ResurrectPawn.cs" />
     <Compile Include="Components\SC_MapComponent.cs" />
     <Compile Include="Components\ThingComps\CompAssignableToPawn_EnergyReservoir.cs" />
+    <Compile Include="Components\ThingComps\CompDraftableSynstructAnimal.cs" />
     <Compile Include="Components\ThingComps\CompEnergyReservoir_Powered.cs" />
     <Compile Include="Components\ThingComps\CompProperties_EnergyReservoir.cs" />
     <Compile Include="Components\ThingComps\CompProperties_SynstructStimulator.cs" />
@@ -212,6 +213,8 @@
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceEffect.cs" />
     <Compile Include="Harmony\CompGoldenCube_Patch.cs" />
+    <Compile Include="Harmony\FloatMenuUtility_Patch.cs" />
+    <Compile Include="Harmony\PawnAttackGizmoUtility_Patch.cs" />
     <Compile Include="Harmony\Pawn_Patch.cs" />
     <Compile Include="Hediffs\HediffGiver_MechHypothermia.cs" />
     <Compile Include="Hediffs\HediffWithComps_SynstructCoreAssistant.cs" />

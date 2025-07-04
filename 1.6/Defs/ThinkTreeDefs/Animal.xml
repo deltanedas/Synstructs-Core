@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!-- Wait if drafted -->
+    <ThinkTreeDef>
+        <defName>ABF_ThinkTree_Synstruct_Animal</defName>
+        <insertTag>Animal_PreMain</insertTag>
+        <insertPriority>2</insertPriority>
+        <thinkRoot Class="ThinkNode_ConditionalOfPlayerFaction">
+            <subNodes>
+                <li Class="ThinkNode_Tagger">
+                    <tagToGive>DraftedOrder</tagToGive>
+                    <subNodes>
+                        <li Class="JobGiver_MoveToStandable" />
+                        <li Class="JobGiver_Orders" />
+                    </subNodes>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+
     <ThinkTreeDef>
         <defName>ABF_ThinkTree_Synstruct_AnimalBuildCoherenceIdly</defName>
         <insertTag>Animal_PreWander</insertTag>

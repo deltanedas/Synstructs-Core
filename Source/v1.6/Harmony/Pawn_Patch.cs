@@ -38,5 +38,21 @@ namespace ArtificialBeings
                 return true;
             }
         }
+
+        // Let Synstruct animals take orders.
+        [HarmonyPatch(typeof(Pawn), "get_CanTakeOrder")]
+        public static class Pawn_get_CanTakeOrder_Patch
+        {
+            [HarmonyPrefix]
+            public static bool Listener(ref Pawn __instance, ref bool __result)
+            {
+                if (SC_Utils.IsSynstruct(__instance) && __instance.RaceProps.intelligence == Intelligence.Animal)
+                {
+                    __result = true;
+                    return false;
+                }
+                return true;
+            }
+        }
     }
 }
