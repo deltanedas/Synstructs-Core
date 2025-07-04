@@ -5,7 +5,7 @@ using Verse;
 namespace ArtificialBeings
 {
     // Frames are destroyed if the total health of the pawn falls below 20% or upon death.
-    public class Hediff_SynstructFrame : Hediff
+    public class Hediff_SynstructFrame : HediffWithComps
     {
         public override bool ShouldRemove => base.ShouldRemove || pawn.health.summaryHealth.SummaryHealthPercent <= 0.2f;
 

@@ -5,7 +5,7 @@ using Verse;
 namespace ArtificialBeings
 {
     // Chassis upgrades are destroyed when the pawn is killed.
-    public class Hediff_SynstructChassis : Hediff
+    public class Hediff_SynstructChassis : HediffWithComps
     {
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
