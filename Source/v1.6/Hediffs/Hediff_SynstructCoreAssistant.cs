@@ -5,7 +5,7 @@ using Verse;
 namespace ArtificialBeings
 {
     // Core Assistant upgrades are destroyed if the pawn is dead and has no consciousness source.
-    public class Hediff_CoreAssistant : Hediff
+    public class Hediff_CoreAssistant : Hediff_Implant
     {
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
         {
