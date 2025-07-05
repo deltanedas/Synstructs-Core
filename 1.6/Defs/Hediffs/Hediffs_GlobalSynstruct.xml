@@ -18,7 +18,7 @@
 		        <statOffsets>
 					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
                     <ABF_Stat_Synstruct_CoherenceRetention>-0.25</ABF_Stat_Synstruct_CoherenceRetention>
-                    <ABF_Stat_Synstruct_EnergyConsumption>0.25</ABF_Stat_Synstruct_EnergyConsumption>
+                    <ABF_Stat_Synstruct_EnergyConsumption>25</ABF_Stat_Synstruct_EnergyConsumption>
                 </statOffsets>
             </li>
         </stages>
