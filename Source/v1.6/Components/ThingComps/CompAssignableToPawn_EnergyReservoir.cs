@@ -47,7 +47,7 @@ namespace ArtificialBeings
                 }
                 if (cachedCandidates.NullOrEmpty())
                 {
-                    PawnComparer comparer = new PawnComparer();
+                    SC_Utils.PawnComparer comparer = new SC_Utils.PawnComparer();
                     cachedCandidates = new List<Pawn>();
                     foreach (Pawn pawn in parent.Map.mapPawns.SpawnedColonyAnimals)
                     {
@@ -76,15 +76,6 @@ namespace ArtificialBeings
                 return "ABF_IncapableOfChargingShort".Translate();
             }
             return AcceptanceReport.WasAccepted;
-        }
-
-        // Comparer used to keep the list sorted as it is generated and cached.
-        private class PawnComparer : Comparer<Pawn>
-        {
-            public override int Compare(Pawn x, Pawn y)
-            {
-                return x.LabelShortCap.CompareTo(y.LabelShortCap);
-            }
         }
     }
 }

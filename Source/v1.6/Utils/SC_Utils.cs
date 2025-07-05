@@ -647,6 +647,13 @@ namespace ArtificialBeings
         // Cached dictionary matching maps to the number of biomimetics in the player's colony. Cached via map component regularly.
         public static Dictionary<Map, int> playerBiomimeticCount = new Dictionary<Map, int>();
 
-        public const float chargingRatePerDay = 6f;
+        // Comparer of pawns, used in various places to keep lists in a particular sort order.
+        public class PawnComparer : Comparer<Pawn>
+        {
+            public override int Compare(Pawn x, Pawn y)
+            {
+                return x.LabelShortCap.CompareTo(y.LabelShortCap);
+            }
+        }
     }
 }
