@@ -41,6 +41,12 @@ namespace ArtificialBeings
             base.PostSpawnSetup(respawningAfterLoad);
         }
 
+        // The pawn can lose its draft controller on despawn, and that's fine, so long as we don't continue to hold a reference to it.
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
+        {
+            drafter = null;
+        }
+
         // The extra selection overlay for drawing lines for paths only happens for Colonist pawns (ie. humanlikes).
         public override void PostDrawExtraSelectionOverlays()
         {
