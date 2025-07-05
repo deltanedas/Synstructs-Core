@@ -127,7 +127,6 @@
             <bulkRecipeCount>4</bulkRecipeCount>
             <skillRequirements>
                 <Crafting>6</Crafting>
-                <Intellectual>2</Intellectual>
             </skillRequirements>
             <researchPrerequisite>ABF_ResearchProject_Synstruct_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
@@ -160,7 +159,6 @@
             <bulkRecipeCount>4</bulkRecipeCount>
             <skillRequirements>
                 <Crafting>12</Crafting>
-                <Intellectual>4</Intellectual>
             </skillRequirements>
         </recipeMaker>
     </ThingDef>
