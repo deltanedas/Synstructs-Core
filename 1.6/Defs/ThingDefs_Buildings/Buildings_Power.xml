@@ -88,7 +88,7 @@
             <li Class="ArtificialBeings.CompProperties_EnergyReservoir">
                 <compClass>ArtificialBeings.CompEnergyReservoir_Powered</compClass>
                 <minimumReserveBeforeReady>0.05</minimumReserveBeforeReady>
-                <maximumReserve>600</maximumReserve>
+                <maximumReserve>2000</maximumReserve>
                 <energyEfficiency>1</energyEfficiency> <!-- To be determined -->
                 <reactsIfDamagedAboveMinimumReserve>true</reactsIfDamagedAboveMinimumReserve>
             </li>
