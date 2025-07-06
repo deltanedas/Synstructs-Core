@@ -13,7 +13,21 @@ namespace ArtificialBeings
 
         protected float cachedHeatGeneration = 0f;
 
+        protected float cachedPawnEnergyConsumption = 0f;
+
+        protected int cachedPawnsInRoomCount = 0;
+
+        protected int cachedActiveChargersInRoomCount = 0;
+
         private List<Pawn> chargingPawns;
+
+        protected virtual float PowerConsumptionModifier
+        {
+            get
+            {
+                return (0.125f * (Mathf.Max(cachedPawnsInRoomCount, 1f) - 1f) / Mathf.Max(cachedActiveChargersInRoomCount, 1f)) + 1;
+            }
+        }
 
         public override bool Active
         {
@@ -40,25 +54,36 @@ namespace ArtificialBeings
             chargingPawns = roomPawns;
             if (baselineOnly || roomChargers.NullOrEmpty() || roomPawns.NullOrEmpty())
             {
-                cachedPowerConsumption = Mathf.Max(compPowerTrader.Props.idlePowerDraw, 0f);
+                cachedPowerConsumption = Mathf.Max(compPowerTrader.Props.PowerConsumption, 0f);
                 cachedHeatGeneration = 0f;
+                cachedPawnEnergyConsumption = 0f;
+                cachedPawnsInRoomCount = 0;
+                cachedActiveChargersInRoomCount = 0;
                 return;
             }
 
-            int activeChargers = 0;
+            cachedActiveChargersInRoomCount = 0;
             // Count only chargers which are active.
             for (int i = roomChargers.Count - 1; i >= 0; i--)
             {
                 if (roomChargers[i].Active)
                 {
-                    activeChargers++;
+                    cachedActiveChargersInRoomCount++;
                 }
             }
+            if (cachedActiveChargersInRoomCount == 0)
+            {
+                return;
+            }
 
-            int validPawns = roomPawns.Count;
-            float powerConsumptionModifier = validPawns + (0.25f * (validPawns - 1) / Mathf.Max(activeChargers, 1f));
-            cachedPowerConsumption = compPowerTrader.Props.PowerConsumption * powerConsumptionModifier;
-            cachedHeatGeneration = 0.5f * validPawns;
+            cachedPawnsInRoomCount = roomPawns.Count;
+            cachedPawnEnergyConsumption = 0;
+            foreach (Pawn pawn in roomPawns)
+            {
+                cachedPawnEnergyConsumption += GetChargePerDayForPawn(pawn);
+            }
+            cachedPowerConsumption = cachedPawnEnergyConsumption * PowerConsumptionModifier;
+            cachedHeatGeneration = 0.5f * cachedPawnsInRoomCount;
         }
 
         public override void DoChargePulse()
@@ -87,7 +112,6 @@ namespace ArtificialBeings
             // The amount to replenish depends on the tick rate of the device. A longer tick interval means it is being called less, and should charge more to compensate.
             // The parent comp treats normal ticker types as Rare, so Rare is the shortest acceptable interval.
             int effectiveTicks = parent.def.tickerType == TickerType.Long ? GenTicks.TickLongInterval : GenTicks.TickRareInterval;
-            float effectiveCharge = Props.baseChargeRatePerDay / GenDate.TicksPerDay * effectiveTicks;
 
             // The heat pusher output is not modifiable. Simply push the cached heat (or cold) if necessary.
             if (cachedHeatGeneration != 0f)
@@ -97,25 +121,33 @@ namespace ArtificialBeings
 
             foreach (Pawn pawn in chargingPawns)
             {
-                if (pawn.needs?.TryGetNeed(ABF_NeedDefOf.ABF_Need_Synstruct_Energy) is Need need)
+                if (pawn.needs?.TryGetNeed(ABF_NeedDefOf.ABF_Need_Synstruct_Energy) is Need_SynstructEnergy need)
                 {
-                    need.CurLevel += effectiveCharge;
+                    need.CurLevel += GetChargePerDayForPawn(pawn) / GenDate.TicksPerDay * effectiveTicks;
                 }
             }
         }
 
         public override string CompInspectStringExtra()
         {
-            string output = base.CompInspectStringExtra();
-            if (output != null)
-            {
-                return output;
-            }
             if (!chargingPawns.NullOrEmpty() && chargingPawns.Count > 1)
             {
-                return "ABF_IncreasedLoad".Translate();
+                return "ABF_ReducedEfficiency".Translate(Props.maxChargeRatePerPawnPerDay, (1 / PowerConsumptionModifier).ToStringPercent("0.#"));
             }
-            return null;
+            return base.CompInspectStringExtra();
+        }
+
+        // Depending on when this is called, it may differ between when used to recalculate caches versus doing charge pulses, due to chargers going offline or pawn energy consumption changing.
+        public override float GetChargePerDayForPawn(Pawn pawn)
+        {
+            float toChargeForPawn = pawn.GetStatValue(ABF_StatDefOf.ABF_Stat_Synstruct_EnergyConsumption);
+            // If the pawn has less than 90% of its need filled, this building should attempt to charge it up.
+            if (pawn.needs.TryGetNeed(ABF_NeedDefOf.ABF_Need_Synstruct_Energy) is Need_SynstructEnergy energyNeed && energyNeed.CurLevelPercentage < 0.9f)
+            {
+                toChargeForPawn *= 1.5f;
+            }
+            // Charging should be split evenly between chargers, and should never exceed this building's maximum charge rate per pawn.
+            return Mathf.Min(toChargeForPawn / Mathf.Max(cachedActiveChargersInRoomCount, 1), Props.maxChargeRatePerPawnPerDay);
         }
     }
 }

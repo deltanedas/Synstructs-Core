@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace ArtificialBeings
@@ -102,6 +103,10 @@ namespace ArtificialBeings
         // Applies the effect of the pulse, whatever that may be.
         public abstract void DoChargePulse();
 
+        // Determines how much charge per day this building should provide to a given pawn, as of this moment.
+        // This is currently not used directly in this abstract class, but it may be at some point.
+        public abstract float GetChargePerDayForPawn(Pawn pawn);
+
         public override string CompInspectStringExtra()
         {
             if (Props.inoperableOutdoors && parent.GetRoom()?.UsesOutdoorTemperature == true)
@@ -112,7 +117,11 @@ namespace ArtificialBeings
             {
                 return "ABF_InoperableInLargeRooms".Translate();
             }
-            return "ABF_BaseChargeRatePerDay".Translate(Props.baseChargeRatePerDay);
+            if (Props.maxChargeRatePerPawnPerDay < Mathf.Infinity)
+            {
+                return "ABF_MaxChargeRatePerPawnPerDay".Translate(Props.maxChargeRatePerPawnPerDay);
+            }
+            return base.CompInspectStringExtra();
         }
     }
 }

@@ -21,13 +21,13 @@
                 <compClass>ArtificialBeings.CompRoomCharger_PoweredHeatGenerating</compClass>
                 <inoperableInLargeRooms>true</inoperableInLargeRooms>
                 <inoperableOutdoors>true</inoperableOutdoors>
-                <baseChargeRatePerDay>200</baseChargeRatePerDay>
+                <maxChargeRatePerPawnPerDay>400</maxChargeRatePerPawnPerDay>
+
             </li>
             <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
-                <basePowerConsumption>200</basePowerConsumption>
-                <idlePowerDraw>20</idlePowerDraw>
+                <basePowerConsumption>20</basePowerConsumption>
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable"/>

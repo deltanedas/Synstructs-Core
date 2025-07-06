@@ -208,6 +208,7 @@
     <Compile Include="DefOfs\SC_PawnRelationDefOf.cs" />
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
+    <Compile Include="Directives\Directive_Minuteman.cs" />
     <Compile Include="Extensions\HediffExtensions.cs" />
     <Compile Include="Gizmos\Gizmo_EnergyReservoir.cs" />
     <Compile Include="Gizmos\Gizmo_CoherenceStatus.cs" />

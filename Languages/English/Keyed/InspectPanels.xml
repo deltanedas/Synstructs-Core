@@ -4,7 +4,9 @@
     <ABF_InoperableOutdoors>Cannot operate: Outdoors</ABF_InoperableOutdoors>
     <ABF_InoperableInLargeRooms>Cannot operate: Room too large</ABF_InoperableInLargeRooms>
     <ABF_InsufficientReserve>Cannot operate: Insufficient reserve</ABF_InsufficientReserve>
-    <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad>
-    <ABF_BaseChargeRatePerDay>Charging {0} watts per day to each nearby unit</ABF_BaseChargeRatePerDay>
+    <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad> <!-- 1.5 -->
+    <ABF_ReducedEfficiency>Can charge up to {0} watts per nearby unit each day at {1} efficiency due to charging multiple units</ABF_ReducedEfficiency> <!-- 1.6 -->
+    <ABF_BaseChargeRatePerDay>Charging {0} watts per day to each nearby unit</ABF_BaseChargeRatePerDay> <!-- 1.5 -->
+    <ABF_MaxChargeRatePerPawnPerDay>Can charge up to {0} watts per nearby unit each day</ABF_MaxChargeRatePerPawnPerDay> <!-- 1.6 -->
 
 </LanguageData>

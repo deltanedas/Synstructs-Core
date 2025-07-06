@@ -14,7 +14,7 @@ namespace ArtificialBeings
 
         public bool inoperableOutdoors = false;
 
-        public float baseChargeRatePerDay = 0f;
+        public float maxChargeRatePerPawnPerDay = 0f;
 
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
         {
@@ -23,9 +23,9 @@ namespace ArtificialBeings
                 yield return error;
             }
 
-            if (baseChargeRatePerDay == 0f)
+            if (maxChargeRatePerPawnPerDay == 0f)
             {
-                yield return $"{parentDef.defName} did not specify a charge rate for its room charger comp. It will not charge pawns!";
+                yield return $"{parentDef.defName} did not specify a maximum charge rate per pawn for its room charger comp. It will not charge pawns!";
             }
         }
     }
