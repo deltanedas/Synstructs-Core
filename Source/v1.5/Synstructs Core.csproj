@@ -284,7 +284,6 @@
     <Compile Include="Toils\Toils_LayDownPower.cs" />
     <Compile Include="Utils\Enums.cs" />
     <Compile Include="Utils\CoherenceUtility.cs" />
-    <Compile Include="Utils\SC_Textures.cs" />
     <Compile Include="Utils\SC_Utils.cs" />
   </ItemGroup>
   <ItemGroup />
