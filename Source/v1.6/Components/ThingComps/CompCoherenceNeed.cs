@@ -118,21 +118,17 @@ namespace ArtificialBeings
         public override void CompTickRare()
         {
             base.CompTickRare();
-            if (!Pawn.Spawned || Disabled || Find.TickManager.TicksGame % GenTicks.TickLongInterval != 0)
+            if (!Pawn.Spawned || Disabled)
             {
                 return;
             }
 
-            // Recache fall rate every in game day.
-            if (Find.TickManager.TicksGame % GenDate.TicksPerDay == 0)
-            {
-                cachedFallRatePerDay = CoherenceFallPerDay();
-            }
+            cachedFallRatePerDay = CoherenceFallPerDay();
 
             TryCoherenceCheck();
 
             ChangeCoherenceEffectTicks();
-            ChangeCoherenceLevel(-cachedFallRatePerDay * GenTicks.TickLongInterval / GenDate.TicksPerDay);
+            ChangeCoherenceLevel(-cachedFallRatePerDay * GenTicks.TickRareInterval / GenDate.TicksPerDay);
         }
 
         public void IncrementDisablingSources()
@@ -183,7 +179,7 @@ namespace ArtificialBeings
         {
             if (coherenceLevel < 0.3f)
             {
-                coherenceEffectTicks -= GenTicks.TickLongInterval;
+                coherenceEffectTicks -= GenTicks.TickRareInterval;
 
                 if (coherenceEffectTicks > 0)
                 {
@@ -192,7 +188,7 @@ namespace ArtificialBeings
             }
             else if (coherenceLevel > 0.7f)
             {
-                coherenceEffectTicks += GenTicks.TickLongInterval;
+                coherenceEffectTicks += GenTicks.TickRareInterval;
 
                 if (coherenceEffectTicks < 0)
                 {
@@ -201,7 +197,7 @@ namespace ArtificialBeings
             }
             else
             {
-                coherenceEffectTicks = Mathf.MoveTowards(coherenceEffectTicks, 0, (Mathf.Log((Mathf.Abs(coherenceEffectTicks) / GenDate.TicksPerDay) + 2, 2) - 1) * GenTicks.TickLongInterval);
+                coherenceEffectTicks = Mathf.MoveTowards(coherenceEffectTicks, 0, (Mathf.Log((Mathf.Abs(coherenceEffectTicks) / GenDate.TicksPerDay) + 2, 2) - 1) * GenTicks.TickRareInterval);
             }
             // Prevent the ticks from going outside a 60 day value positively or negatively.
             coherenceEffectTicks = Mathf.Clamp(coherenceEffectTicks, -(60 * GenDate.TicksPerDay), 60 * GenDate.TicksPerDay);
