@@ -51,6 +51,7 @@
         <label>artisan</label>
         <description>Lacking creativity and the ability to innovate, drones are unable to truly master the finer details of producing goods. Quantity, rather than quality, has always been the lot of drone assembly lines - but that is not always what is needed.\n\nExtremely specialized directives can permit units to consistently produce Excellent quality goods, but the sheer intricacy of the programming severely impairs the rate of work - even for work that is unskilled.</description>
         <directiveClass>ArtificialBeings.Directive_Basic</directiveClass>
+        <directiveCategory>Work</directiveCategory>
         <iconPath>UI/Icons/ABF_DirectiveArtisan</iconPath>
         <statFactors>
             <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
