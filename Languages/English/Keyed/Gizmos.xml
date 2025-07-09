@@ -16,4 +16,8 @@
     <ABF_ReservoirGizmoLabel>Energy</ABF_ReservoirGizmoLabel>
     <ABF_ReservoirLevel>Reserve available: {0} watts</ABF_ReservoirLevel>
 
+    <!-- Minuteman Directive, 1.6+ -->
+    <ABF_CommandToggleActivationDesc>Toggle whether this unit is active or not</ABF_CommandToggleActivationDesc>
+    <ABF_CommandActiveLabel>Active</ABF_CommandActiveLabel>
+
 </LanguageData>

@@ -36,7 +36,7 @@ namespace ArtificialBeings
 
         public float coherenceEffectTicks = GenDate.TicksPerDay;
 
-        public bool Disabled => disablingSources > 0;
+        public bool Disabled => disablingSources > 0 || !Pawn.Awake();
 
         public ABF_CoherenceStage Stage
         {

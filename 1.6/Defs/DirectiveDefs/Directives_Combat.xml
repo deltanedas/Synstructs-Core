@@ -217,4 +217,27 @@
         </groupKindWeights>
     </ArtificialBeings.DirectiveDef>
 
+    <ArtificialBeings.DirectiveDef>
+        <defName>ABF_Directive_Synstruct_Minuteman</defName>
+        <label>minuteman</label>
+        <description>Combat is, historically, a very brief affair. The time between combats tends to be far, far more significant. Many a warrior has languished in idility awaiting the opportunity to once again raise weapons and release battlecries. There is no reason for combat drones to similarly languish.\n\nSpecialized directives can suspend the operations of a drone and reactivate them at a moment's notice, allowing for a state akin to hibernation while awaiting a time when they are needed. Enemies will still treat units deactivated in this way as a threat, as they are capable of awakening at will. Units will automatically awaken if damaged.</description>
+        <customEffectsDescription>Units with this directive can enter and exit a state of dormancy on command, suspending their needs.</customEffectsDescription>
+        <directiveClass>ArtificialBeings.Directive_Minuteman</directiveClass>
+        <directiveCategory>Military</directiveCategory>
+        <iconPath>UI/Icons/ABF_DirectiveInterference</iconPath>
+        <complexityCost>1</complexityCost>
+        <groupKindWeights>
+            <li><key>Combat</key><value>-1</value></li>
+            <li><key>Peaceful</key><value>-1</value></li>
+            <li><key>Trader</key><value>-1</value></li>
+        </groupKindWeights>
+        <requirementWorkers>
+            <li Class="ArtificialBeings.DirectiveRequirementWorker_RequiredWorkTag">
+                <requiredWorkTags>
+                    <li>Violent</li>
+                </requiredWorkTags>
+            </li>
+        </requirementWorkers>
+    </ArtificialBeings.DirectiveDef>
+
 </Defs>
