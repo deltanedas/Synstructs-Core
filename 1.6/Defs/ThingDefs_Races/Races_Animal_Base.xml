@@ -28,7 +28,9 @@
 			<manhunterOnDamageChance>0</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
 			<needsRest>false</needsRest>
-			<useMeatFrom>Alpaca</useMeatFrom>
+            <specificMeatDef>Steel</specificMeatDef>
+            <isImmuneToInfections>true</isImmuneToInfections>
+            <hasMeat>false</hasMeat>
 			<leatherDef>Leather_Human</leatherDef>
             <lifeExpectancy>40</lifeExpectancy>
 			<hediffGiverSets Inherit="False">
