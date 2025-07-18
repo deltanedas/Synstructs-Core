@@ -5,9 +5,9 @@
     <ABF_InoperableInLargeRooms>Cannot operate: Room too large</ABF_InoperableInLargeRooms>
     <ABF_InsufficientReserve>Cannot operate: Insufficient reserve</ABF_InsufficientReserve>
     <ABF_IncreasedLoad>Device is under increased load due to multiple targets</ABF_IncreasedLoad> <!-- 1.5 -->
-    <ABF_ReducedEfficiency>Can charge up to {0} watts per nearby unit each day at {1} efficiency due to charging multiple units</ABF_ReducedEfficiency> <!-- 1.6 -->
+    <ABF_ReducedEfficiency>Supplying {0} watts to nearby units at {1} efficiency due to charging multiple units</ABF_ReducedEfficiency> <!-- 1.6 -->
     <ABF_BaseChargeRatePerDay>Charging {0} watts per day to each nearby unit</ABF_BaseChargeRatePerDay> <!-- 1.5 -->
-    <ABF_MaxChargeRatePerPawnPerDay>Can charge up to {0} watts per nearby unit each day</ABF_MaxChargeRatePerPawnPerDay> <!-- 1.6 -->
+    <ABF_MaxChargeRatePerPawn>Can supply up to {0} watts per nearby unit</ABF_MaxChargeRatePerPawn> <!-- 1.6 -->
 
     <!-- Directives, all 1.6+ -->
     <ABF_MinutemanDormant>Dormant</ABF_MinutemanDormant>

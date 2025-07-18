@@ -56,7 +56,7 @@
                 <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_EnergyShortage</hediffToApplyOnEmpty>
                 <hediffRisePerDay>2</hediffRisePerDay>
                 <hediffFallPerDay>4</hediffFallPerDay>
-                <unitsLabel>watts</unitsLabel>
+                <unitsLabel>Wd</unitsLabel>
             </li>
         </modExtensions>
     </NeedDef>

@@ -119,7 +119,7 @@ namespace ArtificialBeings
             }
             if (Props.maxChargeRatePerPawnPerDay < Mathf.Infinity)
             {
-                return "ABF_MaxChargeRatePerPawnPerDay".Translate(Props.maxChargeRatePerPawnPerDay);
+                return "ABF_MaxChargeRatePerPawn".Translate(Props.maxChargeRatePerPawnPerDay);
             }
             return base.CompInspectStringExtra();
         }
