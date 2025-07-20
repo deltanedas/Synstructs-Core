@@ -75,6 +75,11 @@ namespace ArtificialBeings
                 if (innerPawn.playerSettings != null)
                     innerPawn.playerSettings.medCare = MedicalCareCategory.Best;
             }
+            // Reviving a drone should never allow them to have an Ideology tracker.
+            if (ABF_Utils.IsArtificialDrone(innerPawn))
+            {
+                innerPawn.ideo = null;
+            }
 
             // Notify successful resurrection and destroy the used kit.
             Messages.Message("ABF_ResurrectionSuccessful".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.PositiveEvent, true);
