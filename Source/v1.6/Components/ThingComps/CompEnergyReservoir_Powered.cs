@@ -23,10 +23,6 @@ namespace ArtificialBeings
             {
                 reserve = Mathf.Clamp(reserve + Mathf.Abs(compPowerTrader.PowerOutput * Props.energyEfficiency * GenTicks.TickRareInterval) / GenDate.TicksPerDay, 0, Props.maximumReserve);
             }
-            else
-            {
-                return;
-            }
             // If we are at maximum reserve, keep the power consumption much lower.
             if (reserve >= Props.maximumReserve)
             {
@@ -34,7 +30,7 @@ namespace ArtificialBeings
             }
             else
             {
-                compPowerTrader.PowerOutput = (0 - compPowerTrader.Props.PowerConsumption);
+                compPowerTrader.PowerOutput = 0 - compPowerTrader.Props.PowerConsumption;
             }
         }
 
