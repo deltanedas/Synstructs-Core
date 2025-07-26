@@ -2,55 +2,6 @@
 <Defs>
 
 	<HediffDef>
-		<defName>ABF_Hediff_Synstruct_CoolantLoss</defName>
-		<label>coolant loss</label>
-		<description>Loss of coolant in the chassis, resulting in reduced cooling capacity and loss of finetuned motor control. Lack of circulation prevents restorative mechanites from functioning properly, leading to extended recovery times. \n\nPrioritization ensures core functionality receives sufficient coolant flow until critical levels are reached.</description>
-        <hediffClass>HediffWithComps</hediffClass>
-		<maxSeverity>1.0</maxSeverity>
-	    <defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
-        <comps>
-            <li Class="ArtificialBeings.HediffCompProperties_SeverityAffectsNeed">
-                <needDef>ABF_Need_Synstruct_Coolant</needDef>
-                <changePerDayAtOneSeverity>-3</changePerDayAtOneSeverity>
-                <changeByPercent>true</changeByPercent>
-            </li>
-        </comps>
-        <stages>
-            <li>
-                <label>nominal</label>
-                <becomeVisible>false</becomeVisible>
-            </li>
-            <li>
-                <minSeverity>0.15</minSeverity>
-                <label>minor</label>
-            </li>
-            <li>
-                <minSeverity>0.3</minSeverity>
-                <label>moderate</label>
-            </li>
-            <li>
-                <minSeverity>0.45</minSeverity>
-                <label>significant</label>
-            </li>
-            <li>
-                <minSeverity>0.6</minSeverity>
-                <label>threatening</label>
-                <lifeThreatening>true</lifeThreatening>
-            </li>
-            <li>
-                <minSeverity>0.75</minSeverity>
-                <label>severe</label>
-                <lifeThreatening>true</lifeThreatening>
-            </li>
-            <li>
-                <minSeverity>0.9</minSeverity>
-                <label>critical</label>
-                <lifeThreatening>true</lifeThreatening>
-            </li>
-	    </stages>
-	</HediffDef>
-
-	<HediffDef>
 		<defName>ABF_Hediff_Synstruct_Overheating</defName>
 		<label>overheating</label>
 		<description>Unsafe levels of heat retention in the chassis. At minor levels, artificial units can reduce some high power/heat functionality to offset the impact. At major levels, the unit will suffer from increasing system failures. If it surpasses a critical threshold, the core will shut down and the unit will die.</description>

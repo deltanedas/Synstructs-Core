@@ -2,50 +2,10 @@
 <Defs>
 
     <NeedDef>
-        <defName>ABF_Need_Synstruct_Coolant</defName>
-        <needClass>ArtificialBeings.Need_Artificial</needClass>
-        <label>coolant</label>
-        <description>Coolant is the amount of reserve coolant a pawn currently retains. If it is at zero, the pawn will swiftly shut down and become incapacitated.</description>
-        <listPriority>375</listPriority>
-        <showForCaravanMembers>true</showForCaravanMembers>
-        <freezeWhileSleeping>true</freezeWhileSleeping>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
-        <modExtensions>
-            <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
-                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_CoolantShortage</hediffToApplyOnEmpty>
-                <hediffRisePerDay>1</hediffRisePerDay>
-                <hediffFallPerDay>0.25</hediffFallPerDay>
-                <unitsLabel>packs</unitsLabel>
-            </li>
-        </modExtensions>
-    </NeedDef>
-
-    <NeedDef>
-        <defName>ABF_Need_Synstruct_Lubricant</defName>
-        <needClass>ArtificialBeings.Need_Artificial</needClass>
-        <label>lubricant</label>
-        <description>Lubricant is the amount of reserve lubricant a pawn currently retains. If it is at zero, the pawn will lose coherence, manipulation, and moving efficiency.</description>
-        <listPriority>370</listPriority>
-        <showForCaravanMembers>true</showForCaravanMembers>
-        <freezeWhileSleeping>true</freezeWhileSleeping>
-        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-        <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
-        <modExtensions>
-            <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
-                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_LubricantShortage</hediffToApplyOnEmpty>
-                <hediffRisePerDay>0.1</hediffRisePerDay>
-                <hediffFallPerDay>0.5</hediffFallPerDay>
-                <unitsLabel>packs</unitsLabel>
-            </li>
-        </modExtensions>
-    </NeedDef>
-
-    <NeedDef>
         <defName>ABF_Need_Synstruct_Energy</defName>
         <needClass>ArtificialBeings.Need_SynstructEnergy</needClass>
         <label>energy</label>
-        <description>Energy is required for this pawn to remain operational. If it hits zero, the pawn will very rapidly shutdown as the emergency reserve is depleted - but will not die if that happens.</description>
+        <description>Energy is required for this creature to remain operational. If it hits zero, the creature will very rapidly shutdown as the emergency reserve is depleted - but will not die if that happens.</description>
         <listPriority>810</listPriority>
         <major>true</major>
         <showForCaravanMembers>true</showForCaravanMembers>
@@ -57,6 +17,27 @@
                 <hediffRisePerDay>2</hediffRisePerDay>
                 <hediffFallPerDay>4</hediffFallPerDay>
                 <unitsLabel>Wd</unitsLabel>
+            </li>
+        </modExtensions>
+    </NeedDef>
+
+    <NeedDef>
+        <defName>ABF_Need_Synstruct_Components</defName>
+        <needClass>ArtificialBeings.Need_Artificial</needClass>
+        <label>components</label>
+        <description>Components is the reserve of machine parts a synstruct currently retains. If it is at zero, the pawn will steadily lose efficiency.</description>
+        <listPriority>370</listPriority>
+        <fallPerDay>0.01667</fallPerDay>
+        <showForCaravanMembers>true</showForCaravanMembers>
+        <freezeWhileSleeping>true</freezeWhileSleeping>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <colonistAndPrisonersOnly>true</colonistAndPrisonersOnly>
+        <modExtensions>
+            <li Class="ArtificialBeings.ABF_ArtificialNeedExtension">
+                <hediffToApplyOnEmpty>ABF_Hediff_Synstruct_ComponentShortage</hediffToApplyOnEmpty>
+                <hediffRisePerDay>0.1</hediffRisePerDay>
+                <hediffFallPerDay>24</hediffFallPerDay>
+                <unitsLabel>components</unitsLabel>
             </li>
         </modExtensions>
     </NeedDef>

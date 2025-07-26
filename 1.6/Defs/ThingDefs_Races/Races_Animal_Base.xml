@@ -34,7 +34,6 @@
 			<leatherDef>Leather_Human</leatherDef>
             <lifeExpectancy>40</lifeExpectancy>
 			<hediffGiverSets Inherit="False">
-				<li>ABF_HediffGiverSet_Synstruct_BleedsCoolant</li>
                 <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
 			</hediffGiverSets>
             <ageGenerationCurve>

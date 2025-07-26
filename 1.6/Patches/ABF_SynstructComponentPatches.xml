@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+    <!-- It's possible another mod is already adding the desired mod extension. Patch it defensively to add the ability for it to satisfy the need. -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="ComponentIndustrial"]/modExtensions/li[@Class="ArtificialBeings.ABF_NeedFulfillerExtension"]/needOffsetRelations</xpath>
+        <nomatch Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="ComponentIndustrial"]</xpath>
+            <value>
+                <li Class="ArtificialBeings.ABF_NeedFulfillerExtension">
+                    <needOffsetRelations></needOffsetRelations>
+                </li>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <!-- Ensure that components actually can fulfill the components need -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="ComponentIndustrial"]/modExtensions/li[@Class="ArtificialBeings.ABF_NeedFulfillerExtension"]/needOffsetRelations</xpath>
+        <value>
+            <li><key>ABF_Need_Synstruct_Components</key><value>1</value></li>
+        </value>
+    </Operation>
+
+    <!-- It's possible another mod is already adding a comps node to ComponentIndustrial. Patch it defensively to add the ability for the player to force consume it. -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="ComponentIndustrial"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="ComponentIndustrial"]</xpath>
+            <value>
+                <comps/>
+            </value>
+        </nomatch>
+    </Operation>
+
+    <!-- It's possible another mod is already adding the desired ThingComp for offering float menu options for forcing consumption. We need only add one if there isn't already one. -->
+    <!-- Todo: ComponentIndustrial does not have its own comps node. -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="ComponentIndustrial"]/comps/li[compClass="ArtificialBeings.CompArtificialNeedFulfiller"]</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="ComponentIndustrial"]/comps</xpath>
+            <value>
+                <li>
+                    <compClass>ArtificialBeings.CompArtificialNeedFulfiller</compClass>
+                </li>
+            </value>
+        </nomatch>
+    </Operation>
+
+</Patch>

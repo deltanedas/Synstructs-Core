@@ -245,7 +245,6 @@
 				</points>
 			</ageGenerationCurve>
 			<hediffGiverSets>
-				<li>ABF_HediffGiverSet_Synstruct_BleedsCoolant</li>
                 <li>ABF_HediffGiverSet_Synstruct_TemperatureVulnerable</li>
 			</hediffGiverSets>
 		</race>

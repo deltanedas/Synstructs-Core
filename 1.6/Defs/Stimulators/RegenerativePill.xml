@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ABF_Thing_Synstruct_StimulatorBase">
 		<defName>ABF_Thing_Synstruct_RegenerativePill</defName>
 		<label>regenerative pill</label>
-		<description>A rare case of a synstruct-designed solution (mostly) safe for organic consumption, regenerative pills are a complex synthetic solution that traverse the host's blood, coolant, or other internal streams and accumulates around injury sites in such a way as to accelerate recovery and cut off loss of fluids.\n\nOrganics will find the sensation quite unpleasant, but fully benefit from the pill's effects. Inorganic units benefit from the solution's materials to accelerate damage recovery without downsides.</description>
+		<description>A synstruct-designed solution that acts as a fine binding agent for hastening the rate at which the chassis can be mended and repaired.</description>
 		<graphicData>
 			<texPath>Things/Drugs/RegenerativePill</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
@@ -28,15 +28,12 @@
 		<defName>ABF_Hediff_Synstruct_Regeneration</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>regeneration</label>
-		<description>A synthetic solution absorbed into the system is fortifying damaged regions of the body against loss of fluid and acting as useful material for repairs.</description>
+		<description>A synthetic solution absorbed into the system is fortifying damaged regions of the body and acting as useful material for repairs.</description>
 		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
         <initialSeverity>1.0</initialSeverity>
 		<maxSeverity>1.0</maxSeverity>
         <isBad>false</isBad>
-        <removeWithTags>
-            <li>ABF_Synstruct_CoolantShortage</li>
-        </removeWithTags>
 		<stages>
 			<li>
                 <totalBleedFactor>0.5</totalBleedFactor>

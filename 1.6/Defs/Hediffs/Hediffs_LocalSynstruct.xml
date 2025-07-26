@@ -32,71 +32,14 @@
     </HediffDef>
 
     <HediffDef>
-        <defName>ABF_Hediff_Synstruct_CoolantShortage</defName>
-        <label>coolant shortage</label>
-        <description>This unit has insufficient coolant to fully fill its coolant lines and is shutting down to avoid catastrophic failure.\nCoolant reserves must be refilled to ensure a return to proper functionality.</description>
-        <maxSeverity>1</maxSeverity>
-        <tags>
-            <li>ABF_Synstruct_CoolantShortage</li>
-        </tags>
-        <stages>
-            <li>
-                <label>minor</label>
-                <capMods>
-                    <li>
-                        <capacity>Consciousness</capacity>
-                        <setMax>0.8</setMax>
-                    </li>
-                </capMods>
-            </li>
-            <li>
-                <label>moderate</label>
-                <minSeverity>0.25</minSeverity>
-                <capMods>
-                    <li>
-                        <capacity>Consciousness</capacity>
-                        <setMax>0.6</setMax>
-                    </li>
-                </capMods>
-            </li>
-            <li>
-                <label>severe</label>
-                <minSeverity>0.5</minSeverity>
-                <capMods>
-                    <li>
-                        <capacity>Consciousness</capacity>
-                        <setMax>0.4</setMax>
-                    </li>
-                </capMods>
-                <statFactors>
-                    <ABF_Stat_Synstruct_EnergyConsumption>0.8</ABF_Stat_Synstruct_EnergyConsumption>
-                </statFactors>
-            </li>
-            <li>
-                <label>extreme</label>
-                <minSeverity>0.75</minSeverity>
-                <lifeThreatening>true</lifeThreatening>
-                <capMods>
-                    <li>
-                        <capacity>Consciousness</capacity>
-                        <setMax>0.1</setMax>
-                    </li>
-                </capMods>
-                <statFactors>
-                    <ABF_Stat_Synstruct_EnergyConsumption>0.25</ABF_Stat_Synstruct_EnergyConsumption>
-                </statFactors>
-            </li>
-        </stages>
-    </HediffDef>
-
-    <HediffDef>
-        <defName>ABF_Hediff_Synstruct_LubricantShortage</defName>
-        <label>lubricant shortage</label>
-        <description>This unit has insufficient lubricant to maintain smooth part functionality, reducing exterior part efficiency and increasing the loss of coherence.\nLubricant reserves must be refilled to ensure a return to proper functionality.</description>
+        <defName>ABF_Hediff_Synstruct_ComponentShortage</defName>
+        <label>component shortage</label>
+        <description>This unit has insufficient components to maintain smooth part functionality, resulting in a reduced ability to self-repair and to operate.\nComponent reserves must be restored to ensure a return to proper functionality.</description>
         <maxSeverity>1</maxSeverity>
         <stages>
             <li>
                 <label>minor</label>
+                <naturalHealingFactor>0.95</naturalHealingFactor>
                 <capMods>
                     <li>
                         <capacity>Manipulation</capacity>
@@ -114,6 +57,7 @@
             <li>
                 <label>moderate</label>
                 <minSeverity>0.25</minSeverity>
+                <naturalHealingFactor>0.9</naturalHealingFactor>
                 <capMods>
                     <li>
                         <capacity>Manipulation</capacity>
@@ -131,6 +75,7 @@
             <li>
                 <label>severe</label>
                 <minSeverity>0.5</minSeverity>
+                <naturalHealingFactor>0.85</naturalHealingFactor>
                 <capMods>
                     <li>
                         <capacity>Manipulation</capacity>
@@ -148,6 +93,7 @@
             <li>
                 <label>extreme</label>
                 <minSeverity>0.75</minSeverity>
+                <naturalHealingFactor>0.8</naturalHealingFactor>
                 <capMods>
                     <li>
                         <capacity>Manipulation</capacity>

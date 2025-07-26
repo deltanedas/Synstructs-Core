@@ -257,18 +257,18 @@
 		<workAmount>200</workAmount>
 	</RecipeDef>
 
-    <!-- Injecting coolant into a synstruct -->
+    <!-- Injecting chemfuel into a synstruct -->
     <RecipeDef>
-        <defName>ABF_Recipe_Synstruct_InjectCoolant</defName>
-        <label>inject coolant</label>
-        <description>Manually replenish a pawn's coolant reserves by injecting from a pack. This does not replace lost coolant in the chassis, but is essential for replenishing that lost quantity over time from the reserves.</description>
-        <jobString>injecting coolant into TargetA.</jobString>
+        <defName>ABF_Recipe_Synstruct_InjectChemfuel</defName>
+        <label>inject chemfuel</label>
+        <description>Manually recharge a synstruct by injecting chemfuel into the generator.</description>
+        <jobString>injecting chemfuel into TargetA.</jobString>
         <effectWorking>Repair</effectWorking>
         <soundWorking>Recipe_Machining</soundWorking>
         <workSpeedStat>ABF_Stat_Artificial_OperationSpeed</workSpeedStat>
         <workSkill>Crafting</workSkill>
-        <workSkillLearnFactor>2</workSkillLearnFactor>
-        <workAmount>800</workAmount>
+        <workSkillLearnFactor>0</workSkillLearnFactor>
+        <workAmount>400</workAmount>
         <hideBodyPartNames>true</hideBodyPartNames>
         <targetsBodyPart>false</targetsBodyPart>
         <anesthetize>false</anesthetize>
@@ -278,24 +278,24 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>ABF_Thing_Synstruct_CoolantPack</li>
+                        <li>Chemfuel</li>
                     </thingDefs>
                 </filter>
             </li>
         </ingredients>
         <fixedIngredientFilter>
             <thingDefs>
-                <li>ABF_Thing_Synstruct_CoolantPack</li>
+                <li>Chemfuel</li>
             </thingDefs>
         </fixedIngredientFilter>
     </RecipeDef>
 
-    <!-- Injecting lubricant into a synstruct -->
+    <!-- Providing components to a synstruct -->
     <RecipeDef>
-        <defName>ABF_Recipe_Synstruct_InjectLubricant</defName>
-        <label>inject lubricant</label>
-        <description>Manually replenish a pawn's lubricant reserves by injecting from a pack. This does not replace lost lubricant in the chassis, but is essential for replenishing that lost quantity over time from the reserves.</description>
-        <jobString>injecting lubricant into TargetA.</jobString>
+        <defName>ABF_Recipe_Synstruct_SupplyComponents</defName>
+        <label>supply components</label>
+        <description>Manually replenish a synstructs's component reserves.</description>
+        <jobString>supply components for TargetA.</jobString>
         <effectWorking>Repair</effectWorking>
         <soundWorking>Recipe_Machining</soundWorking>
         <workSpeedStat>ABF_Stat_Artificial_OperationSpeed</workSpeedStat>
@@ -311,14 +311,14 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>ABF_Thing_Synstruct_LubricantPack</li>
+                        <li>ComponentIndustrial</li>
                     </thingDefs>
                 </filter>
             </li>
         </ingredients>
         <fixedIngredientFilter>
             <thingDefs>
-                <li>ABF_Thing_Synstruct_LubricantPack</li>
+                <li>ComponentIndustrial</li>
             </thingDefs>
         </fixedIngredientFilter>
     </RecipeDef>
