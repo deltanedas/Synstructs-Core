@@ -68,13 +68,9 @@ namespace ArtificialBeings
             }
         }
 
-        // Can be assigned if the pawn has a coherence need.
+        // The pawn being in the cached list implies it has a coherence need.
         public override AcceptanceReport CanAssignTo(Pawn pawn)
         {
-            if (pawn.HasComp<CompCoherenceNeed>())
-            {
-                return "ABF_CoherenceNeedMissing".Translate(pawn.LabelShortCap);
-            }
             return AcceptanceReport.WasAccepted;
         }
     }

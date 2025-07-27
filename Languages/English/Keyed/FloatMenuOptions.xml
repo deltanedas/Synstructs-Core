@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-    <ABF_CoherenceNeedMissing>{0} does not have a coherence need.</ABF_CoherenceNeedMissing>
+    <ABF_CoherenceNeedMissing>{0} does not have a coherence need.</ABF_CoherenceNeedMissing> <!-- 1.5 Only -->
 	<ABF_IncapableOfCharging>{0} has no ability to charge.</ABF_IncapableOfCharging>
     <ABF_IncapableOfChargingShort>Cannot charge.</ABF_IncapableOfChargingShort> <!-- Not used in 1.5 -->
 	<ABF_ForceCharge>Force recharge</ABF_ForceCharge>
