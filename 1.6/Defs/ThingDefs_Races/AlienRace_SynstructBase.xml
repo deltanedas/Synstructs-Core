@@ -25,6 +25,7 @@
                     <li>ABF_Trait_Synstruct_BiologicalPreference</li>
                 </traitList>
                 <blackTraitList>
+                    <li>Cannibal</li>
                     <li>Transhumanist</li>
                     <li>BodyPurist</li>
                     <li>Tough</li>
